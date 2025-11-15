@@ -1,15 +1,15 @@
----
-layout: home
----
-# E2E AI Engineering Notes
+<link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
+<section style="padding:4rem 1rem; background:#f5f7fa; text-align:center;">
+  <h1 style="margin:0; font-size:2.5rem;">E2E AI Engineering</h1>
+  <p style="font-size:1.2rem;">Four projects. One month. Data → model → API → prod.</p>
+  <a class="btn" href="#projects">View Projects</a>
+</section>
 
-Research log for a 30-day sprint turning CSVs → APIs → cloud.
+<section id="projects" style="max-width:900px; margin:3rem auto; display:flex; flex-wrap:wrap; gap:1.5rem;">
+  <div class="card"><h3>CSV-Chat</h3><p>RAG-powered Q&A on any spreadsheet.</p><a href="https://github.com/ElaMCB/E2E-AI-engineering/tree/main/p1-csv-chat">Code</a> | <a href="https://huggingface.co/spaces/ElaMCB/csv-chat">Demo</a></div>
+  <div class="card"><h3>Tiny-LLM-LoRA</h3><p>Fine-tune DialoGPT-medium with LoRA.</p><a href="https://github.com/ElaMCB/E2E-AI-engineering/tree/main/p2-tiny-llm">Code</a></div>
+  <div class="card"><h3>FinSent API</h3><p>Sub-100 ms sentiment micro-service.</p><a href="https://github.com/ElaMCB/E2E-AI-engineering/tree/main/p3-finsent">Code</a></div>
+  <div class="card"><h3>GCP Pipeline</h3><p>Vertex AI → Cloud Run with Terraform.</p><a href="https://github.com/ElaMCB/E2E-AI-engineering/tree/main/p4-gcp">Code</a></div>
+</section>
 
-## Projects
-1. CSV-Chat – write-up coming soon
-2. Tiny-LLM-LoRA (draft)
-3. FinSent micro-service (draft)
-4. GCP pipeline (draft)
-
-## Archive
-[All notes](./archive/)
+<style>.btn{display:inline-block;margin-top:1rem;padding:.6rem 1.2rem;background:#0969da;color:#fff;text-decoration:none;border-radius:4px;}.card{flex:1 1 250px;border:1px solid #d0d7de;border-radius:6px;padding:1rem;background:#fff;}</style>
