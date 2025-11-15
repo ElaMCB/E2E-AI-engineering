@@ -1,0 +1,5 @@
+---
+layout: default
+---
+<link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
+<!-- rest of your existing HTML -->
