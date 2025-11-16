@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-  <rect width="32" height="32" rx="4" fill="#0d47a1"/>
-  <path d="M16 8C11.58 8 8 11.58 8 16s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z" fill="#fff"/>
-  <path d="M16 12c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="#0d47a1"/>
+  <!-- Gradient background -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Background circle with gradient -->
+  <circle cx="16" cy="16" r="14" fill="url(#gradient)" opacity="0.9" />
+  
+  <!-- Abstract AI/tech symbol -->
+  <g transform="translate(8, 8) scale(0.25)" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Central hexagon -->
+    <path d="M50 15L78 40L78 70L50 95L22 70L22 40Z" fill="none" stroke="#ffffff" stroke-width="6" />
+    
+    <!-- Inner connections -->
+    <line x1="50" y1="15" x2="50" y2="55" />
+    <line x1="22" y1="40" x2="50" y2="55" />
+    <line x1="78" y1="40" x2="50" y2="55" />
+    
+    <!-- Glowing effect -->
+    <circle cx="50" cy="55" r="5" fill="#ffffff" filter="url(#glow)" opacity="0.8" />
+    
+    <!-- Subtle orbiting elements -->
+    <circle cx="30" cy="30" r="3" fill="#ffffff" />
+    <circle cx="70" cy="30" r="3" fill="#ffffff" />
+    <circle cx="30" cy="80" r="3" fill="#ffffff" />
+    <circle cx="70" cy="80" r="3" fill="#ffffff" />
+  </g>
 </svg>
