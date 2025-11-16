@@ -166,10 +166,14 @@
             padding: 0 var(--space-6);
         }
         
-        .sprint-btn {
+        .sprint-btn-container {
             position: absolute;
             top: var(--space-6);
             right: var(--space-6);
+        }
+        
+        .sprint-btn {
+            position: relative;
             background: var(--primary);
             color: white;
             text-decoration: none;
@@ -181,6 +185,58 @@
             font-size: 0.875rem;
             line-height: 1.5;
             letter-spacing: 0.01em;
+            overflow: hidden;
+            display: block;
+            min-width: 140px;
+            text-align: center;
+        }
+        
+        .sprint-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            width: 0%;
+            transition: width 0.5s ease;
+            z-index: 1;
+        }
+        
+        .sprint-text {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .sprint-percent {
+            font-size: 0.8em;
+            opacity: 0.8;
+            margin-left: 0.25rem;
+        }
+        
+        .sprint-tooltip {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--primary-dark);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0 0 var(--radius) var(--radius);
+            font-size: 0.75rem;
+            opacity: 0;
+            transform: translateY(-5px);
+            transition: all 0.2s ease;
+            pointer-events: none;
+            white-space: nowrap;
+            z-index: 10;
+        }
+        
+        .sprint-btn-container:hover .sprint-tooltip {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .sprint-btn:hover {
@@ -404,9 +460,19 @@
 <body>
     <header>
         <div class="container">
-            <a href="sprint.html" class="sprint-btn">
-                <i class="fas fa-rocket"></i> 30-Day Sprint
-            </a>
+            <div class="sprint-btn-container">
+                <a href="sprint.html" class="sprint-btn">
+                    <span class="sprint-progress" id="sprintProgress"></span>
+                    <span class="sprint-text">
+                        <i class="fas fa-rocket"></i> 
+                        <span id="sprintDay">30-Day Sprint</span>
+                        <span class="sprint-percent" id="sprintPercent"></span>
+                    </span>
+                </a>
+                <div class="sprint-tooltip" id="sprintTooltip">
+                    Day <span id="currentDay">1</span> of 30
+                </div>
+            </div>
             <h1>E2E AI Engineering</h1>
             <p class="subtitle">Four projects. One month. Data → model → API → production.</p>
             <a href="#projects" class="btn">
@@ -546,26 +612,79 @@
     </style>
     
     <script>
-        // Scroll to Top Button
-        const scrollToTopBtn = document.getElementById('scrollToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollToTopBtn.classList.add('visible');
-            } else {
-                scrollToTopBtn.classList.remove('visible');
+        // Calculate sprint progress
+        function updateSprintProgress() {
+            const startDate = new Date('2025-11-16T00:00:00'); // Start date of the sprint
+            const today = new Date();
+            const timeDiff = today - startDate;
+            const dayDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24)) + 1; // +1 because we start counting from day 1
+            
+            // Cap at 30 days
+            const currentDay = Math.min(Math.max(1, dayDiff), 30);
+            const progress = (currentDay / 30) * 100;
+            
+            // Update progress bar
+            const progressBar = document.getElementById('sprintProgress');
+            const dayText = document.getElementById('sprintDay');
+            const percentText = document.getElementById('sprintPercent');
+            const currentDayEl = document.getElementById('currentDay');
+            
+            if (progressBar && dayText && percentText && currentDayEl) {
+                progressBar.style.width = `${progress}%`;
+                dayText.textContent = `Day ${currentDay}/30`;
+                percentText.textContent = `${Math.round(progress)}%`;
+                currentDayEl.textContent = currentDay;
+                
+                // Add pulse animation on new day
+                if (currentDay > 1) {
+                    progressBar.style.animation = 'pulse 2s ease-out';
+                    setTimeout(() => {
+                        progressBar.style.animation = '';
+                    }, 2000);
+                }
             }
-        });
+        }
         
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Add loading animation to cards
+        // Initialize sprint progress
         document.addEventListener('DOMContentLoaded', () => {
+            // Scroll to Top Button
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            
+            // Update sprint progress
+            updateSprintProgress();
+            
+            // Update progress every day
+            setInterval(updateSprintProgress, 24 * 60 * 60 * 1000);
+            
+            // Add animation for progress bar
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes pulse {
+                    0% { opacity: 0.5; }
+                    50% { opacity: 0.8; }
+                    100% { opacity: 0.5; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            if (scrollToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        scrollToTopBtn.classList.add('visible');
+                    } else {
+                        scrollToTopBtn.classList.remove('visible');
+                    }
+                });
+                
+                scrollToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // Add loading animation to cards
             const cards = document.querySelectorAll('.card');
             cards.forEach((card, index) => {
                 card.style.animationDelay = `${index * 0.1}s`;
