@@ -10,17 +10,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --primary-light: #eff6ff;
             --secondary: #1e293b;
-            --accent: #3b82f6;
-            --background: #ffffff;
+            --accent: #60a5fa;
+            --background: #f9fafb;
             --card-bg: #ffffff;
             --text: #1f2937;
             --text-light: #4b5563;
             --border: #e5e7eb;
             --success: #10b981;
-            --header-bg: #f8fafc;
+            --header-bg: #f1f5f9;
         }
         
         * {
@@ -31,10 +32,12 @@
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: var(--text);
             background-color: var(--background);
             -webkit-font-smoothing: antialiased;
+            font-weight: 400;
+            color: #374151;
         }
         
         .container {
@@ -62,14 +65,16 @@
             position: absolute;
             top: 1.5rem;
             right: 1.5rem;
-            background: var(--accent);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
             text-decoration: none;
             padding: 0.5rem 1.25rem;
-            border-radius: 6px;
+            border-radius: 8px;
             font-weight: 500;
             transition: all 0.2s ease;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
+            border: none;
+            font-size: 0.9rem;
         }
         
         .sprint-btn:hover {
@@ -100,13 +105,15 @@
             background: var(--primary);
             color: white;
             text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
             font-weight: 500;
             transition: all 0.2s ease;
             border: 1px solid transparent;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
         }
         
         .btn:hover {
@@ -139,16 +146,18 @@
         
         .card {
             background: var(--card-bg);
-            border-radius: 8px;
+            border-radius: 10px;
             padding: 1.75rem;
             border: 1px solid var(--border);
             transition: all 0.2s ease;
             display: flex;
             flex-direction: column;
             height: 100%;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
             position: relative;
             overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
         }
 
         .card:hover {
@@ -164,9 +173,11 @@
         }
         
         .card h3 {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             margin-bottom: 0.75rem;
-            color: var(--secondary);
+            color: var(--text);
+            font-weight: 600;
+            letter-spacing: -0.3px;
         }
         
         .card p {
