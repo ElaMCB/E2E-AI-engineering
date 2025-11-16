@@ -10,16 +10,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --secondary: #1e1b4b;
-            --accent: #a855f7;
-            --background: #f8fafc;
-            --card-bg: rgba(255, 255, 255, 0.95);
-            --text: #1e1b4b;
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #1e293b;
+            --accent: #3b82f6;
+            --background: #ffffff;
+            --card-bg: #ffffff;
+            --text: #1f2937;
             --text-light: #4b5563;
-            --border: #e2e8f0;
+            --border: #e5e7eb;
             --success: #10b981;
+            --header-bg: #f8fafc;
         }
         
         * {
@@ -42,25 +43,19 @@
             padding: 0 1.5rem;
         }
         
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
         body {
-            background: linear-gradient(-45deg, #e0f2fe, #dbeafe, #ede9fe, #f0f9ff);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
         header {
-            background: linear-gradient(135deg, rgba(224, 242, 254, 0.9) 0%, rgba(219, 234, 254, 0.9) 100%);
+            background-color: var(--header-bg);
             padding: 4rem 1.5rem;
             text-align: center;
             position: relative;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid var(--border);
         }
         
         .sprint-btn {
@@ -105,14 +100,18 @@
             background: var(--primary);
             color: white;
             text-decoration: none;
-            padding: 0.75rem 1.75rem;
-            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
             font-weight: 500;
             transition: all 0.2s ease;
-            border: none;
+            border: 1px solid transparent;
             cursor: pointer;
             font-size: 1rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
         }
         
         .btn:hover {
@@ -140,27 +139,22 @@
         
         .card {
             background: var(--card-bg);
-            border-radius: 16px;
-            padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 8px;
+            padding: 1.75rem;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
             display: flex;
             flex-direction: column;
             height: 100%;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
             position: relative;
             overflow: hidden;
         }
 
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--primary));
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-color: var(--primary);
         }
         
         .card:hover {
