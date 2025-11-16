@@ -335,11 +335,13 @@
             gap: 0.5rem;
         }
         
-        .btn-container:hover .btn-progress {
+        /* Animate on page load */
+        .btn-progress.animate {
             width: 100%;
+            transition: width 3s ease-in-out;
         }
         
-        .btn-container:hover .btn {
+        .btn-container .btn {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
         }
@@ -685,55 +687,44 @@
             }
         }
         
-        // Initialize view projects button animation
-        const viewProjectsBtn = document.getElementById('viewProjectsBtn');
-        if (viewProjectsBtn) {
-            viewProjectsBtn.addEventListener('mouseenter', () => {
-                const progress = viewProjectsBtn.querySelector('.btn-progress');
-                if (progress) {
-                    progress.style.transition = 'width 3s ease-in-out';
-                    progress.style.width = '100%';
-                }
-            });
-            
-            viewProjectsBtn.addEventListener('mouseleave', () => {
-                const progress = viewProjectsBtn.querySelector('.btn-progress');
-                if (progress) {
-                    progress.style.transition = 'width 0.3s ease-out';
-                    progress.style.width = '0%';
-                }
-            });
-            
-            viewProjectsBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const target = document.querySelector(viewProjectsBtn.getAttribute('href'));
-                if (target) {
-                    // Reset and restart animation on click
-                    const progress = viewProjectsBtn.querySelector('.btn-progress');
-                    if (progress) {
-                        progress.style.transition = 'none';
-                        progress.style.width = '0%';
-                        setTimeout(() => {
-                            progress.style.transition = 'width 1s ease-in-out';
-                            progress.style.width = '100%';
-                        }, 10);
-                    }
-                    
-                    // Smooth scroll to projects section
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        }
-        
-        // Initialize sprint progress
+        // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
-            // Scroll to Top Button
-            const scrollToTopBtn = document.getElementById('scrollToTop');
+            // Initialize view projects button animation
+            const viewProjectsBtn = document.getElementById('viewProjectsBtn');
+            if (viewProjectsBtn) {
+                // Check if animation has already run in this session
+                if (!sessionStorage.getItem('buttonAnimated')) {
+                    // Add animation class after a short delay to ensure smooth transition
+                    setTimeout(() => {
+                        const progress = viewProjectsBtn.querySelector('.btn-progress');
+                        if (progress) {
+                            progress.classList.add('animate');
+                            // Mark as animated in session storage
+                            sessionStorage.setItem('buttonAnimated', 'true');
+                            
+                            // Remove animation class after it completes
+                            setTimeout(() => {
+                                progress.classList.remove('animate');
+                                progress.style.width = '0%';
+                            }, 3000);
+                        }
+                    }, 1000);
+                }
+                
+                viewProjectsBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const target = document.querySelector(viewProjectsBtn.getAttribute('href'));
+                    if (target) {
+                        // Smooth scroll to projects section
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            }
             
-            // Update sprint progress
+            // Initialize sprint progress
             updateSprintProgress();
             
             // Update progress every day
@@ -750,6 +741,8 @@
             `;
             document.head.appendChild(style);
             
+            // Initialize scroll to top button
+            const scrollToTopBtn = document.getElementById('scrollToTop');
             if (scrollToTopBtn) {
                 window.addEventListener('scroll', () => {
                     if (window.pageYOffset > 300) {
