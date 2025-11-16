@@ -10,18 +10,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #3b82f6;
-            --primary-dark: #2563eb;
-            --primary-light: #eff6ff;
-            --secondary: #1e293b;
-            --accent: #60a5fa;
-            --background: #f9fafb;
+            --primary: #1e40af;
+            --primary-dark: #1e3a8a;
+            --primary-light: #1e3a8a20;
+            --secondary: #111827;
+            --accent: #3b82f6;
+            --background: #f3f4f6;
             --card-bg: #ffffff;
             --text: #1f2937;
             --text-light: #4b5563;
             --border: #e5e7eb;
-            --success: #10b981;
-            --header-bg: #f1f5f9;
+            --success: #047857;
+            --header-bg: #1e3a8a10;
         }
         
         * {
@@ -37,7 +37,8 @@
             background-color: var(--background);
             -webkit-font-smoothing: antialiased;
             font-weight: 400;
-            color: #374151;
+            color: #1f2937;
+            background-color: #f8fafc;
         }
         
         .container {
@@ -59,22 +60,23 @@
             text-align: center;
             position: relative;
             border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(8px);
         }
         
         .sprint-btn {
             position: absolute;
             top: 1.5rem;
             right: 1.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: var(--primary);
             color: white;
             text-decoration: none;
             padding: 0.5rem 1.25rem;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: 500;
             transition: all 0.2s ease;
-            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
-            border: none;
-            font-size: 0.9rem;
+            box-shadow: none;
+            border: 1px solid var(--primary-dark);
+            font-size: 0.85rem;
         }
         
         .sprint-btn:hover {
@@ -106,14 +108,14 @@
             color: white;
             text-decoration: none;
             padding: 0.7rem 1.5rem;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: 500;
             transition: all 0.2s ease;
-            border: 1px solid transparent;
+            border: 1px solid var(--primary-dark);
             cursor: pointer;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             letter-spacing: 0.3px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: var(--primary);
         }
         
         .btn:hover {
@@ -146,18 +148,17 @@
         
         .card {
             background: var(--card-bg);
-            border-radius: 10px;
+            border-radius: 8px;
             padding: 1.75rem;
             border: 1px solid var(--border);
             transition: all 0.2s ease;
             display: flex;
             flex-direction: column;
             height: 100%;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
             position: relative;
             overflow: hidden;
-            background-color: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(8px);
+            background-color: #ffffff;
         }
 
         .card:hover {
