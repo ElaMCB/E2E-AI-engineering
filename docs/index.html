@@ -10,18 +10,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1e40af;
-            --primary-dark: #1e3a8a;
-            --primary-light: #1e3a8a20;
-            --secondary: #111827;
-            --accent: #3b82f6;
-            --background: #f3f4f6;
-            --card-bg: #ffffff;
-            --text: #1f2937;
-            --text-light: #4b5563;
-            --border: #e5e7eb;
-            --success: #047857;
-            --header-bg: #1e3a8a10;
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --primary-light: #3b82f620;
+            --secondary: #f9fafb;
+            --accent: #60a5fa;
+            --background: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f8fafc;
+            --text-light: #cbd5e1;
+            --border: #334155;
+            --success: #10b981;
+            --header-bg: #1e293b;
         }
         
         * {
@@ -37,8 +37,9 @@
             background-color: var(--background);
             -webkit-font-smoothing: antialiased;
             font-weight: 400;
-            color: #1f2937;
-            background-color: #f8fafc;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
         }
         
         .container {
@@ -60,7 +61,7 @@
             text-align: center;
             position: relative;
             border-bottom: 1px solid var(--border);
-            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
         
         .sprint-btn {
@@ -111,11 +112,10 @@
             border-radius: 6px;
             font-weight: 500;
             transition: all 0.2s ease;
-            border: 1px solid var(--primary-dark);
+            border: 1px solid var(--primary);
             cursor: pointer;
             font-size: 0.9rem;
             letter-spacing: 0.3px;
-            background: var(--primary);
         }
         
         .btn:hover {
@@ -155,10 +155,9 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             position: relative;
             overflow: hidden;
-            background-color: #ffffff;
         }
 
         .card:hover {
