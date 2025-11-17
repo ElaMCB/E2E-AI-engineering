@@ -96,7 +96,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Blog Post
 
-Read about how this project was built: [How I Turned a CSV into a Chatbot Without Fine-tuning]()
+Read about how this project was built: [How I Built an Excel/CSV Chatbot Without Fine-tuning](BLOG.md)
 
 ## License
 
