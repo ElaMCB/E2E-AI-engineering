@@ -18,6 +18,30 @@ I built a web application that combines several powerful technologies:
 
 4. **Gradio**: Provides a simple web interface for users to upload files and ask questions.
 
+## Why Not Fine-tuning?
+
+You might be wondering why I chose not to fine-tune a model for this project. Here's why:
+
+1. **RAG is More Efficient**: 
+   - Fine-tuning requires training a model on specific data, which is computationally expensive
+   - With RAG, we get the benefits of a pre-trained model's general knowledge
+   - The system can handle any new spreadsheet without retraining
+
+2. **No Need for Domain-Specific Data**:
+   - The model already understands natural language and basic data analysis
+   - We don't need to teach it domain-specific knowledge
+   - The data context comes from the uploaded files, not the model's training
+
+3. **Cost-Effective**:
+   - No need for expensive GPU hours to fine-tune
+   - Lower operational costs with on-demand processing
+   - Easier to maintain and update
+
+4. **Flexibility**:
+   - Works with any spreadsheet without retraining
+   - Can be easily adapted to different domains
+   - No need to collect and prepare training data
+
 ## How It Works
 
 1. **Data Ingestion**: Users upload an Excel or CSV file through the web interface.
