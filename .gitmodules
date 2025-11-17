@@ -1,0 +1,3 @@
+[submodule "excel-csv-chat-RAG"]
+	path = excel-csv-chat-RAG
+	url = https://huggingface.co/spaces/AzzuraM/excel-csv-chat-RAG
