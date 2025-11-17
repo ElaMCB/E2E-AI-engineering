@@ -69,6 +69,10 @@ In today's data-driven world, not everyone is comfortable writing complex querie
    ```
    Open your browser to `http://localhost:7860`
 
+## 🚀 Try It Out
+
+1. **Live Demo**: [Try it on Hugging Face Spaces](https://huggingface.co/spaces/AzzuraM/excel-csv-chat-RAG)
+
 ## 📚 Learning Resources
 
 1. **For Beginners**
