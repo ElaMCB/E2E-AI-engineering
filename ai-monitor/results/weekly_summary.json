@@ -14,5 +14,164 @@
         "hash": "1d9ba21c6903c10d394c63937b87c17e"
       }
     ]
+  },
+  {
+    "date": "2025-12-13",
+    "updates": [
+      {
+        "title": "GitHub: DeepSeek-V3.2-Exp",
+        "source": "GitHub",
+        "url": "https://github.com/arthur1258/DeepSeek-V3.2-Exp",
+        "date": "2025-12-13",
+        "summary": "🔍 Explore and enhance deep learning models with DeepSeek-V3.2-Exp, your go-to tool for streamlined data analysis and advanced AI insights.",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "737fd192bfa79ef39c1e43648f75ef28"
+      },
+      {
+        "title": "GitHub: ai-paper-digest",
+        "source": "GitHub",
+        "url": "https://github.com/JY0284/ai-paper-digest",
+        "date": "2025-12-13",
+        "summary": "`ai-paper-digest` 是一个专为AI研究者、工程师和学习者设计的智能论文摘要系统。它能够自动从RSS源获取最新AI论文，使用先进的AI模型（如DeepSeek等）生成高质量的中文摘要，并提供现代化的Web界面帮助用户快速浏览和学习。",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "a0d962cd5ad1f109be88b12476b77515"
+      },
+      {
+        "title": "GitHub: DeepSeek-Pentest-AI",
+        "source": "GitHub",
+        "url": "https://github.com/ajitpanja22/DeepSeek-Pentest-AI",
+        "date": "2025-12-13",
+        "summary": "🔍 Automate vulnerability testing and payload generation in web applications with DeepSeek Pentest AI, a powerful Burp Suite extension.",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "af82f500f8bba9674b70f2742ea47a79"
+      },
+      {
+        "title": "GitHub: kimi-ai-2api",
+        "source": "GitHub",
+        "url": "https://github.com/menendzerzumia-max/kimi-ai-2api",
+        "date": "2025-12-13",
+        "summary": "⚡ Transform Kimi.ai chat experiences into OpenAI API format with this high-performance proxy service for seamless integration and enhanced access.",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "35ac067b9e66a63789d20d6c8fbc61bf"
+      },
+      {
+        "title": "GitHub: Med-X-KimiK2-RAG",
+        "source": "GitHub",
+        "url": "https://github.com/Iluvmrbeast/Med-X-KimiK2-RAG",
+        "date": "2025-12-13",
+        "summary": "🩺 Assist clinical reasoning with MedeX, an AI-powered tool using Retrieval-Augmented Generation for medical education and case analysis.",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "e380a9bffd19b9aade1804fabb98306c"
+      },
+      {
+        "title": "Parents call for New York governor to sign landmark AI safety bill",
+        "source": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/844062/parents-call-for-new-york-governor-to-sign-landmark-ai-safety-bill",
+        "date": "2025-12-12",
+        "summary": "A group of more than 150 parents sent a letter on Friday to New York governor Kathy Hochul, urging her to sign the Responsible AI Safety and Education (RAISE) Act without changes. The RAISE Act is a b...",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "1d9ba21c6903c10d394c63937b87c17e"
+      },
+      {
+        "title": "arXiv: LabelFusion: Learning to Fuse LLMs and Transformer Classifiers for Robust Text Classification",
+        "source": "arXiv",
+        "url": "https://arxiv.org/abs/2512.10793v1",
+        "date": "2025-12-11",
+        "summary": "LabelFusion is a fusion ensemble for text classification that learns to combine a traditional transformer-based classifier (e.g., RoBERTa) with one or more Large Language Models (LLMs such as OpenAI G...",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "46b003dce45c68b793a7261bd5d0444c"
+      },
+      {
+        "title": "GitHub: personal-ai-os",
+        "source": "GitHub",
+        "url": "https://github.com/beingaigital/personal-ai-os",
+        "date": "2025-12-08",
+        "summary": "本项目提供基于 Kimi K2 API 的本地工作流型个人 AI OS，用于：信息提炼、深度分析（Super Analyst）与广度思考（New Angle）。",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "f581d140c522c7c37a1609005dde39ae"
+      },
+      {
+        "title": "GitHub: KIMI-AI-Humanizer",
+        "source": "GitHub",
+        "url": "https://github.com/syaikhipin/KIMI-AI-Humanizer",
+        "date": "2025-12-01",
+        "summary": "Humanize Text Using Kimi K2 Thinking",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "cecc332f02084162ed7a473a9cdec6e9"
+      },
+      {
+        "title": "GitHub: ApexNexus",
+        "source": "GitHub",
+        "url": "https://github.com/buckster123/ApexNexus",
+        "date": "2025-11-18",
+        "summary": "Self-evolving AI paragon powered by Kimi K2 architecture. Perceptive, meticulous, and supremely efficacious.",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "325bb8741b206332f756d989fc4329b9"
+      },
+      {
+        "title": "GitHub: KFC",
+        "source": "GitHub",
+        "url": "https://github.com/king0929zion/KFC",
+        "date": "2025-11-18",
+        "summary": "A minimalist Android client for Kimi CLI - bringing AI agent capabilities to mobile with clean UI",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "b7f3dd6e9f6561d5c63c4aac25252aa6"
+      },
+      {
+        "title": "GitHub: ai-sql-duckdb-analytics",
+        "source": "GitHub",
+        "url": "https://github.com/rusheel080703/ai-sql-duckdb-analytics",
+        "date": "2025-11-13",
+        "summary": "A project demonstrating a full-stack data analytics workflow: using the Kimi K2 AI model for complex SQL generation and executing those queries with high-performance DuckDB via Python. Addresses five ",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "276b5564bd38a083b7ba7ecdced60ef0"
+      },
+      {
+        "title": "GitHub: AiModelCompare",
+        "source": "GitHub",
+        "url": "https://github.com/mcdonnej95/AiModelCompare",
+        "date": "2025-10-24",
+        "summary": "Comparing GPT 4-o and DeepSeek R1 API model's summarization of Chinese social media posts, using a blind judgement round from Chat GPT 4-o to score summaries on completeness, favorability, and exclusi",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "1e7f26509ebd6b0bbedd9c81c84f997b"
+      },
+      {
+        "title": "GitHub Release: anything-llm - AnythingLLM v1.8.5 🎉  Mobile support + RAG improvements",
+        "source": "GitHub Releases",
+        "url": "https://github.com/Mintplex-Labs/anything-llm/releases/tag/v1.8.5",
+        "date": "2025-08-15",
+        "summary": "# AnythingLLM v1.8.5 is live\r\n\r\n\r\n## Notable Changes\r\n\r\n### Mobile support\r\n\r\nNow, currently under [Experimental features](https://docs.anythingllm.com/beta-preview/enable-feature), you can connect th",
+        "keywords": [
+          "moonshot"
+        ],
+        "hash": "11239362f62b3f751f4bceb02828076b"
+      }
+    ]
   }
 ]
