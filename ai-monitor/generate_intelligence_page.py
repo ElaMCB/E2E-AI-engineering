@@ -223,6 +223,48 @@ def generate_html_from_analysis(analysis: Dict) -> str:
             <p style="color: var(--text-light); line-height: 1.8; margin-top: 0.75rem; font-size: 1rem;">
                 {html.escape(personal['message'])}
             </p>
+            <button id="engageDeeperBtn" style="margin-top: 1rem; padding: 0.6rem 1.5rem; background: var(--primary); color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-comments"></i> Engage Deeper
+            </button>
+        </div>
+        
+        <div id="agentInterface" style="display: none; background: var(--card-bg); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; border: 1px solid var(--border);">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <i class="fas fa-robot" style="font-size: 1.5rem; color: var(--primary);"></i>
+                <h3 style="margin: 0; color: var(--text); font-size: 1.1rem;">Your Intelligence Agent</h3>
+            </div>
+            <div id="agentMessages" style="max-height: 400px; overflow-y: auto; margin-bottom: 1rem; padding: 1rem; background: rgba(0, 0, 0, 0.2); border-radius: 8px;">
+                <div class="agent-message" style="margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: start; gap: 0.75rem;">
+                        <i class="fas fa-robot" style="color: var(--primary); margin-top: 0.25rem;"></i>
+                        <div style="flex: 1;">
+                            <p style="margin: 0; color: var(--text-light); line-height: 1.6;">
+                                Hi Ela! I'm your intelligence agent. I can help you understand the discoveries, answer questions about specific insights, explain changes, or provide recommendations. What would you like to know?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+                <input type="text" id="agentInput" placeholder="Ask me anything about this week's discoveries..." style="flex: 1; padding: 0.75rem; background: rgba(0, 0, 0, 0.3); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.9rem;" />
+                <button id="agentSendBtn" style="padding: 0.75rem 1.5rem; background: var(--primary); color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                    <i class="fas fa-paper-plane"></i> Send
+                </button>
+            </div>
+            <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                <button class="quick-question" data-question="What are the top 3 most important insights?" style="padding: 0.5rem 1rem; background: rgba(59, 130, 246, 0.1); color: var(--primary); border: 1px solid var(--primary); border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: all 0.3s ease;">
+                    Top 3 Insights
+                </button>
+                <button class="quick-question" data-question="What significant changes happened this week?" style="padding: 0.5rem 1rem; background: rgba(59, 130, 246, 0.1); color: var(--primary); border: 1px solid var(--primary); border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: all 0.3s ease;">
+                    Significant Changes
+                </button>
+                <button class="quick-question" data-question="What should I focus on?" style="padding: 0.5rem 1rem; background: rgba(59, 130, 246, 0.1); color: var(--primary); border: 1px solid var(--primary); border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: all 0.3s ease;">
+                    What to Focus On
+                </button>
+                <button class="quick-question" data-question="Tell me about DeepSeek updates" style="padding: 0.5rem 1rem; background: rgba(59, 130, 246, 0.1); color: var(--primary); border: 1px solid var(--primary); border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: all 0.3s ease;">
+                    DeepSeek Updates
+                </button>
+            </div>
         </div>
         
         <div class="alert-box">
@@ -329,6 +371,177 @@ def generate_html_from_analysis(analysis: Dict) -> str:
     
     <!-- Visitor Tracking -->
     <script src="analytics.js"></script>
+    
+    <!-- Intelligence Agent Script -->
+    <script>
+        // Load analysis data for agent
+        let analysisData = null;
+        fetch('ai-monitor/results/latest_analysis.json')
+            .then(response => response.json())
+            .then(data => {
+                analysisData = data;
+            })
+            .catch(() => {
+                console.log('Analysis data not available');
+            });
+        
+        // Toggle agent interface
+        document.getElementById('engageDeeperBtn').addEventListener('click', function() {
+            const interface = document.getElementById('agentInterface');
+            if (interface.style.display === 'none') {
+                interface.style.display = 'block';
+                this.innerHTML = '<i class="fas fa-times"></i> Close';
+                this.style.background = 'var(--danger)';
+            } else {
+                interface.style.display = 'none';
+                this.innerHTML = '<i class="fas fa-comments"></i> Engage Deeper';
+                this.style.background = 'var(--primary)';
+            }
+        });
+        
+        // Agent response function
+        function getAgentResponse(question) {
+            if (!analysisData) {
+                return "I'm sorry, I don't have access to the analysis data right now. Please try again later.";
+            }
+            
+            const lowerQuestion = question.toLowerCase();
+            const insights = analysisData.top_insights || [];
+            const changes = analysisData.significant_changes || [];
+            const recommendations = analysisData.recommendations || [];
+            const summary = analysisData.executive_summary || {};
+            
+            // Top insights questions
+            if (lowerQuestion.includes('top') && (lowerQuestion.includes('insight') || lowerQuestion.includes('important'))) {
+                const top3 = insights.slice(0, 3);
+                let response = "Here are the top 3 most important insights this week:\\n\\n";
+                top3.forEach((insight, i) => {
+                    response += `${i + 1}. ${insight.title} (Impact: ${insight.impact_score}/10)\\n`;
+                    response += `   ${insight.description.substring(0, 150)}...\\n\\n`;
+                });
+                return response;
+            }
+            
+            // Changes questions
+            if (lowerQuestion.includes('change') || lowerQuestion.includes('different')) {
+                if (changes.length === 0) {
+                    return "No significant changes detected this week compared to previous weeks.";
+                }
+                let response = "Here are the significant changes this week:\\n\\n";
+                changes.forEach(change => {
+                    response += `• ${change.category.replace('_', ' ').toUpperCase()}: ${change.description}\\n`;
+                    response += `  Magnitude: ${change.magnitude}/10\\n\\n`;
+                });
+                return response;
+            }
+            
+            // Focus/recommendations
+            if (lowerQuestion.includes('focus') || lowerQuestion.includes('recommend') || lowerQuestion.includes('should')) {
+                if (recommendations.length === 0) {
+                    return "Based on the analysis, continue monitoring the top insights regularly.";
+                }
+                let response = "Here's what you should focus on:\\n\\n";
+                recommendations.forEach((rec, i) => {
+                    response += `${i + 1}. ${rec}\\n`;
+                });
+                return response;
+            }
+            
+            // Company-specific questions
+            const companies = ['deepseek', 'kimi', 'moonshot', 'qwen', 'ernie'];
+            for (const company of companies) {
+                if (lowerQuestion.includes(company)) {
+                    const companyInsights = insights.filter(insight => 
+                        insight.title.toLowerCase().includes(company) || 
+                        insight.description.toLowerCase().includes(company)
+                    );
+                    if (companyInsights.length === 0) {
+                        return `I don't see any specific updates about ${company} in the top insights this week.`;
+                    }
+                    let response = `Here are the ${company} updates this week:\\n\\n`;
+                    companyInsights.forEach(insight => {
+                        response += `• ${insight.title}\\n`;
+                        response += `  ${insight.description.substring(0, 120)}...\\n\\n`;
+                    });
+                    return response;
+                }
+            }
+            
+            // Summary questions
+            if (lowerQuestion.includes('summary') || lowerQuestion.includes('overview') || lowerQuestion.includes('what happened')) {
+                return summary.summary || "This week saw multiple AI developments across various companies and models.";
+            }
+            
+            // Default response
+            return "I can help you with:\\n• Top insights and their impact scores\\n• Significant changes this week\\n• Recommendations on what to focus on\\n• Updates about specific companies (DeepSeek, Kimi, etc.)\\n• Executive summary\\n\\nTry asking: 'What are the top 3 insights?' or 'What changed this week?'";
+        }
+        
+        // Send message function
+        function sendMessage() {
+            const input = document.getElementById('agentInput');
+            const question = input.value.trim();
+            if (!question) return;
+            
+            // Add user message
+            const messagesDiv = document.getElementById('agentMessages');
+            const userMsg = document.createElement('div');
+            userMsg.className = 'agent-message';
+            userMsg.style.marginBottom = '1rem';
+            userMsg.innerHTML = `
+                <div style="display: flex; align-items: start; gap: 0.75rem; flex-direction: row-reverse;">
+                    <i class="fas fa-user" style="color: var(--success); margin-top: 0.25rem;"></i>
+                    <div style="flex: 1; text-align: right;">
+                        <p style="margin: 0; color: var(--text-light); line-height: 1.6; background: rgba(59, 130, 246, 0.2); padding: 0.75rem; border-radius: 8px; display: inline-block;">
+                            ${question}
+                        </p>
+                    </div>
+                </div>
+            `;
+            messagesDiv.appendChild(userMsg);
+            
+            // Get agent response
+            const response = getAgentResponse(question);
+            
+            // Add agent response
+            setTimeout(() => {
+                const agentMsg = document.createElement('div');
+                agentMsg.className = 'agent-message';
+                agentMsg.style.marginBottom = '1rem';
+                agentMsg.innerHTML = `
+                    <div style="display: flex; align-items: start; gap: 0.75rem;">
+                        <i class="fas fa-robot" style="color: var(--primary); margin-top: 0.25rem;"></i>
+                        <div style="flex: 1;">
+                            <p style="margin: 0; color: var(--text-light); line-height: 1.6; white-space: pre-line;">
+                                ${response}
+                            </p>
+                        </div>
+                    </div>
+                `;
+                messagesDiv.appendChild(agentMsg);
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }, 500);
+            
+            input.value = '';
+        }
+        
+        // Send button
+        document.getElementById('agentSendBtn').addEventListener('click', sendMessage);
+        
+        // Enter key
+        document.getElementById('agentInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        // Quick question buttons
+        document.querySelectorAll('.quick-question').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.getElementById('agentInput').value = this.dataset.question;
+                sendMessage();
+            });
+        });
+    </script>
 </body>
 </html>
 """
