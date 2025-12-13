@@ -22,6 +22,27 @@ Stay ahead of AI developments by automatically searching and tracking:
 - **Historical Tracking**: Maintains 12 weeks of history
 - **No API Keys Required**: Works with GitHub, Hugging Face, arXiv, DuckDuckGo and RSS feeds out of the box
 
+## 2025 Publication Trends
+
+Based on analysis of Chinese AI company publication patterns throughout 2025:
+
+### Key Platforms (Priority Order)
+1. **Gitee** - China's primary code hosting (10M+ repos, 5M+ users) - Often first to see releases
+2. **ModelScope** - Alibaba's platform (70K+ models, 16M developers) - Major Chinese AI hub
+3. **GitHub** - International releases, open-source code
+4. **Hugging Face** - Model distribution and weights
+5. **arXiv** - Research papers and technical documentation
+6. **Company Blogs** - Official announcements
+
+### 2025 Trends
+- **Open-Source Strategy**: Chinese models account for ~40% of global AI models (Sept 2025)
+- **Cost Advantage**: Chinese LLMs cost ~1/5 of foreign counterparts
+- **Multi-Platform Publishing**: Companies publish simultaneously on Gitee, GitHub, Hugging Face
+- **Rapid Iteration**: Multiple versions released throughout the year
+- **Timing Patterns**: Major releases in Q1 (DeepSeek-R1), Q2 (open-source push), Q3 (Alibaba Qwen-3), Q4 (year-end updates)
+
+See [PUBLICATION_TRENDS.md](PUBLICATION_TRENDS.md) for detailed analysis.
+
 ## Quick Start
 
 ### 1. Install Dependencies
