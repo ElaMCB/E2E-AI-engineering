@@ -448,7 +448,11 @@ def main():
     
     # Generate and print report
     report = analyzer.generate_report()
-    print(report)
+    try:
+        print(report)
+    except UnicodeEncodeError:
+        # Windows console encoding issue - just save to file
+        print("Report generated (saved to file due to console encoding)")
     
     # Save report
     report_file = analyzer.results_dir / f"intelligence_report_{datetime.now().strftime('%Y%m%d')}.md"

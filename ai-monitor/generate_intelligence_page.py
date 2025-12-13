@@ -7,6 +7,7 @@ import json
 import html
 from pathlib import Path
 from datetime import datetime
+from typing import Dict
 
 
 def generate_intelligence_page(analysis_file: str = "results/latest_analysis.json",
