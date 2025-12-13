@@ -209,13 +209,20 @@
                     <span class="impact-badge impact-high">Impact: 8.0/10</span>
                 </h3>
                 <p style="color: var(--text-light); margin-bottom: 0.5rem;">
-                    # AnythingLLM v1.8.5 is live
-
-
-## Notable Changes
-
-### Mobile support
-
+                    # AnythingLLM v1.8.5 is live
+
+
+
+
+
+## Notable Changes
+
+
+
+### Mobile support
+
+
+
 Now, currently under [Experimental features](https://docs.anythingllm.com/beta-preview/enable-feature), you can connect th...
                 </p>
                 <div style="font-size: 0.85rem; color: var(--text-muted);">
@@ -436,7 +443,8 @@ Now, currently under [Experimental features](https://docs.anythingllm.com/beta-p
     <script>
         // Load analysis data for agent
         let analysisData = null;
-        fetch('ai-monitor/results/latest_analysis.json')
+        fetch('https://elamcb.github.io/E2E-AI-engineering/ai-monitor/results/latest_analysis.json')
+            .catch(() => fetch('../ai-monitor/results/latest_analysis.json'))
             .then(response => response.json())
             .then(data => {
                 analysisData = data;
