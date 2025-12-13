@@ -2,7 +2,7 @@
 
 Live portfolio: https://elamcb.github.io/E2E-AI-engineering/
 
-Four-project sprint demonstrating full-stack AI workflows in 30 days.  
+Full-stack AI engineering projects demonstrating end-to-end workflows.  
 Each folder is a standalone micro-product with tests, Dockerfile, and live demo.
 
 | # | Project         | Status  | Demo | Documentation |
