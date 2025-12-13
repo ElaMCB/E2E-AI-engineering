@@ -25,12 +25,12 @@ jobs:
       
       - name: Install dependencies
         run: |
-          cd chinese-ai-monitor
+          cd ai-monitor
           pip install -r requirements.txt
       
       - name: Run AI Monitor
         run: |
-          cd chinese-ai-monitor
+          cd ai-monitor
           python monitor.py
         # Optional: Add NewsAPI key as GitHub secret
         # Uncomment the env section below and add NEWS_API_KEY to GitHub secrets
@@ -39,7 +39,7 @@ jobs:
       
       - name: Generate HTML Page
         run: |
-          cd chinese-ai-monitor
+          cd ai-monitor
           python generate_html.py
       
       - name: Commit and Push Results
@@ -47,7 +47,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           # Force add results (they're in .gitignore but we need them for the website)
-          git add -f chinese-ai-monitor/results/weekly_summary.json docs/chinese-ai-monitor.html
+          git add -f ai-monitor/results/weekly_summary.json docs/ai-monitor.html
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else

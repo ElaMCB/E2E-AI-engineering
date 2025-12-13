@@ -10,7 +10,7 @@ from typing import List, Dict
 
 
 def generate_html_page(summary_file: str = "results/weekly_summary.json", 
-                       output_file: str = "../docs/chinese-ai-monitor.html"):
+                       output_file: str = "../docs/ai-monitor.html"):
     """Generate HTML page from weekly summary"""
     
     summary_path = Path(summary_file)

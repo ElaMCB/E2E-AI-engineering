@@ -83,14 +83,14 @@ This will:
 3. Set trigger to "Weekly" (choose your day/time)
 4. Action: Start a program
 5. Program: `python`
-6. Arguments: `C:\path\to\chinese-ai-monitor\monitor.py`
-7. Start in: `C:\path\to\chinese-ai-monitor`
+6. Arguments: `C:\path\to\ai-monitor\monitor.py`
+7. Start in: `C:\path\to\ai-monitor`
 
 Or use PowerShell:
 
 ```powershell
 # Create scheduled task
-$action = New-ScheduledTaskAction -Execute "python" -Argument "C:\path\to\chinese-ai-monitor\monitor.py" -WorkingDirectory "C:\path\to\chinese-ai-monitor"
+$action = New-ScheduledTaskAction -Execute "python" -Argument "C:\path\to\ai-monitor\monitor.py" -WorkingDirectory "C:\path\to\ai-monitor"
 $trigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Monday -At 9AM
 Register-ScheduledTask -TaskName "AIMonitor" -Action $action -Trigger $trigger
 ```
@@ -102,7 +102,7 @@ Register-ScheduledTask -TaskName "AIMonitor" -Action $action -Trigger $trigger
 crontab -e
 
 # Add this line to run every Monday at 9 AM
-0 9 * * 1 cd /path/to/chinese-ai-monitor && /usr/bin/python3 monitor.py >> logs/monitor.log 2>&1
+0 9 * * 1 cd /path/to/ai-monitor && /usr/bin/python3 monitor.py >> logs/monitor.log 2>&1
 ```
 
 ### GitHub Actions (Cloud-based)
@@ -127,14 +127,14 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install dependencies
-        run: pip install -r chinese-ai-monitor/requirements.txt
+        run: pip install -r ai-monitor/requirements.txt
       - name: Run monitor
-        run: python chinese-ai-monitor/monitor.py
+        run: python ai-monitor/monitor.py
       - name: Upload results
         uses: actions/upload-artifact@v3
         with:
           name: ai-monitor-results
-          path: chinese-ai-monitor/results/
+          path: ai-monitor/results/
 ```
 
 ## Output Files
