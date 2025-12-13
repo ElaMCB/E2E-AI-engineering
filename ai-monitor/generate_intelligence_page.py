@@ -34,6 +34,37 @@ def generate_intelligence_page(analysis_file: str = "results/latest_analysis.jso
     print(f"Intelligence page generated: {output_path}")
 
 
+def get_personalized_greeting() -> Dict[str, str]:
+    """Generate personalized greeting based on time and user info"""
+    # Get Eastern Time
+    eastern = pytz.timezone('US/Eastern')
+    now = datetime.now(eastern)
+    hour = now.hour
+    
+    # Determine time of day
+    if 5 <= hour < 12:
+        time_greeting = "Good morning"
+    elif 12 <= hour < 17:
+        time_greeting = "Good afternoon"
+    elif 17 <= hour < 21:
+        time_greeting = "Good evening"
+    else:
+        time_greeting = "Good evening"
+    
+    # User name from GitHub repos
+    user_name = "Ela"
+    
+    # Create personalized message
+    greeting = f"{time_greeting}, {user_name}"
+    message = "Here are the discoveries for this week. Please skim through them and let me know if you want to engage deeper."
+    
+    return {
+        'greeting': greeting,
+        'message': message,
+        'time': now.strftime('%I:%M %p ET')
+    }
+
+
 def generate_html_from_analysis(analysis: Dict) -> str:
     """Generate HTML from analysis data"""
     
@@ -41,6 +72,9 @@ def generate_html_from_analysis(analysis: Dict) -> str:
     top_insights = analysis.get('top_insights', [])
     changes = analysis.get('significant_changes', [])
     recommendations = analysis.get('recommendations', [])
+    
+    # Get personalized greeting
+    personal = get_personalized_greeting()
     
     html_output = f"""<!DOCTYPE html>
 <html lang="en">
