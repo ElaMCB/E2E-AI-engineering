@@ -3,6 +3,7 @@ Generate HTML page from weekly summary JSON for GitHub Pages
 """
 
 import json
+import html
 from pathlib import Path
 from datetime import datetime
 from typing import List, Dict
@@ -313,7 +314,7 @@ def generate_html_from_summaries(summaries: List[Dict]) -> str:
             <h1><i class="fas fa-robot"></i> Chinese AI Market Monitor</h1>
             <p class="subtitle">Weekly tracking of Chinese AI developments, models, and innovations</p>
             <div class="meta">
-                Last updated: {latest.get('date', 'N/A')} | 
+                Last updated: {html.escape(str(latest.get('date', 'N/A')))} | 
                 Total updates this week: {len(all_updates)}
             </div>
         </header>
@@ -336,21 +337,28 @@ def generate_html_from_summaries(summaries: List[Dict]) -> str:
     
     # Add keyword sections
     for keyword, updates in sorted_keywords:
+        # Escape keyword for HTML
+        escaped_keyword = html.escape(str(keyword).upper())
+        
         html += f"""
         <div class="keyword-section">
             <div class="keyword-header">
-                <span class="keyword-title">{keyword.upper()}</span>
+                <span class="keyword-title">{escaped_keyword}</span>
                 <span class="keyword-count">{len(updates)} updates</span>
             </div>
             <div class="updates-list">
 """
         
         for update in updates[:10]:  # Limit to 10 per keyword
-            title = update.get('title', 'No title')
-            url = update.get('url', '#')
-            source = update.get('source', 'Unknown')
-            date = update.get('date', 'N/A')
-            summary = update.get('summary', '')
+            # Get and escape all user-controlled data
+            title = html.escape(str(update.get('title', 'No title')))
+            url_raw = update.get('url', '#')
+            # Escape URL for href attribute to prevent XSS
+            # This escapes HTML special chars like quotes that could break out of the attribute
+            url = html.escape(str(url_raw)) if url_raw and url_raw != '#' else '#'
+            source = html.escape(str(update.get('source', 'Unknown')))
+            date = html.escape(str(update.get('date', 'N/A')))
+            summary = html.escape(str(update.get('summary', '')))
             
             html += f"""
                 <div class="update-card">
