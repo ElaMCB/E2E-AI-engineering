@@ -1,4 +1,4 @@
-# PowerShell script to schedule weekly Chinese AI monitor on Windows
+# PowerShell script to schedule weekly AI monitor on Windows
 # Run this script as Administrator
 
 $scriptPath = Join-Path $PSScriptRoot "monitor.py"
@@ -9,7 +9,7 @@ if (-not (Test-Path $scriptPath)) {
     exit 1
 }
 
-Write-Host "Setting up scheduled task for Chinese AI Monitor..." -ForegroundColor Green
+Write-Host "Setting up scheduled task for AI Monitor..." -ForegroundColor Green
 Write-Host "Script: $scriptPath" -ForegroundColor Yellow
 Write-Host "Python: $pythonPath" -ForegroundColor Yellow
 
@@ -40,18 +40,18 @@ $settings = New-ScheduledTaskSettingsSet `
 # Register the task
 try {
     Register-ScheduledTask `
-        -TaskName "ChineseAIMonitor" `
+        -TaskName "AIMonitor" `
         -Action $action `
         -Trigger $trigger `
         -Principal $principal `
         -Settings $settings `
-        -Description "Weekly monitoring of Chinese AI market developments" `
+        -Description "Weekly monitoring of AI market developments" `
         -Force
     
     Write-Host "`nScheduled task created successfully!" -ForegroundColor Green
     Write-Host "Task will run every Monday at 9:00 AM" -ForegroundColor Cyan
-    Write-Host "`nTo view the task: Get-ScheduledTask -TaskName ChineseAIMonitor" -ForegroundColor Yellow
-    Write-Host "To remove the task: Unregister-ScheduledTask -TaskName ChineseAIMonitor -Confirm:`$false" -ForegroundColor Yellow
+    Write-Host "`nTo view the task: Get-ScheduledTask -TaskName AIMonitor" -ForegroundColor Yellow
+    Write-Host "To remove the task: Unregister-ScheduledTask -TaskName AIMonitor -Confirm:`$false" -ForegroundColor Yellow
 }
 catch {
     Write-Host "Error creating scheduled task: $_" -ForegroundColor Red

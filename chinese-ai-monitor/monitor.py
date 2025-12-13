@@ -1,6 +1,6 @@
 """
-Weekly Chinese AI Market Monitor
-Automatically searches and tracks Chinese AI developments, models, and innovations.
+Weekly AI Market Monitor
+Automatically searches and tracks AI developments, models, and innovations.
 """
 
 import json
@@ -34,8 +34,8 @@ class AIUpdate:
             self.hash = hashlib.md5(content).hexdigest()
 
 
-class ChineseAIMonitor:
-    """Monitors Chinese AI market developments"""
+class AIMonitor:
+    """Monitors AI market developments"""
     
     def __init__(self, config_path: str = "config.json"):
         self.config = self._load_config(config_path)
@@ -118,7 +118,7 @@ class ChineseAIMonitor:
                 ))
                 
                 for result in results:
-                    # Filter for Chinese AI relevance
+                    # Filter for AI relevance
                     if self._is_relevant(result.get('title', '') + ' ' + result.get('body', '')):
                         update = AIUpdate(
                             title=result.get('title', 'No title'),
@@ -142,7 +142,7 @@ class ChineseAIMonitor:
         return updates
     
     def search_rss_feeds(self) -> List[AIUpdate]:
-        """Search RSS feeds for Chinese AI news"""
+        """Search RSS feeds for AI news"""
         updates = []
         
         for feed_url in self.config.get('rss_feeds', []):
@@ -150,7 +150,7 @@ class ChineseAIMonitor:
                 feed = feedparser.parse(feed_url)
                 
                 for entry in feed.entries[:self.config.get('max_results_per_source', 20)]:
-                    # Check if entry is relevant to Chinese AI
+                    # Check if entry is relevant to AI
                     content = entry.get('title', '') + ' ' + entry.get('summary', '')
                     
                     if self._is_relevant(content):
@@ -228,11 +228,11 @@ class ChineseAIMonitor:
         return updates
     
     def _is_relevant(self, text: str) -> bool:
-        """Check if text is relevant to Chinese AI developments"""
+        """Check if text is relevant to AI developments"""
         text_lower = text.lower()
         
-        # Chinese AI companies and models
-        chinese_ai_keywords = [
+        # AI companies and models
+        ai_keywords = [
             'deepseek', 'kimi', 'zhipu', '智谱', 'baichuan', '百川',
             '01.ai', '零一万物', 'moonshot', '月之暗面', 'minimax',
             'ernie', '文心', 'qwen', '通义', 'doubao', '豆包',
@@ -240,7 +240,7 @@ class ChineseAIMonitor:
             'chinese llm', 'chinese model'
         ]
         
-        return any(keyword in text_lower for keyword in chinese_ai_keywords)
+        return any(keyword in text_lower for keyword in ai_keywords)
     
     def _extract_keywords(self, text: str) -> List[str]:
         """Extract relevant keywords from text"""
@@ -352,7 +352,7 @@ class ChineseAIMonitor:
         
         latest = summaries[-1]
         report = f"""
-# Chinese AI Market Weekly Report
+# AI Market Weekly Report
 ## Date: {latest['date']}
 ## Total Updates: {len(latest['updates'])}
 
@@ -379,7 +379,7 @@ class ChineseAIMonitor:
 
 def main():
     """Main entry point"""
-    monitor = ChineseAIMonitor()
+    monitor = AIMonitor()
     updates = monitor.run_weekly_search()
     
     # Generate and print report

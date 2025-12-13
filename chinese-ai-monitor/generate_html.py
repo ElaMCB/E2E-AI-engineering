@@ -62,7 +62,7 @@ def generate_html_from_summaries(summaries: List[Dict]) -> str:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chinese AI Market Monitor - E2E AI Engineering</title>
+    <title>AI Market Monitor - E2E AI Engineering</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -311,8 +311,8 @@ def generate_html_from_summaries(summaries: List[Dict]) -> str:
         </a>
         
         <header>
-            <h1><i class="fas fa-robot"></i> Chinese AI Market Monitor</h1>
-            <p class="subtitle">Weekly tracking of Chinese AI developments, models, and innovations</p>
+            <h1><i class="fas fa-robot"></i> AI Market Monitor</h1>
+            <p class="subtitle">Weekly tracking of AI developments, models, and innovations</p>
             <div class="meta">
                 Last updated: {html.escape(str(latest.get('date', 'N/A')))} | 
                 Total updates this week: {len(all_updates)}
@@ -403,7 +403,7 @@ def generate_empty_html() -> str:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chinese AI Market Monitor - E2E AI Engineering</title>
+    <title>AI Market Monitor - E2E AI Engineering</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">

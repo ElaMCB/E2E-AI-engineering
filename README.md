@@ -16,7 +16,7 @@ Each folder is a standalone micro-product with tests, Dockerfile, and live demo.
 
 | Tool | Description |
 |------|-------------|
-| [Chinese AI Monitor](chinese-ai-monitor/) | Weekly automated monitoring of Chinese AI market advances (DeepSeek, Kimi, etc.) |
+| [AI Monitor](chinese-ai-monitor/) | Weekly automated monitoring of AI market advances (DeepSeek, Kimi, etc.) |
 
 ---
 

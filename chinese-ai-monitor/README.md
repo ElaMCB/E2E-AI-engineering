@@ -1,20 +1,20 @@
-# 🇨🇳 Chinese AI Market Weekly Monitor
+# AI Market Weekly Monitor
 
-Automated weekly monitoring system to track Chinese AI market advances, new models, and innovations. Get early alerts about developments from companies like DeepSeek, Kimi, Zhipu AI, Baichuan, and others.
+Automated weekly monitoring system to track AI market advances, new models, and innovations. Get early alerts about developments from companies like DeepSeek, Kimi, Zhipu AI, Baichuan, and others.
 
 ## 🎯 Purpose
 
-Stay ahead of Chinese AI developments by automatically searching and tracking:
+Stay ahead of AI developments by automatically searching and tracking:
 - New AI models and releases (DeepSeek, Kimi, Qwen, etc.)
-- Chinese AI company announcements
-- AI innovations and breakthroughs from China
+- AI company announcements
+- AI innovations and breakthroughs
 - Market trends and competitive intelligence
 
 ## ✨ Features
 
 - **Multi-source Search**: Combines DuckDuckGo, RSS feeds, and NewsAPI
 - **Deduplication**: Automatically filters duplicate articles
-- **Keyword Tracking**: Monitors specific Chinese AI companies and models
+- **Keyword Tracking**: Monitors specific AI companies and models
 - **Weekly Reports**: Generates markdown reports with summaries
 - **Historical Tracking**: Maintains 12 weeks of history
 - **No API Keys Required**: Works with DuckDuckGo and RSS feeds out of the box
@@ -30,7 +30,7 @@ pip install -r requirements.txt
 ### 2. Configure (Optional)
 
 Edit `config.json` to customize:
-- Search terms (add more Chinese AI companies/models)
+- Search terms (add more AI companies/models)
 - RSS feeds (add more news sources)
 - NewsAPI key (optional, for more results)
 
@@ -64,7 +64,7 @@ Or use PowerShell:
 # Create scheduled task
 $action = New-ScheduledTaskAction -Execute "python" -Argument "C:\path\to\chinese-ai-monitor\monitor.py" -WorkingDirectory "C:\path\to\chinese-ai-monitor"
 $trigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Monday -At 9AM
-Register-ScheduledTask -TaskName "ChineseAIMonitor" -Action $action -Trigger $trigger
+Register-ScheduledTask -TaskName "AIMonitor" -Action $action -Trigger $trigger
 ```
 
 ### Linux/Mac (Cron)
@@ -82,7 +82,7 @@ crontab -e
 Create `.github/workflows/weekly-ai-monitor.yml`:
 
 ```yaml
-name: Weekly Chinese AI Monitor
+name: Weekly AI Monitor
 
 on:
   schedule:
@@ -122,13 +122,13 @@ Results are saved in the `results/` directory:
 
 ### Search Terms
 
-Add more Chinese AI companies/models to track in `config.json`:
+Add more AI companies/models to track in `config.json`:
 
 ```json
 {
   "search_terms": [
     "Your New AI Model",
-    "Another Chinese AI Company"
+    "Another AI Company"
   ]
 }
 ```
@@ -158,7 +158,7 @@ Get a free API key from [newsapi.org](https://newsapi.org) and add to `config.js
 ## 📈 Example Report
 
 ```
-# Chinese AI Market Weekly Report
+# AI Market Weekly Report
 ## Date: 2025-01-13
 ## Total Updates: 15
 
@@ -194,7 +194,7 @@ Currently monitoring:
 ## 🔍 How It Works
 
 1. **Search Phase**: Queries multiple sources using configured search terms
-2. **Filtering**: Keeps only articles relevant to Chinese AI
+2. **Filtering**: Keeps only articles relevant to AI
 3. **Deduplication**: Removes articles seen in previous runs
 4. **Keyword Extraction**: Identifies which models/companies are mentioned
 5. **Storage**: Saves results in JSON and generates markdown reports

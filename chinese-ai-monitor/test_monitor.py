@@ -2,17 +2,17 @@
 Quick test script to verify the monitor is working correctly
 """
 
-from monitor import ChineseAIMonitor
+from monitor import AIMonitor
 import json
 from pathlib import Path
 
 def test_monitor():
     """Test the monitor with a limited search"""
-    print("Testing Chinese AI Monitor...")
+    print("Testing AI Monitor...")
     print("=" * 60)
     
     # Create monitor instance
-    monitor = ChineseAIMonitor()
+    monitor = AIMonitor()
     
     # Test configuration loading
     print(f"✓ Configuration loaded")
