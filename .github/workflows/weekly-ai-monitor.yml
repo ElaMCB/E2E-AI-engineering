@@ -1,4 +1,4 @@
-name: Weekly Chinese AI Monitor
+name: Weekly AI Monitor
 
 on:
   schedule:
@@ -9,7 +9,7 @@ on:
 jobs:
   monitor:
     runs-on: ubuntu-latest
-    name: Monitor Chinese AI Developments
+    name: Monitor AI Developments
     permissions:
       contents: write  # Required to commit results
     
@@ -51,7 +51,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "🤖 Weekly Chinese AI Monitor Update - $(date +'%Y-%m-%d')"
+            git commit -m "Weekly AI Monitor Update - $(date +'%Y-%m-%d')"
             git push
           fi
 
