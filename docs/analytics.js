@@ -26,16 +26,6 @@ if (GA_MEASUREMENT_ID && GA_MEASUREMENT_ID !== 'G-XXXXXXXXXX') {
 
 // Simple visitor counter using visitor-badge API
 function updateVisitorCounter() {
-    // Fixed badge in corner
-    const badgeContainer = document.getElementById('visitor-badge');
-    if (badgeContainer) {
-        const img = document.createElement('img');
-        img.src = 'https://visitor-badge.laobi.icu/badge?page_id=ElaMCB/E2E-AI-engineering';
-        img.alt = 'Visitor count';
-        img.style.border = 'none';
-        badgeContainer.appendChild(img);
-    }
-    
     // Footer visitor counter - fetch as text
     const footerCounter = document.getElementById('footer-visitor-counter');
     if (footerCounter) {
