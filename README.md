@@ -9,8 +9,8 @@ Each folder is a standalone micro-product with tests, Dockerfile, and live demo.
 |---|-----------------|---------|------|---------------|
 | 1 | Excel/CSV Chat  | ✅ Done | [Live Demo](https://huggingface.co/spaces/AzzuraM/excel-csv-chat-RAG) | [Read the Blog](https://github.com/ElaMCB/E2E-AI-engineering/blob/main/ai-30day-sprint/p1-csv-chat/BLOG.md) |
 | 2 | Tiny-LLM-LoRA   | 🚧 WIP  | –    | –             |
-| 3 | FinSent API     | 📝 Todo | –    | –             |
-| 4 | GCP Pipeline    | 📝 Todo | –    | –             |
+| 3 | FinSent API     | Todo | –    | –             |
+| 4 | GCP Pipeline    | Todo | –    | –             |
 
 ## 🛠️ Additional Tools
 

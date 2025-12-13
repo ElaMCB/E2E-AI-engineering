@@ -2,7 +2,7 @@
 
 Automated weekly monitoring system to track AI market advances, new models, and innovations. Get early alerts about developments from companies like DeepSeek, Kimi, Zhipu AI, Baichuan, and others.
 
-## 🎯 Purpose
+## Purpose
 
 Stay ahead of AI developments by automatically searching and tracking:
 - New AI models and releases (DeepSeek, Kimi, Qwen, etc.)
@@ -10,7 +10,7 @@ Stay ahead of AI developments by automatically searching and tracking:
 - AI innovations and breakthroughs
 - Market trends and competitive intelligence
 
-## ✨ Features
+## Features
 
 - **Multi-source Search**: Combines DuckDuckGo, RSS feeds, and NewsAPI
 - **Deduplication**: Automatically filters duplicate articles
@@ -19,7 +19,7 @@ Stay ahead of AI developments by automatically searching and tracking:
 - **Historical Tracking**: Maintains 12 weeks of history
 - **No API Keys Required**: Works with DuckDuckGo and RSS feeds out of the box
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Install Dependencies
 
@@ -46,7 +46,7 @@ This will:
 - Generate a weekly report
 - Track seen articles to avoid duplicates
 
-## 📅 Schedule Weekly Runs
+## Schedule Weekly Runs
 
 ### Windows (Task Scheduler)
 
@@ -109,7 +109,7 @@ jobs:
           path: chinese-ai-monitor/results/
 ```
 
-## 📊 Output Files
+## Output Files
 
 Results are saved in the `results/` directory:
 
@@ -118,7 +118,7 @@ Results are saved in the `results/` directory:
 - `report_YYYYMMDD.md` - Human-readable markdown report
 - `seen_hashes.json` - Tracks seen articles (for deduplication)
 
-## 🔧 Configuration
+## Configuration
 
 ### Search Terms
 
@@ -155,7 +155,7 @@ Get a free API key from [newsapi.org](https://newsapi.org) and add to `config.js
 }
 ```
 
-## 📈 Example Report
+## Example Report
 
 ```
 # AI Market Weekly Report
@@ -177,7 +177,7 @@ Get a free API key from [newsapi.org](https://newsapi.org) and add to `config.js
   - Summary: Moonshot AI's Kimi...
 ```
 
-## 🎯 Tracked Companies/Models
+## Tracked Companies/Models
 
 Currently monitoring:
 - **DeepSeek** - Deep learning research company
@@ -199,7 +199,7 @@ Currently monitoring:
 4. **Keyword Extraction**: Identifies which models/companies are mentioned
 5. **Storage**: Saves results in JSON and generates markdown reports
 
-## 💡 Tips
+## Tips
 
 - Run manually first to test configuration
 - Check `results/` directory after first run
@@ -207,7 +207,7 @@ Currently monitoring:
 - Add more RSS feeds for better coverage
 - Consider adding NewsAPI key for more comprehensive results
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 **No results found?**
 - Check internet connection
@@ -222,7 +222,7 @@ Currently monitoring:
 - Ensure all dependencies are installed: `pip install -r requirements.txt`
 - Check Python version (3.8+ required)
 
-## 📝 License
+## License
 
 Part of the E2E-AI-engineering portfolio project.
 
