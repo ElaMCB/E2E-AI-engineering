@@ -26,6 +26,7 @@ if (GA_MEASUREMENT_ID && GA_MEASUREMENT_ID !== 'G-XXXXXXXXXX') {
 
 // Simple visitor counter using visitor-badge API
 function updateVisitorCounter() {
+    // Fixed badge in corner
     const badgeContainer = document.getElementById('visitor-badge');
     if (badgeContainer) {
         const img = document.createElement('img');
@@ -33,6 +34,37 @@ function updateVisitorCounter() {
         img.alt = 'Visitor count';
         img.style.border = 'none';
         badgeContainer.appendChild(img);
+    }
+    
+    // Footer visitor counter
+    const footerCounter = document.getElementById('footer-visitor-counter');
+    if (footerCounter) {
+        const img = document.createElement('img');
+        img.src = 'https://visitor-badge.laobi.icu/badge?page_id=ElaMCB/E2E-AI-engineering';
+        img.alt = 'Visitor count';
+        img.style.border = 'none';
+        img.style.marginLeft = '10px';
+        img.style.verticalAlign = 'middle';
+        footerCounter.appendChild(img);
+    }
+    
+    // Update local view count
+    updateLocalViewCount();
+}
+
+// Update local view count display
+function updateLocalViewCount() {
+    try {
+        const views = JSON.parse(localStorage.getItem('pageViews') || '[]');
+        const uniqueViews = new Set(views.map(v => v.path)).size;
+        const totalViews = views.length;
+        
+        const localStats = document.getElementById('local-view-stats');
+        if (localStats) {
+            localStats.textContent = ` | Local: ${totalViews} views, ${uniqueViews} unique pages`;
+        }
+    } catch (e) {
+        console.error('Error updating local view count:', e);
     }
 }
 
