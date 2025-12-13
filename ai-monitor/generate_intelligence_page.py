@@ -8,6 +8,7 @@ import html
 from pathlib import Path
 from datetime import datetime
 from typing import Dict
+import pytz
 
 
 def generate_intelligence_page(analysis_file: str = "results/latest_analysis.json",
@@ -172,6 +173,23 @@ def generate_html_from_analysis(analysis: Dict) -> str:
                 Analysis Date: {html.escape(str(analysis.get('date', 'N/A')))}
             </div>
         </header>
+        
+        <div class="alert-box" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.05)); border-left: 4px solid var(--primary); margin-bottom: 2rem;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                <i class="fas fa-user-circle" style="font-size: 1.5rem; color: var(--primary);"></i>
+                <div style="flex: 1;">
+                    <h3 style="margin: 0; color: var(--primary); font-size: 1.2rem; font-weight: 600;">
+                        {html.escape(personal['greeting'])}
+                    </h3>
+                    <p style="margin: 0.25rem 0 0 0; color: var(--text-muted); font-size: 0.85rem;">
+                        {html.escape(personal['time'])}
+                    </p>
+                </div>
+            </div>
+            <p style="color: var(--text-light); line-height: 1.8; margin-top: 0.75rem; font-size: 1rem;">
+                {html.escape(personal['message'])}
+            </p>
+        </div>
         
         <div class="alert-box">
             <h3 style="margin-bottom: 1rem; color: var(--primary);">
