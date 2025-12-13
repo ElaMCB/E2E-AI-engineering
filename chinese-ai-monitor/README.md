@@ -12,12 +12,15 @@ Stay ahead of AI developments by automatically searching and tracking:
 
 ## Features
 
-- **Multi-source Search**: Combines DuckDuckGo, RSS feeds, and NewsAPI
+- **Multi-source Search**: Combines GitHub, Hugging Face, arXiv, DuckDuckGo, RSS feeds, and NewsAPI
+- **GitHub Integration**: Monitors repositories, releases, and code updates
+- **Hugging Face Integration**: Tracks new model releases and updates
+- **arXiv Integration**: Discovers research papers and publications
 - **Deduplication**: Automatically filters duplicate articles
 - **Keyword Tracking**: Monitors specific AI companies and models
 - **Weekly Reports**: Generates markdown reports with summaries
 - **Historical Tracking**: Maintains 12 weeks of history
-- **No API Keys Required**: Works with DuckDuckGo and RSS feeds out of the box
+- **No API Keys Required**: Works with GitHub, Hugging Face, arXiv, DuckDuckGo and RSS feeds out of the box
 
 ## Quick Start
 
@@ -32,7 +35,9 @@ pip install -r requirements.txt
 Edit `config.json` to customize:
 - Search terms (add more AI companies/models)
 - RSS feeds (add more news sources)
+- GitHub token (optional, for higher rate limits)
 - NewsAPI key (optional, for more results)
+- Enable/disable specific sources (GitHub, Hugging Face, arXiv, etc.)
 
 ### 3. Run Manually
 

@@ -34,6 +34,10 @@
     "https://www.techinasia.com/feed"
   ],
   "news_api_key": null,
+  "github_token": null,
+  "github_enabled": true,
+  "huggingface_enabled": true,
+  "arxiv_enabled": true,
   "duckduckgo_enabled": true,
   "output_format": "json",
   "max_results_per_source": 20,

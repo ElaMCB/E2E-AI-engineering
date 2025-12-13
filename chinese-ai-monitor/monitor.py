@@ -77,6 +77,10 @@ class AIMonitor:
                 "https://feeds.feedburner.com/venturebeat/SGAE"
             ],
             "news_api_key": None,  # Optional: Add your NewsAPI key
+            "github_token": None,  # Optional: GitHub token for higher rate limits
+            "huggingface_enabled": True,
+            "arxiv_enabled": True,
+            "github_enabled": True,
             "duckduckgo_enabled": True,
             "output_format": "json",
             "max_results_per_source": 20
@@ -227,6 +231,203 @@ class AIMonitor:
         
         return updates
     
+    def search_github(self) -> List[AIUpdate]:
+        """Search GitHub for repositories, releases, and discussions"""
+        updates = []
+        
+        if not self.config.get('github_enabled', True):
+            return updates
+        
+        try:
+            headers = {}
+            github_token = self.config.get('github_token')
+            if github_token:
+                headers['Authorization'] = f'token {github_token}'
+            
+            # Search for repositories
+            for term in self.config.get('search_terms', [])[:5]:
+                query = f"{term} language:python language:jupyter language:markdown"
+                url = "https://api.github.com/search/repositories"
+                params = {
+                    'q': query,
+                    'sort': 'updated',
+                    'order': 'desc',
+                    'per_page': 10
+                }
+                
+                response = requests.get(url, params=params, headers=headers, timeout=10)
+                if response.status_code == 200:
+                    data = response.json()
+                    
+                    for repo in data.get('items', []):
+                        content = repo.get('name', '') + ' ' + repo.get('description', '')
+                        
+                        if self._is_relevant(content):
+                            update = AIUpdate(
+                                title=f"GitHub: {repo.get('name', 'No title')}",
+                                source="GitHub",
+                                url=repo.get('html_url', ''),
+                                date=repo.get('updated_at', datetime.now().isoformat())[:10],
+                                summary=repo.get('description', '')[:200] or 'No description',
+                                keywords=self._extract_keywords(content),
+                                hash=''
+                            )
+                            
+                            if update.hash not in self.seen_hashes:
+                                updates.append(update)
+                                self.seen_hashes.add(update.hash)
+                
+                # Search for releases
+                for term in self.config.get('search_terms', [])[:3]:
+                    query = f"{term}"
+                    url = "https://api.github.com/search/repositories"
+                    params = {
+                        'q': query,
+                        'sort': 'updated',
+                        'order': 'desc',
+                        'per_page': 5
+                    }
+                    
+                    response = requests.get(url, params=params, headers=headers, timeout=10)
+                    if response.status_code == 200:
+                        repos = response.json().get('items', [])
+                        
+                        for repo in repos:
+                            releases_url = repo.get('releases_url', '').replace('{/id}', '')
+                            if releases_url:
+                                try:
+                                    releases_resp = requests.get(releases_url, headers=headers, timeout=5)
+                                    if releases_resp.status_code == 200:
+                                        releases = releases_resp.json()[:3]  # Latest 3 releases
+                                        for release in releases:
+                                            if self._is_relevant(release.get('name', '') + ' ' + release.get('body', '')):
+                                                update = AIUpdate(
+                                                    title=f"GitHub Release: {repo.get('name')} - {release.get('name', '')}",
+                                                    source="GitHub Releases",
+                                                    url=release.get('html_url', ''),
+                                                    date=release.get('published_at', datetime.now().isoformat())[:10],
+                                                    summary=release.get('body', '')[:200] or release.get('name', ''),
+                                                    keywords=self._extract_keywords(release.get('name', '') + ' ' + release.get('body', '')),
+                                                    hash=''
+                                                )
+                                                
+                                                if update.hash not in self.seen_hashes:
+                                                    updates.append(update)
+                                                    self.seen_hashes.add(update.hash)
+                                except:
+                                    pass
+        
+        except Exception as e:
+            print(f"Error searching GitHub: {e}")
+        
+        return updates
+    
+    def search_huggingface(self) -> List[AIUpdate]:
+        """Search Hugging Face for model releases"""
+        updates = []
+        
+        if not self.config.get('huggingface_enabled', True):
+            return updates
+        
+        try:
+            for term in self.config.get('search_terms', [])[:5]:
+                # Search Hugging Face models
+                url = "https://huggingface.co/api/models"
+                params = {
+                    'search': term,
+                    'sort': 'downloads',
+                    'direction': -1,
+                    'limit': 10
+                }
+                
+                response = requests.get(url, params=params, timeout=10)
+                if response.status_code == 200:
+                    models = response.json()
+                    
+                    for model in models:
+                        if isinstance(model, dict):
+                            content = model.get('modelId', '') + ' ' + model.get('pipeline_tag', '') + ' ' + (model.get('tags', []) or [])
+                            
+                            if self._is_relevant(str(content)):
+                                # Get model details
+                                model_id = model.get('modelId', '')
+                                model_url = f"https://huggingface.co/{model_id}"
+                                
+                                update = AIUpdate(
+                                    title=f"Hugging Face: {model_id}",
+                                    source="Hugging Face",
+                                    url=model_url,
+                                    date=model.get('createdAt', datetime.now().isoformat())[:10] if model.get('createdAt') else datetime.now().strftime('%Y-%m-%d'),
+                                    summary=f"Model: {model.get('pipeline_tag', 'N/A')} - {', '.join(model.get('tags', [])[:3]) if model.get('tags') else 'No tags'}",
+                                    keywords=self._extract_keywords(str(content)),
+                                    hash=''
+                                )
+                                
+                                if update.hash not in self.seen_hashes:
+                                    updates.append(update)
+                                    self.seen_hashes.add(update.hash)
+        
+        except Exception as e:
+            print(f"Error searching Hugging Face: {e}")
+        
+        return updates
+    
+    def search_arxiv(self) -> List[AIUpdate]:
+        """Search arXiv for research papers"""
+        updates = []
+        
+        if not self.config.get('arxiv_enabled', True):
+            return updates
+        
+        try:
+            import feedparser
+            
+            for term in self.config.get('search_terms', [])[:5]:
+                # arXiv API search
+                url = "http://export.arxiv.org/api/query"
+                params = {
+                    'search_query': f'all:{term}',
+                    'start': 0,
+                    'max_results': 10,
+                    'sortBy': 'submittedDate',
+                    'sortOrder': 'descending'
+                }
+                
+                response = requests.get(url, params=params, timeout=10)
+                if response.status_code == 200:
+                    feed = feedparser.parse(response.content)
+                    
+                    for entry in feed.entries:
+                        content = entry.get('title', '') + ' ' + entry.get('summary', '')
+                        
+                        if self._is_relevant(content):
+                            # Parse date
+                            date_str = datetime.now().strftime('%Y-%m-%d')
+                            if hasattr(entry, 'published_parsed') and entry.published_parsed:
+                                try:
+                                    date_str = datetime(*entry.published_parsed[:6]).strftime('%Y-%m-%d')
+                                except:
+                                    pass
+                            
+                            update = AIUpdate(
+                                title=f"arXiv: {entry.get('title', 'No title')}",
+                                source="arXiv",
+                                url=entry.get('link', ''),
+                                date=date_str,
+                                summary=entry.get('summary', '')[:200] + '...',
+                                keywords=self._extract_keywords(content),
+                                hash=''
+                            )
+                            
+                            if update.hash not in self.seen_hashes:
+                                updates.append(update)
+                                self.seen_hashes.add(update.hash)
+        
+        except Exception as e:
+            print(f"Error searching arXiv: {e}")
+        
+        return updates
+    
     def _is_relevant(self, text: str) -> bool:
         """Check if text is relevant to AI developments"""
         text_lower = text.lower()
@@ -260,8 +461,29 @@ class AIMonitor:
     
     def run_weekly_search(self) -> List[AIUpdate]:
         """Run all search methods and collect updates"""
-        print(f"Starting weekly Chinese AI market search at {datetime.now()}")
+        print(f"Starting weekly AI market search at {datetime.now()}")
         all_updates = []
+        
+        # Search GitHub
+        if self.config.get('github_enabled', True):
+            print("Searching GitHub...")
+            github_updates = self.search_github()
+            all_updates.extend(github_updates)
+            print(f"  Found {len(github_updates)} results from GitHub")
+        
+        # Search Hugging Face
+        if self.config.get('huggingface_enabled', True):
+            print("Searching Hugging Face...")
+            hf_updates = self.search_huggingface()
+            all_updates.extend(hf_updates)
+            print(f"  Found {len(hf_updates)} results from Hugging Face")
+        
+        # Search arXiv
+        if self.config.get('arxiv_enabled', True):
+            print("Searching arXiv...")
+            arxiv_updates = self.search_arxiv()
+            all_updates.extend(arxiv_updates)
+            print(f"  Found {len(arxiv_updates)} results from arXiv")
         
         # Search DuckDuckGo
         if self.config.get('duckduckgo_enabled', True):
