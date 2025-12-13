@@ -36,37 +36,39 @@ function updateVisitorCounter() {
         badgeContainer.appendChild(img);
     }
     
-    // Footer visitor counter
+    // Footer visitor counter - fetch as text
     const footerCounter = document.getElementById('footer-visitor-counter');
     if (footerCounter) {
-        const img = document.createElement('img');
-        img.src = 'https://visitor-badge.laobi.icu/badge?page_id=ElaMCB/E2E-AI-engineering';
-        img.alt = 'Visitor count';
-        img.style.border = 'none';
-        img.style.marginLeft = '10px';
-        img.style.verticalAlign = 'middle';
-        footerCounter.appendChild(img);
+        // Fetch visitor count from API
+        fetch('https://visitor-badge.laobi.icu/api?page_id=ElaMCB/E2E-AI-engineering')
+            .then(response => response.json())
+            .then(data => {
+                if (data && data.count) {
+                    footerCounter.textContent = data.count;
+                } else {
+                    // Fallback: try to get from badge image alt text or use placeholder
+                    footerCounter.textContent = '...';
+                }
+            })
+            .catch(() => {
+                // Fallback if API fails - try alternative method
+                fetch('https://api.countapi.xyz/get/ElaMCB/E2E-AI-engineering')
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data && data.value) {
+                            footerCounter.textContent = data.value;
+                        } else {
+                            footerCounter.textContent = '...';
+                        }
+                    })
+                    .catch(() => {
+                        footerCounter.textContent = '...';
+                    });
+            });
     }
     
-    // Update local view count
-    updateLocalViewCount();
 }
 
-// Update local view count display
-function updateLocalViewCount() {
-    try {
-        const views = JSON.parse(localStorage.getItem('pageViews') || '[]');
-        const uniqueViews = new Set(views.map(v => v.path)).size;
-        const totalViews = views.length;
-        
-        const localStats = document.getElementById('local-view-stats');
-        if (localStats) {
-            localStats.textContent = ` | Local: ${totalViews} views, ${uniqueViews} unique pages`;
-        }
-    } catch (e) {
-        console.error('Error updating local view count:', e);
-    }
-}
 
 // Track page views
 function trackPageView() {
