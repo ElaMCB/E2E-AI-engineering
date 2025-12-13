@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Market Intelligence - E2E AI Engineering</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --background: #1a1a1a;
+            --card-bg: rgba(40, 40, 40, 0.7);
+            --text: #f8fafc;
+            --text-light: #cbd5e1;
+            --text-muted: #94a3b8;
+            --border: rgba(200, 200, 200, 0.1);
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: radial-gradient(circle at 10% 20%, rgba(40, 40, 40, 0.8) 0%, rgba(26, 26, 26, 0.9) 90%);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .alert-box {
+            background: var(--card-bg);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .insight-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .insight-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .impact-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+        
+        .impact-high {
+            background: var(--danger);
+            color: white;
+        }
+        
+        .impact-medium {
+            background: var(--warning);
+            color: white;
+        }
+        
+        .impact-low {
+            background: var(--success);
+            color: white;
+        }
+        
+        .recommendation {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 3px solid var(--primary);
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); text-decoration: none; margin-bottom: 2rem; padding: 0.5rem 1rem; border-radius: 8px; background: rgba(59, 130, 246, 0.1);">
+            <i class="fas fa-arrow-left"></i>
+            Back to Portfolio
+        </a>
+        
+        <header>
+            <h1><i class="fas fa-brain"></i> AI Market Intelligence</h1>
+            <p style="color: var(--text-light); font-size: 1.1rem; margin-top: 0.5rem;">
+                Intelligent analysis of weekly AI discoveries
+            </p>
+            <div style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+                Analysis Date: 2025-12-13
+            </div>
+        </header>
+        
+        <div class="alert-box">
+            <h3 style="margin-bottom: 1rem; color: var(--primary);">
+                <i class="fas fa-lightbulb"></i> Executive Summary
+            </h3>
+            <p style="color: var(--text-light); line-height: 1.8;">
+                This week saw 14 updates across 3 companies/models. Top activity: kimi, deepseek, moonshot
+            </p>
+        </div>
+        
+        <section style="margin-bottom: 3rem;">
+            <h2 style="margin-bottom: 1.5rem; color: var(--text);">
+                <i class="fas fa-star"></i> Top Insights (Priority Ranked)
+            </h2>
+
+            <div class="insight-card">
+                <h3 style="margin-bottom: 0.5rem; color: var(--text);">
+                    1. GitHub Release: anything-llm - AnythingLLM v1.8.5 🎉  Mobile support + RAG improvements
+                    <span class="impact-badge impact-high">Impact: 8.0/10</span>
+                </h3>
+                <p style="color: var(--text-light); margin-bottom: 0.5rem;">
+                    # AnythingLLM v1.8.5 is live
+
+
+## Notable Changes
+
+### Mobile support
+
+Now, currently under [Experimental features](https://docs.anythingllm.com/beta-preview/enable-feature), you can connect th...
+                </p>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                    <span>Type: new_model</span> | 
+                    <span>Source: GitHub Releases</span>
+                </div>
+            </div>
+
+            <div class="insight-card">
+                <h3 style="margin-bottom: 0.5rem; color: var(--text);">
+                    2. GitHub: DeepSeek-V3.2-Exp
+                    <span class="impact-badge impact-medium">Impact: 7.0/10</span>
+                </h3>
+                <p style="color: var(--text-light); margin-bottom: 0.5rem;">
+                    🔍 Explore and enhance deep learning models with DeepSeek-V3.2-Exp, your go-to tool for streamlined data analysis and advanced AI insights....
+                </p>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                    <span>Type: new_model</span> | 
+                    <span>Source: GitHub</span>
+                </div>
+            </div>
+
+            <div class="insight-card">
+                <h3 style="margin-bottom: 0.5rem; color: var(--text);">
+                    3. GitHub: ai-paper-digest
+                    <span class="impact-badge impact-medium">Impact: 7.0/10</span>
+                </h3>
+                <p style="color: var(--text-light); margin-bottom: 0.5rem;">
+                    `ai-paper-digest` 是一个专为AI研究者、工程师和学习者设计的智能论文摘要系统。它能够自动从RSS源获取最新AI论文，使用先进的AI模型（如DeepSeek等）生成高质量的中文摘要，并提供现代化的Web界面帮助用户快速浏览和学习。...
+                </p>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                    <span>Type: new_model</span> | 
+                    <span>Source: GitHub</span>
+                </div>
+            </div>
+
+            <div class="insight-card">
+                <h3 style="margin-bottom: 0.5rem; color: var(--text);">
+                    4. GitHub: DeepSeek-Pentest-AI
+                    <span class="impact-badge impact-medium">Impact: 7.0/10</span>
+                </h3>
+                <p style="color: var(--text-light); margin-bottom: 0.5rem;">
+                    🔍 Automate vulnerability testing and payload generation in web applications with DeepSeek Pentest AI, a powerful Burp Suite extension....
+                </p>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                    <span>Type: new_model</span> | 
+                    <span>Source: GitHub</span>
+                </div>
+            </div>
+
+            <div class="insight-card">
+                <h3 style="margin-bottom: 0.5rem; color: var(--text);">
+                    5. GitHub: kimi-ai-2api
+                    <span class="impact-badge impact-medium">Impact: 7.0/10</span>
+                </h3>
+                <p style="color: var(--text-light); margin-bottom: 0.5rem;">
+                    ⚡ Transform Kimi.ai chat experiences into OpenAI API format with this high-performance proxy service for seamless integration and enhanced access....
+                </p>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                    <span>Type: new_model</span> | 
+                    <span>Source: GitHub</span>
+                </div>
+            </div>
+
+            <div class="insight-card">
+                <h3 style="margin-bottom: 0.5rem; color: var(--text);">
+                    6. GitHub: Med-X-KimiK2-RAG
+                    <span class="impact-badge impact-medium">Impact: 7.0/10</span>
+                </h3>
+                <p style="color: var(--text-light); margin-bottom: 0.5rem;">
+                    🩺 Assist clinical reasoning with MedeX, an AI-powered tool using Retrieval-Augmented Generation for medical education and case analysis....
+                </p>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                    <span>Type: new_model</span> | 
+                    <span>Source: GitHub</span>
+                </div>
+            </div>
+
+            <div class="insight-card">
+                <h3 style="margin-bottom: 0.5rem; color: var(--text);">
+                    7. GitHub: personal-ai-os
+                    <span class="impact-badge impact-medium">Impact: 7.0/10</span>
+                </h3>
+                <p style="color: var(--text-light); margin-bottom: 0.5rem;">
+                    本项目提供基于 Kimi K2 API 的本地工作流型个人 AI OS，用于：信息提炼、深度分析（Super Analyst）与广度思考（New Angle）。...
+                </p>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                    <span>Type: new_model</span> | 
+                    <span>Source: GitHub</span>
+                </div>
+            </div>
+
+            <div class="insight-card">
+                <h3 style="margin-bottom: 0.5rem; color: var(--text);">
+                    8. arXiv: LabelFusion: Learning to Fuse LLMs and Transformer Classifiers for Robust Text Classification
+                    <span class="impact-badge impact-medium">Impact: 6.5/10</span>
+                </h3>
+                <p style="color: var(--text-light); margin-bottom: 0.5rem;">
+                    LabelFusion is a fusion ensemble for text classification that learns to combine a traditional transformer-based classifier (e.g., RoBERTa) with one or more Large Language Models (LLMs such as OpenAI G......
+                </p>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                    <span>Type: research_paper</span> | 
+                    <span>Source: arXiv</span>
+                </div>
+            </div>
+
+            <div class="insight-card">
+                <h3 style="margin-bottom: 0.5rem; color: var(--text);">
+                    9. GitHub: KIMI-AI-Humanizer
+                    <span class="impact-badge impact-medium">Impact: 6.5/10</span>
+                </h3>
+                <p style="color: var(--text-light); margin-bottom: 0.5rem;">
+                    Humanize Text Using Kimi K2 Thinking...
+                </p>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                    <span>Type: new_model</span> | 
+                    <span>Source: GitHub</span>
+                </div>
+            </div>
+
+            <div class="insight-card">
+                <h3 style="margin-bottom: 0.5rem; color: var(--text);">
+                    10. Parents call for New York governor to sign landmark AI safety bill
+                    <span class="impact-badge impact-medium">Impact: 6.0/10</span>
+                </h3>
+                <p style="color: var(--text-light); margin-bottom: 0.5rem;">
+                    A group of more than 150 parents sent a letter on Friday to New York governor Kathy Hochul, urging her to sign the Responsible AI Safety and Education (RAISE) Act without changes. The RAISE Act is a b......
+                </p>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                    <span>Type: trend</span> | 
+                    <span>Source: The Verge</span>
+                </div>
+            </div>
+
+        </section>
+        
+        <section style="margin-bottom: 3rem;">
+            <h2 style="margin-bottom: 1.5rem; color: var(--text);">
+                <i class="fas fa-chart-line"></i> Significant Changes
+            </h2>
+
+            <div class="insight-card">
+                <h3 style="margin-bottom: 0.5rem; color: var(--text);">
+                    New Company
+                    <span class="impact-badge impact-medium">Magnitude: 7.0/10</span>
+                </h3>
+                <p style="color: var(--text-light); margin-bottom: 1rem;">
+                    New entities detected: moonshot, kimi
+                </p>
+                <div>
+                    <strong style="color: var(--text);">Implications:</strong>
+                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem; color: var(--text-light);">
+                        <li>Monitor moonshot for future developments</li>
+                        <li>Monitor kimi for future developments</li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="insight-card">
+                <h3 style="margin-bottom: 0.5rem; color: var(--text);">
+                    Market Shift
+                    <span class="impact-badge impact-medium">Magnitude: 6.0/10</span>
+                </h3>
+                <p style="color: var(--text-light); margin-bottom: 1rem;">
+                    Significant activity increase: 1 → 14 updates (+1300%)
+                </p>
+                <div>
+                    <strong style="color: var(--text);">Implications:</strong>
+                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem; color: var(--text-light);">
+                        <li>Increased market activity - monitor closely</li>
+                        <li>Potential major announcements coming</li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+        
+        <section style="margin-bottom: 3rem;">
+            <h2 style="margin-bottom: 1.5rem; color: var(--text);">
+                <i class="fas fa-tasks"></i> Recommendations
+            </h2>
+
+            <div class="recommendation">
+                <i class="fas fa-check-circle" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                URGENT: 1 high-impact developments detected - review immediately
+            </div>
+
+            <div class="recommendation">
+                <i class="fas fa-check-circle" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                New companies/models detected - add to monitoring list
+            </div>
+
+            <div class="recommendation">
+                <i class="fas fa-check-circle" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                Market activity spike detected - potential major announcements
+            </div>
+
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 2rem; margin-top: 4rem; border-top: 1px solid var(--border); color: var(--text-muted); background: var(--card-bg);">
+        <p style="margin: 0.5rem 0; color: var(--text-light);">
+            © 2025 E2E AI Engineering | 
+            <a href="https://github.com/ElaMCB/E2E-AI-engineering" style="color: var(--primary); text-decoration: none;">GitHub</a> | 
+            <a href="index.html" style="color: var(--primary); text-decoration: none;">Portfolio</a> | 
+            <a href="ai-monitor.html" style="color: var(--primary); text-decoration: none;">Raw Data</a> | 
+            Visitors: <span id="footer-visitor-counter" style="color: var(--primary); font-weight: 600;">...</span>
+        </p>
+    </footer>
+    
+    <!-- Visitor Tracking -->
+    <script src="analytics.js"></script>
+</body>
+</html>
