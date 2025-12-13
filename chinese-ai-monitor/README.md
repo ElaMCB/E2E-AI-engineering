@@ -12,7 +12,9 @@ Stay ahead of AI developments by automatically searching and tracking:
 
 ## Features
 
-- **Multi-source Search**: Combines GitHub, Hugging Face, arXiv, DuckDuckGo, RSS feeds, and NewsAPI
+- **Multi-source Search**: Combines Gitee, ModelScope, GitHub, Hugging Face, arXiv, DuckDuckGo, RSS feeds, and NewsAPI
+- **Gitee Integration**: Monitors China's primary code hosting platform (10M+ repos) - often first to see releases
+- **ModelScope Integration**: Tracks Alibaba's AI platform (70K+ models, 16M developers) - major Chinese AI hub
 - **GitHub Integration**: Monitors repositories, releases, and code updates
 - **Hugging Face Integration**: Tracks new model releases and updates
 - **arXiv Integration**: Discovers research papers and publications
@@ -193,16 +195,20 @@ Get a free API key from [newsapi.org](https://newsapi.org) and add to `config.js
 
 ### Enable/Disable Sources
 
-Control which sources to search:
+Control which sources to search (prioritized in order):
 
 ```json
 {
+  "gitee_enabled": true,
+  "modelscope_enabled": true,
   "github_enabled": true,
   "huggingface_enabled": true,
   "arxiv_enabled": true,
   "duckduckgo_enabled": true
 }
 ```
+
+**Note**: Gitee and ModelScope are searched first as they're often the earliest sources for Chinese AI releases.
 
 ## Example Report
 

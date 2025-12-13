@@ -78,9 +78,12 @@ class AIMonitor:
             ],
             "news_api_key": None,  # Optional: Add your NewsAPI key
             "github_token": None,  # Optional: GitHub token for higher rate limits
+            "gitee_token": None,  # Optional: Gitee token for higher rate limits
             "huggingface_enabled": True,
             "arxiv_enabled": True,
             "github_enabled": True,
+            "gitee_enabled": True,
+            "modelscope_enabled": True,
             "duckduckgo_enabled": True,
             "output_format": "json",
             "max_results_per_source": 20
@@ -428,6 +431,116 @@ class AIMonitor:
         
         return updates
     
+    def search_gitee(self) -> List[AIUpdate]:
+        """Search Gitee (China's GitHub) for repositories and releases"""
+        updates = []
+        
+        if not self.config.get('gitee_enabled', True):
+            return updates
+        
+        try:
+            headers = {}
+            gitee_token = self.config.get('gitee_token')
+            if gitee_token:
+                headers['Authorization'] = f'token {gitee_token}'
+            
+            # Search for repositories
+            for term in self.config.get('search_terms', [])[:5]:
+                # Gitee API search
+                url = "https://gitee.com/api/v5/search/repositories"
+                params = {
+                    'q': term,
+                    'sort': 'updated',
+                    'order': 'desc',
+                    'per_page': 10
+                }
+                
+                response = requests.get(url, params=params, headers=headers, timeout=10)
+                if response.status_code == 200:
+                    data = response.json()
+                    
+                    if isinstance(data, dict) and 'data' in data:
+                        repos = data.get('data', [])
+                    elif isinstance(data, list):
+                        repos = data
+                    else:
+                        repos = []
+                    
+                    for repo in repos:
+                        if isinstance(repo, dict):
+                            content = repo.get('name', '') + ' ' + repo.get('description', '')
+                            
+                            if self._is_relevant(content):
+                                update = AIUpdate(
+                                    title=f"Gitee: {repo.get('name', 'No title')}",
+                                    source="Gitee",
+                                    url=repo.get('html_url', repo.get('url', '')),
+                                    date=repo.get('updated_at', datetime.now().isoformat())[:10] if repo.get('updated_at') else datetime.now().strftime('%Y-%m-%d'),
+                                    summary=repo.get('description', '')[:200] or 'No description',
+                                    keywords=self._extract_keywords(content),
+                                    hash=''
+                                )
+                                
+                                if update.hash not in self.seen_hashes:
+                                    updates.append(update)
+                                    self.seen_hashes.add(update.hash)
+        
+        except Exception as e:
+            print(f"Error searching Gitee: {e}")
+        
+        return updates
+    
+    def search_modelscope(self) -> List[AIUpdate]:
+        """Search ModelScope (Alibaba's AI platform) for models"""
+        updates = []
+        
+        if not self.config.get('modelscope_enabled', True):
+            return updates
+        
+        try:
+            for term in self.config.get('search_terms', [])[:5]:
+                # ModelScope API search
+                url = "https://www.modelscope.cn/api/v1/models"
+                params = {
+                    'PageSize': 20,
+                    'PageNumber': 1,
+                    'Sort': 'Downloads',
+                    'Order': 'desc'
+                }
+                
+                # ModelScope uses a different search approach - search by keyword in name/description
+                # We'll search the main page and filter
+                search_url = f"https://www.modelscope.cn/models"
+                
+                # Try to get model list (ModelScope may require different approach)
+                # For now, we'll use DuckDuckGo to find ModelScope pages
+                from duckduckgo_search import DDGS
+                
+                with DDGS() as ddgs:
+                    query = f"site:modelscope.cn {term}"
+                    results = list(ddgs.text(query, max_results=10))
+                    
+                    for result in results:
+                        if 'modelscope.cn' in result.get('href', '') and self._is_relevant(result.get('title', '') + ' ' + result.get('body', '')):
+                            update = AIUpdate(
+                                title=f"ModelScope: {result.get('title', 'No title')}",
+                                source="ModelScope",
+                                url=result.get('href', ''),
+                                date=datetime.now().strftime('%Y-%m-%d'),
+                                summary=result.get('body', '')[:200] + '...',
+                                keywords=self._extract_keywords(result.get('title', '') + ' ' + result.get('body', '')),
+                                hash=''
+                            )
+                            
+                            if update.hash not in self.seen_hashes:
+                                updates.append(update)
+                                self.seen_hashes.add(update.hash)
+        
+        except Exception as e:
+            print(f"Error searching ModelScope: {e}")
+        
+        return updates
+    
     def _is_relevant(self, text: str) -> bool:
         """Check if text is relevant to AI developments"""
         text_lower = text.lower()
@@ -463,6 +576,20 @@ class AIMonitor:
         """Run all search methods and collect updates"""
         print(f"Starting weekly AI market search at {datetime.now()}")
         all_updates = []
+        
+        # Search Gitee (Priority 1 - often first to see Chinese releases)
+        if self.config.get('gitee_enabled', True):
+            print("Searching Gitee...")
+            gitee_updates = self.search_gitee()
+            all_updates.extend(gitee_updates)
+            print(f"  Found {len(gitee_updates)} results from Gitee")
+        
+        # Search ModelScope (Priority 2 - major Chinese AI platform)
+        if self.config.get('modelscope_enabled', True):
+            print("Searching ModelScope...")
+            modelscope_updates = self.search_modelscope()
+            all_updates.extend(modelscope_updates)
+            print(f"  Found {len(modelscope_updates)} results from ModelScope")
         
         # Search GitHub
         if self.config.get('github_enabled', True):
