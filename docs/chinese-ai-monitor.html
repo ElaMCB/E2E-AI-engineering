@@ -10,54 +10,301 @@
     <style>
         :root {
             --primary: #3b82f6;
+            --primary-dark: #2563eb;
             --background: #1a1a1a;
+            --card-bg: rgba(40, 40, 40, 0.7);
             --text: #f8fafc;
+            --text-light: #cbd5e1;
             --text-muted: #94a3b8;
+            --border: rgba(200, 200, 200, 0.1);
+            --success: #10b981;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: radial-gradient(circle at 10% 20%, rgba(40, 40, 40, 0.8) 0%, rgba(26, 26, 26, 0.9) 90%);
             color: var(--text);
+            line-height: 1.7;
+            padding: 2rem 1rem;
             min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .meta {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: rgba(59, 130, 246, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: rgba(59, 130, 246, 0.2);
+            transform: translateX(-3px);
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .stat-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .keyword-section {
+            margin-bottom: 3rem;
+        }
+        
+        .keyword-header {
             display: flex;
             align-items: center;
-            justify-content: center;
-            padding: 2rem;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
         }
-        .container {
-            text-align: center;
-            max-width: 600px;
-        }
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+        
+        .keyword-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
             color: var(--primary);
         }
-        .empty-state {
+        
+        .keyword-count {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .updates-list {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .update-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .update-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        }
+        
+        .update-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+        
+        .update-title a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .update-title a:hover {
+            color: var(--primary);
+        }
+        
+        .update-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
         }
+        
+        .update-source {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .update-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .update-summary {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-top: 0.75rem;
+        }
+        
+        .update-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .update-link:hover {
+            gap: 0.75rem;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+        }
+        
         .empty-state i {
             font-size: 4rem;
             margin-bottom: 1rem;
             opacity: 0.5;
         }
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            margin-top: 2rem;
-            display: inline-block;
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="empty-state">
-            <i class="fas fa-search"></i>
-            <h1>No Data Yet</h1>
-            <p>The weekly monitor hasn't run yet. Check back after the first scheduled run!</p>
-            <a href="index.html">← Back to Portfolio</a>
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Back to Portfolio
+        </a>
+        
+        <header>
+            <h1><i class="fas fa-robot"></i> Chinese AI Market Monitor</h1>
+            <p class="subtitle">Weekly tracking of Chinese AI developments, models, and innovations</p>
+            <div class="meta">
+                Last updated: 2025-12-13 | 
+                Total updates this week: 1
+            </div>
+        </header>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value">1</div>
+                <div class="stat-label">Total Updates</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">1</div>
+                <div class="stat-label">Companies/Models Tracked</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">1</div>
+                <div class="stat-label">Sources</div>
+            </div>
         </div>
+
+        <div class="keyword-section">
+            <div class="keyword-header">
+                <span class="keyword-title">DEEPSEEK</span>
+                <span class="keyword-count">1 updates</span>
+            </div>
+            <div class="updates-list">
+
+                <div class="update-card">
+                    <div class="update-title">
+                        <a href="https://www.theverge.com/ai-artificial-intelligence/844062/parents-call-for-new-york-governor-to-sign-landmark-ai-safety-bill" target="_blank" rel="noopener noreferrer">Parents call for New York governor to sign landmark AI safety bill</a>
+                    </div>
+                    <div class="update-meta">
+                        <span class="update-source">
+                            <i class="fas fa-newspaper"></i>
+                            The Verge
+                        </span>
+                        <span class="update-date">
+                            <i class="fas fa-calendar"></i>
+                            2025-12-12
+                        </span>
+                    </div>
+                    <div class="update-summary">A group of more than 150 parents sent a letter on Friday to New York governor Kathy Hochul, urging her to sign the Responsible AI Safety and Education (RAISE) Act without changes. The RAISE Act is a b...</div>
+                    <a href="https://www.theverge.com/ai-artificial-intelligence/844062/parents-call-for-new-york-governor-to-sign-landmark-ai-safety-bill" target="_blank" rel="noopener noreferrer" class="update-link">
+                        Read more <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 </body>
 </html>
