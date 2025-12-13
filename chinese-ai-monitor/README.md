@@ -183,6 +183,16 @@ Get a GitHub personal access token from [GitHub Settings](https://github.com/set
 }
 ```
 
+### Gitee Token (Optional)
+
+Get a Gitee personal access token from [Gitee Settings](https://gitee.com/profile/personal_access_tokens) for higher rate limits:
+
+```json
+{
+  "gitee_token": "your_gitee_token_here"
+}
+```
+
 ### NewsAPI (Optional)
 
 Get a free API key from [newsapi.org](https://newsapi.org) and add to `config.json`:
