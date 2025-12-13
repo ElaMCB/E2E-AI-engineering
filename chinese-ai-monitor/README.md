@@ -14,7 +14,7 @@ Stay ahead of AI developments by automatically searching and tracking:
 
 - **Multi-source Search**: Combines Gitee, ModelScope, GitHub, Hugging Face, arXiv, DuckDuckGo, RSS feeds, and NewsAPI
 - **Gitee Integration**: Monitors China's primary code hosting platform (10M+ repos) - often first to see releases
-- **ModelScope Integration**: Tracks Alibaba's AI platform (70K+ models, 16M developers) - major Chinese AI hub
+- **ModelScope Integration**: Tracks Alibaba's AI platform (70K+ models, 16M developers) - major AI hub
 - **GitHub Integration**: Monitors repositories, releases, and code updates
 - **Hugging Face Integration**: Tracks new model releases and updates
 - **arXiv Integration**: Discovers research papers and publications
@@ -26,19 +26,19 @@ Stay ahead of AI developments by automatically searching and tracking:
 
 ## 2025 Publication Trends
 
-Based on analysis of Chinese AI company publication patterns throughout 2025:
+Based on analysis of AI company publication patterns throughout 2025:
 
 ### Key Platforms (Priority Order)
 1. **Gitee** - China's primary code hosting (10M+ repos, 5M+ users) - Often first to see releases
-2. **ModelScope** - Alibaba's platform (70K+ models, 16M developers) - Major Chinese AI hub
+2. **ModelScope** - Alibaba's platform (70K+ models, 16M developers) - Major AI hub
 3. **GitHub** - International releases, open-source code
 4. **Hugging Face** - Model distribution and weights
 5. **arXiv** - Research papers and technical documentation
 6. **Company Blogs** - Official announcements
 
 ### 2025 Trends
-- **Open-Source Strategy**: Chinese models account for ~40% of global AI models (Sept 2025)
-- **Cost Advantage**: Chinese LLMs cost ~1/5 of foreign counterparts
+- **Open-Source Strategy**: Models account for ~40% of global AI models (Sept 2025)
+- **Cost Advantage**: LLMs cost ~1/5 of foreign counterparts
 - **Multi-Platform Publishing**: Companies publish simultaneously on Gitee, GitHub, Hugging Face
 - **Rapid Iteration**: Multiple versions released throughout the year
 - **Timing Patterns**: Major releases in Q1 (DeepSeek-R1), Q2 (open-source push), Q3 (Alibaba Qwen-3), Q4 (year-end updates)
@@ -218,7 +218,7 @@ Control which sources to search (prioritized in order):
 }
 ```
 
-**Note**: Gitee and ModelScope are searched first as they're often the earliest sources for Chinese AI releases.
+**Note**: Gitee and ModelScope are searched first as they're often the earliest sources for AI releases.
 
 ## Example Report
 

@@ -1,11 +1,11 @@
-# Chinese AI Company Publication Trends (2025)
+# AI Company Publication Trends (2025)
 
 Based on analysis of publication patterns from January to December 2025, here are the key trends:
 
 ## Primary Publication Channels
 
 ### 1. **Gitee (China's GitHub)**
-- **Why**: Aligned with local regulations, preferred by Chinese developers
+- **Why**: Aligned with local regulations, preferred by developers
 - **Usage**: Many companies publish code repositories here first or exclusively
 - **Example**: DeepSeek announced open-sourcing 5 repositories in February 2025
 - **Note**: Over 10 million repositories, 5+ million users
@@ -25,7 +25,7 @@ Based on analysis of publication patterns from January to December 2025, here ar
 ### 4. **ModelScope (Alibaba's Platform)**
 - **Why**: China's largest AI open-source community
 - **Usage**: 70,000+ models, 16 million developers (as of June 2025)
-- **Example**: Alibaba's own models, many Chinese AI models
+- **Example**: Alibaba's own models, many AI models
 - **Note**: Major platform that should be monitored
 
 ### 5. **arXiv**
@@ -49,9 +49,9 @@ Based on analysis of publication patterns from January to December 2025, here ar
 ### Strategic Trends
 
 1. **Open-Source First Strategy**
-   - Chinese companies are aggressively open-sourcing models
-   - By September 2025, Chinese models accounted for ~40% of global AI models
-   - Cost advantage: Chinese LLMs cost ~1/5 of foreign counterparts
+   - Companies are aggressively open-sourcing models
+   - By September 2025, models accounted for ~40% of global AI models
+   - Cost advantage: LLMs cost ~1/5 of foreign counterparts
 
 2. **Multi-Platform Publishing**
    - Companies publish on multiple platforms simultaneously
@@ -71,8 +71,8 @@ Based on analysis of publication patterns from January to December 2025, here ar
 ## Recommended Monitoring Strategy
 
 ### Priority Sources (in order):
-1. **Gitee** - Often first to see Chinese company releases
-2. **ModelScope** - Major Chinese AI platform
+1. **Gitee** - Often first to see company releases
+2. **ModelScope** - Major AI platform
 3. **GitHub** - International releases
 4. **Hugging Face** - Model distribution
 5. **arXiv** - Research papers
@@ -92,7 +92,7 @@ Based on analysis of publication patterns from January to December 2025, here ar
 
 ## Action Items for Monitor
 
-1. **Add Gitee API integration** - Critical for Chinese company releases
+1. **Add Gitee API integration** - Critical for company releases
 2. **Add ModelScope API integration** - Major platform with 70K+ models
 3. **Monitor company blogs** - Official announcement sources
 4. **Track release timing** - Look for patterns in publication schedules

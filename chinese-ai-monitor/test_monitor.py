@@ -24,7 +24,7 @@ def test_monitor():
         "DeepSeek releases new AI model",
         "Kimi AI gets major update",
         "Random news article about weather",
-        "Chinese AI company Zhipu announces breakthrough"
+        "AI company Zhipu announces breakthrough"
     ]
     
     print(f"\n✓ Testing relevance filter:")
@@ -35,7 +35,7 @@ def test_monitor():
     
     # Test keyword extraction
     print(f"\n✓ Testing keyword extraction:")
-    test_text = "DeepSeek and Kimi AI are leading Chinese AI models"
+    test_text = "DeepSeek and Kimi AI are leading AI models"
     keywords = monitor._extract_keywords(test_text)
     print(f"  Keywords found: {keywords}")
     

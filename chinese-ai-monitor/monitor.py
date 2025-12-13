@@ -577,14 +577,14 @@ class AIMonitor:
         print(f"Starting weekly AI market search at {datetime.now()}")
         all_updates = []
         
-        # Search Gitee (Priority 1 - often first to see Chinese releases)
+        # Search Gitee (Priority 1 - often first to see releases)
         if self.config.get('gitee_enabled', True):
             print("Searching Gitee...")
             gitee_updates = self.search_gitee()
             all_updates.extend(gitee_updates)
             print(f"  Found {len(gitee_updates)} results from Gitee")
         
-        # Search ModelScope (Priority 2 - major Chinese AI platform)
+        # Search ModelScope (Priority 2 - major AI platform)
         if self.config.get('modelscope_enabled', True):
             print("Searching ModelScope...")
             modelscope_updates = self.search_modelscope()
