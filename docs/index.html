@@ -790,5 +790,24 @@
             });
         });
     </script>
+    
+    <!-- Footer with Visitor Stats -->
+    <footer style="text-align: center; padding: 2rem; margin-top: 4rem; border-top: 1px solid var(--border); color: var(--text-muted);">
+        <div style="margin-bottom: 1rem;">
+            <p style="margin: 0.5rem 0;">
+                © 2025 E2E AI Engineering | 
+                <a href="https://github.com/ElaMCB/E2E-AI-engineering" style="color: var(--primary); text-decoration: none;">GitHub</a>
+            </p>
+            <div style="margin-top: 1rem; font-size: 0.9rem;">
+                <span>Visitors: </span>
+                <span id="footer-visitor-counter" style="display: inline-block;"></span>
+                <span id="local-view-stats" style="color: var(--text-muted);"></span>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Visitor Tracking and Analytics -->
+    <script src="analytics.js"></script>
+    <div id="visitor-badge" style="position: fixed; bottom: 10px; right: 10px; z-index: 1000;"></div>
 </body>
 </html>
