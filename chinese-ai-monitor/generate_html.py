@@ -57,7 +57,7 @@ def generate_html_from_summaries(summaries: List[Dict]) -> str:
     sorted_keywords = sorted(by_keyword.items(), key=lambda x: len(x[1]), reverse=True)
     
     # Generate HTML
-    html = f"""<!DOCTYPE html>
+    html_output = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -340,7 +340,7 @@ def generate_html_from_summaries(summaries: List[Dict]) -> str:
         # Escape keyword for HTML
         escaped_keyword = html.escape(str(keyword).upper())
         
-        html += f"""
+        html_output += f"""
         <div class="keyword-section">
             <div class="keyword-header">
                 <span class="keyword-title">{escaped_keyword}</span>
@@ -360,7 +360,7 @@ def generate_html_from_summaries(summaries: List[Dict]) -> str:
             date = html.escape(str(update.get('date', 'N/A')))
             summary = html.escape(str(update.get('summary', '')))
             
-            html += f"""
+            html_output += f"""
                 <div class="update-card">
                     <div class="update-title">
                         <a href="{url}" target="_blank" rel="noopener noreferrer">{title}</a>
@@ -382,18 +382,18 @@ def generate_html_from_summaries(summaries: List[Dict]) -> str:
                 </div>
 """
         
-        html += """
+        html_output += """
             </div>
         </div>
 """
     
-    html += """
+    html_output += """
     </div>
 </body>
 </html>
 """
     
-    return html
+    return html_output
 
 
 def generate_empty_html() -> str:
