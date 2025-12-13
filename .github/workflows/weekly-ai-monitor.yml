@@ -42,12 +42,24 @@ jobs:
           cd ai-monitor
           python generate_html.py
       
+      - name: Run Intelligence Analysis
+        run: |
+          cd ai-monitor
+          python analyzer.py
+        continue-on-error: true
+      
+      - name: Generate Intelligence Page
+        run: |
+          cd ai-monitor
+          python generate_intelligence_page.py
+        continue-on-error: true
+      
       - name: Commit and Push Results
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           # Force add results (they're in .gitignore but we need them for the website)
-          git add -f ai-monitor/results/weekly_summary.json docs/ai-monitor.html
+          git add -f ai-monitor/results/weekly_summary.json ai-monitor/results/latest_analysis.json docs/ai-monitor.html docs/intelligence.html
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
