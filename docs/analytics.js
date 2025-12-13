@@ -26,38 +26,66 @@ if (GA_MEASUREMENT_ID && GA_MEASUREMENT_ID !== 'G-XXXXXXXXXX') {
 
 // Simple visitor counter using visitor-badge API
 function updateVisitorCounter() {
-    // Footer visitor counter - use visitor badge image
+    // Footer visitor counter - display as text
     const footerCounter = document.getElementById('footer-visitor-counter');
     if (footerCounter) {
-        // Create an image element that displays the visitor count badge
-        const img = document.createElement('img');
-        img.src = 'https://visitor-badge.laobi.icu/badge?page_id=ElaMCB/E2E-AI-engineering';
-        img.alt = 'Visitor count';
-        img.style.border = 'none';
-        img.style.verticalAlign = 'middle';
-        img.style.marginLeft = '5px';
-        img.style.height = '20px';
+        // Try multiple counter services for reliability
+        const counterServices = [
+            // Service 1: countapi.xyz (primary)
+            () => fetch('https://api.countapi.xyz/hit/ElaMCB/E2E-AI-engineering')
+                .then(response => response.json())
+                .then(data => data && data.value !== undefined ? data.value : null),
+            
+            // Service 2: visitor-badge API (fallback - we'll extract from image)
+            () => {
+                return new Promise((resolve) => {
+                    const img = new Image();
+                    img.crossOrigin = 'anonymous';
+                    img.onload = function() {
+                        // Try to extract count from image if possible
+                        // For now, just use a placeholder
+                        resolve(null);
+                    };
+                    img.onerror = () => resolve(null);
+                    img.src = 'https://visitor-badge.laobi.icu/badge?page_id=ElaMCB/E2E-AI-engineering';
+                    setTimeout(() => resolve(null), 2000);
+                });
+            }
+        ];
         
-        // Clear any existing content and add the image
-        footerCounter.innerHTML = '';
-        footerCounter.appendChild(img);
+        // Try services in order
+        let serviceIndex = 0;
+        const tryNextService = () => {
+            if (serviceIndex >= counterServices.length) {
+                // All services failed, show badge image as last resort
+                const img = document.createElement('img');
+                img.src = 'https://visitor-badge.laobi.icu/badge?page_id=ElaMCB/E2E-AI-engineering';
+                img.alt = 'Visitor count';
+                img.style.border = 'none';
+                img.style.verticalAlign = 'middle';
+                img.style.marginLeft = '5px';
+                img.style.height = '18px';
+                footerCounter.innerHTML = '';
+                footerCounter.appendChild(img);
+                return;
+            }
+            
+            counterServices[serviceIndex]()
+                .then(count => {
+                    if (count !== null) {
+                        footerCounter.textContent = count.toLocaleString();
+                    } else {
+                        serviceIndex++;
+                        tryNextService();
+                    }
+                })
+                .catch(() => {
+                    serviceIndex++;
+                    tryNextService();
+                });
+        };
         
-        // Also try to get text count as fallback
-        fetch('https://api.countapi.xyz/hit/ElaMCB/E2E-AI-engineering')
-            .then(response => response.json())
-            .then(data => {
-                if (data && data.value !== undefined) {
-                    // Optionally show text count alongside badge
-                    const textSpan = document.createElement('span');
-                    textSpan.textContent = data.value.toLocaleString();
-                    textSpan.style.marginLeft = '5px';
-                    footerCounter.appendChild(textSpan);
-                }
-            })
-            .catch(() => {
-                // If countapi fails, just show the badge image
-                console.log('CountAPI unavailable, showing badge only');
-            });
+        tryNextService();
     }
 }
 
