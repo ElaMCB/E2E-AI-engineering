@@ -1,0 +1,43 @@
+{
+  "search_terms": [
+    "DeepSeek AI",
+    "Kimi AI",
+    "Chinese AI model",
+    "中国AI模型",
+    "智谱AI",
+    "Zhipu AI",
+    "百川智能",
+    "Baichuan AI",
+    "零一万物",
+    "01.AI",
+    "月之暗面",
+    "Moonshot AI",
+    "MiniMax",
+    "文心一言",
+    "Ernie Bot",
+    "通义千问",
+    "Qwen",
+    "豆包",
+    "Doubao",
+    "Chinese LLM",
+    "中国大模型",
+    "AI innovation China",
+    "Chinese AI startup",
+    "China AI breakthrough"
+  ],
+  "rss_feeds": [
+    "https://techcrunch.com/feed/",
+    "https://www.theverge.com/rss/index.xml",
+    "https://rss.cnn.com/rss/edition.rss",
+    "https://feeds.feedburner.com/venturebeat/SGAE",
+    "https://www.scmp.com/rss/2/feed",
+    "https://www.techinasia.com/feed"
+  ],
+  "news_api_key": null,
+  "duckduckgo_enabled": true,
+  "output_format": "json",
+  "max_results_per_source": 20,
+  "notification_email": null,
+  "notification_webhook": null
+}
+

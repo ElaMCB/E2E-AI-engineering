@@ -12,6 +12,12 @@ Each folder is a standalone micro-product with tests, Dockerfile, and live demo.
 | 3 | FinSent API     | 📝 Todo | –    | –             |
 | 4 | GCP Pipeline    | 📝 Todo | –    | –             |
 
+## 🛠️ Additional Tools
+
+| Tool | Description |
+|------|-------------|
+| [Chinese AI Monitor](chinese-ai-monitor/) | Weekly automated monitoring of Chinese AI market advances (DeepSeek, Kimi, etc.) |
+
 ---
 
 Visitor badge (auto-updated)  
