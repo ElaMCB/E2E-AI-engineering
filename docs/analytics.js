@@ -39,24 +39,23 @@ function updateVisitorCounter() {
     // Footer visitor counter - fetch as text
     const footerCounter = document.getElementById('footer-visitor-counter');
     if (footerCounter) {
-        // Fetch visitor count from API
-        fetch('https://visitor-badge.laobi.icu/api?page_id=ElaMCB/E2E-AI-engineering')
+        // Use countapi.xyz for visitor counting (free service)
+        fetch('https://api.countapi.xyz/get/ElaMCB/E2E-AI-engineering')
             .then(response => response.json())
             .then(data => {
-                if (data && data.count) {
-                    footerCounter.textContent = data.count;
+                if (data && data.value !== undefined) {
+                    footerCounter.textContent = data.value.toLocaleString();
                 } else {
-                    // Fallback: try to get from badge image alt text or use placeholder
                     footerCounter.textContent = '...';
                 }
             })
             .catch(() => {
-                // Fallback if API fails - try alternative method
-                fetch('https://api.countapi.xyz/get/ElaMCB/E2E-AI-engineering')
+                // If countapi fails, increment and get the count
+                fetch('https://api.countapi.xyz/hit/ElaMCB/E2E-AI-engineering')
                     .then(response => response.json())
                     .then(data => {
-                        if (data && data.value) {
-                            footerCounter.textContent = data.value;
+                        if (data && data.value !== undefined) {
+                            footerCounter.textContent = data.value.toLocaleString();
                         } else {
                             footerCounter.textContent = '...';
                         }
