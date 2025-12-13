@@ -26,36 +26,39 @@ if (GA_MEASUREMENT_ID && GA_MEASUREMENT_ID !== 'G-XXXXXXXXXX') {
 
 // Simple visitor counter using visitor-badge API
 function updateVisitorCounter() {
-    // Footer visitor counter - fetch as text
+    // Footer visitor counter - use visitor badge image
     const footerCounter = document.getElementById('footer-visitor-counter');
     if (footerCounter) {
-        // Use countapi.xyz for visitor counting (free service)
-        fetch('https://api.countapi.xyz/get/ElaMCB/E2E-AI-engineering')
+        // Create an image element that displays the visitor count badge
+        const img = document.createElement('img');
+        img.src = 'https://visitor-badge.laobi.icu/badge?page_id=ElaMCB/E2E-AI-engineering';
+        img.alt = 'Visitor count';
+        img.style.border = 'none';
+        img.style.verticalAlign = 'middle';
+        img.style.marginLeft = '5px';
+        img.style.height = '20px';
+        
+        // Clear any existing content and add the image
+        footerCounter.innerHTML = '';
+        footerCounter.appendChild(img);
+        
+        // Also try to get text count as fallback
+        fetch('https://api.countapi.xyz/hit/ElaMCB/E2E-AI-engineering')
             .then(response => response.json())
             .then(data => {
                 if (data && data.value !== undefined) {
-                    footerCounter.textContent = data.value.toLocaleString();
-                } else {
-                    footerCounter.textContent = '...';
+                    // Optionally show text count alongside badge
+                    const textSpan = document.createElement('span');
+                    textSpan.textContent = data.value.toLocaleString();
+                    textSpan.style.marginLeft = '5px';
+                    footerCounter.appendChild(textSpan);
                 }
             })
             .catch(() => {
-                // If countapi fails, increment and get the count
-                fetch('https://api.countapi.xyz/hit/ElaMCB/E2E-AI-engineering')
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data && data.value !== undefined) {
-                            footerCounter.textContent = data.value.toLocaleString();
-                        } else {
-                            footerCounter.textContent = '...';
-                        }
-                    })
-                    .catch(() => {
-                        footerCounter.textContent = '...';
-                    });
+                // If countapi fails, just show the badge image
+                console.log('CountAPI unavailable, showing badge only');
             });
     }
-    
 }
 
 
