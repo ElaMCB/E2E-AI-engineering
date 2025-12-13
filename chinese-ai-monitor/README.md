@@ -150,6 +150,16 @@ Add more news sources:
 }
 ```
 
+### GitHub Token (Optional)
+
+Get a GitHub personal access token from [GitHub Settings](https://github.com/settings/tokens) for higher rate limits:
+
+```json
+{
+  "github_token": "ghp_your_token_here"
+}
+```
+
 ### NewsAPI (Optional)
 
 Get a free API key from [newsapi.org](https://newsapi.org) and add to `config.json`:
@@ -157,6 +167,19 @@ Get a free API key from [newsapi.org](https://newsapi.org) and add to `config.js
 ```json
 {
   "news_api_key": "your-api-key-here"
+}
+```
+
+### Enable/Disable Sources
+
+Control which sources to search:
+
+```json
+{
+  "github_enabled": true,
+  "huggingface_enabled": true,
+  "arxiv_enabled": true,
+  "duckduckgo_enabled": true
 }
 ```
 
