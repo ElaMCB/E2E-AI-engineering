@@ -46,7 +46,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add chinese-ai-monitor/results/ docs/chinese-ai-monitor.html
+          # Force add results (they're in .gitignore but we need them for the website)
+          git add -f chinese-ai-monitor/results/weekly_summary.json docs/chinese-ai-monitor.html
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
