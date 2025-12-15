@@ -173,5 +173,43 @@
         "hash": "11239362f62b3f751f4bceb02828076b"
       }
     ]
+  },
+  {
+    "date": "2025-12-15",
+    "updates": [
+      {
+        "title": "GitHub: Tools_DeepSeekOCR",
+        "source": "GitHub",
+        "url": "https://github.com/Sabastincruzz/Tools_DeepSeekOCR",
+        "date": "2025-12-15",
+        "summary": "🖥️ Deploy DeepSeek-OCR for Optical Character Recognition directly from screen captures on Windows, enabling efficient text extraction from images.",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "d074f813ffa675bc0bbd83fda14533fc"
+      },
+      {
+        "title": "GitHub: deepseek-trading-experiment",
+        "source": "GitHub",
+        "url": "https://github.com/v0acc0002/deepseek-trading-experiment",
+        "date": "2025-12-15",
+        "summary": "🤖 Explore AI-driven trading with the DeepSeek crypto bot, designed for learning rather than profit through backtesting strategies and financial analysis.",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "103f5d1e01777b3ebc9bf6c6c995eded"
+      },
+      {
+        "title": "arXiv: LLM tools in the prediction of the stability of perovskite solar cells",
+        "source": "arXiv",
+        "url": "https://arxiv.org/abs/2512.11615v1",
+        "date": "2025-12-12",
+        "summary": "We investigate whether tools based on large language models (LLMs) can be effectively used by a developer of new perovskite solar cells (PSCs) to predict both the \"lifetime\" of the device and the degr...",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "f656bb1b134558adffd2bbe1b7f10909"
+      }
+    ]
   }
 ]
