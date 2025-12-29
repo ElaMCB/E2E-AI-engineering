@@ -1,36 +1,32 @@
 {
-  "date": "2025-12-22",
+  "date": "2025-12-29",
   "executive_summary": {
-    "summary": "This week saw 25 updates across 5 companies/models. Top activity: Other, deepseek, kimi",
+    "summary": "This week saw 11 updates across 4 companies/models. Top activity: deepseek, kimi, qwen",
     "key_highlights": [
-      "OTHER: 10 updates",
-      "DEEPSEEK: 7 updates",
-      "KIMI: 7 updates"
+      "DEEPSEEK: 6 updates",
+      "KIMI: 5 updates",
+      "QWEN: 2 updates"
     ],
     "trends": [
       "Strong GitHub activity - many new repositories"
     ],
-    "total_updates": 25,
-    "unique_companies": 5,
+    "total_updates": 11,
+    "unique_companies": 4,
     "top_companies": [
       {
-        "name": "Other",
-        "count": 10
-      },
-      {
         "name": "deepseek",
-        "count": 7
+        "count": 6
       },
       {
         "name": "kimi",
-        "count": 7
+        "count": 5
       },
       {
         "name": "qwen",
-        "count": 1
+        "count": 2
       },
       {
-        "name": "zhipu",
+        "name": "minimax",
         "count": 1
       }
     ]
@@ -38,31 +34,17 @@
   "top_insights": [
     {
       "type": "new_model",
-      "title": "GitHub: DeepSeek-V3.2-Exp",
-      "description": "🔍 Explore and enhance deep learning models with DeepSeek-V3.2-Exp, your go-to tool for streamlined data analysis and advanced AI insights.",
+      "title": "GitHub: AI-Research-Agent",
+      "description": "This project automatically generates a structured daily report about the Turkish game development industry using the DeepSeek R1 model via OpenRouter. It collects news from trusted sources, compares t",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "737fd192bfa79ef39c1e43648f75ef28"
+        "2a841121d5d55ece84bf36bd9f1b86bc"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2025-12-22"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub: DeepSeek-Pentest-AI",
-      "description": "🔍 Automate vulnerability testing and payload generation in web applications with DeepSeek Pentest AI, a powerful Burp Suite extension.",
-      "impact_score": 7.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "af82f500f8bba9674b70f2742ea47a79"
-      ],
-      "evidence": [
-        "GitHub"
-      ],
-      "timestamp": "2025-12-22"
+      "timestamp": "2025-12-29"
     },
     {
       "type": "new_model",
@@ -76,7 +58,49 @@
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2025-12-22"
+      "timestamp": "2025-12-29"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: doc2anki",
+      "description": "A CLI tool that converts Markdown and Org-mode documents into Anki flashcards using LLM. Features AST-based intelligent chunking, multi-provider AI support (OpenAI, Claude, DeepSeek, Qwen, etc.), and ",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "e054640dd8588c55a0945534c8417ba2"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2025-12-29"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: nautilus_AItrader",
+      "description": "AI-powered cryptocurrency trading bot using DeepSeek and NautilusTrader",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "25e87be9e0ed8e43b5da9e7501773ebf"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2025-12-29"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: AI-test",
+      "description": "基于大模型的测试用例生成工具（可使用Deepseek 、小米 MiMo 、智普、Kimi、MiniMAX等API）",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "a90bf093e52135ca981cad036160b662"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2025-12-29"
     },
     {
       "type": "new_model",
@@ -90,7 +114,7 @@
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2025-12-22"
+      "timestamp": "2025-12-29"
     },
     {
       "type": "new_model",
@@ -104,7 +128,21 @@
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2025-12-22"
+      "timestamp": "2025-12-29"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: Kimiko",
+      "description": "Kimiko – modular AI assistant with human-in-the-loop governance",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "09bfb8f2cee201d2d888cb393ead22bc"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2025-12-28"
     },
     {
       "type": "new_model",
@@ -118,103 +156,39 @@
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2025-12-22"
+      "timestamp": "2025-12-25"
     },
     {
-      "type": "new_model",
-      "title": "GitHub: BidMonitor-AI",
-      "description": "本系统是一款专为企业打造的 24/7 全天候招标动态监控利器。集成 Selenium 自动化技术绕过反爬机制，实现中国招标网、政府采购网等多平台并发采集。核心采用 DeepSeek/Gemini/Claude 等多大语言模型进行二次智能分析，配合关键词与排除词算法，精准过滤无关杂讯。支持邮件、微信、短信及语音电话多渠道同步预警，并具备多联系人独立配置功能。彻底取代人工盯守，以 AI 驱动的高效率实",
-      "impact_score": 7.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "b2b34c8b9f872a0627d9b115ce06a6a0"
-      ],
-      "evidence": [
-        "GitHub"
-      ],
-      "timestamp": "2025-12-22"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub: Intelligent-Chat-Robot",
-      "description": "参与2025年传智杯的人工智能大模型创新应用挑战赛获得一等奖（国家级），使用Ollama客户端调用本地大语言模型（如qwen2、deepseek-r1）两种AI，集成科大讯飞API和Google语音识别，支持上传图片并进行分析，使用transformers库分析用户情感并给予相应回应，使用langdetect检测语言，支持中文、英文等",
-      "impact_score": 7.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "fa378110d0adef9cb6ec10a9f2803bc6"
-      ],
-      "evidence": [
-        "GitHub"
-      ],
-      "timestamp": "2025-12-18"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub: zhenxun_plugin_zhipu_toolkit",
-      "description": "智谱AI全家桶插件，包含智谱平台多种功能(伪人，文生图/视频，图生视频 ，图像理解等)",
-      "impact_score": 7.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "6682b7ce026a7a7748c5b9db9c6ada96"
-      ],
-      "evidence": [
-        "GitHub"
-      ],
-      "timestamp": "2025-12-16"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub: personal-ai-os",
-      "description": "本项目提供基于 Kimi K2 API 的本地工作流型个人 AI OS，用于：信息提炼、深度分析（Super Analyst）与广度思考（New Angle）。",
+      "type": "research_paper",
+      "title": "arXiv: CricBench: A Multilingual Benchmark for Evaluating LLMs in Cricket Analytics",
+      "description": "Cricket is the second most popular sport globally, commanding a massive following of over 2.5 billion fans globally. Enthusiasts and analysts frequently seek advanced statistical insights, such as lon...",
       "impact_score": 6.5,
       "confidence": 0.8,
       "related_updates": [
-        "f581d140c522c7c37a1609005dde39ae"
+        "7f436a61cecf8d5be0fb6860462a8d8d"
       ],
       "evidence": [
-        "GitHub"
+        "arXiv"
       ],
-      "timestamp": "2025-12-08"
+      "timestamp": "2025-12-26"
     }
   ],
   "significant_changes": [
     {
       "category": "new_company",
-      "description": "New entities detected: qwen, kimi, zhipu",
+      "description": "New entities detected: minimax",
       "magnitude": 7.0,
       "week_over_week_change": {
         "new": [
-          "qwen",
-          "kimi",
-          "zhipu"
+          "minimax"
         ]
       },
       "implications": [
-        "Monitor qwen for future developments",
-        "Monitor kimi for future developments",
-        "Monitor zhipu for future developments"
-      ]
-    },
-    {
-      "category": "market_shift",
-      "description": "Significant activity increase: 3 → 25 updates (+733%)",
-      "magnitude": 6.0,
-      "week_over_week_change": {
-        "prev": 3,
-        "current": 25
-      },
-      "implications": [
-        "Increased market activity - monitor closely",
-        "Potential major announcements coming"
+        "Monitor minimax for future developments"
       ]
     }
   ],
   "trends": [
-    {
-      "type": "increasing_activity",
-      "description": "Activity trending up: 1 → 25 updates",
-      "confidence": 0.8
-    },
     {
       "type": "emerging_company",
       "description": "deepseek showing increasing activity",
@@ -224,11 +198,15 @@
       "type": "emerging_company",
       "description": "kimi showing increasing activity",
       "confidence": 0.7
+    },
+    {
+      "type": "emerging_company",
+      "description": "qwen showing increasing activity",
+      "confidence": 0.7
     }
   ],
   "recommendations": [
     "New companies/models detected - add to monitoring list",
-    "Market activity spike detected - potential major announcements",
     "Long-term trends identified - consider strategic implications"
   ]
 }

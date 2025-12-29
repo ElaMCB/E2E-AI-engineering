@@ -472,5 +472,134 @@
         "hash": "1e7f26509ebd6b0bbedd9c81c84f997b"
       }
     ]
+  },
+  {
+    "date": "2025-12-29",
+    "updates": [
+      {
+        "title": "GitHub: AI-Research-Agent",
+        "source": "GitHub",
+        "url": "https://github.com/ulquiorraexe/AI-Research-Agent",
+        "date": "2025-12-29",
+        "summary": "This project automatically generates a structured daily report about the Turkish game development industry using the DeepSeek R1 model via OpenRouter. It collects news from trusted sources, compares t",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "2a841121d5d55ece84bf36bd9f1b86bc"
+      },
+      {
+        "title": "GitHub: freeflux",
+        "source": "GitHub",
+        "url": "https://github.com/Rian-create/freeflux",
+        "date": "2025-12-29",
+        "summary": "🚀 Simplify FLUX access with 4-bit models and CPU offloading, enabling powerful GPU utilization and prompt generation from keywords with DeepSeek-R1 AI.",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "a898b7340e2d958c00410c3b3e9bf35f"
+      },
+      {
+        "title": "GitHub: doc2anki",
+        "source": "GitHub",
+        "url": "https://github.com/SOV710/doc2anki",
+        "date": "2025-12-29",
+        "summary": "A CLI tool that converts Markdown and Org-mode documents into Anki flashcards using LLM. Features AST-based intelligent chunking, multi-provider AI support (OpenAI, Claude, DeepSeek, Qwen, etc.), and ",
+        "keywords": [
+          "qwen",
+          "deepseek"
+        ],
+        "hash": "e054640dd8588c55a0945534c8417ba2"
+      },
+      {
+        "title": "GitHub: nautilus_AItrader",
+        "source": "GitHub",
+        "url": "https://github.com/Patrick-code-Bot/nautilus_AItrader",
+        "date": "2025-12-29",
+        "summary": "AI-powered cryptocurrency trading bot using DeepSeek and NautilusTrader",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "25e87be9e0ed8e43b5da9e7501773ebf"
+      },
+      {
+        "title": "GitHub: AI-test",
+        "source": "GitHub",
+        "url": "https://github.com/Sruixu/AI-test",
+        "date": "2025-12-29",
+        "summary": "基于大模型的测试用例生成工具（可使用Deepseek 、小米 MiMo 、智普、Kimi、MiniMAX等API）",
+        "keywords": [
+          "deepseek",
+          "minimax",
+          "kimi"
+        ],
+        "hash": "a90bf093e52135ca981cad036160b662"
+      },
+      {
+        "title": "GitHub: kimi-ai-2api",
+        "source": "GitHub",
+        "url": "https://github.com/menendzerzumia-max/kimi-ai-2api",
+        "date": "2025-12-29",
+        "summary": "⚡ Transform Kimi.ai chat experiences into OpenAI API format with this high-performance proxy service for seamless integration and enhanced access.",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "35ac067b9e66a63789d20d6c8fbc61bf"
+      },
+      {
+        "title": "GitHub: Med-X-KimiK2-RAG",
+        "source": "GitHub",
+        "url": "https://github.com/Iluvmrbeast/Med-X-KimiK2-RAG",
+        "date": "2025-12-29",
+        "summary": "🩺 Assist clinical reasoning with MedeX, an AI-powered tool using Retrieval-Augmented Generation for medical education and case analysis.",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "e380a9bffd19b9aade1804fabb98306c"
+      },
+      {
+        "title": "GitHub: Kimiko",
+        "source": "GitHub",
+        "url": "https://github.com/gore79/Kimiko",
+        "date": "2025-12-28",
+        "summary": "Kimiko – modular AI assistant with human-in-the-loop governance",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "09bfb8f2cee201d2d888cb393ead22bc"
+      },
+      {
+        "title": "arXiv: CricBench: A Multilingual Benchmark for Evaluating LLMs in Cricket Analytics",
+        "source": "arXiv",
+        "url": "https://arxiv.org/abs/2512.21877v1",
+        "date": "2025-12-26",
+        "summary": "Cricket is the second most popular sport globally, commanding a massive following of over 2.5 billion fans globally. Enthusiasts and analysts frequently seek advanced statistical insights, such as lon...",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "7f436a61cecf8d5be0fb6860462a8d8d"
+      },
+      {
+        "title": "arXiv: See Less, See Right: Bi-directional Perceptual Shaping For Multimodal Reasoning",
+        "source": "arXiv",
+        "url": "https://arxiv.org/abs/2512.22120v1",
+        "date": "2025-12-26",
+        "summary": "Large vision-language models (VLMs) often benefit from intermediate visual cues, either injected via external tools or generated as latent visual tokens during reasoning, but these mechanisms still ov...",
+        "keywords": [
+          "qwen"
+        ],
+        "hash": "b43b2f81127d005d147676502708859c"
+      },
+      {
+        "title": "GitHub: ApexVivum",
+        "source": "GitHub",
+        "url": "https://github.com/buckster123/ApexVivum",
+        "date": "2025-12-25",
+        "summary": "Self-evolving AI paragon powered by Kimi K2 architecture. Perceptive, meticulous, and supremely efficacious.",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "e88fab6476613c0be001f2293ae8421f"
+      }
+    ]
   }
 ]
