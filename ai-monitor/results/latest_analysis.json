@@ -1,29 +1,29 @@
 {
-  "date": "2025-12-29",
+  "date": "2026-01-05",
   "executive_summary": {
-    "summary": "This week saw 11 updates across 4 companies/models. Top activity: deepseek, kimi, qwen",
+    "summary": "This week saw 15 updates across 4 companies/models. Top activity: kimi, deepseek, qwen",
     "key_highlights": [
+      "KIMI: 8 updates",
       "DEEPSEEK: 6 updates",
-      "KIMI: 5 updates",
-      "QWEN: 2 updates"
+      "QWEN: 3 updates"
     ],
     "trends": [
       "Strong GitHub activity - many new repositories"
     ],
-    "total_updates": 11,
+    "total_updates": 15,
     "unique_companies": 4,
     "top_companies": [
+      {
+        "name": "kimi",
+        "count": 8
+      },
       {
         "name": "deepseek",
         "count": 6
       },
       {
-        "name": "kimi",
-        "count": 5
-      },
-      {
         "name": "qwen",
-        "count": 2
+        "count": 3
       },
       {
         "name": "minimax",
@@ -34,73 +34,73 @@
   "top_insights": [
     {
       "type": "new_model",
-      "title": "GitHub: AI-Research-Agent",
-      "description": "This project automatically generates a structured daily report about the Turkish game development industry using the DeepSeek R1 model via OpenRouter. It collects news from trusted sources, compares t",
-      "impact_score": 7.0,
+      "title": "GitHub Release: http-privacy - 1.0.8 (End of Year Release)",
+      "description": "## What's Changed\r\n* chore(deps): update dependency openai to v1.102.0 by @renovate[bot] in https://github.com/AI-Robotic-Labs/http-privacy/pull/280\r\n* chore(deps): update dependency boto3 to v1.40.21",
+      "impact_score": 8.0,
       "confidence": 0.8,
       "related_updates": [
-        "2a841121d5d55ece84bf36bd9f1b86bc"
+        "0bd7efabfcfb79909e21b17db81eb9f4"
       ],
       "evidence": [
-        "GitHub"
+        "GitHub Releases"
       ],
-      "timestamp": "2025-12-29"
+      "timestamp": "2025-12-09"
     },
     {
       "type": "new_model",
-      "title": "GitHub: freeflux",
-      "description": "🚀 Simplify FLUX access with 4-bit models and CPU offloading, enabling powerful GPU utilization and prompt generation from keywords with DeepSeek-R1 AI.",
-      "impact_score": 7.0,
+      "title": "GitHub Release: http-privacy - 1.0.6 - Out of Beta",
+      "description": "## What's Changed\r\n* fix(deps): update dependency boto3 to v1.39.1 by @renovate[bot] in https://github.com/AI-Robotic-Labs/http-privacy/pull/194\r\n* fix(deps): update dependency boto3 to v1.39.2 by @re",
+      "impact_score": 8.0,
       "confidence": 0.8,
       "related_updates": [
-        "a898b7340e2d958c00410c3b3e9bf35f"
+        "f50fd89463680ee769c3baf78c2ba811"
       ],
       "evidence": [
-        "GitHub"
+        "GitHub Releases"
       ],
-      "timestamp": "2025-12-29"
+      "timestamp": "2025-08-01"
     },
     {
       "type": "new_model",
-      "title": "GitHub: doc2anki",
-      "description": "A CLI tool that converts Markdown and Org-mode documents into Anki flashcards using LLM. Features AST-based intelligent chunking, multi-provider AI support (OpenAI, Claude, DeepSeek, Qwen, etc.), and ",
+      "title": "GitHub: Tools_DeepSeekOCR",
+      "description": "🖥️ Deploy DeepSeek-OCR for Optical Character Recognition directly from screen captures on Windows, enabling efficient text extraction from images.",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "e054640dd8588c55a0945534c8417ba2"
+        "d074f813ffa675bc0bbd83fda14533fc"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2025-12-29"
+      "timestamp": "2026-01-05"
     },
     {
       "type": "new_model",
-      "title": "GitHub: nautilus_AItrader",
-      "description": "AI-powered cryptocurrency trading bot using DeepSeek and NautilusTrader",
+      "title": "GitHub: deepseek-trading-experiment",
+      "description": "🤖 Explore AI-driven trading with the DeepSeek crypto bot, designed for learning rather than profit through backtesting strategies and financial analysis.",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "25e87be9e0ed8e43b5da9e7501773ebf"
+        "103f5d1e01777b3ebc9bf6c6c995eded"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2025-12-29"
+      "timestamp": "2026-01-05"
     },
     {
       "type": "new_model",
-      "title": "GitHub: AI-test",
-      "description": "基于大模型的测试用例生成工具（可使用Deepseek 、小米 MiMo 、智普、Kimi、MiniMAX等API）",
+      "title": "GitHub: DeepSeek-V3.2-Exp",
+      "description": "🔍 Explore and enhance deep learning models with DeepSeek-V3.2-Exp, your go-to tool for streamlined data analysis and advanced AI insights.",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "a90bf093e52135ca981cad036160b662"
+        "737fd192bfa79ef39c1e43648f75ef28"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2025-12-29"
+      "timestamp": "2026-01-05"
     },
     {
       "type": "new_model",
@@ -114,7 +114,7 @@
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2025-12-29"
+      "timestamp": "2026-01-05"
     },
     {
       "type": "new_model",
@@ -128,21 +128,35 @@
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2025-12-29"
+      "timestamp": "2026-01-05"
     },
     {
       "type": "new_model",
-      "title": "GitHub: Kimiko",
-      "description": "Kimiko – modular AI assistant with human-in-the-loop governance",
+      "title": "GitHub: multimodel-chat",
+      "description": "一个多合一的AI聊天工具，将ChatGPT、Gemini、LLaMA，以及DeepSeek、讯飞星火、通义千问、kimi等大模型的API集成在同一个工具中。 An all-in-one AI chat tool that integrates APIs of multiple large models, including ChatGPT, Gemini, LLaMA, DeepSeek, iFl",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "09bfb8f2cee201d2d888cb393ead22bc"
+        "066375b8635024933fdc8724d0da642a"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2025-12-28"
+      "timestamp": "2026-01-03"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: Youtube-Engagement-Helper",
+      "description": "Python script that monitors YouTube channels, transcribes videos, generates AI summaries, and creates human-like engagement comments using Kimi K2 Instruct (Chutes). Analyzes top comments to match eac",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "63c55c726fd2f3c21ff9b66f8ae27729"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-01-02"
     },
     {
       "type": "new_model",
@@ -156,39 +170,16 @@
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2025-12-25"
-    },
-    {
-      "type": "research_paper",
-      "title": "arXiv: CricBench: A Multilingual Benchmark for Evaluating LLMs in Cricket Analytics",
-      "description": "Cricket is the second most popular sport globally, commanding a massive following of over 2.5 billion fans globally. Enthusiasts and analysts frequently seek advanced statistical insights, such as lon...",
-      "impact_score": 6.5,
-      "confidence": 0.8,
-      "related_updates": [
-        "7f436a61cecf8d5be0fb6860462a8d8d"
-      ],
-      "evidence": [
-        "arXiv"
-      ],
-      "timestamp": "2025-12-26"
+      "timestamp": "2025-12-31"
     }
   ],
-  "significant_changes": [
-    {
-      "category": "new_company",
-      "description": "New entities detected: minimax",
-      "magnitude": 7.0,
-      "week_over_week_change": {
-        "new": [
-          "minimax"
-        ]
-      },
-      "implications": [
-        "Monitor minimax for future developments"
-      ]
-    }
-  ],
+  "significant_changes": [],
   "trends": [
+    {
+      "type": "increasing_activity",
+      "description": "Activity trending up: 3 → 15 updates",
+      "confidence": 0.8
+    },
     {
       "type": "emerging_company",
       "description": "deepseek showing increasing activity",
@@ -203,10 +194,15 @@
       "type": "emerging_company",
       "description": "qwen showing increasing activity",
       "confidence": 0.7
+    },
+    {
+      "type": "emerging_company",
+      "description": "minimax showing increasing activity",
+      "confidence": 0.7
     }
   ],
   "recommendations": [
-    "New companies/models detected - add to monitoring list",
+    "URGENT: 2 high-impact developments detected - review immediately",
     "Long-term trends identified - consider strategic implications"
   ]
 }

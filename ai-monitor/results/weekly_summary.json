@@ -601,5 +601,178 @@
         "hash": "e88fab6476613c0be001f2293ae8421f"
       }
     ]
+  },
+  {
+    "date": "2026-01-05",
+    "updates": [
+      {
+        "title": "GitHub: Tools_DeepSeekOCR",
+        "source": "GitHub",
+        "url": "https://github.com/Sabastincruzz/Tools_DeepSeekOCR",
+        "date": "2026-01-05",
+        "summary": "🖥️ Deploy DeepSeek-OCR for Optical Character Recognition directly from screen captures on Windows, enabling efficient text extraction from images.",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "d074f813ffa675bc0bbd83fda14533fc"
+      },
+      {
+        "title": "GitHub: deepseek-trading-experiment",
+        "source": "GitHub",
+        "url": "https://github.com/v0acc0002/deepseek-trading-experiment",
+        "date": "2026-01-05",
+        "summary": "🤖 Explore AI-driven trading with the DeepSeek crypto bot, designed for learning rather than profit through backtesting strategies and financial analysis.",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "103f5d1e01777b3ebc9bf6c6c995eded"
+      },
+      {
+        "title": "GitHub: DeepSeek-V3.2-Exp",
+        "source": "GitHub",
+        "url": "https://github.com/arthur1258/DeepSeek-V3.2-Exp",
+        "date": "2026-01-05",
+        "summary": "🔍 Explore and enhance deep learning models with DeepSeek-V3.2-Exp, your go-to tool for streamlined data analysis and advanced AI insights.",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "737fd192bfa79ef39c1e43648f75ef28"
+      },
+      {
+        "title": "GitHub: kimi-ai-2api",
+        "source": "GitHub",
+        "url": "https://github.com/menendzerzumia-max/kimi-ai-2api",
+        "date": "2026-01-05",
+        "summary": "⚡ Transform Kimi.ai chat experiences into OpenAI API format with this high-performance proxy service for seamless integration and enhanced access.",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "35ac067b9e66a63789d20d6c8fbc61bf"
+      },
+      {
+        "title": "GitHub: Med-X-KimiK2-RAG",
+        "source": "GitHub",
+        "url": "https://github.com/Iluvmrbeast/Med-X-KimiK2-RAG",
+        "date": "2026-01-05",
+        "summary": "🩺 Assist clinical reasoning with MedeX, an AI-powered tool using Retrieval-Augmented Generation for medical education and case analysis.",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "e380a9bffd19b9aade1804fabb98306c"
+      },
+      {
+        "title": "GitHub: multimodel-chat",
+        "source": "GitHub",
+        "url": "https://github.com/pypy66/multimodel-chat",
+        "date": "2026-01-03",
+        "summary": "一个多合一的AI聊天工具，将ChatGPT、Gemini、LLaMA，以及DeepSeek、讯飞星火、通义千问、kimi等大模型的API集成在同一个工具中。 An all-in-one AI chat tool that integrates APIs of multiple large models, including ChatGPT, Gemini, LLaMA, DeepSeek, iFl",
+        "keywords": [
+          "deepseek",
+          "kimi"
+        ],
+        "hash": "066375b8635024933fdc8724d0da642a"
+      },
+      {
+        "title": "GitHub: Youtube-Engagement-Helper",
+        "source": "GitHub",
+        "url": "https://github.com/RadoTSC/Youtube-Engagement-Helper",
+        "date": "2026-01-02",
+        "summary": "Python script that monitors YouTube channels, transcribes videos, generates AI summaries, and creates human-like engagement comments using Kimi K2 Instruct (Chutes). Analyzes top comments to match eac",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "63c55c726fd2f3c21ff9b66f8ae27729"
+      },
+      {
+        "title": "arXiv: Geometry of Reason: Spectral Signatures of Valid Mathematical Reasoning",
+        "source": "arXiv",
+        "url": "https://arxiv.org/abs/2601.00791v1",
+        "date": "2026-01-02",
+        "summary": "We present a training-free method for detecting valid mathematical reasoning in large language models through spectral analysis of attention patterns. By treating attention matrices as adjacency matri...",
+        "keywords": [
+          "qwen"
+        ],
+        "hash": "5d76c910d0d16131f5690c80ba80929f"
+      },
+      {
+        "title": "GitHub: ApexVivum",
+        "source": "GitHub",
+        "url": "https://github.com/buckster123/ApexVivum",
+        "date": "2025-12-31",
+        "summary": "Self-evolving AI paragon powered by Kimi K2 architecture. Perceptive, meticulous, and supremely efficacious.",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "e88fab6476613c0be001f2293ae8421f"
+      },
+      {
+        "title": "GitHub: deeptrade",
+        "source": "GitHub",
+        "url": "https://github.com/soga2008/deeptrade",
+        "date": "2025-12-30",
+        "summary": "AI-driven algorithmic trading platform featuring ML predictions, technical indicators, risk metrics, and a full backtesting engine. Built with React, FastAPI, and Kimi K2AI.",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "2a583918656ffec3d5d4fd91eb15bf15"
+      },
+      {
+        "title": "GitHub: AI-test",
+        "source": "GitHub",
+        "url": "https://github.com/Sruixu/AI-test",
+        "date": "2025-12-29",
+        "summary": "基于大模型的测试用例生成工具（可使用Deepseek 、小米 MiMo 、智普、Kimi、MiniMAX等API）",
+        "keywords": [
+          "deepseek",
+          "kimi",
+          "minimax"
+        ],
+        "hash": "a90bf093e52135ca981cad036160b662"
+      },
+      {
+        "title": "GitHub: Kimiko",
+        "source": "GitHub",
+        "url": "https://github.com/gore79/Kimiko",
+        "date": "2025-12-28",
+        "summary": "Kimiko – modular AI assistant with human-in-the-loop governance",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "09bfb8f2cee201d2d888cb393ead22bc"
+      },
+      {
+        "title": "GitHub Release: http-privacy - 1.0.8 (End of Year Release)",
+        "source": "GitHub Releases",
+        "url": "https://github.com/AI-Robotic-Labs/http-privacy/releases/tag/1.0.8",
+        "date": "2025-12-09",
+        "summary": "## What's Changed\r\n* chore(deps): update dependency openai to v1.102.0 by @renovate[bot] in https://github.com/AI-Robotic-Labs/http-privacy/pull/280\r\n* chore(deps): update dependency boto3 to v1.40.21",
+        "keywords": [
+          "qwen"
+        ],
+        "hash": "0bd7efabfcfb79909e21b17db81eb9f4"
+      },
+      {
+        "title": "GitHub: AiModelCompare",
+        "source": "GitHub",
+        "url": "https://github.com/mcdonnej95/AiModelCompare",
+        "date": "2025-10-24",
+        "summary": "Comparing GPT 4-o and DeepSeek R1 API model's summarization of Chinese social media posts, using a blind judgement round from Chat GPT 4-o to score summaries on completeness, favorability, and exclusi",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "1e7f26509ebd6b0bbedd9c81c84f997b"
+      },
+      {
+        "title": "GitHub Release: http-privacy - 1.0.6 - Out of Beta",
+        "source": "GitHub Releases",
+        "url": "https://github.com/AI-Robotic-Labs/http-privacy/releases/tag/1.0.6",
+        "date": "2025-08-01",
+        "summary": "## What's Changed\r\n* fix(deps): update dependency boto3 to v1.39.1 by @renovate[bot] in https://github.com/AI-Robotic-Labs/http-privacy/pull/194\r\n* fix(deps): update dependency boto3 to v1.39.2 by @re",
+        "keywords": [
+          "qwen"
+        ],
+        "hash": "f50fd89463680ee769c3baf78c2ba811"
+      }
+    ]
   }
 ]
