@@ -163,11 +163,22 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add coverage.json eval.json
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
+          
+          # Only commit metrics on main branch pushes, not on PRs
+          if [ "${{ github.event_name }}" = "push" ] && [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            # Checkout main branch properly
+            git fetch origin main:main || true
+            git checkout main || git checkout -b main
+            git add coverage.json eval.json
+            if git diff --staged --quiet; then
+              echo "No changes to commit"
+            else
+              git commit -m "CI: Update metrics [skip ci]"
+              git push origin main
+            fi
           else
-            git commit -m "CI: Update metrics [skip ci]" || echo "Commit failed (may already be committed)"
-            git push || echo "Push failed (may not have permissions or already pushed)"
+            echo "Skipping metrics commit (not on main branch or this is a PR)"
+            echo "Metrics files generated:"
+            ls -la coverage.json eval.json 2>/dev/null || echo "Metrics files not found"
           fi
         continue-on-error: true
