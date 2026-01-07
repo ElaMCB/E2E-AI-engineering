@@ -105,6 +105,16 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         }
         
+        /* Show video if it loads successfully */
+        #intro video:not([style*="display: none"]) {
+            display: block;
+        }
+        
+        /* Hide placeholder text when video is available */
+        #intro video:not([style*="display: none"]) ~ div {
+            display: none;
+        }
+        
         #intro button {
             position: absolute;
             bottom: 20px;
@@ -561,9 +571,25 @@
 <body>
     <!-- Game-style cinematic intro -->
     <div id="intro">
-        <video autoplay muted loop playsinline poster="assets/intro_poster.jpg">
+        <div style="text-align: center; color: white; max-width: 600px; padding: 2rem;">
+            <div style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.9;">
+                <i class="fas fa-robot"></i>
+            </div>
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700; background: linear-gradient(135deg, #3b82f6, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                E2E AI Engineering
+            </h1>
+            <div style="font-family: 'Courier New', monospace; font-size: 1.2rem; color: #60a5fa; margin: 2rem 0; opacity: 0.8;">
+                <div style="margin-bottom: 0.5rem;">$ python agent_eval.py</div>
+                <div style="margin-bottom: 0.5rem;">✓ Loading evaluation framework...</div>
+                <div style="margin-bottom: 0.5rem;">✓ Initializing multi-agent system...</div>
+                <div>✓ Ready for production deployment</div>
+            </div>
+            <div style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">
+                Applied AI & Agent Evaluation
+            </div>
+        </div>
+        <video autoplay muted loop playsinline poster="assets/intro_poster.jpg" style="display: none;">
             <source src="assets/intro.webm" type="video/webm">
-            Your browser does not support the video tag.
         </video>
         <button onclick="document.getElementById('intro').remove(); document.getElementById('main-content').style.opacity = '1';">
             Skip intro
@@ -914,14 +940,25 @@
         document.addEventListener('DOMContentLoaded', function() {
             const intro = document.getElementById('intro');
             const mainContent = document.getElementById('main-content');
-            
-            // If video fails to load, show content immediately
             const video = intro?.querySelector('video');
+            const placeholder = intro?.querySelector('div[style*="text-align: center"]');
+            
+            // Check if video file exists and loads successfully
             if (video) {
-                video.addEventListener('error', function() {
-                    intro.style.display = 'none';
-                    mainContent.style.opacity = '1';
+                video.addEventListener('loadeddata', function() {
+                    // Video loaded successfully - show it and hide placeholder
+                    video.style.display = 'block';
+                    if (placeholder) placeholder.style.display = 'none';
                 });
+                
+                video.addEventListener('error', function() {
+                    // Video failed to load - keep placeholder visible
+                    console.log('Video not found, showing placeholder');
+                    video.style.display = 'none';
+                });
+                
+                // Try to load the video
+                video.load();
             }
         });
     </script>
