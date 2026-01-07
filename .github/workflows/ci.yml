@@ -139,22 +139,25 @@ jobs:
       
       - name: Generate coverage.json
         run: |
-          python .github/scripts/generate_metrics.py --coverage-dir coverage-artifacts --output coverage.json
+          python .github/scripts/generate_metrics.py --coverage-dir coverage-artifacts --output coverage.json || echo "Coverage generation failed, will create default"
         continue-on-error: true
       
       - name: Run evaluation tests and generate eval.json
         run: |
-          python .github/scripts/generate_metrics.py --run-evals --output eval.json
+          python .github/scripts/generate_metrics.py --run-evals --output eval.json || echo "Eval generation failed, will create default"
         continue-on-error: true
       
       - name: Ensure metrics files exist
         run: |
           if [ ! -f coverage.json ]; then
             echo '{"schemaVersion": 1, "label": "Coverage", "message": "0%", "color": "red"}' > coverage.json
+            echo "Created default coverage.json"
           fi
           if [ ! -f eval.json ]; then
             echo '{"schemaVersion": 1, "label": "Eval Score", "message": "N/A", "color": "grey"}' > eval.json
+            echo "Created default eval.json"
           fi
+          ls -la coverage.json eval.json
       
       - name: Commit and push metrics
         run: |
@@ -164,6 +167,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "CI: Update metrics [skip ci]"
-            git push
+            git commit -m "CI: Update metrics [skip ci]" || echo "Commit failed (may already be committed)"
+            git push || echo "Push failed (may not have permissions or already pushed)"
           fi
+        continue-on-error: true
