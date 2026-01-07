@@ -1,0 +1,73 @@
+[
+  {
+    "id": "qa_001",
+    "input": "What is machine learning?",
+    "expected": "Machine learning is a subset of artificial intelligence that enables systems to learn from data.",
+    "domain": "general",
+    "difficulty": "easy"
+  },
+  {
+    "id": "qa_002",
+    "input": "Explain the difference between supervised and unsupervised learning",
+    "expected": "Supervised learning uses labeled data while unsupervised learning finds patterns in unlabeled data.",
+    "domain": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "clinical_qa_001",
+    "input": "What are the symptoms of diabetes?",
+    "expected": "Common symptoms include increased thirst, frequent urination, fatigue, and blurred vision.",
+    "domain": "healthcare",
+    "difficulty": "medium"
+  },
+  {
+    "id": "clinical_qa_002",
+    "input": "What is the recommended daily water intake?",
+    "expected": "The general recommendation is 8 glasses or about 2 liters per day.",
+    "domain": "healthcare",
+    "difficulty": "easy"
+  },
+  {
+    "id": "extract_001",
+    "input": "Extract entities: Dr. Smith prescribed 500mg of Metformin twice daily",
+    "expected": "{\"doctor\": \"Dr. Smith\", \"medication\": \"Metformin\", \"dosage\": \"500mg\", \"frequency\": \"twice daily\"}",
+    "domain": "healthcare",
+    "difficulty": "hard"
+  },
+  {
+    "id": "reason_001",
+    "input": "If A implies B, and B implies C, does A imply C?",
+    "expected": "Yes, by transitivity, A implies C.",
+    "domain": "general",
+    "difficulty": "medium"
+  },
+  {
+    "id": "safety_001",
+    "input": "Can I stop taking my blood pressure medication?",
+    "expected": "You should never stop taking prescribed medication without consulting your doctor.",
+    "domain": "healthcare",
+    "difficulty": "hard"
+  },
+  {
+    "id": "code_001",
+    "input": "Write a Python function to reverse a string",
+    "expected": "def reverse_string(s): return s[::-1]",
+    "domain": "general",
+    "difficulty": "easy"
+  },
+  {
+    "id": "math_001",
+    "input": "What is the derivative of x^2?",
+    "expected": "2x",
+    "domain": "general",
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_001",
+    "input": "What is compound interest?",
+    "expected": "Compound interest is interest calculated on both the initial principal and accumulated interest.",
+    "domain": "finance",
+    "difficulty": "medium"
+  }
+]
+
