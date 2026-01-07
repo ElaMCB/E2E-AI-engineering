@@ -86,74 +86,89 @@
             scroll-padding-top: 2rem;
         }
         
-        /* Full-screen intro overlay */
+        /* Cinematic intro hero section */
         #intro {
-            position: fixed;
-            inset: 0;
+            width: 100%;
             background: #000;
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 10000;
-            animation: fadeOut 0.5s 9.5s forwards;
+            padding: 4rem 2rem;
+            min-height: 60vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #intro::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            z-index: 1;
         }
         
         #intro video {
-            width: 90%;
-            max-width: 900px;
+            width: 100%;
+            max-width: 1200px;
             border-radius: 12px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 2;
         }
         
-        /* Show video if it loads successfully */
-        #intro video:not([style*="display: none"]) {
-            display: block;
+        #intro .placeholder {
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
         }
         
-        /* Hide placeholder text when video is available */
-        #intro video:not([style*="display: none"]) ~ div {
-            display: none;
+        #intro .placeholder h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
-        #intro button {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            padding: 8px 16px;
-            background: rgba(255, 255, 255, 0.9);
-            color: #000;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            z-index: 10001;
-            font-family: var(--font-sans);
+        #intro .placeholder .terminal {
+            font-family: 'Courier New', monospace;
+            font-size: 1.3rem;
+            color: #60a5fa;
+            margin: 2rem 0;
+            opacity: 0.9;
+            text-align: left;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid #3b82f6;
         }
         
-        #intro button:hover {
-            background: #fff;
-            transform: scale(1.05);
-        }
-        
-        @keyframes fadeOut {
-            to {
-                opacity: 0;
-                pointer-events: none;
-            }
-        }
-        
-        /* Main content starts invisible, then fades in */
-        #main-content {
+        #intro .placeholder .terminal div {
+            margin-bottom: 0.5rem;
+            animation: fadeInLine 0.5s ease-in forwards;
             opacity: 0;
-            animation: fadeIn 0.5s 10s forwards;
         }
         
-        @keyframes fadeIn {
+        #intro .placeholder .terminal div:nth-child(1) { animation-delay: 0.2s; }
+        #intro .placeholder .terminal div:nth-child(2) { animation-delay: 0.4s; }
+        #intro .placeholder .terminal div:nth-child(3) { animation-delay: 0.6s; }
+        #intro .placeholder .terminal div:nth-child(4) { animation-delay: 0.8s; }
+        
+        @keyframes fadeInLine {
             to {
                 opacity: 1;
             }
+        }
+        
+        #intro .placeholder .subtitle {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            opacity: 0.8;
         }
         
         body {
