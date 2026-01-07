@@ -1047,40 +1047,6 @@
         
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
-            // Initialize view projects button animation
-            const viewProjectsBtn = document.getElementById('viewProjectsBtn');
-            if (viewProjectsBtn) {
-                // Check if animation has already run in this session
-                if (!sessionStorage.getItem('buttonAnimated')) {
-                    // Add animation class after a short delay to ensure smooth transition
-                    setTimeout(() => {
-                        const progress = viewProjectsBtn.querySelector('.btn-progress');
-                        if (progress) {
-                            progress.classList.add('animate');
-                            // Mark as animated in session storage
-                            sessionStorage.setItem('buttonAnimated', 'true');
-                            
-                            // Remove animation class after it completes
-                            setTimeout(() => {
-                                progress.classList.remove('animate');
-                                progress.style.width = '0%';
-                            }, 3000);
-                        }
-                    }, 1000);
-                }
-                
-                viewProjectsBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const target = document.querySelector(viewProjectsBtn.getAttribute('href'));
-                    if (target) {
-                        // Smooth scroll to projects section
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            }
             
             // Initialize sprint progress
             updateSprintProgress();
