@@ -907,5 +907,24 @@
     
     <!-- Visitor Tracking and Analytics -->
     <script src="analytics.js"></script>
+    
+    <!-- Intro skip handler -->
+    <script>
+        // Ensure main content is visible if intro is skipped or video fails
+        document.addEventListener('DOMContentLoaded', function() {
+            const intro = document.getElementById('intro');
+            const mainContent = document.getElementById('main-content');
+            
+            // If video fails to load, show content immediately
+            const video = intro?.querySelector('video');
+            if (video) {
+                video.addEventListener('error', function() {
+                    intro.style.display = 'none';
+                    mainContent.style.opacity = '1';
+                });
+            }
+        });
+    </script>
+    </div>
 </body>
 </html>
