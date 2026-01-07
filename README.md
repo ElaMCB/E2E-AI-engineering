@@ -3,7 +3,7 @@
 [![Portfolio](https://img.shields.io/badge/Portfolio-Live-blue?style=for-the-badge&logo=github)](https://elamcb.github.io/E2E-AI-engineering/)
 [![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-[![Last Updated](https://img.shields.io/badge/Last%20Updated-January%202025-blue?style=for-the-badge)](https://github.com/ElaMCB/E2E-AI-engineering)
+[![Last Updated](https://img.shields.io/badge/Last%20Updated-January%202026-blue?style=for-the-badge)](https://github.com/ElaMCB/E2E-AI-engineering)
 
 **Live portfolio:** https://elamcb.github.io/E2E-AI-engineering/
 
