@@ -119,11 +119,21 @@ jobs:
       - name: Generate coverage.json
         run: |
           python .github/scripts/generate_metrics.py --coverage-dir coverage-artifacts --output coverage.json
+        continue-on-error: true
       
       - name: Run evaluation tests and generate eval.json
         run: |
           python .github/scripts/generate_metrics.py --run-evals --output eval.json
         continue-on-error: true
+      
+      - name: Ensure metrics files exist
+        run: |
+          if [ ! -f coverage.json ]; then
+            echo '{"schemaVersion": 1, "label": "Coverage", "message": "0%", "color": "red"}' > coverage.json
+          fi
+          if [ ! -f eval.json ]; then
+            echo '{"schemaVersion": 1, "label": "Eval Score", "message": "N/A", "color": "grey"}' > eval.json
+          fi
       
       - name: Commit and push metrics
         run: |
