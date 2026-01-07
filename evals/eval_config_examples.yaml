@@ -1,0 +1,60 @@
+# Evaluation Configuration Examples
+
+# Example 1: Unit Test Configuration
+unit_tests:
+  test_suite: "tool_calling"
+  models:
+    - "gpt-4"
+    - "claude-3-opus"
+  test_cases: 100
+  timeout_seconds: 30
+  expected_format: "json"
+
+# Example 2: E2E Test Configuration
+e2e_tests:
+  test_suite: "clinical_workflow"
+  models:
+    - "gpt-4"
+    - "gpt-3.5-turbo"
+  scenarios:
+    - "patient_note_extraction"
+    - "clinical_decision_support"
+    - "medication_recommendation"
+  ground_truth_source: "expert_labeled"
+  sample_size: 50
+
+# Example 3: A/B Test Configuration
+ab_tests:
+  experiment_name: "prompt_engineering_v2"
+  variants:
+    - name: "baseline"
+      model: "gpt-4"
+      prompt_version: "v1"
+    - name: "few_shot"
+      model: "gpt-4"
+      prompt_version: "v2_few_shot"
+    - name: "chain_of_thought"
+      model: "gpt-4"
+      prompt_version: "v2_cot"
+  metrics:
+    - "correctness"
+    - "latency"
+    - "safety_score"
+  sample_size_per_variant: 200
+  statistical_significance: 0.05
+
+# Example 4: Post-Deployment Monitoring
+monitoring:
+  sampling_rate: 0.02  # 2% of requests
+  review_frequency: "weekly"
+  alert_thresholds:
+    correctness_drop: 0.05  # 5% drop triggers alert
+    latency_increase: 1.5    # 1.5x increase triggers alert
+    safety_flag_rate: 0.01   # 1% safety flags triggers alert
+  metrics_tracking:
+    - "correctness"
+    - "latency_p50"
+    - "latency_p95"
+    - "safety_flags"
+    - "hallucination_rate"
+
