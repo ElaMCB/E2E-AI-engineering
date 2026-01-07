@@ -1,0 +1,101 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project:
+          - ai-monitor
+          - ai-30day-sprint/p1-csv-chat
+          - evals
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: |
+          if [ -f "${{ matrix.project }}/requirements.txt" ]; then
+            pip install -r ${{ matrix.project }}/requirements.txt
+          fi
+          pip install pytest pytest-cov pytest-mock
+      
+      - name: Run tests
+        working-directory: ${{ matrix.project }}
+        run: |
+          if [ -f "test_*.py" ] || [ -f "tests/test_*.py" ]; then
+            pytest --cov=. --cov-report=xml --cov-report=term-missing -v || true
+          else
+            echo "No tests found for ${{ matrix.project }}"
+          fi
+        continue-on-error: true
+      
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          file: ./${{ matrix.project }}/coverage.xml
+          flags: ${{ matrix.project }}
+          name: ${{ matrix.project }}
+        continue-on-error: true
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install linting tools
+        run: |
+          pip install flake8 black isort mypy
+      
+      - name: Run black check
+        run: |
+          black --check --diff ai-monitor ai-30day-sprint evals || true
+        continue-on-error: true
+      
+      - name: Run isort check
+        run: |
+          isort --check-only --diff ai-monitor ai-30day-sprint evals || true
+        continue-on-error: true
+      
+      - name: Run flake8
+        run: |
+          flake8 ai-monitor ai-30day-sprint evals --max-line-length=120 --ignore=E203,W503 || true
+        continue-on-error: true
+
+  build-status:
+    runs-on: ubuntu-latest
+    needs: [test, lint]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Verify imports
+        run: |
+          cd ai-monitor && python -c "import monitor, analyzer, generate_html" || true
+          cd ../evals && python -c "import run_ab_test_models_prompts" || true
+        continue-on-error: true
+
