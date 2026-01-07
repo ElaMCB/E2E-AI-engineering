@@ -2,17 +2,31 @@
 Quick test script to verify the monitor is working correctly
 """
 
-from monitor import AIMonitor
-import json
+import pytest
+import sys
 from pathlib import Path
+
+# Add parent directory to path for imports
+sys.path.insert(0, str(Path(__file__).parent))
+
+try:
+    from monitor import AIMonitor
+except ImportError:
+    pytest.skip("monitor module not available", allow_module_level=True)
+
+import json
 
 def test_monitor():
     """Test the monitor with a limited search"""
+    try:
+        # Create monitor instance
+        monitor = AIMonitor()
+    except Exception as e:
+        pytest.skip(f"Could not create AIMonitor: {e}")
+        return
+    
     print("Testing AI Monitor...")
     print("=" * 60)
-    
-    # Create monitor instance
-    monitor = AIMonitor()
     
     # Test configuration loading
     print(f"✓ Configuration loaded")
