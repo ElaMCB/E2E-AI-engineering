@@ -176,3 +176,4 @@ Then add to `IntelligentAnalyzer.__init__()`.
 - **Use Intelligence Page**: Visual dashboard is faster than reading JSON
 - **Set Up Alerts**: Get notified when impact score ≥ 9.0
 
+

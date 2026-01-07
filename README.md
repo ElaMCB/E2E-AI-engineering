@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 [![Last Updated](https://img.shields.io/badge/Last%20Updated-January%202026-blue?style=for-the-badge)](https://github.com/ElaMCB/E2E-AI-engineering)
 
+> **Note:** This repository uses branch protection. All changes must go through pull requests that pass CI checks.
+
 [![CI](https://github.com/ElaMCB/E2E-AI-engineering/actions/workflows/ci.yml/badge.svg)](https://github.com/ElaMCB/E2E-AI-engineering/actions/workflows/ci.yml)
 ![Coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/ElaMCB/E2E-AI-engineering/main/coverage.json)
 ![Eval Score](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/ElaMCB/E2E-AI-engineering/main/eval.json)

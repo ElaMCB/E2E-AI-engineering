@@ -20,6 +20,9 @@ def calculate_coverage(coverage_dir: Path) -> Dict[str, Any]:
     # Find all coverage.json files
     if coverage_dir and coverage_dir.exists():
         coverage_files = list(coverage_dir.rglob("coverage.json"))
+        print(f"Found {len(coverage_files)} coverage files in {coverage_dir}", file=sys.stderr)
+    else:
+        print(f"Coverage directory does not exist: {coverage_dir}", file=sys.stderr)
     
     # Also check for coverage.xml files (coverage.py can generate both)
     if coverage_dir and coverage_dir.exists():
