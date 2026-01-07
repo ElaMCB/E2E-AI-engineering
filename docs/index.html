@@ -499,6 +499,19 @@
     </style>
 </head>
 <body>
+    <!-- Game-style cinematic intro -->
+    <div id="intro">
+        <video autoplay muted loop playsinline poster="assets/intro_poster.jpg">
+            <source src="assets/intro.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+        <button onclick="document.getElementById('intro').remove(); document.getElementById('main-content').style.opacity = '1';">
+            Skip intro
+        </button>
+    </div>
+
+    <!-- Main content -->
+    <div id="main-content">
     <header>
         <div class="container">
             <div class="sprint-btn-container">
