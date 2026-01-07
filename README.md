@@ -65,7 +65,5 @@ See [evals/](evals/) for evaluation patterns, A/B testing frameworks, and case s
 
 ---
 
-Eval patterns adopted by 3 external projects ([PR #24](https://github.com/ElaMCB/E2E-AI-engineering/pull/24), [PR #31](https://github.com/ElaMCB/E2E-AI-engineering/pull/31), [PR #57](https://github.com/ElaMCB/E2E-AI-engineering/pull/57)).
-
 ![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=ElaMCB/E2E-AI-engineering)
 
