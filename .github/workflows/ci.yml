@@ -53,10 +53,16 @@ jobs:
             echo '{"totals": {"percent_covered": 0.0}}' > coverage.json
           fi
       
+      - name: Sanitize artifact name
+        id: sanitize
+        run: |
+          SANITIZED=$(echo "${{ matrix.project }}" | tr '/' '-')
+          echo "name=coverage-${SANITIZED}" >> $GITHUB_OUTPUT
+      
       - name: Upload coverage artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: coverage-${{ matrix.project }}
+          name: ${{ steps.sanitize.outputs.name }}
           path: ${{ matrix.project }}/coverage.json
           if-no-files-found: ignore
 
