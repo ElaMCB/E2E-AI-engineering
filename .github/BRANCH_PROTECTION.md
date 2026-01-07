@@ -31,6 +31,7 @@ Enable these required status checks:
    - ✅ (Optional) Require all conversations on code to be resolved
 
 4. **Restrict who can push to matching branches**
+   - ❌ **DO NOT ENABLE "Restrict updates"** - This blocks ALL merges!
    - ✅ (Optional) Restrict pushes that create files larger than 100 MB
 
 5. **Do not allow bypassing the above settings**
