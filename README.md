@@ -33,11 +33,11 @@ It is designed to mirror responsibilities of Applied AI / LLM Agent Evaluation r
 
 | # | Project         | Last Update | Demo / Docs | Agent / Eval Focus |
 |---|-----------------|-------------|-------------|---------------------|
-| 1 | Excel/CSV Chat  | 2025-01-07 | [![Demo](https://img.shields.io/badge/Demo-Live-FF6B6B?style=flat-square)](https://huggingface.co/spaces/AzzuraM/excel-csv-chat-RAG) [![Blog](https://img.shields.io/badge/Blog-Read-blue?style=flat-square)](https://github.com/ElaMCB/E2E-AI-engineering/blob/main/ai-30day-sprint/p1-csv-chat/BLOG.md) | RAG pipeline, data eval, CSV/Excel QA |
+| 1 | Excel/CSV Chat  | 2026-01-07 | [![Demo](https://img.shields.io/badge/Demo-Live-FF6B6B?style=flat-square)](https://huggingface.co/spaces/AzzuraM/excel-csv-chat-RAG) [![Blog](https://img.shields.io/badge/Blog-Read-blue?style=flat-square)](https://github.com/ElaMCB/E2E-AI-engineering/blob/main/ai-30day-sprint/p1-csv-chat/BLOG.md) | RAG pipeline, data eval, CSV/Excel QA |
 | 2 | Tiny-LLM-LoRA   | 2026-01-07 | – | Fine-tuning + eval loops on small models |
 | 3 | FinSent API     | 2026-01-05 | – | LLM API + regression tests on sentiment |
 | 4 | GCP Pipeline    | 2026-01-05 | – | Data & training pipeline with CI/CD |
-| 5 | AI Monitor      | 2025-01-07 | [![Dashboard](https://img.shields.io/badge/Dashboard-Live-9B59B6?style=flat-square)](https://elamcb.github.io/E2E-AI-engineering/intelligence.html) [![Architecture](https://img.shields.io/badge/Architecture-Docs-blue?style=flat-square)](https://github.com/ElaMCB/E2E-AI-engineering/blob/main/ai-monitor/AGENT_ARCHITECTURE.md) | Multi-agent monitor + eval of news quality |
+| 5 | AI Monitor      | 2026-01-07 | [![Dashboard](https://img.shields.io/badge/Dashboard-Live-9B59B6?style=flat-square)](https://elamcb.github.io/E2E-AI-engineering/intelligence.html) [![Architecture](https://img.shields.io/badge/Architecture-Docs-blue?style=flat-square)](https://github.com/ElaMCB/E2E-AI-engineering/blob/main/ai-monitor/AGENT_ARCHITECTURE.md) | Multi-agent monitor + eval of news quality |
 
 Each project includes evaluation notes: see `EVAL_NOTES.md` in each project folder.
 
