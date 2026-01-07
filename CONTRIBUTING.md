@@ -78,6 +78,8 @@ pytest ai-monitor/test_monitor.py
 
 ## Pull Request Process
 
+**Important:** The `main` branch is protected. All changes must go through pull requests that pass CI checks.
+
 1. **Create a feature branch**
    ```bash
    git checkout -b feature/your-feature-name
@@ -88,7 +90,7 @@ pytest ai-monitor/test_monitor.py
    - Add tests for new functionality
    - Update documentation as needed
 
-3. **Ensure tests pass**
+3. **Ensure tests pass locally**
    ```bash
    pytest
    pre-commit run --all-files
@@ -104,12 +106,19 @@ pytest ai-monitor/test_monitor.py
    ```bash
    git push origin feature/your-feature-name
    ```
+   Then create a pull request on GitHub.
 
-6. **PR Requirements**
-   - All tests must pass
-   - Code coverage should not decrease
-   - Code must be formatted and linted
-   - PR description should explain changes
+6. **PR Requirements (Enforced by CI)**
+   - ✅ All tests must pass (blocks merge if failing)
+   - ✅ All linting checks must pass (blocks merge if failing)
+   - ✅ Build status must succeed (blocks merge if failing)
+   - ✅ Code coverage is calculated and updated automatically
+   - ✅ Evaluation metrics are calculated and updated automatically
+
+7. **After PR is merged**
+   - CI automatically updates `coverage.json` and `eval.json` on main
+   - Badges in README reflect the latest metrics
+   - No manual updates needed
 
 ## Project Structure
 

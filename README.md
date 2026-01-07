@@ -5,6 +5,11 @@
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 [![Last Updated](https://img.shields.io/badge/Last%20Updated-January%202026-blue?style=for-the-badge)](https://github.com/ElaMCB/E2E-AI-engineering)
 
+[![CI](https://github.com/ElaMCB/E2E-AI-engineering/actions/workflows/ci.yml/badge.svg)](https://github.com/ElaMCB/E2E-AI-engineering/actions/workflows/ci.yml)
+![Coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/ElaMCB/E2E-AI-engineering/main/coverage.json)
+![Eval Score](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/ElaMCB/E2E-AI-engineering/main/eval.json)
+[![Maintained](https://img.shields.io/badge/Maintained-yes-success?style=flat-square)](https://github.com/ElaMCB/E2E-AI-engineering)
+
 **Live portfolio:** https://elamcb.github.io/E2E-AI-engineering/
 
 ![Tech Stack](https://img.shields.io/badge/LangChain-OpenAI-orange?style=flat-square&logo=openai)
