@@ -2,18 +2,6 @@
 
 Live portfolio: https://elamcb.github.io/E2E-AI-engineering/
 
-## Why this repo exists
-
-This repo showcases end-to-end AI engineering with a focus on:
-
-- **LLM-based agent architectures** (multi-agent, tools, RAG)
-- **Evaluation and monitoring of agents** in realistic workflows
-- **MLOps, data engineering, and automation** around these systems
-
-It is designed to mirror responsibilities of Applied AI / LLM Agent Evaluation roles in production environments (e.g., healthcare, finance, operations).
-
----
-
 ## Projects
 
 | # | Project         | Status  | Demo / Docs | Agent / Eval Focus |
