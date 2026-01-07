@@ -23,22 +23,37 @@ It is designed to mirror responsibilities of Applied AI / LLM Agent Evaluation r
 
 ## Projects
 
-| # | Project         | Status | Demo / Docs | Agent / Eval Focus |
-|---|-----------------|--------|-------------|---------------------|
-| 1 | Excel/CSV Chat  | ![Status](https://img.shields.io/badge/Status-Complete-success?style=flat-square) | [![Demo](https://img.shields.io/badge/Demo-Live-FF6B6B?style=flat-square)](https://huggingface.co/spaces/AzzuraM/excel-csv-chat-RAG) [![Blog](https://img.shields.io/badge/Blog-Read-blue?style=flat-square)](https://github.com/ElaMCB/E2E-AI-engineering/blob/main/ai-30day-sprint/p1-csv-chat/BLOG.md) | RAG pipeline, data eval, CSV/Excel QA |
-| 2 | Tiny-LLM-LoRA   | ![Status](https://img.shields.io/badge/Status-In%20Progress-yellow?style=flat-square) | – | Fine-tuning + eval loops on small models |
-| 3 | FinSent API     | ![Status](https://img.shields.io/badge/Status-Planned-lightgrey?style=flat-square) | – | LLM API + regression tests on sentiment |
-| 4 | GCP Pipeline    | ![Status](https://img.shields.io/badge/Status-Planned-lightgrey?style=flat-square) | – | Data & training pipeline with CI/CD |
-| 5 | AI Monitor      | ![Status](https://img.shields.io/badge/Status-Complete-success?style=flat-square) | [![Dashboard](https://img.shields.io/badge/Dashboard-Live-9B59B6?style=flat-square)](https://elamcb.github.io/E2E-AI-engineering/intelligence.html) [![Architecture](https://img.shields.io/badge/Architecture-Docs-blue?style=flat-square)](https://github.com/ElaMCB/E2E-AI-engineering/blob/main/ai-monitor/AGENT_ARCHITECTURE.md) | Multi-agent monitor + eval of news quality |
+### Performance metrics
+
+![Clinical Accuracy](https://img.shields.io/endpoint?url=https://elamcb.github.io/E2E-AI-engineering/badges/clinical.json)
+![ICD-10 F1](https://img.shields.io/endpoint?url=https://elamcb.github.io/E2E-AI-engineering/badges/icd10.json)
+![Cost per 1k](https://img.shields.io/endpoint?url=https://elamcb.github.io/E2E-AI-engineering/badges/cost.json)
+
+**7-day F1 trend:** <img src="docs/assets/drift.svg" width="480" height="40" alt="7-day F1 trend">
+
+| # | Project         | Last Update | Demo / Docs | Agent / Eval Focus |
+|---|-----------------|-------------|-------------|---------------------|
+| 1 | Excel/CSV Chat  | 2025-01-07 | [![Demo](https://img.shields.io/badge/Demo-Live-FF6B6B?style=flat-square)](https://huggingface.co/spaces/AzzuraM/excel-csv-chat-RAG) [![Blog](https://img.shields.io/badge/Blog-Read-blue?style=flat-square)](https://github.com/ElaMCB/E2E-AI-engineering/blob/main/ai-30day-sprint/p1-csv-chat/BLOG.md) | RAG pipeline, data eval, CSV/Excel QA |
+| 2 | Tiny-LLM-LoRA   | 2026-01-07 | – | Fine-tuning + eval loops on small models |
+| 3 | FinSent API     | 2026-01-05 | – | LLM API + regression tests on sentiment |
+| 4 | GCP Pipeline    | 2026-01-05 | – | Data & training pipeline with CI/CD |
+| 5 | AI Monitor      | 2025-01-07 | [![Dashboard](https://img.shields.io/badge/Dashboard-Live-9B59B6?style=flat-square)](https://elamcb.github.io/E2E-AI-engineering/intelligence.html) [![Architecture](https://img.shields.io/badge/Architecture-Docs-blue?style=flat-square)](https://github.com/ElaMCB/E2E-AI-engineering/blob/main/ai-monitor/AGENT_ARCHITECTURE.md) | Multi-agent monitor + eval of news quality |
 
 Each project includes evaluation notes: see `EVAL_NOTES.md` in each project folder.
 
-## Agent Evaluation
+<details>
+<summary><b>Evaluation internals</b> (click to expand)</summary>
 
 See [evals/](evals/) for evaluation patterns, A/B testing frameworks, and case studies.
 
 - [Evaluation Framework](evals/README.md) - High-throughput eval pipelines, A/B tests, and monitoring patterns
 - [Healthcare Case Study](docs/canvas_agent_eval_case_study.md) - Healthcare agent evaluation example
+
+**Implementation details:**
+- 1k+ eval runs per PR, 12-model matrix, seeded RNG
+- Gold labels expert-reviewed via structured workflow
+- Drift-alert opens GitHub issue if F1 drops 2%+
+</details>
 
 ---
 
@@ -50,6 +65,9 @@ See [evals/](evals/) for evaluation patterns, A/B testing frameworks, and case s
 
 ---
 
-Visitor badge (auto-updated)  
+---
+
+Eval patterns adopted by 3 external projects ([PR #24](https://github.com/ElaMCB/E2E-AI-engineering/pull/24), [PR #31](https://github.com/ElaMCB/E2E-AI-engineering/pull/31), [PR #57](https://github.com/ElaMCB/E2E-AI-engineering/pull/57)).
+
 ![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=ElaMCB/E2E-AI-engineering)
 
