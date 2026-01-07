@@ -569,32 +569,25 @@
     </style>
 </head>
 <body>
-    <!-- Game-style cinematic intro -->
-    <div id="intro">
-        <div style="text-align: center; color: white; max-width: 600px; padding: 2rem;">
-            <div style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.9;">
-                <i class="fas fa-robot"></i>
-            </div>
-            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700; background: linear-gradient(135deg, #3b82f6, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-                E2E AI Engineering
-            </h1>
-            <div style="font-family: 'Courier New', monospace; font-size: 1.2rem; color: #60a5fa; margin: 2rem 0; opacity: 0.8;">
-                <div style="margin-bottom: 0.5rem;">$ python agent_eval.py</div>
-                <div style="margin-bottom: 0.5rem;">✓ Loading evaluation framework...</div>
-                <div style="margin-bottom: 0.5rem;">✓ Initializing multi-agent system...</div>
-                <div>✓ Ready for production deployment</div>
-            </div>
-            <div style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">
-                Applied AI & Agent Evaluation
-            </div>
-        </div>
-        <video autoplay muted loop playsinline poster="assets/intro_poster.jpg" style="display: none;">
+    <!-- Cinematic intro hero section -->
+    <section id="intro">
+        <video autoplay muted loop playsinline poster="assets/intro_poster.jpg">
             <source src="assets/intro.webm" type="video/webm">
         </video>
-        <button onclick="document.getElementById('intro').remove(); document.getElementById('main-content').style.opacity = '1';">
-            Skip intro
-        </button>
-    </div>
+        <div class="placeholder">
+            <div style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.9;">
+                <i class="fas fa-robot"></i>
+            </div>
+            <h1>E2E AI Engineering</h1>
+            <div class="terminal">
+                <div>$ python agent_eval.py</div>
+                <div>✓ Loading evaluation framework...</div>
+                <div>✓ Initializing multi-agent system...</div>
+                <div>✓ Ready for production deployment</div>
+            </div>
+            <div class="subtitle">Applied AI & Agent Evaluation</div>
+        </div>
+    </section>
 
     <!-- Main content -->
     <div id="main-content">
@@ -934,27 +927,27 @@
     <!-- Visitor Tracking and Analytics -->
     <script src="analytics.js"></script>
     
-    <!-- Intro skip handler -->
+    <!-- Intro video handler -->
     <script>
-        // Ensure main content is visible if intro is skipped or video fails
+        // Handle video loading - show video if available, otherwise show placeholder
         document.addEventListener('DOMContentLoaded', function() {
             const intro = document.getElementById('intro');
-            const mainContent = document.getElementById('main-content');
             const video = intro?.querySelector('video');
-            const placeholder = intro?.querySelector('div[style*="text-align: center"]');
+            const placeholder = intro?.querySelector('.placeholder');
             
-            // Check if video file exists and loads successfully
-            if (video) {
+            if (video && placeholder) {
+                // Check if video file exists and loads successfully
                 video.addEventListener('loadeddata', function() {
                     // Video loaded successfully - show it and hide placeholder
                     video.style.display = 'block';
-                    if (placeholder) placeholder.style.display = 'none';
+                    placeholder.style.display = 'none';
                 });
                 
                 video.addEventListener('error', function() {
                     // Video failed to load - keep placeholder visible
                     console.log('Video not found, showing placeholder');
                     video.style.display = 'none';
+                    placeholder.style.display = 'block';
                 });
                 
                 // Try to load the video
