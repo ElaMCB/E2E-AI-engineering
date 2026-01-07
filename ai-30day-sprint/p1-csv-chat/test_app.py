@@ -1,28 +1,38 @@
 import os
 import pytest
-import pandas as pd
 import sys
 from pathlib import Path
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent))
 
+# Try to import dependencies
+try:
+    import pandas as pd
+except ImportError:
+    pytest.skip("pandas not available", allow_module_level=True)
+
 try:
     from app import load_csv, query_data
-except ImportError:
+except ImportError as e:
     # If app can't be imported, skip tests
-    pytest.skip("app module not available", allow_module_level=True)
+    pytest.skip(f"app module not available: {e}", allow_module_level=True)
 
 # Sample test data
 def create_test_csv(filename: str = "test_data.csv"):
-    data = {
-        'Name': ['Alice', 'Bob', 'Charlie'],
-        'Age': [25, 30, 35],
-        'City': ['New York', 'San Francisco', 'Los Angeles']
-    }
-    df = pd.DataFrame(data)
-    df.to_csv(filename, index=False)
-    return filename
+    """Create a test CSV file."""
+    try:
+        import pandas as pd
+        data = {
+            'Name': ['Alice', 'Bob', 'Charlie'],
+            'Age': [25, 30, 35],
+            'City': ['New York', 'San Francisco', 'Los Angeles']
+        }
+        df = pd.DataFrame(data)
+        df.to_csv(filename, index=False)
+        return filename
+    except ImportError:
+        pytest.skip("pandas not available")
 
 def test_load_csv():
     """Test loading a CSV file."""
