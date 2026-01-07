@@ -816,33 +816,20 @@
 
     <!-- Main content -->
     <div id="main-content">
-    <header>
-        <div class="container">
-            <div class="sprint-btn-container">
-                <a href="sprint.html" class="sprint-btn">
-                    <span class="sprint-progress" id="sprintProgress"></span>
-                    <span class="sprint-text">
-                        <i class="fas fa-rocket"></i> 
-                        <span id="sprintDay">30-Day Sprint</span>
-                        <span class="sprint-percent" id="sprintPercent"></span>
-                    </span>
-                </a>
-                <div class="sprint-tooltip" id="sprintTooltip">
-                    Day <span id="currentDay">1</span> of 30
-                </div>
-            </div>
-            <h1>E2E AI Engineering</h1>
-            <p class="subtitle">Four projects. One month. Data → model → API → production.</p>
-            <div class="btn-container">
-                <a href="#projects" class="btn" id="viewProjectsBtn">
-                    <span class="btn-progress"></span>
-                    <span class="btn-content">
-                        <i class="fas fa-code"></i> View Projects
-                    </span>
-                </a>
-            </div>
+    <!-- Sprint button - fixed position -->
+    <div class="sprint-btn-container" style="position: fixed; top: var(--space-6); right: var(--space-6); z-index: 1000;">
+        <a href="sprint.html" class="sprint-btn">
+            <span class="sprint-progress" id="sprintProgress"></span>
+            <span class="sprint-text">
+                <i class="fas fa-rocket"></i> 
+                <span id="sprintDay">30-Day Sprint</span>
+                <span class="sprint-percent" id="sprintPercent"></span>
+            </span>
+        </a>
+        <div class="sprint-tooltip" id="sprintTooltip">
+            Day <span id="currentDay">1</span> of 30
         </div>
-    </header>
+    </div>
 
     <section id="projects" class="container" style="opacity: 0; animation: fadeInUp 1s ease-out 0.8s forwards;">
         <div style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.05)); border-left: 4px solid var(--primary); padding: 1.5rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);">
