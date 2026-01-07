@@ -86,6 +86,48 @@
             scroll-padding-top: 2rem;
         }
         
+        /* Smooth scroll reveal animations */
+        .fade-in-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Parallax effect for sections */
+        section {
+            position: relative;
+            transition: transform 0.3s ease-out;
+        }
+        
+        /* Enhanced button animations */
+        .btn, .card-link, .sprint-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::after, .card-link::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .btn:hover::after, .card-link:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+        
         /* Cinematic intro hero section */
         #intro {
             width: 100%;
@@ -232,6 +274,19 @@
             margin-bottom: var(--space-12);
             position: relative;
             overflow: hidden;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         header::after {
@@ -634,8 +689,8 @@
         </div>
     </header>
 
-    <section id="projects" class="container">
-        <div style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.05)); border-left: 4px solid var(--primary); padding: 1.5rem; margin-bottom: 2rem; border-radius: 8px;">
+    <section id="projects" class="container" style="opacity: 0; animation: fadeInUp 1s ease-out 0.8s forwards;">
+        <div style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.05)); border-left: 4px solid var(--primary); padding: 1.5rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);">
             <h3 style="margin: 0 0 0.75rem 0; color: var(--primary); font-size: 1.2rem;">
                 <i class="fas fa-robot"></i> Applied AI & Agent Evaluation
             </h3>
