@@ -24,10 +24,10 @@ Each project includes evaluation notes: see `EVAL_NOTES.md` in each project fold
 
 ## Agent Evaluation
 
-See [evals/](evals/) for evaluation patterns, A/B testing frameworks, and Canvas-style case studies.
+See [evals/](evals/) for evaluation patterns, A/B testing frameworks, and case studies.
 
 - [Evaluation Framework](evals/README.md) - High-throughput eval pipelines, A/B tests, and monitoring patterns
-- [Canvas-style Case Study](docs/canvas_agent_eval_case_study.md) - Healthcare agent evaluation example
+- [Healthcare Case Study](docs/canvas_agent_eval_case_study.md) - Healthcare agent evaluation example
 
 ---
 

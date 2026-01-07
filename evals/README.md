@@ -7,7 +7,7 @@ This folder contains examples of:
 - **Patterns for human-in-the-loop** / expert-labeled benchmarks
 - **Post-deployment style sampling and monitoring**
 
-These examples are inspired by Applied AI roles that lead evaluation of LLM agents in production (e.g., Canvas Medical-type roles).
+These examples are inspired by Applied AI roles that lead evaluation of LLM agents in production.
 
 ## Structure
 
@@ -53,5 +53,5 @@ Post-deployment monitoring with statistical sampling to ensure agents maintain q
 
 - **AI Monitor** (`../ai-monitor/`) - Multi-agent system with evaluation of news quality
 - **Excel/CSV Chat** (`../excel-csv-chat-RAG/`) - RAG pipeline with data QA evaluation
-- **Canvas Case Study** (`../docs/canvas_agent_eval_case_study.md`) - Healthcare evaluation example
+- **Healthcare Case Study** (`../docs/canvas_agent_eval_case_study.md`) - Healthcare evaluation example
 

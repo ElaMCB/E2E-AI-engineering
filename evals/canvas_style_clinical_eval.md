@@ -1,6 +1,6 @@
-# Canvas-Style Clinical Agent Evaluation
+# Clinical Agent Evaluation
 
-This document describes evaluation patterns for LLM agents in healthcare/clinical settings, inspired by roles at companies like Canvas Medical.
+This document describes evaluation patterns for LLM agents in healthcare/clinical settings.
 
 ## Evaluation Requirements
 

@@ -1,6 +1,6 @@
-# Case Study: Healthcare Agent Evaluation (Canvas-style)
+# Case Study: Healthcare Agent Evaluation
 
-This document maps this repository to Applied AI / LLM Agent Evaluation roles, specifically those focused on healthcare applications (e.g., Canvas Medical).
+This document maps this repository to Applied AI / LLM Agent Evaluation roles, specifically those focused on healthcare applications.
 
 ## Role Alignment
 
