@@ -48,13 +48,22 @@ def calculate_coverage(coverage_dir: Path) -> Dict[str, Any]:
                     elif isinstance(data, dict) and 'coverage' in data:
                         percent = data['coverage']
                     
-                    # Only count files with actual coverage data (not just 0% fallbacks)
-                    if percent > 0.0 or 'files' in data:  # 'files' indicates real coverage data
+                    # Check if this is a real coverage file (not a fallback)
+                    # Real coverage files have 'files' key even if coverage is 0%
+                    # Fallback files only have 'totals' with no 'files' key
+                    has_files_key = 'files' in data
+                    has_totals_key = 'totals' in data
+                    
+                    # Count as valid if:
+                    # 1. Has actual coverage data (files key) - even if 0%
+                    # 2. OR has percent > 0 (real coverage, might not have files key in some formats)
+                    if has_files_key or percent > 0.0:
                         total_covered += percent
                         valid_coverage_files.append(cov_file)
-                        print(f"Found coverage from {cov_file}: {percent:.1f}%", file=sys.stderr)
+                        print(f"Found coverage from {cov_file}: {percent:.1f}% (has_files={has_files_key})", file=sys.stderr)
                     else:
-                        print(f"Skipping {cov_file}: appears to be a fallback (0% with no file data)", file=sys.stderr)
+                        # This is likely a fallback file created when tests didn't run
+                        print(f"Skipping {cov_file}: appears to be a fallback (0% with no file data, has_files={has_files_key}, has_totals={has_totals_key})", file=sys.stderr)
             except Exception as e:
                 print(f"Error reading {cov_file}: {e}", file=sys.stderr)
     
