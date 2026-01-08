@@ -176,10 +176,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 4rem 2rem;
-            min-height: 60vh;
+            padding: 2rem 1rem;
+            min-height: 100vh;
             position: relative;
             overflow: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        @media (min-width: 768px) {
+            #intro {
+                padding: 4rem 2rem;
+                min-height: 60vh;
+            }
         }
         
         #intro::before {
@@ -188,53 +196,153 @@
             inset: 0;
             background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
             z-index: 1;
+            animation: introGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes introGlow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
         }
         
         #intro video {
             width: 100%;
             max-width: 1200px;
+            height: auto;
             border-radius: 12px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 2;
+            display: block;
+            object-fit: cover;
+        }
+        
+        @media (max-width: 767px) {
+            #intro video {
+                border-radius: 8px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            }
         }
         
         #intro .placeholder {
             text-align: center;
             color: white;
             max-width: 800px;
-            padding: 2rem;
+            padding: 1.5rem 1rem;
             position: relative;
             z-index: 2;
+            width: 100%;
+            display: block;
+            animation: introFadeIn 1s ease-out forwards;
+        }
+        
+        @keyframes introFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        @media (min-width: 768px) {
+            #intro .placeholder {
+                padding: 2rem;
+            }
+        }
+        
+        #intro .placeholder > div:first-child {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+        
+        @media (max-width: 767px) {
+            #intro .placeholder > div:first-child {
+                font-size: 2.5rem;
+            }
         }
         
         #intro .placeholder h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            margin-bottom: 1rem;
             font-weight: 700;
             background: linear-gradient(135deg, #3b82f6, #60a5fa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            line-height: 1.2;
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes titleGlow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+        
+        @media (min-width: 640px) {
+            #intro .placeholder h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            #intro .placeholder h1 {
+                font-size: 3.5rem;
+            }
         }
         
         #intro .placeholder .terminal {
             font-family: 'Courier New', monospace;
-            font-size: 1.3rem;
+            font-size: 0.9rem;
             color: #60a5fa;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
             opacity: 0.9;
             text-align: left;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
             border-radius: 8px;
             border-left: 3px solid #3b82f6;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        @media (min-width: 768px) {
+            #intro .placeholder .terminal {
+                font-size: 1.1rem;
+                padding: 1.5rem;
+                margin: 2rem 0;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            #intro .placeholder .terminal {
+                font-size: 1.3rem;
+            }
         }
         
         #intro .placeholder .terminal div {
             margin-bottom: 0.5rem;
             animation: fadeInLine 0.5s ease-in forwards;
             opacity: 0;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        
+        @media (max-width: 767px) {
+            #intro .placeholder .terminal div {
+                white-space: normal;
+                font-size: 0.85rem;
+            }
         }
         
         #intro .placeholder .terminal div:nth-child(1) { animation-delay: 0.2s; }
@@ -243,15 +351,35 @@
         #intro .placeholder .terminal div:nth-child(4) { animation-delay: 0.8s; }
         
         @keyframes fadeInLine {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
             to {
                 opacity: 1;
+                transform: translateX(0);
             }
         }
         
         #intro .placeholder .subtitle {
-            margin-top: 2rem;
-            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
             opacity: 0.8;
+            animation: subtitleFade 1s ease-out 1s forwards;
+            opacity: 0;
+        }
+        
+        @keyframes subtitleFade {
+            to {
+                opacity: 0.8;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            #intro .placeholder .subtitle {
+                font-size: 1.1rem;
+                margin-top: 2rem;
+            }
         }
         
         body {
@@ -1113,12 +1241,29 @@
             const video = intro?.querySelector('video');
             const placeholder = intro?.querySelector('.placeholder');
             
+            // Always show placeholder on mobile for better performance and visibility
+            const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
             if (video && placeholder) {
+                // On mobile, always show placeholder for better UX
+                if (isMobile) {
+                    video.style.display = 'none';
+                    placeholder.style.display = 'block';
+                    placeholder.style.opacity = '1';
+                    return;
+                }
+                
+                // On desktop, try to load video
                 // Check if video file exists and loads successfully
                 video.addEventListener('loadeddata', function() {
                     // Video loaded successfully - show it and hide placeholder
                     video.style.display = 'block';
-                    placeholder.style.display = 'none';
+                    video.style.opacity = '0';
+                    video.style.transition = 'opacity 0.5s ease-in';
+                    setTimeout(() => {
+                        video.style.opacity = '1';
+                        placeholder.style.display = 'none';
+                    }, 100);
                 });
                 
                 video.addEventListener('error', function() {
@@ -1126,13 +1271,24 @@
                     console.log('Video not found, showing placeholder');
                     video.style.display = 'none';
                     placeholder.style.display = 'block';
+                    placeholder.style.opacity = '1';
                 });
                 
                 // Try to load the video
                 video.load();
+                
+                // Fallback: if video doesn't load within 3 seconds, show placeholder
+                setTimeout(function() {
+                    if (video.readyState < 2) { // HAVE_CURRENT_DATA
+                        video.style.display = 'none';
+                        placeholder.style.display = 'block';
+                        placeholder.style.opacity = '1';
+                    }
+                }, 3000);
             }
         });
     </script>
     </div>
 </body>
 </html>
+
