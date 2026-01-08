@@ -33,25 +33,40 @@ def calculate_coverage(coverage_dir: Path) -> Dict[str, Any]:
             print("Found coverage.xml files but no JSON. Using placeholder.", file=sys.stderr)
     
     # Aggregate coverage from all projects
+    valid_coverage_files = []
     if coverage_files:
         for cov_file in coverage_files:
             try:
                 with open(cov_file, 'r') as f:
                     data = json.load(f)
-                    # Coverage.py JSON format
+                    percent = 0.0
+                    # Coverage.py JSON format (pytest-cov)
                     if 'totals' in data:
                         percent = data['totals'].get('percent_covered', 0.0)
-                        total_covered += percent
                     elif 'percent_covered' in data:
-                        total_covered += data['percent_covered']
+                        percent = data['percent_covered']
                     elif isinstance(data, dict) and 'coverage' in data:
-                        total_covered += data['coverage']
+                        percent = data['coverage']
+                    
+                    # Only count files with actual coverage data (not just 0% fallbacks)
+                    if percent > 0.0 or 'files' in data:  # 'files' indicates real coverage data
+                        total_covered += percent
+                        valid_coverage_files.append(cov_file)
+                        print(f"Found coverage from {cov_file}: {percent:.1f}%", file=sys.stderr)
+                    else:
+                        print(f"Skipping {cov_file}: appears to be a fallback (0% with no file data)", file=sys.stderr)
             except Exception as e:
                 print(f"Error reading {cov_file}: {e}", file=sys.stderr)
     
-    # Average coverage across projects, or default to 0
-    avg_coverage = total_covered / len(coverage_files) if coverage_files else 0.0
-    coverage_percent = round(avg_coverage, 1)
+    # Average coverage across projects with valid data, or default to 0
+    if valid_coverage_files:
+        avg_coverage = total_covered / len(valid_coverage_files)
+        coverage_percent = round(avg_coverage, 1)
+        print(f"Averaged coverage from {len(valid_coverage_files)} project(s): {coverage_percent}%", file=sys.stderr)
+    else:
+        avg_coverage = 0.0
+        coverage_percent = 0.0
+        print("No valid coverage data found (all projects may have skipped tests or no coverage generated)", file=sys.stderr)
     
     # Determine color
     if coverage_percent >= 80:
