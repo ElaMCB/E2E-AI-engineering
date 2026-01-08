@@ -33,6 +33,10 @@ jobs:
             pip install -r ${{ matrix.project }}/requirements.txt
           fi
           pip install pytest pytest-cov pytest-mock coverage pandas requests beautifulsoup4 feedparser pyyaml
+          # For evals project, ensure metrics modules are importable
+          if [ "${{ matrix.project }}" = "evals" ]; then
+            pip install numpy  # Some metrics might need numpy
+          fi
       
       - name: Run tests
         working-directory: ${{ matrix.project }}
