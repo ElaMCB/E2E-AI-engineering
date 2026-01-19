@@ -128,11 +128,19 @@ jobs:
     if: always()
     permissions:
       contents: write
+      # Note: GITHUB_TOKEN cannot bypass branch protection rules
+      # If you get "Repository rule violations", you need to either:
+      # 1. Use a PAT with bypass permissions (store as secret METRICS_PAT)
+      # 2. Configure branch protection to allow this workflow to bypass
+      # 3. Or commit to a separate branch and use a separate workflow to merge
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          # Use PAT if available, otherwise fall back to GITHUB_TOKEN
+          # PAT must have 'repo' scope and bypass protection permissions
+          token: ${{ secrets.METRICS_PAT || secrets.GITHUB_TOKEN }}
+          ref: ${{ github.ref }}
       
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -175,15 +183,26 @@ jobs:
           
           # Only commit metrics on main branch pushes, not on PRs
           if [ "${{ github.event_name }}" = "push" ] && [ "${{ github.ref }}" = "refs/heads/main" ]; then
-            # Checkout main branch properly
-            git fetch origin main:main || true
+            # Ensure we're on main branch
             git checkout main || git checkout -b main
+            git pull origin main || true
+            
             git add coverage.json eval.json
             if git diff --staged --quiet; then
               echo "No changes to commit"
             else
               git commit -m "CI: Update metrics [skip ci]"
-              git push origin main
+              # Try to push - if it fails due to branch protection, we'll handle it
+              if ! git push origin main; then
+                echo "::warning::Failed to push metrics due to branch protection rules"
+                echo "::warning::To fix this, either:"
+                echo "::warning::1. Create a PAT with bypass permissions and add it as secret METRICS_PAT"
+                echo "::warning::2. Configure branch protection to allow this workflow to bypass"
+                echo "::warning::3. Or manually merge metrics updates"
+                echo "Metrics files generated but not committed:"
+                ls -la coverage.json eval.json
+                exit 0  # Don't fail the job, just warn
+              fi
             fi
           else
             echo "Skipping metrics commit (not on main branch or this is a PR)"
