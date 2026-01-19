@@ -1,106 +1,110 @@
 {
-  "date": "2026-01-05",
+  "date": "2026-01-19",
   "executive_summary": {
-    "summary": "This week saw 15 updates across 4 companies/models. Top activity: kimi, deepseek, qwen",
+    "summary": "This week saw 22 updates across 7 companies/models. Top activity: deepseek, kimi, Other",
     "key_highlights": [
+      "DEEPSEEK: 9 updates",
       "KIMI: 8 updates",
-      "DEEPSEEK: 6 updates",
-      "QWEN: 3 updates"
+      "OTHER: 5 updates"
     ],
     "trends": [
       "Strong GitHub activity - many new repositories"
     ],
-    "total_updates": 15,
-    "unique_companies": 4,
+    "total_updates": 22,
+    "unique_companies": 7,
     "top_companies": [
+      {
+        "name": "deepseek",
+        "count": 9
+      },
       {
         "name": "kimi",
         "count": 8
       },
       {
-        "name": "deepseek",
-        "count": 6
+        "name": "Other",
+        "count": 5
       },
       {
-        "name": "qwen",
-        "count": 3
+        "name": "moonshot",
+        "count": 2
       },
       {
-        "name": "minimax",
-        "count": 1
+        "name": "zhipu",
+        "count": 2
       }
     ]
   },
   "top_insights": [
     {
       "type": "new_model",
-      "title": "GitHub Release: http-privacy - 1.0.8 (End of Year Release)",
-      "description": "## What's Changed\r\n* chore(deps): update dependency openai to v1.102.0 by @renovate[bot] in https://github.com/AI-Robotic-Labs/http-privacy/pull/280\r\n* chore(deps): update dependency boto3 to v1.40.21",
-      "impact_score": 8.0,
+      "title": "GitHub Release: tt-metal - v0.66.0-dev20260118",
+      "description": "> [!NOTE]\n>\n> If you are installing from a release, please refer to the README, INSTALLATION instructions, and any other documentation packaged with the release, not on the main branch. There may be d",
+      "impact_score": 9.0,
       "confidence": 0.8,
       "related_updates": [
-        "0bd7efabfcfb79909e21b17db81eb9f4"
+        "5a348b6a0f986aa6cc2d05532cb2314d"
       ],
       "evidence": [
         "GitHub Releases"
       ],
-      "timestamp": "2025-12-09"
+      "timestamp": "2026-01-19"
     },
     {
       "type": "new_model",
-      "title": "GitHub Release: http-privacy - 1.0.6 - Out of Beta",
-      "description": "## What's Changed\r\n* fix(deps): update dependency boto3 to v1.39.1 by @renovate[bot] in https://github.com/AI-Robotic-Labs/http-privacy/pull/194\r\n* fix(deps): update dependency boto3 to v1.39.2 by @re",
-      "impact_score": 8.0,
+      "title": "GitHub Release: tt-metal - v0.66.0-dev20260117",
+      "description": "> [!NOTE]\n>\n> If you are installing from a release, please refer to the README, INSTALLATION instructions, and any other documentation packaged with the release, not on the main branch. There may be d",
+      "impact_score": 9.0,
       "confidence": 0.8,
       "related_updates": [
-        "f50fd89463680ee769c3baf78c2ba811"
+        "ebd8d7dba89c9e5fb71dc7b3a8c46d06"
       ],
       "evidence": [
         "GitHub Releases"
       ],
-      "timestamp": "2025-08-01"
+      "timestamp": "2026-01-18"
+    },
+    {
+      "type": "research_paper",
+      "title": "arXiv: MHA2MLA-VLM: Enabling DeepSeek's Economical Multi-Head Latent Attention across Vision-Language Models",
+      "description": "As vision-language models (VLMs) tackle increasingly complex and multimodal tasks, the rapid growth of Key-Value (KV) cache imposes significant memory and computational bottlenecks during inference. W...",
+      "impact_score": 7.5,
+      "confidence": 0.8,
+      "related_updates": [
+        "486e49c01e8a4ee80ebca9f164bdfb64"
+      ],
+      "evidence": [
+        "arXiv"
+      ],
+      "timestamp": "2026-01-16"
     },
     {
       "type": "new_model",
-      "title": "GitHub: Tools_DeepSeekOCR",
-      "description": "🖥️ Deploy DeepSeek-OCR for Optical Character Recognition directly from screen captures on Windows, enabling efficient text extraction from images.",
+      "title": "GitHub: fitness-timer-autopost",
+      "description": "🔥 Автоматический постинг табата-тренировок в Telegram канал FITNESS TIMER через DeepSeek AI | Табата | HIIT | Фитнес",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "d074f813ffa675bc0bbd83fda14533fc"
+        "e240cadc76a6b14b16e417c3b24e0d76"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-01-05"
+      "timestamp": "2026-01-19"
     },
     {
       "type": "new_model",
-      "title": "GitHub: deepseek-trading-experiment",
-      "description": "🤖 Explore AI-driven trading with the DeepSeek crypto bot, designed for learning rather than profit through backtesting strategies and financial analysis.",
+      "title": "GitHub: boss-workflow",
+      "description": "Conversational task management system with Telegram, DeepSeek AI, Discord, Google Sheets & Calendar integration",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "103f5d1e01777b3ebc9bf6c6c995eded"
+        "1d7015f77c625c2198a579ffa5cd4857"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-01-05"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub: DeepSeek-V3.2-Exp",
-      "description": "🔍 Explore and enhance deep learning models with DeepSeek-V3.2-Exp, your go-to tool for streamlined data analysis and advanced AI insights.",
-      "impact_score": 7.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "737fd192bfa79ef39c1e43648f75ef28"
-      ],
-      "evidence": [
-        "GitHub"
-      ],
-      "timestamp": "2026-01-05"
+      "timestamp": "2026-01-19"
     },
     {
       "type": "new_model",
@@ -114,7 +118,7 @@
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-01-05"
+      "timestamp": "2026-01-19"
     },
     {
       "type": "new_model",
@@ -128,58 +132,69 @@
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-01-05"
+      "timestamp": "2026-01-19"
     },
     {
       "type": "new_model",
-      "title": "GitHub: multimodel-chat",
-      "description": "一个多合一的AI聊天工具，将ChatGPT、Gemini、LLaMA，以及DeepSeek、讯飞星火、通义千问、kimi等大模型的API集成在同一个工具中。 An all-in-one AI chat tool that integrates APIs of multiple large models, including ChatGPT, Gemini, LLaMA, DeepSeek, iFl",
+      "title": "GitHub: kimi-actions",
+      "description": "AI code review GitHub Action powered by Kimi (Moonshot AI)",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "066375b8635024933fdc8724d0da642a"
+        "f010fdc1b334027cc292eca977148f3d"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-01-03"
+      "timestamp": "2026-01-19"
     },
     {
       "type": "new_model",
-      "title": "GitHub: Youtube-Engagement-Helper",
-      "description": "Python script that monitors YouTube channels, transcribes videos, generates AI summaries, and creates human-like engagement comments using Kimi K2 Instruct (Chutes). Analyzes top comments to match eac",
+      "title": "GitHub: ZhipuAI-web-search-dify-plugin",
+      "description": "A dify plugin for Web search  powered by ZhipuAI API with advanced filtering and content control 一个由智谱AI高级搜索API驱动的Dify插件，支持过滤和内容控制的强大网页搜索功能。",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "63c55c726fd2f3c21ff9b66f8ae27729"
+        "76c90c9c8a6d46eab20fa3fb3bfc19fb"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-01-02"
+      "timestamp": "2026-01-16"
     },
     {
       "type": "new_model",
-      "title": "GitHub: ApexVivum",
-      "description": "Self-evolving AI paragon powered by Kimi K2 architecture. Perceptive, meticulous, and supremely efficacious.",
+      "title": "GitHub: BidMonitor-AI",
+      "description": "本系统是一款专为企业打造的 24/7 全天候招标动态监控利器。集成 Selenium 自动化技术绕过反爬机制，实现中国招标网、政府采购网等多平台并发采集。核心采用 DeepSeek/Gemini/Claude 等多大语言模型进行二次智能分析，配合关键词与排除词算法，精准过滤无关杂讯。支持邮件、微信、短信及语音电话多渠道同步预警，并具备多联系人独立配置功能。彻底取代人工盯守，以 AI 驱动的高效率实",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "e88fab6476613c0be001f2293ae8421f"
+        "b2b34c8b9f872a0627d9b115ce06a6a0"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2025-12-31"
+      "timestamp": "2026-01-13"
     }
   ],
-  "significant_changes": [],
-  "trends": [
+  "significant_changes": [
     {
-      "type": "increasing_activity",
-      "description": "Activity trending up: 3 → 15 updates",
-      "confidence": 0.8
-    },
+      "category": "new_company",
+      "description": "New entities detected: moonshot, zhipu",
+      "magnitude": 7.0,
+      "week_over_week_change": {
+        "new": [
+          "moonshot",
+          "zhipu"
+        ]
+      },
+      "implications": [
+        "Monitor moonshot for future developments",
+        "Monitor zhipu for future developments"
+      ]
+    }
+  ],
+  "trends": [
     {
       "type": "emerging_company",
       "description": "deepseek showing increasing activity",
@@ -197,12 +212,18 @@
     },
     {
       "type": "emerging_company",
+      "description": "zhipu showing increasing activity",
+      "confidence": 0.7
+    },
+    {
+      "type": "emerging_company",
       "description": "minimax showing increasing activity",
       "confidence": 0.7
     }
   ],
   "recommendations": [
     "URGENT: 2 high-impact developments detected - review immediately",
+    "New companies/models detected - add to monitoring list",
     "Long-term trends identified - consider strategic implications"
   ]
 }
