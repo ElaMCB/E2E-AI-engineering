@@ -75,8 +75,8 @@ jobs:
             # Try to push - if it fails due to branch protection, show warning
             if ! git push origin main; then
               echo "::warning::Failed to push due to branch protection rules"
-              echo "::warning::See .github/METRICS_PUSH_FIX.md for instructions"
-              echo "::warning::Files were generated but not committed"
+              echo "::warning::Add your username 'ElaMCB' directly to the bypass list (not just 'Repository admin' role)"
+              echo "::warning::Go to: Settings → Rulesets → main branch → Bypass list → Add → Users → ElaMCB"
               exit 0  # Don't fail the job
             fi
           fi
