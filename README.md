@@ -68,7 +68,7 @@ See [evals/](evals/) for evaluation patterns, A/B testing frameworks, and case s
 
 | Tool | Status | Description |
 |------|--------|-------------|
-| [AI Monitor](ai-monitor/) | ![Status](https://img.shields.io/badge/Status-Active-success?style=flat-square) | Weekly automated monitoring of AI market advances (DeepSeek, Kimi, etc.) |
+| [AI Monitor](https://elamcb.github.io/E2E-AI-engineering/intelligence.html) | ![Status](https://img.shields.io/badge/Status-Active-success?style=flat-square) | Weekly automated monitoring of AI market advances (DeepSeek, Kimi, etc.) |
 
 ---
 

@@ -22,7 +22,12 @@ This happens because branch protection rules block direct pushes to `main`, even
 
 2. **Add PAT as Secret:**
    - Go to Repository Settings → Secrets and variables → Actions
-   - Add a new secret named `METRICS_PAT` with the token value
+   - Click "New repository secret"
+   - **Secret name:** `METRICS_PAT` 
+     - ✅ Valid: starts with letter, only contains `[a-z]`, `[A-Z]`, `[0-9]`, `_`
+     - ❌ Invalid: spaces, hyphens, special characters
+   - **Secret value:** Paste your PAT token
+   - Click "Add secret"
 
 3. **Configure Branch Protection:**
    - Go to Repository Settings → Branches → Branch protection rules → `main`
