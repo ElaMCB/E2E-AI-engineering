@@ -18,8 +18,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           # Use PAT if available to bypass branch protection
+          # PAT must be created by a repository admin for bypass to work
           token: ${{ secrets.METRICS_PAT || secrets.GITHUB_TOKEN }}
           ref: main
+          fetch-depth: 0  # Fetch full history for proper git operations
       
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -59,9 +61,20 @@ jobs:
         continue-on-error: true
       
       - name: Commit and Push Results
+        env:
+          # Use PAT for git operations to ensure bypass permissions apply
+          GIT_TOKEN: ${{ secrets.METRICS_PAT || secrets.GITHUB_TOKEN }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          
+          # Configure git to use the PAT token for authentication
+          if [ -n "$GIT_TOKEN" ] && [ "$GIT_TOKEN" != "${{ secrets.GITHUB_TOKEN }}" ]; then
+            echo "Using PAT token for authentication (bypass should apply)"
+            # Set remote URL with token for authentication
+            git remote set-url origin https://$GIT_TOKEN@github.com/${{ github.repository }}.git
+          fi
+          
           # Ensure we're on main branch
           git checkout main || git checkout -b main
           git pull origin main || true
@@ -72,12 +85,15 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Weekly AI Monitor Update - $(date +'%Y-%m-%d')"
-            # Try to push - if it fails due to branch protection, show warning
+            # Push using the configured remote (with PAT if available)
             if ! git push origin main; then
               echo "::warning::Failed to push due to branch protection rules"
-              echo "::warning::See .github/METRICS_PUSH_FIX.md for instructions"
-              echo "::warning::Files were generated but not committed"
+              echo "::warning::Repository admin role should allow bypass, but push failed"
+              echo "::warning::This might indicate the PAT wasn't created by a repository admin"
+              echo "::warning::Or the bypass list needs to include the specific user who created the PAT"
               exit 0  # Don't fail the job
+            else
+              echo "Successfully pushed to main using PAT with bypass permissions"
             fi
           fi
 
