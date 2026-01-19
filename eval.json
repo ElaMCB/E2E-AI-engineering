@@ -1,7 +1,6 @@
 {
   "schemaVersion": 1,
   "label": "Eval Score",
-  "message": "99.0%",
-  "color": "green"
+  "message": "N/A",
+  "color": "grey"
 }
-
