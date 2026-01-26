@@ -1017,5 +1017,125 @@
         "hash": "e88fab6476613c0be001f2293ae8421f"
       }
     ]
+  },
+  {
+    "date": "2026-01-26",
+    "updates": [
+      {
+        "title": "GitHub: fitness-timer-autopost",
+        "source": "GitHub",
+        "url": "https://github.com/VR-Lounge/fitness-timer-autopost",
+        "date": "2026-01-26",
+        "summary": "🔥 Автоматический постинг табата-тренировок в Telegram канал FITNESS TIMER через DeepSeek AI | Табата | HIIT | Фитнес",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "e240cadc76a6b14b16e417c3b24e0d76"
+      },
+      {
+        "title": "GitHub: kimi-ai-2api",
+        "source": "GitHub",
+        "url": "https://github.com/menendzerzumia-max/kimi-ai-2api",
+        "date": "2026-01-26",
+        "summary": "⚡ Transform Kimi.ai chat experiences into OpenAI API format with this high-performance proxy service for seamless integration and enhanced access.",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "35ac067b9e66a63789d20d6c8fbc61bf"
+      },
+      {
+        "title": "GitHub: Med-X-KimiK2-RAG",
+        "source": "GitHub",
+        "url": "https://github.com/Iluvmrbeast/Med-X-KimiK2-RAG",
+        "date": "2026-01-26",
+        "summary": "🩺 Assist clinical reasoning with MedeX, an AI-powered tool using Retrieval-Augmented Generation for medical education and case analysis.",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "e380a9bffd19b9aade1804fabb98306c"
+      },
+      {
+        "title": "arXiv: Evaluating Large Vision-language Models for Surgical Tool Detection",
+        "source": "arXiv",
+        "url": "https://arxiv.org/abs/2601.16895v1",
+        "date": "2026-01-23",
+        "summary": "Surgery is a highly complex process, and artificial intelligence has emerged as a transformative force in supporting surgical guidance and decision-making. However, the unimodal nature of most current...",
+        "keywords": [
+          "qwen"
+        ],
+        "hash": "d13cf535ec1e56b2a990166992190f0c"
+      },
+      {
+        "title": "GitHub: kimi-actions",
+        "source": "GitHub",
+        "url": "https://github.com/xiaoju111a/kimi-actions",
+        "date": "2026-01-21",
+        "summary": "AI code review GitHub Action powered by Kimi (Moonshot AI)",
+        "keywords": [
+          "moonshot",
+          "kimi"
+        ],
+        "hash": "f010fdc1b334027cc292eca977148f3d"
+      },
+      {
+        "title": "GitHub: medical-rep-interview-system",
+        "source": "GitHub",
+        "url": "https://github.com/WisrightProjects/medical-rep-interview-system",
+        "date": "2026-01-20",
+        "summary": "AI-powered interview and evaluation system for medical representatives using KIMI LLM, RAG, and Speech-to-Text",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "7f1124f42e32013e828e03d9d73eea61"
+      },
+      {
+        "title": "GitHub: paper-reading-framework",
+        "source": "GitHub",
+        "url": "https://github.com/flashpoint493/paper-reading-framework",
+        "date": "2026-01-12",
+        "summary": "使用 Moonshot AI (Kimi) 进行论文的精度阅读、内化和落地的完整框架",
+        "keywords": [
+          "moonshot",
+          "kimi"
+        ],
+        "hash": "aaafb0d2932f95c41cc016143000c870"
+      },
+      {
+        "title": "GitHub: AI-test",
+        "source": "GitHub",
+        "url": "https://github.com/Sruixu/AI-test",
+        "date": "2026-01-12",
+        "summary": "基于大模型的测试用例生成工具（可使用Deepseek 、小米 MiMo 、智普、Kimi、MiniMAX、腾讯混元等API）",
+        "keywords": [
+          "deepseek",
+          "kimi",
+          "minimax"
+        ],
+        "hash": "a90bf093e52135ca981cad036160b662"
+      },
+      {
+        "title": "GitHub: multimodel-chat",
+        "source": "GitHub",
+        "url": "https://github.com/pypy66/multimodel-chat",
+        "date": "2026-01-03",
+        "summary": "一个多合一的AI聊天工具，将ChatGPT、Gemini、LLaMA，以及DeepSeek、讯飞星火、通义千问、kimi等大模型的API集成在同一个工具中。 An all-in-one AI chat tool that integrates APIs of multiple large models, including ChatGPT, Gemini, LLaMA, DeepSeek, iFl",
+        "keywords": [
+          "deepseek",
+          "kimi"
+        ],
+        "hash": "066375b8635024933fdc8724d0da642a"
+      },
+      {
+        "title": "GitHub: Youtube-Engagement-Helper",
+        "source": "GitHub",
+        "url": "https://github.com/RadoTSC/Youtube-Engagement-Helper",
+        "date": "2026-01-02",
+        "summary": "Python script that monitors YouTube channels, transcribes videos, generates AI summaries, and creates human-like engagement comments using Kimi K2 Instruct (Chutes). Analyzes top comments to match eac",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "63c55c726fd2f3c21ff9b66f8ae27729"
+      }
+    ]
   }
 ]

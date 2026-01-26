@@ -1,83 +1,41 @@
 {
-  "date": "2026-01-19",
+  "date": "2026-01-26",
   "executive_summary": {
-    "summary": "This week saw 22 updates across 7 companies/models. Top activity: deepseek, kimi, Other",
+    "summary": "This week saw 10 updates across 5 companies/models. Top activity: kimi, deepseek, moonshot",
     "key_highlights": [
-      "DEEPSEEK: 9 updates",
       "KIMI: 8 updates",
-      "OTHER: 5 updates"
+      "DEEPSEEK: 3 updates",
+      "MOONSHOT: 2 updates"
     ],
     "trends": [
       "Strong GitHub activity - many new repositories"
     ],
-    "total_updates": 22,
-    "unique_companies": 7,
+    "total_updates": 10,
+    "unique_companies": 5,
     "top_companies": [
-      {
-        "name": "deepseek",
-        "count": 9
-      },
       {
         "name": "kimi",
         "count": 8
       },
       {
-        "name": "Other",
-        "count": 5
+        "name": "deepseek",
+        "count": 3
       },
       {
         "name": "moonshot",
         "count": 2
       },
       {
-        "name": "zhipu",
-        "count": 2
+        "name": "qwen",
+        "count": 1
+      },
+      {
+        "name": "minimax",
+        "count": 1
       }
     ]
   },
   "top_insights": [
-    {
-      "type": "new_model",
-      "title": "GitHub Release: tt-metal - v0.66.0-dev20260118",
-      "description": "> [!NOTE]\n>\n> If you are installing from a release, please refer to the README, INSTALLATION instructions, and any other documentation packaged with the release, not on the main branch. There may be d",
-      "impact_score": 9.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "5a348b6a0f986aa6cc2d05532cb2314d"
-      ],
-      "evidence": [
-        "GitHub Releases"
-      ],
-      "timestamp": "2026-01-19"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub Release: tt-metal - v0.66.0-dev20260117",
-      "description": "> [!NOTE]\n>\n> If you are installing from a release, please refer to the README, INSTALLATION instructions, and any other documentation packaged with the release, not on the main branch. There may be d",
-      "impact_score": 9.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "ebd8d7dba89c9e5fb71dc7b3a8c46d06"
-      ],
-      "evidence": [
-        "GitHub Releases"
-      ],
-      "timestamp": "2026-01-18"
-    },
-    {
-      "type": "research_paper",
-      "title": "arXiv: MHA2MLA-VLM: Enabling DeepSeek's Economical Multi-Head Latent Attention across Vision-Language Models",
-      "description": "As vision-language models (VLMs) tackle increasingly complex and multimodal tasks, the rapid growth of Key-Value (KV) cache imposes significant memory and computational bottlenecks during inference. W...",
-      "impact_score": 7.5,
-      "confidence": 0.8,
-      "related_updates": [
-        "486e49c01e8a4ee80ebca9f164bdfb64"
-      ],
-      "evidence": [
-        "arXiv"
-      ],
-      "timestamp": "2026-01-16"
-    },
     {
       "type": "new_model",
       "title": "GitHub: fitness-timer-autopost",
@@ -90,21 +48,7 @@
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-01-19"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub: boss-workflow",
-      "description": "Conversational task management system with Telegram, DeepSeek AI, Discord, Google Sheets & Calendar integration",
-      "impact_score": 7.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "1d7015f77c625c2198a579ffa5cd4857"
-      ],
-      "evidence": [
-        "GitHub"
-      ],
-      "timestamp": "2026-01-19"
+      "timestamp": "2026-01-26"
     },
     {
       "type": "new_model",
@@ -118,7 +62,7 @@
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-01-19"
+      "timestamp": "2026-01-26"
     },
     {
       "type": "new_model",
@@ -132,7 +76,7 @@
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-01-19"
+      "timestamp": "2026-01-26"
     },
     {
       "type": "new_model",
@@ -146,63 +90,98 @@
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-01-19"
+      "timestamp": "2026-01-21"
     },
     {
       "type": "new_model",
-      "title": "GitHub: ZhipuAI-web-search-dify-plugin",
-      "description": "A dify plugin for Web search  powered by ZhipuAI API with advanced filtering and content control 一个由智谱AI高级搜索API驱动的Dify插件，支持过滤和内容控制的强大网页搜索功能。",
+      "title": "GitHub: medical-rep-interview-system",
+      "description": "AI-powered interview and evaluation system for medical representatives using KIMI LLM, RAG, and Speech-to-Text",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "76c90c9c8a6d46eab20fa3fb3bfc19fb"
+        "7f1124f42e32013e828e03d9d73eea61"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-01-16"
+      "timestamp": "2026-01-20"
+    },
+    {
+      "type": "research_paper",
+      "title": "arXiv: Evaluating Large Vision-language Models for Surgical Tool Detection",
+      "description": "Surgery is a highly complex process, and artificial intelligence has emerged as a transformative force in supporting surgical guidance and decision-making. However, the unimodal nature of most current...",
+      "impact_score": 6.5,
+      "confidence": 0.8,
+      "related_updates": [
+        "d13cf535ec1e56b2a990166992190f0c"
+      ],
+      "evidence": [
+        "arXiv"
+      ],
+      "timestamp": "2026-01-23"
     },
     {
       "type": "new_model",
-      "title": "GitHub: BidMonitor-AI",
-      "description": "本系统是一款专为企业打造的 24/7 全天候招标动态监控利器。集成 Selenium 自动化技术绕过反爬机制，实现中国招标网、政府采购网等多平台并发采集。核心采用 DeepSeek/Gemini/Claude 等多大语言模型进行二次智能分析，配合关键词与排除词算法，精准过滤无关杂讯。支持邮件、微信、短信及语音电话多渠道同步预警，并具备多联系人独立配置功能。彻底取代人工盯守，以 AI 驱动的高效率实",
-      "impact_score": 7.0,
+      "title": "GitHub: paper-reading-framework",
+      "description": "使用 Moonshot AI (Kimi) 进行论文的精度阅读、内化和落地的完整框架",
+      "impact_score": 6.5,
       "confidence": 0.8,
       "related_updates": [
-        "b2b34c8b9f872a0627d9b115ce06a6a0"
+        "aaafb0d2932f95c41cc016143000c870"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-01-13"
-    }
-  ],
-  "significant_changes": [
+      "timestamp": "2026-01-12"
+    },
     {
-      "category": "new_company",
-      "description": "New entities detected: moonshot, zhipu",
-      "magnitude": 7.0,
-      "week_over_week_change": {
-        "new": [
-          "moonshot",
-          "zhipu"
-        ]
-      },
-      "implications": [
-        "Monitor moonshot for future developments",
-        "Monitor zhipu for future developments"
-      ]
+      "type": "new_model",
+      "title": "GitHub: AI-test",
+      "description": "基于大模型的测试用例生成工具（可使用Deepseek 、小米 MiMo 、智普、Kimi、MiniMAX、腾讯混元等API）",
+      "impact_score": 6.5,
+      "confidence": 0.8,
+      "related_updates": [
+        "a90bf093e52135ca981cad036160b662"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-01-12"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: multimodel-chat",
+      "description": "一个多合一的AI聊天工具，将ChatGPT、Gemini、LLaMA，以及DeepSeek、讯飞星火、通义千问、kimi等大模型的API集成在同一个工具中。 An all-in-one AI chat tool that integrates APIs of multiple large models, including ChatGPT, Gemini, LLaMA, DeepSeek, iFl",
+      "impact_score": 6.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "066375b8635024933fdc8724d0da642a"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-01-03"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: Youtube-Engagement-Helper",
+      "description": "Python script that monitors YouTube channels, transcribes videos, generates AI summaries, and creates human-like engagement comments using Kimi K2 Instruct (Chutes). Analyzes top comments to match eac",
+      "impact_score": 6.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "63c55c726fd2f3c21ff9b66f8ae27729"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-01-02"
     }
   ],
+  "significant_changes": [],
   "trends": [
     {
       "type": "emerging_company",
       "description": "deepseek showing increasing activity",
-      "confidence": 0.7
-    },
-    {
-      "type": "emerging_company",
-      "description": "kimi showing increasing activity",
       "confidence": 0.7
     },
     {
@@ -212,18 +191,21 @@
     },
     {
       "type": "emerging_company",
-      "description": "zhipu showing increasing activity",
+      "description": "minimax showing increasing activity",
       "confidence": 0.7
     },
     {
       "type": "emerging_company",
-      "description": "minimax showing increasing activity",
+      "description": "kimi showing increasing activity",
+      "confidence": 0.7
+    },
+    {
+      "type": "emerging_company",
+      "description": "moonshot showing increasing activity",
       "confidence": 0.7
     }
   ],
   "recommendations": [
-    "URGENT: 2 high-impact developments detected - review immediately",
-    "New companies/models detected - add to monitoring list",
     "Long-term trends identified - consider strategic implications"
   ]
 }
