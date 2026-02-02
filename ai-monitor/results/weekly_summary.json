@@ -1137,5 +1137,305 @@
         "hash": "63c55c726fd2f3c21ff9b66f8ae27729"
       }
     ]
+  },
+  {
+    "date": "2026-02-02",
+    "updates": [
+      {
+        "title": "GitHub: stock_scanner_bot",
+        "source": "GitHub",
+        "url": "https://github.com/zhuanleee/stock_scanner_bot",
+        "date": "2026-02-02",
+        "summary": "Institutional-grade stock scanner with Polygon.io real-time data, AI-powered analysis (DeepSeek), Telegram bot, story-first scoring, options flow tracking, and self-evolving intelligence. Scans 500+ s",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "b010819939916a57f5e7b929d98c7c63"
+      },
+      {
+        "title": "GitHub: Bushidan-Multi-Agent",
+        "source": "GitHub",
+        "url": "https://github.com/98kuwa036/Bushidan-Multi-Agent",
+        "date": "2026-02-02",
+        "summary": "A hierarchical multi-agent AI system inspired by Sengoku-era military organization. Orchestrating Claude, Llama (Groq), and DeepSeek (Local) to automate complex development tasks.",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "6dcf862347356b9c66d523cf1cb9360b"
+      },
+      {
+        "title": "GitHub: StockScreener",
+        "source": "GitHub",
+        "url": "https://github.com/xang1234/StockScreener",
+        "date": "2026-02-02",
+        "summary": "Full-stack stock scanner implementing William O'Neil's CANSLIM and Mark Minervini's trend template. Features 80+ filters, AI chatbot (Groq/DeepSeek/Gemini),   theme discovery, and StockBee-style bread",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "5eb3b2a3a8fe3d54bf17b4502ed51b8e"
+      },
+      {
+        "title": "GitHub: fitness-timer-autopost",
+        "source": "GitHub",
+        "url": "https://github.com/VR-Lounge/fitness-timer-autopost",
+        "date": "2026-02-02",
+        "summary": "🔥 Автоматический постинг табата-тренировок в Telegram канал FITNESS TIMER через DeepSeek AI | Табата | HIIT | Фитнес",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "e240cadc76a6b14b16e417c3b24e0d76"
+      },
+      {
+        "title": "GitHub Release: xllm - v0.8.0",
+        "source": "GitHub Releases",
+        "url": "https://github.com/jd-opensource/xllm/releases/tag/v0.8.0",
+        "date": "2026-02-02",
+        "summary": "## Highlights\r\n\r\n### Model Support\r\n\r\n#### NPU\r\n- Support DeepSeek-v3.2 model.\r\n- Support GLM4.7 model.\r\n- Support GLM4.6Vmodel.\r\n- Support GME-Qwen2-VL model.\r\n- Support FluxControl model.\r\n#### CUDA",
+        "keywords": [
+          "qwen",
+          "deepseek"
+        ],
+        "hash": "03aedd24aec66e3c5e1df6f9d130934d"
+      },
+      {
+        "title": "GitHub Release: kimi-ida - v0.1.1",
+        "source": "GitHub Releases",
+        "url": "https://github.com/amizu03/kimi-ida/releases/tag/v0.1.1",
+        "date": "2026-02-02",
+        "summary": "**Full Changelog**: https://github.com/amizu03/kimi-ida/compare/v0.1.0...v0.1.1",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "bc1d702173e70e444da60c53d5031af8"
+      },
+      {
+        "title": "GitHub Release: kimi-ida - v0.1.0",
+        "source": "GitHub Releases",
+        "url": "https://github.com/amizu03/kimi-ida/releases/tag/v0.1.0",
+        "date": "2026-02-02",
+        "summary": "- Initial prerelease\r\n\r\n**Full Changelog**: https://github.com/amizu03/kimi-ida/commits/v0.1.0",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "9945da85049cb4d39b26ec5f0fee64a6"
+      },
+      {
+        "title": "GitHub: kimi-ai-2api",
+        "source": "GitHub",
+        "url": "https://github.com/menendzerzumia-max/kimi-ai-2api",
+        "date": "2026-02-02",
+        "summary": "⚡ Transform Kimi.ai chat experiences into OpenAI API format with this high-performance proxy service for seamless integration and enhanced access.",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "35ac067b9e66a63789d20d6c8fbc61bf"
+      },
+      {
+        "title": "GitHub: Med-X-KimiK2-RAG",
+        "source": "GitHub",
+        "url": "https://github.com/Iluvmrbeast/Med-X-KimiK2-RAG",
+        "date": "2026-02-02",
+        "summary": "🩺 Assist clinical reasoning with MedeX, an AI-powered tool using Retrieval-Augmented Generation for medical education and case analysis.",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "e380a9bffd19b9aade1804fabb98306c"
+      },
+      {
+        "title": "GitHub: chatgpt-on-wechat",
+        "source": "GitHub",
+        "url": "https://github.com/zhayujie/chatgpt-on-wechat",
+        "date": "2026-02-02",
+        "summary": "基于大模型搭建的聊天机器人，同时支持 微信公众号、企业微信应用、飞书、钉钉 等接入，可选择ChatGPT/Claude/DeepSeek/文心一言/讯飞星火/通义千问/ Gemini/GLM-4/Kimi/LinkAI，能处理文本、语音和图片，访问操作系统和互联网，支持基于自有知识库进行定制企业智能客服。",
+        "keywords": [
+          "kimi",
+          "deepseek"
+        ],
+        "hash": "47daa50ff606227593ca4fe2e24a5739"
+      },
+      {
+        "title": "GitHub: sneky-kimi25",
+        "source": "GitHub",
+        "url": "https://github.com/krscott/sneky-kimi25",
+        "date": "2026-02-02",
+        "summary": "TUI Snake AI slop",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "a1333b96d58966864a89614af8b2addf"
+      },
+      {
+        "title": "如何评价百川智能开源的医疗大模型 Baichuan-M1-14B",
+        "source": "https://www.zhihu.com/question/10453788461",
+        "url": "https://www.zhihu.com/question/10453788461",
+        "date": "2026-02-02",
+        "summary": "如何评价百川智能开源的医疗大模型 Baichuan-M1-14B ？ 1月24日，百川智能发布了首个全场景深度思考模型Baichuan-M1-preview，并解锁了「医疗循 …...",
+        "keywords": [
+          "baichuan"
+        ],
+        "hash": "de389a26b3cb524b73bfd4ebbf6e3242"
+      },
+      {
+        "title": "百川智能发布超千亿大模型 Baichuan 3，技术能力如何？ - 知乎",
+        "source": "https://www.zhihu.com/question/641806600",
+        "url": "https://www.zhihu.com/question/641806600",
+        "date": "2026-02-02",
+        "summary": "量子位：百川智能上新超千亿大模型Baichuan 3，冲榜成绩：若干中文任务超车GPT-4...",
+        "keywords": [
+          "baichuan"
+        ],
+        "hash": "c6f9b9caf5b3cbd6ff656246f1c4048d"
+      },
+      {
+        "title": "百川智能的角色大模型正式发布，如何看待大语言模型在游戏行业的实际应用？ - 知乎",
+        "source": "https://www.zhihu.com/question/639021497",
+        "url": "https://www.zhihu.com/question/639021497",
+        "date": "2026-02-02",
+        "summary": "2024年1月9日，百川智能发布了角色大模型Baichuan-NPC。 从各方消息来看，Baichuan-NPC似乎想革游戏、影视等行业的命。 而让我对百川NPC真正感兴趣 …...",
+        "keywords": [
+          "baichuan"
+        ],
+        "hash": "df1b40372abf5bc0f5c605817dbceb5c"
+      },
+      {
+        "title": "百川智能发布开源中英文大模型 baichuan-7B ，能力如何？",
+        "source": "https://www.zhihu.com/question/606757218",
+        "url": "https://www.zhihu.com/question/606757218",
+        "date": "2026-02-02",
+        "summary": "Jun 15, 2023 · 目前的开源baichuan-7B模型，说明了百川智能已经跑通了从零开始预训练大语言模型的流程。 从数据搜集处理，模型架构，训练框架，算子优 …...",
+        "keywords": [
+          "baichuan"
+        ],
+        "hash": "d6d8acadc39a2fba1d567b12bad324f0"
+      },
+      {
+        "title": "百川发布最新一代Baichuan 4大模型并开放多款API，其性能如何，在行业中处于什么水 …",
+        "source": "https://www.zhihu.com/question/656914770/answer/3514454451?utm_psn=1789637654368882688",
+        "url": "https://www.zhihu.com/question/656914770/answer/3514454451?utm_psn=1789637654368882688",
+        "date": "2026-02-02",
+        "summary": "由于Baichuan系列模型的广泛应用（去年一经发布便在短时间内获得了超过700万下载量），主流大模型推理框架vLLM等对Baichuan模型有非常成熟的支持。 总 …...",
+        "keywords": [
+          "baichuan"
+        ],
+        "hash": "b7c5af7845afcc294e235eec478a7dc5"
+      },
+      {
+        "title": "GitHub: apecode",
+        "source": "GitHub",
+        "url": "https://github.com/ApeCodeAI/apecode",
+        "date": "2026-02-01",
+        "summary": "Nano Claude Code - A lightweight AI code agent in Python, inspired by  Claude Code and Kimi-CLI",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "b722989d378ac8673a8b2b18368d6e75"
+      },
+      {
+        "title": "GitHub: ai-hub",
+        "source": "GitHub",
+        "url": "https://github.com/ychenfen/ai-hub",
+        "date": "2026-01-31",
+        "summary": "🧠 AI Hub - 统一多AI调用 + 智能任务路由 (Kimi/Claude/GPT/DeepSeek)",
+        "keywords": [
+          "kimi",
+          "deepseek"
+        ],
+        "hash": "98af1450eb289214ee4998622d496812"
+      },
+      {
+        "title": "GitHub: kimi-actions",
+        "source": "GitHub",
+        "url": "https://github.com/xiaoju111a/kimi-actions",
+        "date": "2026-01-31",
+        "summary": "AI code review GitHub Action powered by Kimi (Moonshot AI)",
+        "keywords": [
+          "moonshot",
+          "kimi"
+        ],
+        "hash": "f010fdc1b334027cc292eca977148f3d"
+      },
+      {
+        "title": "GitHub: opencode",
+        "source": "GitHub",
+        "url": "https://github.com/paulojalowyj/opencode",
+        "date": "2026-01-31",
+        "summary": "Sistema de agentes AI especializados para desenvolvimento de software Suporte: Codex, Claude, Kimi K2.5",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "e0caa4ba5650715439378aa4f90d5651"
+      },
+      {
+        "title": "arXiv: Outcome-Conditioned Reasoning Distillation for Resolving Software Issues",
+        "source": "arXiv",
+        "url": "https://arxiv.org/abs/2601.23257v1",
+        "date": "2026-01-30",
+        "summary": "Software issue resolution in large repositories is a long-range decision process: choices made during localization shape the space of viable edits, and missteps can compound into incorrect patches. De...",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "a2527718ddcd6ba7de58fd2f350fa0c4"
+      },
+      {
+        "title": "arXiv: TriSpec: Ternary Speculative Decoding via Lightweight Proxy Verification",
+        "source": "arXiv",
+        "url": "https://arxiv.org/abs/2601.23180v1",
+        "date": "2026-01-30",
+        "summary": "Inference efficiency in Large Language Models (LLMs) is fundamentally limited by their serial, autoregressive generation, especially as reasoning becomes a key capability and response sequences grow l...",
+        "keywords": [
+          "qwen",
+          "deepseek"
+        ],
+        "hash": "ede5dbdc14638049176f4d215933c0d3"
+      },
+      {
+        "title": "arXiv: THINKSAFE: Self-Generated Safety Alignment for Reasoning Models",
+        "source": "arXiv",
+        "url": "https://arxiv.org/abs/2601.23143v1",
+        "date": "2026-01-30",
+        "summary": "Large reasoning models (LRMs) achieve remarkable performance by leveraging reinforcement learning (RL) on reasoning tasks to generate long chain-of-thought (CoT) reasoning. However, this over-optimiza...",
+        "keywords": [
+          "qwen",
+          "deepseek"
+        ],
+        "hash": "6c3923d32bcc72dee7025c98f41c6b8b"
+      },
+      {
+        "title": "GitHub Release: ragflow - v0.23.0",
+        "source": "GitHub Releases",
+        "url": "https://github.com/infiniflow/ragflow/releases/tag/v0.23.0",
+        "date": "2025-12-27",
+        "summary": "## v0.23.0\r\n\r\nReleased on December 27, 2025.\r\n\r\n### New features\r\n\r\n- Memory\r\n   - Implements a **Memory** interface for managing memory.\r\n   - Supports configuring context via the **Retrieval** or **",
+        "keywords": [
+          "qwen",
+          "minimax",
+          "deepseek"
+        ],
+        "hash": "48c71314b0dfa542e36a0d3b4a4208fc"
+      },
+      {
+        "title": "GitHub Release: xllm - v0.7.2",
+        "source": "GitHub Releases",
+        "url": "https://github.com/jd-opensource/xllm/releases/tag/v0.7.2",
+        "date": "2025-12-25",
+        "summary": "# Release xllm 0.7.2\r\n\r\n## Highlights\r\n\r\n### Feature\r\n\r\n- Enhance Qwen3-MoE to support TP settings beyond 4.\r\n- Implement chunked prefill and prefix cache for Qwen3 MoE.\r\n- Support prefix cache for De",
+        "keywords": [
+          "qwen",
+          "deepseek"
+        ],
+        "hash": "f1d7537986a6a07dcad87e431b806350"
+      },
+      {
+        "title": "GitHub Release: xllm - v0.7.1",
+        "source": "GitHub Releases",
+        "url": "https://github.com/jd-opensource/xllm/releases/tag/v0.7.1",
+        "date": "2025-11-20",
+        "summary": "## Highlights\r\n\r\n### Model Support\r\n\r\n- Support GLM-4.5-Air.\r\n- Support Qwen3-VL-Moe.\r\n\r\n### Feature\r\n\r\n- Support scheduler overlap when enable chunked prefill and MTP.\r\n- Enable multi-process mode wh",
+        "keywords": [
+          "qwen"
+        ],
+        "hash": "d35b78c0e7379b98bf547d7b0213bbc0"
+      }
+    ]
   }
 ]

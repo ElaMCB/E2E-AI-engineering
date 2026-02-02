@@ -1,41 +1,167 @@
 {
-  "date": "2026-01-26",
+  "date": "2026-02-02",
   "executive_summary": {
-    "summary": "This week saw 10 updates across 5 companies/models. Top activity: kimi, deepseek, moonshot",
+    "summary": "This week saw 26 updates across 6 companies/models. Top activity: deepseek, kimi, qwen",
     "key_highlights": [
-      "KIMI: 8 updates",
-      "DEEPSEEK: 3 updates",
-      "MOONSHOT: 2 updates"
+      "DEEPSEEK: 12 updates",
+      "KIMI: 10 updates",
+      "QWEN: 6 updates"
     ],
     "trends": [
       "Strong GitHub activity - many new repositories"
     ],
-    "total_updates": 10,
-    "unique_companies": 5,
+    "total_updates": 26,
+    "unique_companies": 6,
     "top_companies": [
       {
-        "name": "kimi",
-        "count": 8
-      },
-      {
         "name": "deepseek",
-        "count": 3
+        "count": 12
       },
       {
-        "name": "moonshot",
-        "count": 2
+        "name": "kimi",
+        "count": 10
       },
       {
         "name": "qwen",
-        "count": 1
+        "count": 6
       },
       {
-        "name": "minimax",
+        "name": "baichuan",
+        "count": 5
+      },
+      {
+        "name": "moonshot",
         "count": 1
       }
     ]
   },
   "top_insights": [
+    {
+      "type": "new_model",
+      "title": "GitHub Release: xllm - v0.8.0",
+      "description": "## Highlights\r\n\r\n### Model Support\r\n\r\n#### NPU\r\n- Support DeepSeek-v3.2 model.\r\n- Support GLM4.7 model.\r\n- Support GLM4.6Vmodel.\r\n- Support GME-Qwen2-VL model.\r\n- Support FluxControl model.\r\n#### CUDA",
+      "impact_score": 10.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "03aedd24aec66e3c5e1df6f9d130934d"
+      ],
+      "evidence": [
+        "GitHub Releases"
+      ],
+      "timestamp": "2026-02-02"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub Release: kimi-ida - v0.1.1",
+      "description": "**Full Changelog**: https://github.com/amizu03/kimi-ida/compare/v0.1.0...v0.1.1",
+      "impact_score": 10.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "bc1d702173e70e444da60c53d5031af8"
+      ],
+      "evidence": [
+        "GitHub Releases"
+      ],
+      "timestamp": "2026-02-02"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub Release: kimi-ida - v0.1.0",
+      "description": "- Initial prerelease\r\n\r\n**Full Changelog**: https://github.com/amizu03/kimi-ida/commits/v0.1.0",
+      "impact_score": 10.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "9945da85049cb4d39b26ec5f0fee64a6"
+      ],
+      "evidence": [
+        "GitHub Releases"
+      ],
+      "timestamp": "2026-02-02"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub Release: xllm - v0.7.2",
+      "description": "# Release xllm 0.7.2\r\n\r\n## Highlights\r\n\r\n### Feature\r\n\r\n- Enhance Qwen3-MoE to support TP settings beyond 4.\r\n- Implement chunked prefill and prefix cache for Qwen3 MoE.\r\n- Support prefix cache for De",
+      "impact_score": 9.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "f1d7537986a6a07dcad87e431b806350"
+      ],
+      "evidence": [
+        "GitHub Releases"
+      ],
+      "timestamp": "2025-12-25"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub Release: xllm - v0.7.1",
+      "description": "## Highlights\r\n\r\n### Model Support\r\n\r\n- Support GLM-4.5-Air.\r\n- Support Qwen3-VL-Moe.\r\n\r\n### Feature\r\n\r\n- Support scheduler overlap when enable chunked prefill and MTP.\r\n- Enable multi-process mode wh",
+      "impact_score": 9.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "d35b78c0e7379b98bf547d7b0213bbc0"
+      ],
+      "evidence": [
+        "GitHub Releases"
+      ],
+      "timestamp": "2025-11-20"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub Release: ragflow - v0.23.0",
+      "description": "## v0.23.0\r\n\r\nReleased on December 27, 2025.\r\n\r\n### New features\r\n\r\n- Memory\r\n   - Implements a **Memory** interface for managing memory.\r\n   - Supports configuring context via the **Retrieval** or **",
+      "impact_score": 8.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "48c71314b0dfa542e36a0d3b4a4208fc"
+      ],
+      "evidence": [
+        "GitHub Releases"
+      ],
+      "timestamp": "2025-12-27"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: stock_scanner_bot",
+      "description": "Institutional-grade stock scanner with Polygon.io real-time data, AI-powered analysis (DeepSeek), Telegram bot, story-first scoring, options flow tracking, and self-evolving intelligence. Scans 500+ s",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "b010819939916a57f5e7b929d98c7c63"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-02-02"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: Bushidan-Multi-Agent",
+      "description": "A hierarchical multi-agent AI system inspired by Sengoku-era military organization. Orchestrating Claude, Llama (Groq), and DeepSeek (Local) to automate complex development tasks.",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "6dcf862347356b9c66d523cf1cb9360b"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-02-02"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: StockScreener",
+      "description": "Full-stack stock scanner implementing William O'Neil's CANSLIM and Mark Minervini's trend template. Features 80+ filters, AI chatbot (Groq/DeepSeek/Gemini),   theme discovery, and StockBee-style bread",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "5eb3b2a3a8fe3d54bf17b4502ed51b8e"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-02-02"
+    },
     {
       "type": "new_model",
       "title": "GitHub: fitness-timer-autopost",
@@ -48,140 +174,51 @@
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-01-26"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub: kimi-ai-2api",
-      "description": "⚡ Transform Kimi.ai chat experiences into OpenAI API format with this high-performance proxy service for seamless integration and enhanced access.",
-      "impact_score": 7.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "35ac067b9e66a63789d20d6c8fbc61bf"
-      ],
-      "evidence": [
-        "GitHub"
-      ],
-      "timestamp": "2026-01-26"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub: Med-X-KimiK2-RAG",
-      "description": "🩺 Assist clinical reasoning with MedeX, an AI-powered tool using Retrieval-Augmented Generation for medical education and case analysis.",
-      "impact_score": 7.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "e380a9bffd19b9aade1804fabb98306c"
-      ],
-      "evidence": [
-        "GitHub"
-      ],
-      "timestamp": "2026-01-26"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub: kimi-actions",
-      "description": "AI code review GitHub Action powered by Kimi (Moonshot AI)",
-      "impact_score": 7.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "f010fdc1b334027cc292eca977148f3d"
-      ],
-      "evidence": [
-        "GitHub"
-      ],
-      "timestamp": "2026-01-21"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub: medical-rep-interview-system",
-      "description": "AI-powered interview and evaluation system for medical representatives using KIMI LLM, RAG, and Speech-to-Text",
-      "impact_score": 7.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "7f1124f42e32013e828e03d9d73eea61"
-      ],
-      "evidence": [
-        "GitHub"
-      ],
-      "timestamp": "2026-01-20"
-    },
-    {
-      "type": "research_paper",
-      "title": "arXiv: Evaluating Large Vision-language Models for Surgical Tool Detection",
-      "description": "Surgery is a highly complex process, and artificial intelligence has emerged as a transformative force in supporting surgical guidance and decision-making. However, the unimodal nature of most current...",
-      "impact_score": 6.5,
-      "confidence": 0.8,
-      "related_updates": [
-        "d13cf535ec1e56b2a990166992190f0c"
-      ],
-      "evidence": [
-        "arXiv"
-      ],
-      "timestamp": "2026-01-23"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub: paper-reading-framework",
-      "description": "使用 Moonshot AI (Kimi) 进行论文的精度阅读、内化和落地的完整框架",
-      "impact_score": 6.5,
-      "confidence": 0.8,
-      "related_updates": [
-        "aaafb0d2932f95c41cc016143000c870"
-      ],
-      "evidence": [
-        "GitHub"
-      ],
-      "timestamp": "2026-01-12"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub: AI-test",
-      "description": "基于大模型的测试用例生成工具（可使用Deepseek 、小米 MiMo 、智普、Kimi、MiniMAX、腾讯混元等API）",
-      "impact_score": 6.5,
-      "confidence": 0.8,
-      "related_updates": [
-        "a90bf093e52135ca981cad036160b662"
-      ],
-      "evidence": [
-        "GitHub"
-      ],
-      "timestamp": "2026-01-12"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub: multimodel-chat",
-      "description": "一个多合一的AI聊天工具，将ChatGPT、Gemini、LLaMA，以及DeepSeek、讯飞星火、通义千问、kimi等大模型的API集成在同一个工具中。 An all-in-one AI chat tool that integrates APIs of multiple large models, including ChatGPT, Gemini, LLaMA, DeepSeek, iFl",
-      "impact_score": 6.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "066375b8635024933fdc8724d0da642a"
-      ],
-      "evidence": [
-        "GitHub"
-      ],
-      "timestamp": "2026-01-03"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub: Youtube-Engagement-Helper",
-      "description": "Python script that monitors YouTube channels, transcribes videos, generates AI summaries, and creates human-like engagement comments using Kimi K2 Instruct (Chutes). Analyzes top comments to match eac",
-      "impact_score": 6.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "63c55c726fd2f3c21ff9b66f8ae27729"
-      ],
-      "evidence": [
-        "GitHub"
-      ],
-      "timestamp": "2026-01-02"
+      "timestamp": "2026-02-02"
     }
   ],
-  "significant_changes": [],
+  "significant_changes": [
+    {
+      "category": "new_company",
+      "description": "New entities detected: baichuan",
+      "magnitude": 7.0,
+      "week_over_week_change": {
+        "new": [
+          "baichuan"
+        ]
+      },
+      "implications": [
+        "Monitor baichuan for future developments"
+      ]
+    },
+    {
+      "category": "market_shift",
+      "description": "Significant activity increase: 10 → 26 updates (+160%)",
+      "magnitude": 6.0,
+      "week_over_week_change": {
+        "prev": 10,
+        "current": 26
+      },
+      "implications": [
+        "Increased market activity - monitor closely",
+        "Potential major announcements coming"
+      ]
+    }
+  ],
   "trends": [
+    {
+      "type": "increasing_activity",
+      "description": "Activity trending up: 15 → 26 updates",
+      "confidence": 0.8
+    },
     {
       "type": "emerging_company",
       "description": "deepseek showing increasing activity",
+      "confidence": 0.7
+    },
+    {
+      "type": "emerging_company",
+      "description": "kimi showing increasing activity",
       "confidence": 0.7
     },
     {
@@ -196,16 +233,14 @@
     },
     {
       "type": "emerging_company",
-      "description": "kimi showing increasing activity",
-      "confidence": 0.7
-    },
-    {
-      "type": "emerging_company",
       "description": "moonshot showing increasing activity",
       "confidence": 0.7
     }
   ],
   "recommendations": [
+    "URGENT: 6 high-impact developments detected - review immediately",
+    "New companies/models detected - add to monitoring list",
+    "Market activity spike detected - potential major announcements",
     "Long-term trends identified - consider strategic implications"
   ]
 }
