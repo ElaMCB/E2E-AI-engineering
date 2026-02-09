@@ -1437,5 +1437,101 @@
         "hash": "d35b78c0e7379b98bf547d7b0213bbc0"
       }
     ]
+  },
+  {
+    "date": "2026-02-09",
+    "updates": [
+      {
+        "title": "GitHub: AI-Research-Agent",
+        "source": "GitHub",
+        "url": "https://github.com/ulquiorraexe/AI-Research-Agent",
+        "date": "2026-02-09",
+        "summary": "This project automatically generates a structured daily report about the Turkish game development industry using the DeepSeek R1 model via OpenRouter. It collects news from trusted sources, compares t",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "2a841121d5d55ece84bf36bd9f1b86bc"
+      },
+      {
+        "title": "DeepSeek",
+        "source": "https://www.deepseek.com/en/",
+        "url": "https://www.deepseek.com/en/",
+        "date": "2026-02-09",
+        "summary": "DeepSeek, unravel the mystery of AGI with curiosity. Answer the essential question with long-termism....",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "2c071c1b803a0922c7bf18ecd78e5311"
+      },
+      {
+        "title": "DeepSeek | 深度求索",
+        "source": "https://www.deepseek.com/",
+        "url": "https://www.deepseek.com/",
+        "date": "2026-02-09",
+        "summary": "基于自研训练框架、自建智算集群和万卡算力等资源，深度求索团队仅用半年时间便已发布并开源多个百亿级参数大模型，如DeepSeek-LLM通用大语言模型 …...",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "917c0f2733ec19bfe9b24cdab127ecb5"
+      },
+      {
+        "title": "DeepSeek - Into the Unknown",
+        "source": "https://chat.deepseek.com/sign_in",
+        "url": "https://chat.deepseek.com/sign_in",
+        "date": "2026-02-09",
+        "summary": "Chat with DeepSeek AI – your intelligent assistant for coding, content creation, file reading, and more....",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "786d2c76e4ae0656035d2099c5b187e2"
+      },
+      {
+        "title": "DeepSeek Platform",
+        "source": "https://platform.deepseek.com/sign_in",
+        "url": "https://platform.deepseek.com/sign_in",
+        "date": "2026-02-09",
+        "summary": "Join DeepSeek API platform to access our AI models, developer resources and API documentation....",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "45aa424038b1242b18e4c3b37b29a14a"
+      },
+      {
+        "title": "DeepSeek",
+        "source": "https://download.deepseek.com/",
+        "url": "https://download.deepseek.com/",
+        "date": "2026-02-09",
+        "summary": "Chat with DeepSeek AI – your intelligent assistant for coding, content creation, file reading, and more....",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "6138b6a8dd0129ae5db3b121299bade0"
+      },
+      {
+        "title": "arXiv: InftyThink+: Effective and Efficient Infinite-Horizon Reasoning via Reinforcement Learning",
+        "source": "arXiv",
+        "url": "https://arxiv.org/abs/2602.06960v1",
+        "date": "2026-02-06",
+        "summary": "Large reasoning models achieve strong performance by scaling inference-time chain-of-thought, but this paradigm suffers from quadratic cost, context length limits, and degraded reasoning due to lost-i...",
+        "keywords": [
+          "deepseek",
+          "qwen"
+        ],
+        "hash": "dfe6fb326771538226df93420ee626ee"
+      },
+      {
+        "title": "GitHub Release: ragflow - v0.23.0",
+        "source": "GitHub Releases",
+        "url": "https://github.com/infiniflow/ragflow/releases/tag/v0.23.0",
+        "date": "2025-12-27",
+        "summary": "## v0.23.0\r\n\r\nReleased on December 27, 2025.\r\n\r\n### New features\r\n\r\n- Memory\r\n   - Implements a **Memory** interface for managing memory.\r\n   - Supports configuring context via the **Retrieval** or **",
+        "keywords": [
+          "minimax",
+          "deepseek",
+          "qwen"
+        ],
+        "hash": "48c71314b0dfa542e36a0d3b4a4208fc"
+      }
+    ]
   }
 ]

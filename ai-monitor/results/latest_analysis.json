@@ -1,111 +1,31 @@
 {
-  "date": "2026-02-02",
+  "date": "2026-02-09",
   "executive_summary": {
-    "summary": "This week saw 26 updates across 6 companies/models. Top activity: deepseek, kimi, qwen",
+    "summary": "This week saw 8 updates across 3 companies/models. Top activity: deepseek, qwen, minimax",
     "key_highlights": [
-      "DEEPSEEK: 12 updates",
-      "KIMI: 10 updates",
-      "QWEN: 6 updates"
+      "DEEPSEEK: 8 updates",
+      "QWEN: 2 updates",
+      "MINIMAX: 1 updates"
     ],
-    "trends": [
-      "Strong GitHub activity - many new repositories"
-    ],
-    "total_updates": 26,
-    "unique_companies": 6,
+    "trends": [],
+    "total_updates": 8,
+    "unique_companies": 3,
     "top_companies": [
       {
         "name": "deepseek",
-        "count": 12
-      },
-      {
-        "name": "kimi",
-        "count": 10
+        "count": 8
       },
       {
         "name": "qwen",
-        "count": 6
+        "count": 2
       },
       {
-        "name": "baichuan",
-        "count": 5
-      },
-      {
-        "name": "moonshot",
+        "name": "minimax",
         "count": 1
       }
     ]
   },
   "top_insights": [
-    {
-      "type": "new_model",
-      "title": "GitHub Release: xllm - v0.8.0",
-      "description": "## Highlights\r\n\r\n### Model Support\r\n\r\n#### NPU\r\n- Support DeepSeek-v3.2 model.\r\n- Support GLM4.7 model.\r\n- Support GLM4.6Vmodel.\r\n- Support GME-Qwen2-VL model.\r\n- Support FluxControl model.\r\n#### CUDA",
-      "impact_score": 10.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "03aedd24aec66e3c5e1df6f9d130934d"
-      ],
-      "evidence": [
-        "GitHub Releases"
-      ],
-      "timestamp": "2026-02-02"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub Release: kimi-ida - v0.1.1",
-      "description": "**Full Changelog**: https://github.com/amizu03/kimi-ida/compare/v0.1.0...v0.1.1",
-      "impact_score": 10.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "bc1d702173e70e444da60c53d5031af8"
-      ],
-      "evidence": [
-        "GitHub Releases"
-      ],
-      "timestamp": "2026-02-02"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub Release: kimi-ida - v0.1.0",
-      "description": "- Initial prerelease\r\n\r\n**Full Changelog**: https://github.com/amizu03/kimi-ida/commits/v0.1.0",
-      "impact_score": 10.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "9945da85049cb4d39b26ec5f0fee64a6"
-      ],
-      "evidence": [
-        "GitHub Releases"
-      ],
-      "timestamp": "2026-02-02"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub Release: xllm - v0.7.2",
-      "description": "# Release xllm 0.7.2\r\n\r\n## Highlights\r\n\r\n### Feature\r\n\r\n- Enhance Qwen3-MoE to support TP settings beyond 4.\r\n- Implement chunked prefill and prefix cache for Qwen3 MoE.\r\n- Support prefix cache for De",
-      "impact_score": 9.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "f1d7537986a6a07dcad87e431b806350"
-      ],
-      "evidence": [
-        "GitHub Releases"
-      ],
-      "timestamp": "2025-12-25"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub Release: xllm - v0.7.1",
-      "description": "## Highlights\r\n\r\n### Model Support\r\n\r\n- Support GLM-4.5-Air.\r\n- Support Qwen3-VL-Moe.\r\n\r\n### Feature\r\n\r\n- Support scheduler overlap when enable chunked prefill and MTP.\r\n- Enable multi-process mode wh",
-      "impact_score": 9.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "d35b78c0e7379b98bf547d7b0213bbc0"
-      ],
-      "evidence": [
-        "GitHub Releases"
-      ],
-      "timestamp": "2025-11-20"
-    },
     {
       "type": "new_model",
       "title": "GitHub Release: ragflow - v0.23.0",
@@ -122,95 +42,105 @@
     },
     {
       "type": "new_model",
-      "title": "GitHub: stock_scanner_bot",
-      "description": "Institutional-grade stock scanner with Polygon.io real-time data, AI-powered analysis (DeepSeek), Telegram bot, story-first scoring, options flow tracking, and self-evolving intelligence. Scans 500+ s",
+      "title": "GitHub: AI-Research-Agent",
+      "description": "This project automatically generates a structured daily report about the Turkish game development industry using the DeepSeek R1 model via OpenRouter. It collects news from trusted sources, compares t",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "b010819939916a57f5e7b929d98c7c63"
+        "2a841121d5d55ece84bf36bd9f1b86bc"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-02-02"
+      "timestamp": "2026-02-09"
     },
     {
-      "type": "new_model",
-      "title": "GitHub: Bushidan-Multi-Agent",
-      "description": "A hierarchical multi-agent AI system inspired by Sengoku-era military organization. Orchestrating Claude, Llama (Groq), and DeepSeek (Local) to automate complex development tasks.",
+      "type": "trend",
+      "title": "DeepSeek",
+      "description": "DeepSeek, unravel the mystery of AGI with curiosity. Answer the essential question with long-termism....",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "6dcf862347356b9c66d523cf1cb9360b"
+        "2c071c1b803a0922c7bf18ecd78e5311"
       ],
       "evidence": [
-        "GitHub"
+        "https://www.deepseek.com/en/"
       ],
-      "timestamp": "2026-02-02"
+      "timestamp": "2026-02-09"
     },
     {
-      "type": "new_model",
-      "title": "GitHub: StockScreener",
-      "description": "Full-stack stock scanner implementing William O'Neil's CANSLIM and Mark Minervini's trend template. Features 80+ filters, AI chatbot (Groq/DeepSeek/Gemini),   theme discovery, and StockBee-style bread",
+      "type": "trend",
+      "title": "DeepSeek | 深度求索",
+      "description": "基于自研训练框架、自建智算集群和万卡算力等资源，深度求索团队仅用半年时间便已发布并开源多个百亿级参数大模型，如DeepSeek-LLM通用大语言模型 …...",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "5eb3b2a3a8fe3d54bf17b4502ed51b8e"
+        "917c0f2733ec19bfe9b24cdab127ecb5"
       ],
       "evidence": [
-        "GitHub"
+        "https://www.deepseek.com/"
       ],
-      "timestamp": "2026-02-02"
+      "timestamp": "2026-02-09"
     },
     {
-      "type": "new_model",
-      "title": "GitHub: fitness-timer-autopost",
-      "description": "🔥 Автоматический постинг табата-тренировок в Telegram канал FITNESS TIMER через DeepSeek AI | Табата | HIIT | Фитнес",
+      "type": "trend",
+      "title": "DeepSeek - Into the Unknown",
+      "description": "Chat with DeepSeek AI – your intelligent assistant for coding, content creation, file reading, and more....",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "e240cadc76a6b14b16e417c3b24e0d76"
+        "786d2c76e4ae0656035d2099c5b187e2"
       ],
       "evidence": [
-        "GitHub"
+        "https://chat.deepseek.com/sign_in"
       ],
-      "timestamp": "2026-02-02"
+      "timestamp": "2026-02-09"
+    },
+    {
+      "type": "trend",
+      "title": "DeepSeek Platform",
+      "description": "Join DeepSeek API platform to access our AI models, developer resources and API documentation....",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "45aa424038b1242b18e4c3b37b29a14a"
+      ],
+      "evidence": [
+        "https://platform.deepseek.com/sign_in"
+      ],
+      "timestamp": "2026-02-09"
+    },
+    {
+      "type": "trend",
+      "title": "DeepSeek",
+      "description": "Chat with DeepSeek AI – your intelligent assistant for coding, content creation, file reading, and more....",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "6138b6a8dd0129ae5db3b121299bade0"
+      ],
+      "evidence": [
+        "https://download.deepseek.com/"
+      ],
+      "timestamp": "2026-02-09"
+    },
+    {
+      "type": "research_paper",
+      "title": "arXiv: InftyThink+: Effective and Efficient Infinite-Horizon Reasoning via Reinforcement Learning",
+      "description": "Large reasoning models achieve strong performance by scaling inference-time chain-of-thought, but this paradigm suffers from quadratic cost, context length limits, and degraded reasoning due to lost-i...",
+      "impact_score": 6.5,
+      "confidence": 0.8,
+      "related_updates": [
+        "dfe6fb326771538226df93420ee626ee"
+      ],
+      "evidence": [
+        "arXiv"
+      ],
+      "timestamp": "2026-02-06"
     }
   ],
-  "significant_changes": [
-    {
-      "category": "new_company",
-      "description": "New entities detected: baichuan",
-      "magnitude": 7.0,
-      "week_over_week_change": {
-        "new": [
-          "baichuan"
-        ]
-      },
-      "implications": [
-        "Monitor baichuan for future developments"
-      ]
-    },
-    {
-      "category": "market_shift",
-      "description": "Significant activity increase: 10 → 26 updates (+160%)",
-      "magnitude": 6.0,
-      "week_over_week_change": {
-        "prev": 10,
-        "current": 26
-      },
-      "implications": [
-        "Increased market activity - monitor closely",
-        "Potential major announcements coming"
-      ]
-    }
-  ],
+  "significant_changes": [],
   "trends": [
-    {
-      "type": "increasing_activity",
-      "description": "Activity trending up: 15 → 26 updates",
-      "confidence": 0.8
-    },
     {
       "type": "emerging_company",
       "description": "deepseek showing increasing activity",
@@ -223,6 +153,11 @@
     },
     {
       "type": "emerging_company",
+      "description": "moonshot showing increasing activity",
+      "confidence": 0.7
+    },
+    {
+      "type": "emerging_company",
       "description": "qwen showing increasing activity",
       "confidence": 0.7
     },
@@ -230,17 +165,10 @@
       "type": "emerging_company",
       "description": "minimax showing increasing activity",
       "confidence": 0.7
-    },
-    {
-      "type": "emerging_company",
-      "description": "moonshot showing increasing activity",
-      "confidence": 0.7
     }
   ],
   "recommendations": [
-    "URGENT: 6 high-impact developments detected - review immediately",
-    "New companies/models detected - add to monitoring list",
-    "Market activity spike detected - potential major announcements",
+    "URGENT: 1 high-impact developments detected - review immediately",
     "Long-term trends identified - consider strategic implications"
   ]
 }
