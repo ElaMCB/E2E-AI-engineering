@@ -1,23 +1,31 @@
 {
-  "date": "2026-02-09",
+  "date": "2026-02-16",
   "executive_summary": {
-    "summary": "This week saw 8 updates across 3 companies/models. Top activity: deepseek, qwen, minimax",
+    "summary": "This week saw 16 updates across 5 companies/models. Top activity: deepseek, Other, kimi",
     "key_highlights": [
-      "DEEPSEEK: 8 updates",
-      "QWEN: 2 updates",
-      "MINIMAX: 1 updates"
+      "DEEPSEEK: 9 updates",
+      "OTHER: 4 updates",
+      "KIMI: 2 updates"
     ],
     "trends": [],
-    "total_updates": 8,
-    "unique_companies": 3,
+    "total_updates": 16,
+    "unique_companies": 5,
     "top_companies": [
       {
         "name": "deepseek",
-        "count": 8
+        "count": 9
+      },
+      {
+        "name": "Other",
+        "count": 4
+      },
+      {
+        "name": "kimi",
+        "count": 2
       },
       {
         "name": "qwen",
-        "count": 2
+        "count": 1
       },
       {
         "name": "minimax",
@@ -28,31 +36,87 @@
   "top_insights": [
     {
       "type": "new_model",
-      "title": "GitHub Release: ragflow - v0.23.0",
-      "description": "## v0.23.0\r\n\r\nReleased on December 27, 2025.\r\n\r\n### New features\r\n\r\n- Memory\r\n   - Implements a **Memory** interface for managing memory.\r\n   - Supports configuring context via the **Retrieval** or **",
-      "impact_score": 8.0,
+      "title": "GitHub Release: groask-release - v2.0.3",
+      "description": "The Fastest Launcher for Claude Code.\n\n## What's New\n\n**Fixes**\n- Hook 脚本 JSON 反斜杠转义修复（反斜杠指数膨胀问题）\n\n**Improvements**\n- 面板 UI 管家风格改造：状态色从警报红/橙改为品牌蓝/青，文案从机器视角改为管家视角（待阅/待指令），动画从急促闪烁改为慢呼吸\n\n\n## Features\n\n- ",
+      "impact_score": 9.0,
       "confidence": 0.8,
       "related_updates": [
-        "48c71314b0dfa542e36a0d3b4a4208fc"
+        "5e681b8c9f281171328ae44df8c56b58"
       ],
       "evidence": [
         "GitHub Releases"
       ],
-      "timestamp": "2025-12-27"
+      "timestamp": "2026-02-16"
     },
     {
       "type": "new_model",
-      "title": "GitHub: AI-Research-Agent",
-      "description": "This project automatically generates a structured daily report about the Turkish game development industry using the DeepSeek R1 model via OpenRouter. It collects news from trusted sources, compares t",
+      "title": "GitHub: DeepSeek-V3.2-Exp",
+      "description": "🔍 Explore and enhance deep learning models with DeepSeek-V3.2-Exp, your go-to tool for streamlined data analysis and advanced AI insights.",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "2a841121d5d55ece84bf36bd9f1b86bc"
+        "737fd192bfa79ef39c1e43648f75ef28"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-02-09"
+      "timestamp": "2026-02-16"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: freeflux",
+      "description": "🚀 Simplify FLUX access with 4-bit models and CPU offloading, enabling powerful GPU utilization and prompt generation from keywords with DeepSeek-R1 AI.",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "a898b7340e2d958c00410c3b3e9bf35f"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-02-16"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: AiChatBot",
+      "description": "AI Group Chat with DeepSeek integration - Real-time multi-user chat with AI assistant",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "24997c4eca5eda0be1be8d71a3c70db2"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-02-16"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: fitness-timer-autopost",
+      "description": "🔥 Автоматический постинг табата-тренировок в Telegram канал FITNESS TIMER через DeepSeek AI | Табата | HIIT | Фитнес",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "e240cadc76a6b14b16e417c3b24e0d76"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-02-16"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: Med-X-KimiK2-RAG",
+      "description": "🩺 Assist clinical reasoning with MedeX, an AI-powered tool using Retrieval-Augmented Generation for medical education and case analysis.",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "e380a9bffd19b9aade1804fabb98306c"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-02-16"
     },
     {
       "type": "trend",
@@ -66,12 +130,12 @@
       "evidence": [
         "https://www.deepseek.com/en/"
       ],
-      "timestamp": "2026-02-09"
+      "timestamp": "2026-02-16"
     },
     {
       "type": "trend",
       "title": "DeepSeek | 深度求索",
-      "description": "基于自研训练框架、自建智算集群和万卡算力等资源，深度求索团队仅用半年时间便已发布并开源多个百亿级参数大模型，如DeepSeek-LLM通用大语言模型 …...",
+      "description": "基于自研训练框架、自建智算集群和万卡算力等资源，深度求索团队仅用半年时间便已发布并开源多个百亿级参数大模型，如DeepSeek-LLM通用大语言模型、DeepSeek-Coder代码大模型，并在2024年1月率先开源国 …...",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
@@ -80,7 +144,7 @@
       "evidence": [
         "https://www.deepseek.com/"
       ],
-      "timestamp": "2026-02-09"
+      "timestamp": "2026-02-16"
     },
     {
       "type": "trend",
@@ -94,21 +158,7 @@
       "evidence": [
         "https://chat.deepseek.com/sign_in"
       ],
-      "timestamp": "2026-02-09"
-    },
-    {
-      "type": "trend",
-      "title": "DeepSeek Platform",
-      "description": "Join DeepSeek API platform to access our AI models, developer resources and API documentation....",
-      "impact_score": 7.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "45aa424038b1242b18e4c3b37b29a14a"
-      ],
-      "evidence": [
-        "https://platform.deepseek.com/sign_in"
-      ],
-      "timestamp": "2026-02-09"
+      "timestamp": "2026-02-16"
     },
     {
       "type": "trend",
@@ -122,25 +172,43 @@
       "evidence": [
         "https://download.deepseek.com/"
       ],
-      "timestamp": "2026-02-09"
-    },
-    {
-      "type": "research_paper",
-      "title": "arXiv: InftyThink+: Effective and Efficient Infinite-Horizon Reasoning via Reinforcement Learning",
-      "description": "Large reasoning models achieve strong performance by scaling inference-time chain-of-thought, but this paradigm suffers from quadratic cost, context length limits, and degraded reasoning due to lost-i...",
-      "impact_score": 6.5,
-      "confidence": 0.8,
-      "related_updates": [
-        "dfe6fb326771538226df93420ee626ee"
-      ],
-      "evidence": [
-        "arXiv"
-      ],
-      "timestamp": "2026-02-06"
+      "timestamp": "2026-02-16"
     }
   ],
-  "significant_changes": [],
+  "significant_changes": [
+    {
+      "category": "new_company",
+      "description": "New entities detected: kimi",
+      "magnitude": 7.0,
+      "week_over_week_change": {
+        "new": [
+          "kimi"
+        ]
+      },
+      "implications": [
+        "Monitor kimi for future developments"
+      ]
+    },
+    {
+      "category": "market_shift",
+      "description": "Significant activity increase: 8 → 16 updates (+100%)",
+      "magnitude": 6.0,
+      "week_over_week_change": {
+        "prev": 8,
+        "current": 16
+      },
+      "implications": [
+        "Increased market activity - monitor closely",
+        "Potential major announcements coming"
+      ]
+    }
+  ],
   "trends": [
+    {
+      "type": "increasing_activity",
+      "description": "Activity trending up: 10 → 16 updates",
+      "confidence": 0.8
+    },
     {
       "type": "emerging_company",
       "description": "deepseek showing increasing activity",
@@ -153,12 +221,12 @@
     },
     {
       "type": "emerging_company",
-      "description": "moonshot showing increasing activity",
+      "description": "qwen showing increasing activity",
       "confidence": 0.7
     },
     {
       "type": "emerging_company",
-      "description": "qwen showing increasing activity",
+      "description": "moonshot showing increasing activity",
       "confidence": 0.7
     },
     {
@@ -169,6 +237,8 @@
   ],
   "recommendations": [
     "URGENT: 1 high-impact developments detected - review immediately",
+    "New companies/models detected - add to monitoring list",
+    "Market activity spike detected - potential major announcements",
     "Long-term trends identified - consider strategic implications"
   ]
 }

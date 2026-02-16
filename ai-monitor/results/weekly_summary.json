@@ -1533,5 +1533,179 @@
         "hash": "48c71314b0dfa542e36a0d3b4a4208fc"
       }
     ]
+  },
+  {
+    "date": "2026-02-16",
+    "updates": [
+      {
+        "title": "GitHub: DeepSeek-V3.2-Exp",
+        "source": "GitHub",
+        "url": "https://github.com/arthur1258/DeepSeek-V3.2-Exp",
+        "date": "2026-02-16",
+        "summary": "🔍 Explore and enhance deep learning models with DeepSeek-V3.2-Exp, your go-to tool for streamlined data analysis and advanced AI insights.",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "737fd192bfa79ef39c1e43648f75ef28"
+      },
+      {
+        "title": "GitHub: freeflux",
+        "source": "GitHub",
+        "url": "https://github.com/Rian-create/freeflux",
+        "date": "2026-02-16",
+        "summary": "🚀 Simplify FLUX access with 4-bit models and CPU offloading, enabling powerful GPU utilization and prompt generation from keywords with DeepSeek-R1 AI.",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "a898b7340e2d958c00410c3b3e9bf35f"
+      },
+      {
+        "title": "GitHub: AiChatBot",
+        "source": "GitHub",
+        "url": "https://github.com/GeorgeZhiXu/AiChatBot",
+        "date": "2026-02-16",
+        "summary": "AI Group Chat with DeepSeek integration - Real-time multi-user chat with AI assistant",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "24997c4eca5eda0be1be8d71a3c70db2"
+      },
+      {
+        "title": "GitHub: fitness-timer-autopost",
+        "source": "GitHub",
+        "url": "https://github.com/VR-Lounge/fitness-timer-autopost",
+        "date": "2026-02-16",
+        "summary": "🔥 Автоматический постинг табата-тренировок в Telegram канал FITNESS TIMER через DeepSeek AI | Табата | HIIT | Фитнес",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "e240cadc76a6b14b16e417c3b24e0d76"
+      },
+      {
+        "title": "GitHub Release: groask-release - v2.0.3",
+        "source": "GitHub Releases",
+        "url": "https://github.com/ThinkerJack/groask-release/releases/tag/v2.0.3",
+        "date": "2026-02-16",
+        "summary": "The Fastest Launcher for Claude Code.\n\n## What's New\n\n**Fixes**\n- Hook 脚本 JSON 反斜杠转义修复（反斜杠指数膨胀问题）\n\n**Improvements**\n- 面板 UI 管家风格改造：状态色从警报红/橙改为品牌蓝/青，文案从机器视角改为管家视角（待阅/待指令），动画从急促闪烁改为慢呼吸\n\n\n## Features\n\n- ",
+        "keywords": [
+          "qwen",
+          "kimi"
+        ],
+        "hash": "5e681b8c9f281171328ae44df8c56b58"
+      },
+      {
+        "title": "GitHub: Med-X-KimiK2-RAG",
+        "source": "GitHub",
+        "url": "https://github.com/Iluvmrbeast/Med-X-KimiK2-RAG",
+        "date": "2026-02-16",
+        "summary": "🩺 Assist clinical reasoning with MedeX, an AI-powered tool using Retrieval-Augmented Generation for medical education and case analysis.",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "e380a9bffd19b9aade1804fabb98306c"
+      },
+      {
+        "title": "DeepSeek",
+        "source": "https://www.deepseek.com/en/",
+        "url": "https://www.deepseek.com/en/",
+        "date": "2026-02-16",
+        "summary": "DeepSeek, unravel the mystery of AGI with curiosity. Answer the essential question with long-termism....",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "2c071c1b803a0922c7bf18ecd78e5311"
+      },
+      {
+        "title": "DeepSeek | 深度求索",
+        "source": "https://www.deepseek.com/",
+        "url": "https://www.deepseek.com/",
+        "date": "2026-02-16",
+        "summary": "基于自研训练框架、自建智算集群和万卡算力等资源，深度求索团队仅用半年时间便已发布并开源多个百亿级参数大模型，如DeepSeek-LLM通用大语言模型、DeepSeek-Coder代码大模型，并在2024年1月率先开源国 …...",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "917c0f2733ec19bfe9b24cdab127ecb5"
+      },
+      {
+        "title": "DeepSeek - Into the Unknown",
+        "source": "https://chat.deepseek.com/sign_in",
+        "url": "https://chat.deepseek.com/sign_in",
+        "date": "2026-02-16",
+        "summary": "Chat with DeepSeek AI – your intelligent assistant for coding, content creation, file reading, and more....",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "786d2c76e4ae0656035d2099c5b187e2"
+      },
+      {
+        "title": "DeepSeek",
+        "source": "https://download.deepseek.com/",
+        "url": "https://download.deepseek.com/",
+        "date": "2026-02-16",
+        "summary": "Chat with DeepSeek AI – your intelligent assistant for coding, content creation, file reading, and more....",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "6138b6a8dd0129ae5db3b121299bade0"
+      },
+      {
+        "title": "DeepSeek Platform",
+        "source": "https://platform.deepseek.com/",
+        "url": "https://platform.deepseek.com/",
+        "date": "2026-02-16",
+        "summary": "Join DeepSeek API platform to access our AI models, developer resources and API documentation....",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "0dd0851efcb65be55a0488ce52607a30"
+      },
+      {
+        "title": "智谱 AI 因算力告急「限购」GLM 编程计划，暴露出 AI 行业哪些问 …",
+        "source": "https://www.zhihu.com/question/1997433388664131775",
+        "url": "https://www.zhihu.com/question/1997433388664131775",
+        "date": "2026-02-16",
+        "summary": "Jan 21, 2026 · 智谱 AI 因算力告急「限购」GLM 编程计划，暴露出 AI 行业哪些问题？ 由于最新大语言模型 GLM-4.7 发布后用户 …...",
+        "keywords": [],
+        "hash": "cd9af0e1e0d3559ba2d0421800932e2c"
+      },
+      {
+        "title": "智谱最新大模型 GLM-5 官网上线，有哪些值得关注的亮点？使用 …",
+        "source": "https://www.zhihu.com/question/2005023983209242784",
+        "url": "https://www.zhihu.com/question/2005023983209242784",
+        "date": "2026-02-16",
+        "summary": "智谱最新大模型 GLM-5 官网上线，有哪些值得关注的亮点？ 使用感受如何？ 知乎科技特别活动「AI 请接招」正在进行中！ 无论是出 …...",
+        "keywords": [],
+        "hash": "81285d1e3e3e60cfea1aa8c8c9c32f00"
+      },
+      {
+        "title": "为什么智谱清言从2023国内领先做到现在越来越难用？ - 知乎",
+        "source": "https://www.zhihu.com/question/1933977898676647524",
+        "url": "https://www.zhihu.com/question/1933977898676647524",
+        "date": "2026-02-16",
+        "summary": "北京智谱华章科技有限公司（简称“智谱AI”）成立于2019年6月11日，总部位于北京海淀区中关村东路1号院9号。 该公司源自清 …...",
+        "keywords": [],
+        "hash": "3fda9aa6676fbed2403f95096c12b8d0"
+      },
+      {
+        "title": "如何评价智谱在港交所敲钟上市，成为大模型第一股？ - 知乎",
+        "source": "https://www.zhihu.com/question/1992547821040198540",
+        "url": "https://www.zhihu.com/question/1992547821040198540",
+        "date": "2026-02-16",
+        "summary": "刺激的还在后面：比它晚一天上市的MiniMax，首日涨幅也达到60%，一举拿下全球IPO规模最大的AI大模型公司称号。 万 …...",
+        "keywords": [
+          "minimax"
+        ],
+        "hash": "798f006944cbbd7fd85b88537b82301a"
+      },
+      {
+        "title": "智谱发布 GLM-4 基座大模型，性能效果如何？ - 知乎",
+        "source": "https://www.zhihu.com/question/639753877",
+        "url": "https://www.zhihu.com/question/639753877",
+        "date": "2026-02-16",
+        "summary": "智谱AI团队完美解决了长上下文全局信息因失焦而导致的精度下降的问题。 多模态能力 这一次，GLM-4的文生图和多模态理解都得到 …...",
+        "keywords": [],
+        "hash": "c4ea595efd5b7f645928407b141c39cc"
+      }
+    ]
   }
 ]
