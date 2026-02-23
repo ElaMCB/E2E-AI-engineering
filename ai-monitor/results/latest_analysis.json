@@ -1,222 +1,130 @@
 {
-  "date": "2026-02-16",
+  "date": "2026-02-23",
   "executive_summary": {
-    "summary": "This week saw 16 updates across 5 companies/models. Top activity: deepseek, Other, kimi",
+    "summary": "This week saw 7 updates across 2 companies/models. Top activity: Other, qwen",
     "key_highlights": [
-      "DEEPSEEK: 9 updates",
-      "OTHER: 4 updates",
-      "KIMI: 2 updates"
+      "OTHER: 5 updates",
+      "QWEN: 2 updates"
     ],
     "trends": [],
-    "total_updates": 16,
-    "unique_companies": 5,
+    "total_updates": 7,
+    "unique_companies": 2,
     "top_companies": [
       {
-        "name": "deepseek",
-        "count": 9
-      },
-      {
         "name": "Other",
-        "count": 4
-      },
-      {
-        "name": "kimi",
-        "count": 2
+        "count": 5
       },
       {
         "name": "qwen",
-        "count": 1
-      },
-      {
-        "name": "minimax",
-        "count": 1
+        "count": 2
       }
     ]
   },
   "top_insights": [
     {
-      "type": "new_model",
-      "title": "GitHub Release: groask-release - v2.0.3",
-      "description": "The Fastest Launcher for Claude Code.\n\n## What's New\n\n**Fixes**\n- Hook 脚本 JSON 反斜杠转义修复（反斜杠指数膨胀问题）\n\n**Improvements**\n- 面板 UI 管家风格改造：状态色从警报红/橙改为品牌蓝/青，文案从机器视角改为管家视角（待阅/待指令），动画从急促闪烁改为慢呼吸\n\n\n## Features\n\n- ",
-      "impact_score": 9.0,
+      "type": "research_paper",
+      "title": "arXiv: Vichara: Appellate Judgment Prediction and Explanation for the Indian Judicial System",
+      "description": "In jurisdictions like India, where courts face an extensive backlog of cases, artificial intelligence offers transformative potential for legal judgment prediction. A critical subset of this backlog c...",
+      "impact_score": 6.5,
       "confidence": 0.8,
       "related_updates": [
-        "5e681b8c9f281171328ae44df8c56b58"
+        "f8ebf8a448f350f04b48f6beffe6d836"
       ],
       "evidence": [
-        "GitHub Releases"
+        "arXiv"
       ],
-      "timestamp": "2026-02-16"
+      "timestamp": "2026-02-20"
     },
     {
-      "type": "new_model",
-      "title": "GitHub: DeepSeek-V3.2-Exp",
-      "description": "🔍 Explore and enhance deep learning models with DeepSeek-V3.2-Exp, your go-to tool for streamlined data analysis and advanced AI insights.",
-      "impact_score": 7.0,
+      "type": "research_paper",
+      "title": "arXiv: Going Down Memory Lane: Scaling Tokens for Video Stream Understanding with Dynamic KV-Cache Memory",
+      "description": "Streaming video understanding requires models to robustly encode, store, and retrieve information from a continuous video stream to support accurate video question answering (VQA). Existing state-of-t...",
+      "impact_score": 6.5,
       "confidence": 0.8,
       "related_updates": [
-        "737fd192bfa79ef39c1e43648f75ef28"
+        "10ac6da35664c974bbabaed14dd085b8"
       ],
       "evidence": [
-        "GitHub"
+        "arXiv"
       ],
-      "timestamp": "2026-02-16"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub: freeflux",
-      "description": "🚀 Simplify FLUX access with 4-bit models and CPU offloading, enabling powerful GPU utilization and prompt generation from keywords with DeepSeek-R1 AI.",
-      "impact_score": 7.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "a898b7340e2d958c00410c3b3e9bf35f"
-      ],
-      "evidence": [
-        "GitHub"
-      ],
-      "timestamp": "2026-02-16"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub: AiChatBot",
-      "description": "AI Group Chat with DeepSeek integration - Real-time multi-user chat with AI assistant",
-      "impact_score": 7.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "24997c4eca5eda0be1be8d71a3c70db2"
-      ],
-      "evidence": [
-        "GitHub"
-      ],
-      "timestamp": "2026-02-16"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub: fitness-timer-autopost",
-      "description": "🔥 Автоматический постинг табата-тренировок в Telegram канал FITNESS TIMER через DeepSeek AI | Табата | HIIT | Фитнес",
-      "impact_score": 7.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "e240cadc76a6b14b16e417c3b24e0d76"
-      ],
-      "evidence": [
-        "GitHub"
-      ],
-      "timestamp": "2026-02-16"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub: Med-X-KimiK2-RAG",
-      "description": "🩺 Assist clinical reasoning with MedeX, an AI-powered tool using Retrieval-Augmented Generation for medical education and case analysis.",
-      "impact_score": 7.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "e380a9bffd19b9aade1804fabb98306c"
-      ],
-      "evidence": [
-        "GitHub"
-      ],
-      "timestamp": "2026-02-16"
+      "timestamp": "2026-02-20"
     },
     {
       "type": "trend",
-      "title": "DeepSeek",
-      "description": "DeepSeek, unravel the mystery of AGI with curiosity. Answer the essential question with long-termism....",
-      "impact_score": 7.0,
+      "title": "智谱发布 GLM-4 基座大模型，性能效果如何？ - 知乎",
+      "description": "智谱AI团队完美解决了长上下文全局信息因失焦而导致的精度下降的问题。 多模态能力 这一次，GLM-4的文生图和多模态理解都得到增强。 全新推出 …...",
+      "impact_score": 6.0,
       "confidence": 0.8,
       "related_updates": [
-        "2c071c1b803a0922c7bf18ecd78e5311"
+        "c4ea595efd5b7f645928407b141c39cc"
       ],
       "evidence": [
-        "https://www.deepseek.com/en/"
+        "https://www.zhihu.com/question/639753877"
       ],
-      "timestamp": "2026-02-16"
+      "timestamp": "2026-02-23"
     },
     {
       "type": "trend",
-      "title": "DeepSeek | 深度求索",
-      "description": "基于自研训练框架、自建智算集群和万卡算力等资源，深度求索团队仅用半年时间便已发布并开源多个百亿级参数大模型，如DeepSeek-LLM通用大语言模型、DeepSeek-Coder代码大模型，并在2024年1月率先开源国 …...",
-      "impact_score": 7.0,
+      "title": "如何评价智谱AI大模型？ - 知乎",
+      "description": "国内大模型第一梯队 TOP 3，必有 智谱AI大模型！ 作为大模型的资深用户，使用近一年，利用大模型改造公司数据管理、常规职场办公业务，深入使用国内外各类大 …...",
+      "impact_score": 6.0,
       "confidence": 0.8,
       "related_updates": [
-        "917c0f2733ec19bfe9b24cdab127ecb5"
+        "a63d892b077499bf153d1ace694d6dea"
       ],
       "evidence": [
-        "https://www.deepseek.com/"
+        "https://www.zhihu.com/question/640928416"
       ],
-      "timestamp": "2026-02-16"
+      "timestamp": "2026-02-23"
     },
     {
       "type": "trend",
-      "title": "DeepSeek - Into the Unknown",
-      "description": "Chat with DeepSeek AI – your intelligent assistant for coding, content creation, file reading, and more....",
-      "impact_score": 7.0,
+      "title": "智谱 AI 发布 CodeGeeX 代码大模型，该模型的主要功能是什么？",
+      "description": "智谱AI 旗下的代码生成大模型 CodeGeeX 正式发布第四代开源版本：CodeGeeX4-ALL-9B，其是集代码补全和生成、代码问答、代码解释器、工具调用、联网 …...",
+      "impact_score": 6.0,
       "confidence": 0.8,
       "related_updates": [
-        "786d2c76e4ae0656035d2099c5b187e2"
+        "f4ac1ca787176117d8622fc4ab7aa671"
       ],
       "evidence": [
-        "https://chat.deepseek.com/sign_in"
+        "https://www.zhihu.com/question/660876840?write"
       ],
-      "timestamp": "2026-02-16"
+      "timestamp": "2026-02-23"
     },
     {
       "type": "trend",
-      "title": "DeepSeek",
-      "description": "Chat with DeepSeek AI – your intelligent assistant for coding, content creation, file reading, and more....",
-      "impact_score": 7.0,
+      "title": "如何看待智谱AI发布GLM4？国产大模型与GPT-4更加接近了吗？",
+      "description": "总结 智谱AI是国内在大模型领域走的非常快的创业公司，他们开源的ChatGLM系列在国内也是获得了非常大的关注。 去年共迭代了三个版本，而此次GLM4的发 …...",
+      "impact_score": 6.0,
       "confidence": 0.8,
       "related_updates": [
-        "6138b6a8dd0129ae5db3b121299bade0"
+        "44cf311c55757935b752ed08a20349c8"
       ],
       "evidence": [
-        "https://download.deepseek.com/"
+        "https://www.zhihu.com/question/639787253"
       ],
-      "timestamp": "2026-02-16"
+      "timestamp": "2026-02-23"
+    },
+    {
+      "type": "trend",
+      "title": "如何评价智谱刚刚发布的GLM-4-0414系列大模型？ - 知乎",
+      "description": "再来看看这次上新的 Z.ai ， 集成基座、推理、沉思模型，推理能力真的是YYDS。 与openAI的4o模型，完进行了对比，问他一个比较深邃的问题，我们先看 …...",
+      "impact_score": 6.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "dbd3c9ff0c2f0f8e7fa683180ef01972"
+      ],
+      "evidence": [
+        "https://www.zhihu.com/question/1895408093245985817"
+      ],
+      "timestamp": "2026-02-23"
     }
   ],
-  "significant_changes": [
-    {
-      "category": "new_company",
-      "description": "New entities detected: kimi",
-      "magnitude": 7.0,
-      "week_over_week_change": {
-        "new": [
-          "kimi"
-        ]
-      },
-      "implications": [
-        "Monitor kimi for future developments"
-      ]
-    },
-    {
-      "category": "market_shift",
-      "description": "Significant activity increase: 8 → 16 updates (+100%)",
-      "magnitude": 6.0,
-      "week_over_week_change": {
-        "prev": 8,
-        "current": 16
-      },
-      "implications": [
-        "Increased market activity - monitor closely",
-        "Potential major announcements coming"
-      ]
-    }
-  ],
+  "significant_changes": [],
   "trends": [
-    {
-      "type": "increasing_activity",
-      "description": "Activity trending up: 10 → 16 updates",
-      "confidence": 0.8
-    },
     {
       "type": "emerging_company",
       "description": "deepseek showing increasing activity",
-      "confidence": 0.7
-    },
-    {
-      "type": "emerging_company",
-      "description": "kimi showing increasing activity",
       "confidence": 0.7
     },
     {
@@ -226,7 +134,7 @@
     },
     {
       "type": "emerging_company",
-      "description": "moonshot showing increasing activity",
+      "description": "kimi showing increasing activity",
       "confidence": 0.7
     },
     {
@@ -236,9 +144,6 @@
     }
   ],
   "recommendations": [
-    "URGENT: 1 high-impact developments detected - review immediately",
-    "New companies/models detected - add to monitoring list",
-    "Market activity spike detected - potential major announcements",
     "Long-term trends identified - consider strategic implications"
   ]
 }
