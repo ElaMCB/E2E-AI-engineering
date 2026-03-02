@@ -1,127 +1,224 @@
 {
-  "date": "2026-02-23",
+  "date": "2026-03-02",
   "executive_summary": {
-    "summary": "This week saw 7 updates across 2 companies/models. Top activity: Other, qwen",
+    "summary": "This week saw 18 updates across 7 companies/models. Top activity: kimi, deepseek, qwen",
     "key_highlights": [
-      "OTHER: 5 updates",
-      "QWEN: 2 updates"
+      "KIMI: 10 updates",
+      "DEEPSEEK: 7 updates",
+      "QWEN: 6 updates"
     ],
-    "trends": [],
-    "total_updates": 7,
-    "unique_companies": 2,
+    "trends": [
+      "Strong GitHub activity - many new repositories"
+    ],
+    "total_updates": 18,
+    "unique_companies": 7,
     "top_companies": [
       {
-        "name": "Other",
-        "count": 5
+        "name": "kimi",
+        "count": 10
+      },
+      {
+        "name": "deepseek",
+        "count": 7
       },
       {
         "name": "qwen",
+        "count": 6
+      },
+      {
+        "name": "minimax",
         "count": 2
+      },
+      {
+        "name": "zhipu",
+        "count": 1
       }
     ]
   },
   "top_insights": [
     {
-      "type": "research_paper",
-      "title": "arXiv: Vichara: Appellate Judgment Prediction and Explanation for the Indian Judicial System",
-      "description": "In jurisdictions like India, where courts face an extensive backlog of cases, artificial intelligence offers transformative potential for legal judgment prediction. A critical subset of this backlog c...",
-      "impact_score": 6.5,
+      "type": "new_model",
+      "title": "GitHub Release: wintermute - v0.5.1-alpha",
+      "description": "## [0.5.1-alpha](https://github.com/overcuriousity/wintermute/compare/v0.5.0-alpha...v0.5.1-alpha) (2026-02-28)\n\n\n### Bug Fixes\n\n* address all PR [#134](https://github.com/overcuriousity/wintermute/is",
+      "impact_score": 9.0,
       "confidence": 0.8,
       "related_updates": [
-        "f8ebf8a448f350f04b48f6beffe6d836"
+        "af3e971d1ea958d1e7992ee2951f362b"
       ],
       "evidence": [
-        "arXiv"
+        "GitHub Releases"
       ],
-      "timestamp": "2026-02-20"
+      "timestamp": "2026-02-28"
     },
     {
-      "type": "research_paper",
-      "title": "arXiv: Going Down Memory Lane: Scaling Tokens for Video Stream Understanding with Dynamic KV-Cache Memory",
-      "description": "Streaming video understanding requires models to robustly encode, store, and retrieve information from a continuous video stream to support accurate video question answering (VQA). Existing state-of-t...",
-      "impact_score": 6.5,
+      "type": "new_model",
+      "title": "GitHub Release: JARVIS - v0.3.0 — Observability & Multi-Provider AI",
+      "description": "## JARVIS v0.3.0\n\n> Production-ready observability, expanded AI provider support, and improved developer experience.\n\n---\n\n## Highlights\n\n### 🔭 Production-Grade Observability Stack\n\nFull monitoring in",
+      "impact_score": 9.0,
       "confidence": 0.8,
       "related_updates": [
-        "10ac6da35664c974bbabaed14dd085b8"
+        "ada755b119abee9ea64f80f3d8e1d56a"
       ],
       "evidence": [
-        "arXiv"
+        "GitHub Releases"
       ],
-      "timestamp": "2026-02-20"
+      "timestamp": "2026-02-27"
     },
     {
-      "type": "trend",
-      "title": "智谱发布 GLM-4 基座大模型，性能效果如何？ - 知乎",
-      "description": "智谱AI团队完美解决了长上下文全局信息因失焦而导致的精度下降的问题。 多模态能力 这一次，GLM-4的文生图和多模态理解都得到增强。 全新推出 …...",
-      "impact_score": 6.0,
+      "type": "new_model",
+      "title": "GitHub: InferenceX",
+      "description": "Open Source Continuous Inference Benchmarking Qwen3.5, DeepSeek, GPTOSS - GB200 NVL72 vs MI355X vs B200 vs GB300 NVL72 vs H100 & soon™ TPUv6e/v7/Trainium2/3",
+      "impact_score": 8.5,
       "confidence": 0.8,
       "related_updates": [
-        "c4ea595efd5b7f645928407b141c39cc"
+        "db9248d9e2bc829cf4695bc484d80b25"
       ],
       "evidence": [
-        "https://www.zhihu.com/question/639753877"
+        "GitHub"
       ],
-      "timestamp": "2026-02-23"
+      "timestamp": "2026-03-02"
     },
     {
-      "type": "trend",
-      "title": "如何评价智谱AI大模型？ - 知乎",
-      "description": "国内大模型第一梯队 TOP 3，必有 智谱AI大模型！ 作为大模型的资深用户，使用近一年，利用大模型改造公司数据管理、常规职场办公业务，深入使用国内外各类大 …...",
-      "impact_score": 6.0,
+      "type": "new_model",
+      "title": "GitHub Release: ragflow - v0.24.0",
+      "description": "# Summary\r\n\r\n## New features\r\n\r\n- Memory\r\n  - Introduces APIs and an SDK for developer integration.\r\n  - Adds Memory extraction log display in the console for improved debugging and tracing.\r\n- Datase",
+      "impact_score": 8.0,
       "confidence": 0.8,
       "related_updates": [
-        "a63d892b077499bf153d1ace694d6dea"
+        "1561485baba5453fae6402b0909ee4f7"
       ],
       "evidence": [
-        "https://www.zhihu.com/question/640928416"
+        "GitHub Releases"
       ],
-      "timestamp": "2026-02-23"
+      "timestamp": "2026-02-10"
     },
     {
-      "type": "trend",
-      "title": "智谱 AI 发布 CodeGeeX 代码大模型，该模型的主要功能是什么？",
-      "description": "智谱AI 旗下的代码生成大模型 CodeGeeX 正式发布第四代开源版本：CodeGeeX4-ALL-9B，其是集代码补全和生成、代码问答、代码解释器、工具调用、联网 …...",
-      "impact_score": 6.0,
+      "type": "new_model",
+      "title": "GitHub Release: JeecgBoot - v3.9.1",
+      "description": "**发版时间**：v3.9.1 | 2026-01-28\r\n\r\n\r\n#### 升级日志\r\n\r\n> 本次升级对 AI 平台进行了全面增强，升级 LangChain4j 至 1.9.1，引入推理模型、多会话与流式调用能力；千问模型支持参数调整与联网搜索，新增 AI 绘画、文生图、图生图和海报生成等多模态能力；AI 应用升级为智能体，支持记忆、变量、插件、流程与 MCP；流程能力新增变量、循环、SQL、",
+      "impact_score": 8.0,
       "confidence": 0.8,
       "related_updates": [
-        "f4ac1ca787176117d8622fc4ab7aa671"
+        "abdb133d3656204e65cf237eb68a3935"
       ],
       "evidence": [
-        "https://www.zhihu.com/question/660876840?write"
+        "GitHub Releases"
       ],
-      "timestamp": "2026-02-23"
+      "timestamp": "2026-01-28"
     },
     {
-      "type": "trend",
-      "title": "如何看待智谱AI发布GLM4？国产大模型与GPT-4更加接近了吗？",
-      "description": "总结 智谱AI是国内在大模型领域走的非常快的创业公司，他们开源的ChatGLM系列在国内也是获得了非常大的关注。 去年共迭代了三个版本，而此次GLM4的发 …...",
-      "impact_score": 6.0,
+      "type": "new_model",
+      "title": "GitHub Release: JeecgBoot - v3.9.0",
+      "description": "**发版时间**：v3.9.0 | 2025-12-01\r\n\r\n#### 源码下载\r\n\r\n-   Github地址： [https://github.com/jeecgboot/JeecgBoot](https://github.com/jeecgboot/JeecgBoot)\r\n-   Gitee地址： [https://gitee.com/jeecg/JeecgBoot](https://gi",
+      "impact_score": 8.0,
       "confidence": 0.8,
       "related_updates": [
-        "44cf311c55757935b752ed08a20349c8"
+        "73191e14b75e948c71ffda6377be5afe"
       ],
       "evidence": [
-        "https://www.zhihu.com/question/639787253"
+        "GitHub Releases"
       ],
-      "timestamp": "2026-02-23"
+      "timestamp": "2025-12-02"
     },
     {
-      "type": "trend",
-      "title": "如何评价智谱刚刚发布的GLM-4-0414系列大模型？ - 知乎",
-      "description": "再来看看这次上新的 Z.ai ， 集成基座、推理、沉思模型，推理能力真的是YYDS。 与openAI的4o模型，完进行了对比，问他一个比较深邃的问题，我们先看 …...",
-      "impact_score": 6.0,
+      "type": "new_model",
+      "title": "GitHub: JARVIS",
+      "description": "AI assistant platform with RAG knowledge base, multi-LLM support (DeepSeek/OpenAI/Anthropic), and streaming conversations. Built with FastAPI + Vue 3.",
+      "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "dbd3c9ff0c2f0f8e7fa683180ef01972"
+        "fc6dede69e99e5b0470f6aea5ac5211d"
       ],
       "evidence": [
-        "https://www.zhihu.com/question/1895408093245985817"
+        "GitHub"
       ],
-      "timestamp": "2026-02-23"
+      "timestamp": "2026-03-02"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: deepseek-rag-assistant",
+      "description": "AI Assistant on DeepSeek with RAG",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "6ddf6a09be5d509da323ea2a9c4a959d"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-03-02"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: ComfyUI-LLMs-Toolkit",
+      "description": "Enhance your ComfyUI workflows with powerful LLMs! This custom node suite integrates DeepSeek, Qwen, and other leading Chinese LLMs directly into your ComfyUI environment. Create innovative AI-powered",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "aaed876487afa9490d81bcd173b27881"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-03-02"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: ai-hub-widget",
+      "description": "AI Hub Desktop Widget v5 — solid, clean sidebar for Claude, Kimi, Gemini, Qwen, Codex, Kilo Code, and Ollama",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "036a39d6451fd1d455e6ce5f213459fd"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-03-02"
     }
   ],
-  "significant_changes": [],
+  "significant_changes": [
+    {
+      "category": "new_company",
+      "description": "New entities detected: minimax, kimi, doubao, deepseek, zhipu",
+      "magnitude": 7.0,
+      "week_over_week_change": {
+        "new": [
+          "minimax",
+          "kimi",
+          "doubao",
+          "deepseek",
+          "zhipu"
+        ]
+      },
+      "implications": [
+        "Monitor minimax for future developments",
+        "Monitor kimi for future developments",
+        "Monitor doubao for future developments",
+        "Monitor deepseek for future developments",
+        "Monitor zhipu for future developments"
+      ]
+    },
+    {
+      "category": "market_shift",
+      "description": "Significant activity increase: 7 → 18 updates (+157%)",
+      "magnitude": 6.0,
+      "week_over_week_change": {
+        "prev": 7,
+        "current": 18
+      },
+      "implications": [
+        "Increased market activity - monitor closely",
+        "Potential major announcements coming"
+      ]
+    }
+  ],
   "trends": [
+    {
+      "type": "increasing_activity",
+      "description": "Activity trending up: 8 → 18 updates",
+      "confidence": 0.8
+    },
     {
       "type": "emerging_company",
       "description": "deepseek showing increasing activity",
@@ -134,16 +231,19 @@
     },
     {
       "type": "emerging_company",
-      "description": "kimi showing increasing activity",
+      "description": "minimax showing increasing activity",
       "confidence": 0.7
     },
     {
       "type": "emerging_company",
-      "description": "minimax showing increasing activity",
+      "description": "kimi showing increasing activity",
       "confidence": 0.7
     }
   ],
   "recommendations": [
+    "URGENT: 6 high-impact developments detected - review immediately",
+    "New companies/models detected - add to monitoring list",
+    "Market activity spike detected - potential major announcements",
     "Long-term trends identified - consider strategic implications"
   ]
 }
