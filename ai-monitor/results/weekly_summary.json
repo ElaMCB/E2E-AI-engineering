@@ -1,43 +1,5 @@
 [
   {
-    "date": "2025-12-15",
-    "updates": [
-      {
-        "title": "GitHub: Tools_DeepSeekOCR",
-        "source": "GitHub",
-        "url": "https://github.com/Sabastincruzz/Tools_DeepSeekOCR",
-        "date": "2025-12-15",
-        "summary": "🖥️ Deploy DeepSeek-OCR for Optical Character Recognition directly from screen captures on Windows, enabling efficient text extraction from images.",
-        "keywords": [
-          "deepseek"
-        ],
-        "hash": "d074f813ffa675bc0bbd83fda14533fc"
-      },
-      {
-        "title": "GitHub: deepseek-trading-experiment",
-        "source": "GitHub",
-        "url": "https://github.com/v0acc0002/deepseek-trading-experiment",
-        "date": "2025-12-15",
-        "summary": "🤖 Explore AI-driven trading with the DeepSeek crypto bot, designed for learning rather than profit through backtesting strategies and financial analysis.",
-        "keywords": [
-          "deepseek"
-        ],
-        "hash": "103f5d1e01777b3ebc9bf6c6c995eded"
-      },
-      {
-        "title": "arXiv: LLM tools in the prediction of the stability of perovskite solar cells",
-        "source": "arXiv",
-        "url": "https://arxiv.org/abs/2512.11615v1",
-        "date": "2025-12-12",
-        "summary": "We investigate whether tools based on large language models (LLMs) can be effectively used by a developer of new perovskite solar cells (PSCs) to predict both the \"lifetime\" of the device and the degr...",
-        "keywords": [
-          "deepseek"
-        ],
-        "hash": "f656bb1b134558adffd2bbe1b7f10909"
-      }
-    ]
-  },
-  {
     "date": "2025-12-22",
     "updates": [
       {
@@ -1874,6 +1836,250 @@
           "qwen"
         ],
         "hash": "acdd33ee745ce276810ef8f2053ee2ac"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-16",
+    "updates": [
+      {
+        "title": "GitHub: codestore-internal-ai-bot",
+        "source": "GitHub",
+        "url": "https://github.com/umarcodestore27/codestore-internal-ai-bot",
+        "date": "2026-03-16",
+        "summary": "Internal AI chatbot for CodeStore Technologies built with Streamlit and Ollama using the DeepSeek-Coder model.",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "c5a925912f4d83a1f8e1bd156a50ee1a"
+      },
+      {
+        "title": "GitHub: freeflux",
+        "source": "GitHub",
+        "url": "https://github.com/Rian-create/freeflux",
+        "date": "2026-03-16",
+        "summary": "🚀 Simplify FLUX access with 4-bit models and CPU offloading, enabling powerful GPU utilization and prompt generation from keywords with DeepSeek-R1 AI.",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "a898b7340e2d958c00410c3b3e9bf35f"
+      },
+      {
+        "title": "GitHub: kimi-usage-monitor",
+        "source": "GitHub",
+        "url": "https://github.com/tboydar/kimi-usage-monitor",
+        "date": "2026-03-16",
+        "summary": "A beautiful real-time terminal monitoring tool for Kimi AI usage with Rich UI",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "74e2e8a2573af254bec7e0aabda1a38a"
+      },
+      {
+        "title": "GitHub: chatgpt-on-wechat",
+        "source": "GitHub",
+        "url": "https://github.com/zhayujie/chatgpt-on-wechat",
+        "date": "2026-03-16",
+        "summary": "CowAgent是基于大模型的超级AI助理，能主动思考和任务规划、访问操作系统和外部资源、创造和执行Skills、拥有长期记忆并不断成长。同时支持飞书、钉钉、企业微信应用、微信公众号、网页等接入，可选择OpenAI/Claude/Gemini/DeepSeek/ Qwen/GLM/Kimi/LinkAI，能处理文本、语音、图片和文件，可快速搭建个人AI助手和企业数字员工。",
+        "keywords": [
+          "deepseek",
+          "kimi",
+          "qwen"
+        ],
+        "hash": "47daa50ff606227593ca4fe2e24a5739"
+      },
+      {
+        "title": "GitHub: LLM-Colosseum-Chinese-AI-Deduction-Arena",
+        "source": "GitHub",
+        "url": "https://github.com/anansosmart/LLM-Colosseum-Chinese-AI-Deduction-Arena",
+        "date": "2026-03-16",
+        "summary": "A multi-agent competitive framework where leading Chinese LLMs (such as Qwen, DeepSeek, and ERNIE) play dual roles as mystery-solvers and judges. The project evaluates models' strategic reasoning and ",
+        "keywords": [
+          "deepseek",
+          "ernie",
+          "qwen"
+        ],
+        "hash": "c21e534ae42b754fc9eb2b12ff46a70e"
+      },
+      {
+        "title": "DeepSeek",
+        "source": "https://www.deepseek.com/en/",
+        "url": "https://www.deepseek.com/en/",
+        "date": "2026-03-16",
+        "summary": "DeepSeek, unravel the mystery of AGI with curiosity. Answer the essential question with long-termism....",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "2c071c1b803a0922c7bf18ecd78e5311"
+      },
+      {
+        "title": "DeepSeek | 深度求索",
+        "source": "https://www.deepseek.com/",
+        "url": "https://www.deepseek.com/",
+        "date": "2026-03-16",
+        "summary": "深度求索（DeepSeek），成立于2023年，专注于研究世界领先的通用人工智能底层模型与技术，挑战人工智能前沿性难题。基于自 …...",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "917c0f2733ec19bfe9b24cdab127ecb5"
+      },
+      {
+        "title": "DeepSeek - Into the Unknown",
+        "source": "https://chat.deepseek.com/sign_in",
+        "url": "https://chat.deepseek.com/sign_in",
+        "date": "2026-03-16",
+        "summary": "Chat with DeepSeek AI – your intelligent assistant for coding, content creation, file reading, and more....",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "786d2c76e4ae0656035d2099c5b187e2"
+      },
+      {
+        "title": "DeepSeek",
+        "source": "https://download.deepseek.com/",
+        "url": "https://download.deepseek.com/",
+        "date": "2026-03-16",
+        "summary": "Chat with DeepSeek AI – your intelligent assistant for coding, content creation, file reading, and more. Upload documents, …...",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "6138b6a8dd0129ae5db3b121299bade0"
+      },
+      {
+        "title": "DeepSeek Platform",
+        "source": "https://platform.deepseek.com/",
+        "url": "https://platform.deepseek.com/",
+        "date": "2026-03-16",
+        "summary": "Join DeepSeek API platform to access our AI models, developer resources and API documentation....",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "0dd0851efcb65be55a0488ce52607a30"
+      },
+      {
+        "title": "智谱发布 GLM-4 基座大模型，性能效果如何？ - 知乎",
+        "source": "https://www.zhihu.com/question/639753877",
+        "url": "https://www.zhihu.com/question/639753877",
+        "date": "2026-03-16",
+        "summary": "智谱AI团队完美解决了长上下文全局信息因失焦而导致的精度下降的问题。 多模态能力 这一次，GLM-4的文生图和多模态理解都得到增强。 全新推出的CogView3，效果明显超过开源最佳的Stable …...",
+        "keywords": [],
+        "hash": "c4ea595efd5b7f645928407b141c39cc"
+      },
+      {
+        "title": "智谱 AI 发布 CodeGeeX 代码大模型，该模型的主要功能是什么？",
+        "source": "https://www.zhihu.com/question/660876840?write",
+        "url": "https://www.zhihu.com/question/660876840?write",
+        "date": "2026-03-16",
+        "summary": "智谱AI 旗下的代码生成大模型 CodeGeeX 正式发布第四代开源版本：CodeGeeX4-ALL-9B，其是集代码补全和生成、代码问答、代码解释器、工具调用、联网搜索、项目级代码问答等能力于一体的代码大 …...",
+        "keywords": [],
+        "hash": "f4ac1ca787176117d8622fc4ab7aa671"
+      },
+      {
+        "title": "如何评价智谱AI大模型？ - 知乎",
+        "source": "https://www.zhihu.com/question/640928416",
+        "url": "https://www.zhihu.com/question/640928416",
+        "date": "2026-03-16",
+        "summary": "我是在GLM4更新后使用的，经过一段时间的使用，可以简单谈谈感受，总体来说智谱AI大模型是一个强大且多功能的工具，能够在多种语言和应用场景中发挥作用。 多语言能力 智谱AI大模型支持中英双 …...",
+        "keywords": [],
+        "hash": "a63d892b077499bf153d1ace694d6dea"
+      },
+      {
+        "title": "智谱生成式 AI 工具「智谱清言」正式上线，该工具都有哪些值得关注 …",
+        "source": "https://www.zhihu.com/question/619959960",
+        "url": "https://www.zhihu.com/question/619959960",
+        "date": "2026-03-16",
+        "summary": "8月31日，智谱AI正式上线首款生成式AI助手“智谱清言”，已在各大应用商店上线。这款工具基于智谱AI自主…...",
+        "keywords": [],
+        "hash": "e3a4fff2107551d34b292237b92fe473"
+      },
+      {
+        "title": "如何看待智谱AI发布GLM4？国产大模型与GPT-4更加接近了吗？",
+        "source": "https://www.zhihu.com/question/639787253",
+        "url": "https://www.zhihu.com/question/639787253",
+        "date": "2026-03-16",
+        "summary": "总结 智谱AI是国内在大模型领域走的非常快的创业公司，他们开源的ChatGLM系列在国内也是获得了非常大的关注。 去年共迭代了三个版本，而此次GLM4的发布让大家看到了一个更加接近OpenAI的国 …...",
+        "keywords": [],
+        "hash": "44cf311c55757935b752ed08a20349c8"
+      },
+      {
+        "title": "GitHub: AgentWeave",
+        "source": "GitHub",
+        "url": "https://github.com/gutohuida/AgentWeave",
+        "date": "2026-03-15",
+        "summary": "File-based collaboration framework enabling Claude and Kimi AI agents to work together through shared state files",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "c35913ab1ff334c53684ebb2992a90e9"
+      },
+      {
+        "title": "GitHub: awesome-skills",
+        "source": "GitHub",
+        "url": "https://github.com/theneoai/awesome-skills",
+        "date": "2026-03-15",
+        "summary": "🌟 450+ Expert AI Skills | CEO, Doctor, Engineer, Scientist & more | Multi-platform: Claude, Cursor, Codex, Kimi, OpenClaw | Transform AI into any professional",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "ec2aa9fc39a9b69864b36d19156bc034"
+      },
+      {
+        "title": "GitHub: kimi_claw_skills",
+        "source": "GitHub",
+        "url": "https://github.com/aggelosChatziioannou/kimi_claw_skills",
+        "date": "2026-03-15",
+        "summary": "Kimi Claw AI Skills Collection",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "b6e5de957fb45ac4ea7250c7381c8c86"
+      },
+      {
+        "title": "GitHub: aiwrap",
+        "source": "GitHub",
+        "url": "https://github.com/Haredev/aiwrap",
+        "date": "2026-03-15",
+        "summary": "AIWrap - Unified CLI wrapper for Kimi, Gemini, Codex, and Claude Code",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "8a0807eb169118e8d592c9f043e894a7"
+      },
+      {
+        "title": "GitHub Release: tt-metal - v0.68.0-dev20260314",
+        "source": "GitHub Releases",
+        "url": "https://github.com/tenstorrent/tt-metal/releases/tag/v0.68.0-dev20260314",
+        "date": "2026-03-14",
+        "summary": "> [!NOTE]\n>\n> If you are installing from a release, please refer to the README, INSTALLATION instructions, and any other documentation packaged with the release, not on the main branch. There may be d",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "36123dd831cbdc10a3820846da3381c1"
+      },
+      {
+        "title": "GitHub: AarnXen-MultiAI-MCP",
+        "source": "GitHub",
+        "url": "https://github.com/Abhishek-Kraj/AarnXen-MultiAI-MCP",
+        "date": "2026-03-14",
+        "summary": "Multi-model AI orchestration MCP server — 31 tools, 25+ models (Gemini, DeepSeek, Kimi, Qwen, GLM, MiniMax), memory flywheel, web grounding. Works with Claude Code.",
+        "keywords": [
+          "deepseek",
+          "minimax",
+          "kimi",
+          "qwen"
+        ],
+        "hash": "baaeafaceedb9cb24d865767b670bff8"
+      },
+      {
+        "title": "GitHub: kimi-enterprise",
+        "source": "GitHub",
+        "url": "https://github.com/abdesselam-tech/kimi-enterprise",
+        "date": "2026-03-14",
+        "summary": "Enterprise-grade multi-agent orchestration framework for Kimi CLI - Run a complete virtual IT company with AI agents",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "2f6374c90e54784ebaa5bb817dbfd650"
       }
     ]
   }

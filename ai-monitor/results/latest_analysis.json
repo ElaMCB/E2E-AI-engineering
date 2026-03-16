@@ -1,121 +1,230 @@
 {
-  "date": "2026-03-09",
+  "date": "2026-03-16",
   "executive_summary": {
-    "summary": "This week saw 6 updates across 2 companies/models. Top activity: Other, qwen",
+    "summary": "This week saw 22 updates across 6 companies/models. Top activity: deepseek, kimi, Other",
     "key_highlights": [
-      "OTHER: 5 updates",
-      "QWEN: 1 updates"
+      "DEEPSEEK: 11 updates",
+      "KIMI: 8 updates",
+      "OTHER: 5 updates"
     ],
-    "trends": [],
-    "total_updates": 6,
-    "unique_companies": 2,
+    "trends": [
+      "Strong GitHub activity - many new repositories"
+    ],
+    "total_updates": 22,
+    "unique_companies": 6,
     "top_companies": [
+      {
+        "name": "deepseek",
+        "count": 11
+      },
+      {
+        "name": "kimi",
+        "count": 8
+      },
       {
         "name": "Other",
         "count": 5
       },
       {
         "name": "qwen",
+        "count": 3
+      },
+      {
+        "name": "ernie",
         "count": 1
       }
     ]
   },
   "top_insights": [
     {
-      "type": "research_paper",
-      "title": "arXiv: Penguin-VL: Exploring the Efficiency Limits of VLM with LLM-based Vision Encoders",
-      "description": "Vision Language Model (VLM) development has largely relied on scaling model size, which hinders deployment on compute-constrained mobile and edge devices such as smartphones and robots. In this work, ...",
-      "impact_score": 6.5,
+      "type": "new_model",
+      "title": "GitHub Release: tt-metal - v0.68.0-dev20260314",
+      "description": "> [!NOTE]\n>\n> If you are installing from a release, please refer to the README, INSTALLATION instructions, and any other documentation packaged with the release, not on the main branch. There may be d",
+      "impact_score": 9.0,
       "confidence": 0.8,
       "related_updates": [
-        "acdd33ee745ce276810ef8f2053ee2ac"
+        "36123dd831cbdc10a3820846da3381c1"
       ],
       "evidence": [
-        "arXiv"
+        "GitHub Releases"
       ],
-      "timestamp": "2026-03-06"
+      "timestamp": "2026-03-14"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: codestore-internal-ai-bot",
+      "description": "Internal AI chatbot for CodeStore Technologies built with Streamlit and Ollama using the DeepSeek-Coder model.",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "c5a925912f4d83a1f8e1bd156a50ee1a"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-03-16"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: freeflux",
+      "description": "🚀 Simplify FLUX access with 4-bit models and CPU offloading, enabling powerful GPU utilization and prompt generation from keywords with DeepSeek-R1 AI.",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "a898b7340e2d958c00410c3b3e9bf35f"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-03-16"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: kimi-usage-monitor",
+      "description": "A beautiful real-time terminal monitoring tool for Kimi AI usage with Rich UI",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "74e2e8a2573af254bec7e0aabda1a38a"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-03-16"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: chatgpt-on-wechat",
+      "description": "CowAgent是基于大模型的超级AI助理，能主动思考和任务规划、访问操作系统和外部资源、创造和执行Skills、拥有长期记忆并不断成长。同时支持飞书、钉钉、企业微信应用、微信公众号、网页等接入，可选择OpenAI/Claude/Gemini/DeepSeek/ Qwen/GLM/Kimi/LinkAI，能处理文本、语音、图片和文件，可快速搭建个人AI助手和企业数字员工。",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "47daa50ff606227593ca4fe2e24a5739"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-03-16"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: LLM-Colosseum-Chinese-AI-Deduction-Arena",
+      "description": "A multi-agent competitive framework where leading Chinese LLMs (such as Qwen, DeepSeek, and ERNIE) play dual roles as mystery-solvers and judges. The project evaluates models' strategic reasoning and ",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "c21e534ae42b754fc9eb2b12ff46a70e"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-03-16"
     },
     {
       "type": "trend",
-      "title": "智谱 AI 因算力告急「限购」GLM 编程计划，暴露出 AI 行业哪些问题？",
-      "description": "Jan 21, 2026 · 智谱 AI 因算力告急「限购」GLM 编程计划，暴露出 AI 行业哪些问题？ 由于最新大语言模型 GLM-4.7 发布后用户量激增，智谱AI遭遇严重 算力 …...",
-      "impact_score": 6.0,
+      "title": "DeepSeek",
+      "description": "DeepSeek, unravel the mystery of AGI with curiosity. Answer the essential question with long-termism....",
+      "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "2dc0b43b31c6b6e5e6928be703069e57"
+        "2c071c1b803a0922c7bf18ecd78e5311"
       ],
       "evidence": [
-        "https://www.zhihu.com/question/1997433388664131775"
+        "https://www.deepseek.com/en/"
       ],
-      "timestamp": "2026-03-09"
+      "timestamp": "2026-03-16"
     },
     {
       "type": "trend",
-      "title": "智谱最新大模型 GLM-5 官网上线，有哪些值得关注的亮点？使用感受如何？ - 知乎",
-      "description": "GLM-5发布啦! 给大家带来实测! 国产大模型正式进入月更节奏! GLM-5发布啦! 给大家带来实测! GLM-4.7 才发布一个月, 智谱又掏出了 GLM-5, 这迭代速度属实离 …...",
-      "impact_score": 6.0,
+      "title": "DeepSeek | 深度求索",
+      "description": "深度求索（DeepSeek），成立于2023年，专注于研究世界领先的通用人工智能底层模型与技术，挑战人工智能前沿性难题。基于自 …...",
+      "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "f6d09caa2995e2dfd1884ffb2cef86fd"
+        "917c0f2733ec19bfe9b24cdab127ecb5"
       ],
       "evidence": [
-        "https://www.zhihu.com/question/2005023983209242784"
+        "https://www.deepseek.com/"
       ],
-      "timestamp": "2026-03-09"
+      "timestamp": "2026-03-16"
     },
     {
       "type": "trend",
-      "title": "智谱发布 GLM-4 基座大模型，性能效果如何？ - 知乎",
-      "description": "智谱AI团队完美解决了长上下文全局信息因失焦而导致的精度下降的问题。 多模态能力 这一次，GLM-4的文生图和多模态理解都得到增强。 全新推出 …...",
-      "impact_score": 6.0,
+      "title": "DeepSeek - Into the Unknown",
+      "description": "Chat with DeepSeek AI – your intelligent assistant for coding, content creation, file reading, and more....",
+      "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "c4ea595efd5b7f645928407b141c39cc"
+        "786d2c76e4ae0656035d2099c5b187e2"
       ],
       "evidence": [
-        "https://www.zhihu.com/question/639753877"
+        "https://chat.deepseek.com/sign_in"
       ],
-      "timestamp": "2026-03-09"
+      "timestamp": "2026-03-16"
     },
     {
       "type": "trend",
-      "title": "为什么智谱清言从2023国内领先做到现在越来越难用？ - 知乎",
-      "description": "但是智谱不一样，它可以说是“国家队”的大模型公司。 智谱坐落在北京，核心成员都是清华系的。 北京智谱华章科技有限公司（简称“智谱AI”）成立于2019年6 …...",
-      "impact_score": 6.0,
+      "title": "DeepSeek",
+      "description": "Chat with DeepSeek AI – your intelligent assistant for coding, content creation, file reading, and more. Upload documents, …...",
+      "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "3fda9aa6676fbed2403f95096c12b8d0"
+        "6138b6a8dd0129ae5db3b121299bade0"
       ],
       "evidence": [
-        "https://www.zhihu.com/question/1933977898676647524"
+        "https://download.deepseek.com/"
       ],
-      "timestamp": "2026-03-09"
-    },
-    {
-      "type": "trend",
-      "title": "如何评价智谱AI大模型？ - 知乎",
-      "description": "GLMs 类似 GPTs，标志着智谱在个性化智能体领域的新尝试。 用户可以根据自己的需求定制智能体，除了丰富了AI的应用场景、打造自身的AI生态之外，更便利 …...",
-      "impact_score": 6.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "a63d892b077499bf153d1ace694d6dea"
-      ],
-      "evidence": [
-        "https://www.zhihu.com/question/640928416"
-      ],
-      "timestamp": "2026-03-09"
+      "timestamp": "2026-03-16"
     }
   ],
-  "significant_changes": [],
+  "significant_changes": [
+    {
+      "category": "new_company",
+      "description": "New entities detected: deepseek, ernie, minimax, kimi",
+      "magnitude": 7.0,
+      "week_over_week_change": {
+        "new": [
+          "deepseek",
+          "ernie",
+          "minimax",
+          "kimi"
+        ]
+      },
+      "implications": [
+        "Monitor deepseek for future developments",
+        "Monitor ernie for future developments",
+        "Monitor minimax for future developments",
+        "Monitor kimi for future developments"
+      ]
+    },
+    {
+      "category": "market_shift",
+      "description": "Significant activity increase: 6 → 22 updates (+267%)",
+      "magnitude": 6.0,
+      "week_over_week_change": {
+        "prev": 6,
+        "current": 22
+      },
+      "implications": [
+        "Increased market activity - monitor closely",
+        "Potential major announcements coming"
+      ]
+    }
+  ],
   "trends": [
     {
-      "type": "emerging_company",
-      "description": "deepseek showing increasing activity",
-      "confidence": 0.7
+      "type": "increasing_activity",
+      "description": "Activity trending up: 7 → 22 updates",
+      "confidence": 0.8
     },
     {
       "type": "emerging_company",
       "description": "qwen showing increasing activity",
+      "confidence": 0.7
+    },
+    {
+      "type": "emerging_company",
+      "description": "deepseek showing increasing activity",
       "confidence": 0.7
     },
     {
@@ -130,6 +239,9 @@
     }
   ],
   "recommendations": [
+    "URGENT: 1 high-impact developments detected - review immediately",
+    "New companies/models detected - add to monitoring list",
+    "Market activity spike detected - potential major announcements",
     "Long-term trends identified - consider strategic implications"
   ]
 }
