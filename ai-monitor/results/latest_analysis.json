@@ -1,36 +1,36 @@
 {
-  "date": "2026-03-16",
+  "date": "2026-03-23",
   "executive_summary": {
-    "summary": "This week saw 22 updates across 6 companies/models. Top activity: deepseek, kimi, Other",
+    "summary": "This week saw 26 updates across 7 companies/models. Top activity: deepseek, kimi, qwen",
     "key_highlights": [
-      "DEEPSEEK: 11 updates",
-      "KIMI: 8 updates",
-      "OTHER: 5 updates"
+      "DEEPSEEK: 13 updates",
+      "KIMI: 11 updates",
+      "QWEN: 6 updates"
     ],
     "trends": [
       "Strong GitHub activity - many new repositories"
     ],
-    "total_updates": 22,
-    "unique_companies": 6,
+    "total_updates": 26,
+    "unique_companies": 7,
     "top_companies": [
       {
         "name": "deepseek",
-        "count": 11
+        "count": 13
       },
       {
         "name": "kimi",
-        "count": 8
-      },
-      {
-        "name": "Other",
-        "count": 5
+        "count": 11
       },
       {
         "name": "qwen",
-        "count": 3
+        "count": 6
       },
       {
-        "name": "ernie",
+        "name": "Other",
+        "count": 4
+      },
+      {
+        "name": "minimax",
         "count": 1
       }
     ]
@@ -38,31 +38,73 @@
   "top_insights": [
     {
       "type": "new_model",
-      "title": "GitHub Release: tt-metal - v0.68.0-dev20260314",
+      "title": "GitHub Release: tt-metal - v0.68.0-dev20260322",
       "description": "> [!NOTE]\n>\n> If you are installing from a release, please refer to the README, INSTALLATION instructions, and any other documentation packaged with the release, not on the main branch. There may be d",
       "impact_score": 9.0,
       "confidence": 0.8,
       "related_updates": [
-        "36123dd831cbdc10a3820846da3381c1"
+        "66edaeffdd6fd29e9d9cde815a7c98a5"
       ],
       "evidence": [
         "GitHub Releases"
       ],
-      "timestamp": "2026-03-14"
+      "timestamp": "2026-03-22"
     },
     {
       "type": "new_model",
-      "title": "GitHub: codestore-internal-ai-bot",
-      "description": "Internal AI chatbot for CodeStore Technologies built with Streamlit and Ollama using the DeepSeek-Coder model.",
-      "impact_score": 7.0,
+      "title": "GitHub Release: tt-metal - v0.68.0-dev20260321",
+      "description": "> [!NOTE]\n>\n> If you are installing from a release, please refer to the README, INSTALLATION instructions, and any other documentation packaged with the release, not on the main branch. There may be d",
+      "impact_score": 9.0,
       "confidence": 0.8,
       "related_updates": [
-        "c5a925912f4d83a1f8e1bd156a50ee1a"
+        "db6e2a1b74fe5a980d3a18e1fab95ad4"
       ],
       "evidence": [
-        "GitHub"
+        "GitHub Releases"
       ],
-      "timestamp": "2026-03-16"
+      "timestamp": "2026-03-21"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub Release: VESTI - v1.2.0-rc.7",
+      "description": "﻿## Highlights\n- Ships ChatGPT parser hardening with selector+anchor extraction, startup warm capture, and content cleanup.\n- Ships Qwen parser hardening for Monaco code blocks and flowing markdown pa",
+      "impact_score": 9.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "c9a3887a947f61450bc4a20971e1f674"
+      ],
+      "evidence": [
+        "GitHub Releases"
+      ],
+      "timestamp": "2026-03-08"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub Release: VESTI - VESTI v1.2.0-rc.6",
+      "description": "## What's Changed\n* add exploration multi-round conversation support by @firefly-hefeng in https://github.com/abraxas914/VESTI/pull/31\n* - Add url field to Conversation type   - Add ExternalLink butto",
+      "impact_score": 8.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "932e65159efc865192ef5489902b13a6"
+      ],
+      "evidence": [
+        "GitHub Releases"
+      ],
+      "timestamp": "2026-03-07"
+    },
+    {
+      "type": "research_paper",
+      "title": "arXiv: Measuring Faithfulness Depends on How You Measure: Classifier Sensitivity in LLM Chain-of-Thought Evaluation",
+      "description": "Recent work on chain-of-thought (CoT) faithfulness reports single aggregate numbers (e.g., DeepSeek-R1 acknowledges hints 39% of the time), implying that faithfulness is an objective, measurable prope...",
+      "impact_score": 7.5,
+      "confidence": 0.8,
+      "related_updates": [
+        "3395b0674c6a81f33b97b198fdcaffe6"
+      ],
+      "evidence": [
+        "arXiv"
+      ],
+      "timestamp": "2026-03-20"
     },
     {
       "type": "new_model",
@@ -76,155 +118,94 @@
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-03-16"
+      "timestamp": "2026-03-23"
     },
     {
       "type": "new_model",
-      "title": "GitHub: kimi-usage-monitor",
-      "description": "A beautiful real-time terminal monitoring tool for Kimi AI usage with Rich UI",
+      "title": "GitHub: JM_TestGenius",
+      "description": "本项目由 JM 开发，是一款基于 AI 大模型的自动化测试用例生成工具。系统支持千问、DeepSeek、OpenAI 等多种大语言模型，可自动解析需求文档内容，智能提取业务逻辑、场景与约束条件，自动生成标准化、可直接执行的测试用例，大幅提升需求分析与测试设计效率。",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "74e2e8a2573af254bec7e0aabda1a38a"
+        "60ff28d28f1ee27b11b3f232be03395a"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-03-16"
+      "timestamp": "2026-03-23"
     },
     {
       "type": "new_model",
-      "title": "GitHub: chatgpt-on-wechat",
-      "description": "CowAgent是基于大模型的超级AI助理，能主动思考和任务规划、访问操作系统和外部资源、创造和执行Skills、拥有长期记忆并不断成长。同时支持飞书、钉钉、企业微信应用、微信公众号、网页等接入，可选择OpenAI/Claude/Gemini/DeepSeek/ Qwen/GLM/Kimi/LinkAI，能处理文本、语音、图片和文件，可快速搭建个人AI助手和企业数字员工。",
+      "title": "GitHub: storycraft-ai",
+      "description": "AI 互动故事工坊，基于 Streamlit + deepseek-r1",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "47daa50ff606227593ca4fe2e24a5739"
+        "0cc8888c16adbd9071d2522bb2a824ea"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-03-16"
+      "timestamp": "2026-03-23"
     },
     {
       "type": "new_model",
-      "title": "GitHub: LLM-Colosseum-Chinese-AI-Deduction-Arena",
-      "description": "A multi-agent competitive framework where leading Chinese LLMs (such as Qwen, DeepSeek, and ERNIE) play dual roles as mystery-solvers and judges. The project evaluates models' strategic reasoning and ",
+      "title": "GitHub: fitness-timer-autopost",
+      "description": "🔥 Автоматический постинг табата-тренировок в Telegram канал FITNESS TIMER через DeepSeek AI | Табата | HIIT | Фитнес",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "c21e534ae42b754fc9eb2b12ff46a70e"
+        "e240cadc76a6b14b16e417c3b24e0d76"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-03-16"
+      "timestamp": "2026-03-23"
     },
     {
-      "type": "trend",
-      "title": "DeepSeek",
-      "description": "DeepSeek, unravel the mystery of AGI with curiosity. Answer the essential question with long-termism....",
+      "type": "new_model",
+      "title": "GitHub: feishu-bot-oss",
+      "description": "飞书 AI 助手 - 基于 Claude/Kimi 的群聊机器人，支持后台任务、项目管理和本地终端交互",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "2c071c1b803a0922c7bf18ecd78e5311"
+        "5a033829bdc7989e26b0674a67212f7f"
       ],
       "evidence": [
-        "https://www.deepseek.com/en/"
+        "GitHub"
       ],
-      "timestamp": "2026-03-16"
-    },
-    {
-      "type": "trend",
-      "title": "DeepSeek | 深度求索",
-      "description": "深度求索（DeepSeek），成立于2023年，专注于研究世界领先的通用人工智能底层模型与技术，挑战人工智能前沿性难题。基于自 …...",
-      "impact_score": 7.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "917c0f2733ec19bfe9b24cdab127ecb5"
-      ],
-      "evidence": [
-        "https://www.deepseek.com/"
-      ],
-      "timestamp": "2026-03-16"
-    },
-    {
-      "type": "trend",
-      "title": "DeepSeek - Into the Unknown",
-      "description": "Chat with DeepSeek AI – your intelligent assistant for coding, content creation, file reading, and more....",
-      "impact_score": 7.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "786d2c76e4ae0656035d2099c5b187e2"
-      ],
-      "evidence": [
-        "https://chat.deepseek.com/sign_in"
-      ],
-      "timestamp": "2026-03-16"
-    },
-    {
-      "type": "trend",
-      "title": "DeepSeek",
-      "description": "Chat with DeepSeek AI – your intelligent assistant for coding, content creation, file reading, and more. Upload documents, …...",
-      "impact_score": 7.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "6138b6a8dd0129ae5db3b121299bade0"
-      ],
-      "evidence": [
-        "https://download.deepseek.com/"
-      ],
-      "timestamp": "2026-03-16"
+      "timestamp": "2026-03-23"
     }
   ],
   "significant_changes": [
     {
       "category": "new_company",
-      "description": "New entities detected: deepseek, ernie, minimax, kimi",
+      "description": "New entities detected: moonshot",
       "magnitude": 7.0,
       "week_over_week_change": {
         "new": [
-          "deepseek",
-          "ernie",
-          "minimax",
-          "kimi"
+          "moonshot"
         ]
       },
       "implications": [
-        "Monitor deepseek for future developments",
-        "Monitor ernie for future developments",
-        "Monitor minimax for future developments",
-        "Monitor kimi for future developments"
-      ]
-    },
-    {
-      "category": "market_shift",
-      "description": "Significant activity increase: 6 → 22 updates (+267%)",
-      "magnitude": 6.0,
-      "week_over_week_change": {
-        "prev": 6,
-        "current": 22
-      },
-      "implications": [
-        "Increased market activity - monitor closely",
-        "Potential major announcements coming"
+        "Monitor moonshot for future developments"
       ]
     }
   ],
   "trends": [
     {
       "type": "increasing_activity",
-      "description": "Activity trending up: 7 → 22 updates",
+      "description": "Activity trending up: 18 → 26 updates",
       "confidence": 0.8
     },
     {
       "type": "emerging_company",
-      "description": "qwen showing increasing activity",
+      "description": "deepseek showing increasing activity",
       "confidence": 0.7
     },
     {
       "type": "emerging_company",
-      "description": "deepseek showing increasing activity",
+      "description": "qwen showing increasing activity",
       "confidence": 0.7
     },
     {
@@ -236,12 +217,16 @@
       "type": "emerging_company",
       "description": "minimax showing increasing activity",
       "confidence": 0.7
+    },
+    {
+      "type": "emerging_company",
+      "description": "ernie showing increasing activity",
+      "confidence": 0.7
     }
   ],
   "recommendations": [
-    "URGENT: 1 high-impact developments detected - review immediately",
+    "URGENT: 4 high-impact developments detected - review immediately",
     "New companies/models detected - add to monitoring list",
-    "Market activity spike detected - potential major announcements",
     "Long-term trends identified - consider strategic implications"
   ]
 }
