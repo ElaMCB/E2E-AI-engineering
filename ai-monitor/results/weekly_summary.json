@@ -1,134 +1,5 @@
 [
   {
-    "date": "2025-12-29",
-    "updates": [
-      {
-        "title": "GitHub: AI-Research-Agent",
-        "source": "GitHub",
-        "url": "https://github.com/ulquiorraexe/AI-Research-Agent",
-        "date": "2025-12-29",
-        "summary": "This project automatically generates a structured daily report about the Turkish game development industry using the DeepSeek R1 model via OpenRouter. It collects news from trusted sources, compares t",
-        "keywords": [
-          "deepseek"
-        ],
-        "hash": "2a841121d5d55ece84bf36bd9f1b86bc"
-      },
-      {
-        "title": "GitHub: freeflux",
-        "source": "GitHub",
-        "url": "https://github.com/Rian-create/freeflux",
-        "date": "2025-12-29",
-        "summary": "🚀 Simplify FLUX access with 4-bit models and CPU offloading, enabling powerful GPU utilization and prompt generation from keywords with DeepSeek-R1 AI.",
-        "keywords": [
-          "deepseek"
-        ],
-        "hash": "a898b7340e2d958c00410c3b3e9bf35f"
-      },
-      {
-        "title": "GitHub: doc2anki",
-        "source": "GitHub",
-        "url": "https://github.com/SOV710/doc2anki",
-        "date": "2025-12-29",
-        "summary": "A CLI tool that converts Markdown and Org-mode documents into Anki flashcards using LLM. Features AST-based intelligent chunking, multi-provider AI support (OpenAI, Claude, DeepSeek, Qwen, etc.), and ",
-        "keywords": [
-          "qwen",
-          "deepseek"
-        ],
-        "hash": "e054640dd8588c55a0945534c8417ba2"
-      },
-      {
-        "title": "GitHub: nautilus_AItrader",
-        "source": "GitHub",
-        "url": "https://github.com/Patrick-code-Bot/nautilus_AItrader",
-        "date": "2025-12-29",
-        "summary": "AI-powered cryptocurrency trading bot using DeepSeek and NautilusTrader",
-        "keywords": [
-          "deepseek"
-        ],
-        "hash": "25e87be9e0ed8e43b5da9e7501773ebf"
-      },
-      {
-        "title": "GitHub: AI-test",
-        "source": "GitHub",
-        "url": "https://github.com/Sruixu/AI-test",
-        "date": "2025-12-29",
-        "summary": "基于大模型的测试用例生成工具（可使用Deepseek 、小米 MiMo 、智普、Kimi、MiniMAX等API）",
-        "keywords": [
-          "deepseek",
-          "minimax",
-          "kimi"
-        ],
-        "hash": "a90bf093e52135ca981cad036160b662"
-      },
-      {
-        "title": "GitHub: kimi-ai-2api",
-        "source": "GitHub",
-        "url": "https://github.com/menendzerzumia-max/kimi-ai-2api",
-        "date": "2025-12-29",
-        "summary": "⚡ Transform Kimi.ai chat experiences into OpenAI API format with this high-performance proxy service for seamless integration and enhanced access.",
-        "keywords": [
-          "kimi"
-        ],
-        "hash": "35ac067b9e66a63789d20d6c8fbc61bf"
-      },
-      {
-        "title": "GitHub: Med-X-KimiK2-RAG",
-        "source": "GitHub",
-        "url": "https://github.com/Iluvmrbeast/Med-X-KimiK2-RAG",
-        "date": "2025-12-29",
-        "summary": "🩺 Assist clinical reasoning with MedeX, an AI-powered tool using Retrieval-Augmented Generation for medical education and case analysis.",
-        "keywords": [
-          "kimi"
-        ],
-        "hash": "e380a9bffd19b9aade1804fabb98306c"
-      },
-      {
-        "title": "GitHub: Kimiko",
-        "source": "GitHub",
-        "url": "https://github.com/gore79/Kimiko",
-        "date": "2025-12-28",
-        "summary": "Kimiko – modular AI assistant with human-in-the-loop governance",
-        "keywords": [
-          "kimi"
-        ],
-        "hash": "09bfb8f2cee201d2d888cb393ead22bc"
-      },
-      {
-        "title": "arXiv: CricBench: A Multilingual Benchmark for Evaluating LLMs in Cricket Analytics",
-        "source": "arXiv",
-        "url": "https://arxiv.org/abs/2512.21877v1",
-        "date": "2025-12-26",
-        "summary": "Cricket is the second most popular sport globally, commanding a massive following of over 2.5 billion fans globally. Enthusiasts and analysts frequently seek advanced statistical insights, such as lon...",
-        "keywords": [
-          "deepseek"
-        ],
-        "hash": "7f436a61cecf8d5be0fb6860462a8d8d"
-      },
-      {
-        "title": "arXiv: See Less, See Right: Bi-directional Perceptual Shaping For Multimodal Reasoning",
-        "source": "arXiv",
-        "url": "https://arxiv.org/abs/2512.22120v1",
-        "date": "2025-12-26",
-        "summary": "Large vision-language models (VLMs) often benefit from intermediate visual cues, either injected via external tools or generated as latent visual tokens during reasoning, but these mechanisms still ov...",
-        "keywords": [
-          "qwen"
-        ],
-        "hash": "b43b2f81127d005d147676502708859c"
-      },
-      {
-        "title": "GitHub: ApexVivum",
-        "source": "GitHub",
-        "url": "https://github.com/buckster123/ApexVivum",
-        "date": "2025-12-25",
-        "summary": "Self-evolving AI paragon powered by Kimi K2 architecture. Perceptive, meticulous, and supremely efficacious.",
-        "keywords": [
-          "kimi"
-        ],
-        "hash": "e88fab6476613c0be001f2293ae8421f"
-      }
-    ]
-  },
-  {
     "date": "2026-01-05",
     "updates": [
       {
@@ -2113,6 +1984,378 @@
           "kimi"
         ],
         "hash": "932e65159efc865192ef5489902b13a6"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-30",
+    "updates": [
+      {
+        "title": "GitHub: super-agent",
+        "source": "GitHub",
+        "url": "https://github.com/gelson12/super-agent",
+        "date": "2026-03-30",
+        "summary": "Multi-model AI agent with semantic routing — Claude, Gemini, DeepSeek via FastAPI",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "4574f4570a7cf2b6bf667b0d658c8052"
+      },
+      {
+        "title": "GitHub: fitness-timer-autopost",
+        "source": "GitHub",
+        "url": "https://github.com/VR-Lounge/fitness-timer-autopost",
+        "date": "2026-03-30",
+        "summary": "🔥 Автоматический постинг табата-тренировок в Telegram канал FITNESS TIMER через DeepSeek AI | Табата | HIIT | Фитнес",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "e240cadc76a6b14b16e417c3b24e0d76"
+      },
+      {
+        "title": "GitHub: chatgpt-on-wechat",
+        "source": "GitHub",
+        "url": "https://github.com/zhayujie/chatgpt-on-wechat",
+        "date": "2026-03-30",
+        "summary": "CowAgent是基于大模型的超级AI助理，能主动思考和任务规划、访问操作系统和外部资源、创造和执行Skills、拥有长期记忆并不断成长，比OpenClaw更轻量和便捷。同时支持微信、飞书、钉钉、企微、QQ、公众号、网页等接入，可选择OpenAI/Claude/Gemini/DeepSeek/ Qwen/GLM/Kimi/LinkAI，能处理文本、语音、图片和文件，可快速搭建个人AI助理和企业数字",
+        "keywords": [
+          "deepseek",
+          "qwen",
+          "kimi"
+        ],
+        "hash": "47daa50ff606227593ca4fe2e24a5739"
+      },
+      {
+        "title": "GitHub: oak-deepseek",
+        "source": "GitHub",
+        "url": "https://github.com/WyxGenius/oak-deepseek",
+        "date": "2026-03-30",
+        "summary": "一个轻量AI Agent框架，基于DeepSeek API",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "020f3cfbc9cab3e1a958ad709bf585fb"
+      },
+      {
+        "title": "GitHub: Flip-LLM",
+        "source": "GitHub",
+        "url": "https://github.com/eager-flipstudio/Flip-LLM",
+        "date": "2026-03-30",
+        "summary": "⚡ Flip LLM API — Access 35+ AI models (Mistral, Llama 4, DeepSeek, GLM, Qwen 3, Kimi K2, Phi 3, Minimax) through a single unified REST API. Features session memory via Firebase RTDB, custom system pro",
+        "keywords": [
+          "deepseek",
+          "qwen",
+          "kimi",
+          "minimax"
+        ],
+        "hash": "19432ac13f48449252fa8eaa894c4c1a"
+      },
+      {
+        "title": "GitHub: vigilops",
+        "source": "GitHub",
+        "url": "https://github.com/LinChuang2008/vigilops",
+        "date": "2026-03-30",
+        "summary": "AI-powered open-source monitoring platform with auto-remediation. 6 built-in runbooks, MCP integration (global first), DeepSeek root cause analysis. 5-minute Docker setup.",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "b271a91204e9c2c003ed8f14f3a4aac5"
+      },
+      {
+        "title": "GitHub: InferenceX",
+        "source": "GitHub",
+        "url": "https://github.com/SemiAnalysisAI/InferenceX",
+        "date": "2026-03-30",
+        "summary": "Open Source Continuous Inference Benchmarking Qwen3.5, DeepSeek, GPTOSS - GB200 NVL72 vs MI355X vs B200 vs GB300 NVL72 vs H100 & soon™ TPUv6e/v7/Trainium2/3",
+        "keywords": [
+          "deepseek",
+          "qwen"
+        ],
+        "hash": "db9248d9e2bc829cf4695bc484d80b25"
+      },
+      {
+        "title": "GitHub: agent-Ai-search",
+        "source": "GitHub",
+        "url": "https://github.com/mitutina/agent-Ai-search",
+        "date": "2026-03-30",
+        "summary": "Dùng chatgpt, gemini, qwen, deepseek để search và tổng hợp thông tin",
+        "keywords": [
+          "deepseek",
+          "qwen"
+        ],
+        "hash": "5982490b832014f79e55537dab26bc56"
+      },
+      {
+        "title": "GitHub Release: tmux-bridge-mcp - v0.3.0 — Zero-Friction Onboarding",
+        "source": "GitHub Releases",
+        "url": "https://github.com/howardpen9/tmux-bridge-mcp/releases/tag/v0.3.0",
+        "date": "2026-03-30",
+        "summary": "## What's New in v0.3.0\n\n### One-Command Setup\n\n```bash\nnpx tmux-bridge-mcp setup\n```\n\nAuto-detects all installed agents and writes the correct MCP config for each:\n\n```\ntmux-bridge-mcp setup\n\nDetecti",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "915d8d4a3992d1df0558c3daea0f0ffc"
+      },
+      {
+        "title": "GitHub: AgentWeave",
+        "source": "GitHub",
+        "url": "https://github.com/gutohuida/AgentWeave",
+        "date": "2026-03-30",
+        "summary": "File-based collaboration framework enabling Claude and Kimi AI agents to work together through shared state files",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "c35913ab1ff334c53684ebb2992a90e9"
+      },
+      {
+        "title": "GitHub: kimi-stock-agent",
+        "source": "GitHub",
+        "url": "https://github.com/dbbbbm/kimi-stock-agent",
+        "date": "2026-03-30",
+        "summary": "AI自己炒股的记录",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "8f583d35f4984ad4d37f51f03baf2c3d"
+      },
+      {
+        "title": "GitHub: local-file-processor",
+        "source": "GitHub",
+        "url": "https://github.com/duwei1018/local-file-processor",
+        "date": "2026-03-30",
+        "summary": "Standalone local file processing pipeline: PDF/DOCX/MD/TXT → AI classify/summarize/embed → DuckDB + semantic search. Supports Kimi cloud and Ollama local models.",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "3fd2d7c1d2702d7e2d71ffb5b4fd1ca2"
+      },
+      {
+        "title": "DeepSeek",
+        "source": "https://www.deepseek.com/en/",
+        "url": "https://www.deepseek.com/en/",
+        "date": "2026-03-30",
+        "summary": "DeepSeek, unravel the mystery of AGI with curiosity. Answer the essential question with long-termism....",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "2c071c1b803a0922c7bf18ecd78e5311"
+      },
+      {
+        "title": "DeepSeek | 深度求索",
+        "source": "https://www.deepseek.com/",
+        "url": "https://www.deepseek.com/",
+        "date": "2026-03-30",
+        "summary": "深度求索（DeepSeek），成立于2023年，专注于研究世界领先的通用人工智能底层模型与技术，挑战人工智能前沿性难题。基于自研训练框架、自建智算集群和万 …...",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "917c0f2733ec19bfe9b24cdab127ecb5"
+      },
+      {
+        "title": "DeepSeek - Into the Unknown",
+        "source": "https://chat.deepseek.com/sign_in",
+        "url": "https://chat.deepseek.com/sign_in",
+        "date": "2026-03-30",
+        "summary": "Chat with DeepSeek AI – your intelligent assistant for coding, content creation, file reading, and more....",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "786d2c76e4ae0656035d2099c5b187e2"
+      },
+      {
+        "title": "DeepSeek Platform",
+        "source": "https://platform.deepseek.com/",
+        "url": "https://platform.deepseek.com/",
+        "date": "2026-03-30",
+        "summary": "Join DeepSeek API platform to access our AI models, developer resources and API documentation....",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "0dd0851efcb65be55a0488ce52607a30"
+      },
+      {
+        "title": "DeepSeek",
+        "source": "https://download.deepseek.com/",
+        "url": "https://download.deepseek.com/",
+        "date": "2026-03-30",
+        "summary": "Chat with DeepSeek AI – your intelligent assistant for coding, content creation, file reading, and more. Upload documents, engage …...",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "6138b6a8dd0129ae5db3b121299bade0"
+      },
+      {
+        "title": "DeepSeek 12-hour outage leaves millions cut off, sparks complaints as rivals gain ground",
+        "source": "Hong Kong - South China Morning Post",
+        "url": "https://www.scmp.com/tech/big-tech/article/3348345/deepseek-outage-leaves-millions-cut-and-sparks-complaints-rivals-gain-ground?utm_source=rss_feed",
+        "date": "2026-03-30",
+        "summary": "Chinese artificial intelligence start-up DeepSeek suffered a prolonged outage overnight that extended into early Monday morning, disrupting service for hundreds of millions of users, according to a co...",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "180c79bfc97923b9f39a5474e1b2d94a"
+      },
+      {
+        "title": "GitHub Release: openclaw-zero-token - openclaw-zero-token 2026.3.27",
+        "source": "GitHub Releases",
+        "url": "https://github.com/linuxhsj/openclaw-zero-token/releases/tag/v2026.3.27",
+        "date": "2026-03-29",
+        "summary": "# v1.0.0 (2026-03-27)\r\n\r\n## 🎉 Initial Release\r\n\r\nOpenClaw Zero Token is a fork of OpenClaw that enables **zero API token costs** by leveraging browser automation to access mainstream AI platforms for ",
+        "keywords": [
+          "kimi",
+          "deepseek",
+          "doubao",
+          "qwen",
+          "zhipu",
+          "moonshot"
+        ],
+        "hash": "0bb060bac6bf7a537bb8bf781905f926"
+      },
+      {
+        "title": "GitHub Release: tmux-bridge-mcp - v0.2.0 — Tests, Safety, CI",
+        "source": "GitHub Releases",
+        "url": "https://github.com/howardpen9/tmux-bridge-mcp/releases/tag/v0.2.0",
+        "date": "2026-03-29",
+        "summary": "## What's New in v0.2.0\n\n### Testing (40 tests, all passing)\n- **kimi-parser tests** — JSON, JSON array, function-call style, multi-line blocks, malformed input, single quotes, nested quotes\n- **tmux-",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "a69b7229438b0a614d4c2062092387c1"
+      },
+      {
+        "title": "GitHub Release: tmux-bridge-mcp - v0.1.0 — Initial Release",
+        "source": "GitHub Releases",
+        "url": "https://github.com/howardpen9/tmux-bridge-mcp/releases/tag/v0.1.0",
+        "date": "2026-03-29",
+        "summary": "## tmux-bridge-mcp v0.1.0\n\nStandalone MCP server for cross-pane AI agent communication via tmux.\n\n### Features\n\n- **9 MCP tools** — `tmux_list`, `tmux_read`, `tmux_type`, `tmux_message`, `tmux_keys`, ",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "62f0037b561bf060158fbe150febd260"
+      },
+      {
+        "title": "GitHub: imagetagger",
+        "source": "GitHub",
+        "url": "https://github.com/JussiSavola/imagetagger",
+        "date": "2026-03-29",
+        "summary": "The application asks Venice AI API (as well as OpenAI API) for image keywords and embeds them to image metadata. Python so should be portable. Tested only in Win11 python 3.11.9. Any other environment",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "ab1b2944b178f58e4002fef19f775238"
+      },
+      {
+        "title": "GitHub: CCDash",
+        "source": "GitHub",
+        "url": "https://github.com/zihenghe04/CCDash",
+        "date": "2026-03-29",
+        "summary": "Open-source unified usage dashboard for Claude — track tokens, quota, costs across Claude Code, claude.ai & API in one panel. 开源 Claude 全平台用量监控面板，聚合 Claude Code / claude.ai / API 数据，适用于 Pro/Max 订阅用户与开",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "cd6d2f3888b85a5158ca71bf2b050db1"
+      },
+      {
+        "title": "GitHub: AI_paper_summary_website",
+        "source": "GitHub",
+        "url": "https://github.com/Mr-silence/AI_paper_summary_website",
+        "date": "2026-03-29",
+        "summary": "Daily AI paper briefing system with multi-source crawling, scoring, Kimi-powered bilingual summaries, issue snapshots, and traceable AI workflow.",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "d8963c68cbbd411eb68274fb24fcebd9"
+      },
+      {
+        "title": "GitHub: auto_report",
+        "source": "GitHub",
+        "url": "https://github.com/yunfeiz/auto_report",
+        "date": "2026-03-29",
+        "summary": "自动报告生成器 - 基于 Kimi AI 的智能研报生成工具",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "1e0a81fc6ff68692b419b3ac5246afc3"
+      },
+      {
+        "title": "GitHub: chinese_chess4human_vs_ai",
+        "source": "GitHub",
+        "url": "https://github.com/Kevinliang05/chinese_chess4human_vs_ai",
+        "date": "2026-03-29",
+        "summary": "chinese_chess4human_vs_ai is a Python Xiangqi game for Human vs AI play. It supports legal move validation, turn management, captures, and check/checkmate logic. Users must configure their own api_key",
+        "keywords": [
+          "qwen"
+        ],
+        "hash": "9b09ee04f5557a196deb51e7620319c0"
+      },
+      {
+        "title": "GitHub: superagent",
+        "source": "GitHub",
+        "url": "https://github.com/TheNickCoolst/superagent",
+        "date": "2026-03-29",
+        "summary": "This AI agent was designed to be an automated AI agent . That tries to build businesses. This project is used by me to make a test if the models from the Chinese Minimax M2.7 can build a whole busines",
+        "keywords": [
+          "minimax"
+        ],
+        "hash": "655d74e7ea225674c70f80a61532ce3c"
+      },
+      {
+        "title": "arXiv: Development of a European Union Time-Indexed Reference Dataset for Assessing the Performance of Signal Detection Methods in Pharmacovigilance using a Large Language Model",
+        "source": "arXiv",
+        "url": "https://arxiv.org/abs/2603.26544v1",
+        "date": "2026-03-27",
+        "summary": "Background: The identification of optimal signal detection methods is hindered by the lack of reliable reference datasets. Existing datasets do not capture when adverse events (AEs) are officially rec...",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "f8ee5c5f09321beb4d6ce28984af744e"
+      },
+      {
+        "title": "arXiv: When Perplexity Lies: Generation-Focused Distillation of Hybrid Sequence Models",
+        "source": "arXiv",
+        "url": "https://arxiv.org/abs/2603.26556v1",
+        "date": "2026-03-27",
+        "summary": "Converting a pretrained Transformer into a more efficient hybrid model through distillation offers a promising approach to reducing inference costs. However, achieving high-quality generation in disti...",
+        "keywords": [
+          "qwen",
+          "kimi"
+        ],
+        "hash": "e6e86698e9d8c56547e0c313e5562eac"
+      },
+      {
+        "title": "GitHub Release: helix - 2.9.14",
+        "source": "GitHub Releases",
+        "url": "https://github.com/helixml/helix/releases/tag/2.9.14",
+        "date": "2026-03-26",
+        "summary": "2.9.14\r\n\r\n## What's Changed\r\n* Merge latest zed upstream paying close attention to and u... by @lukemarsden in https://github.com/helixml/helix/pull/1998\r\n* fix: allow multiple viewers to stream the s",
+        "keywords": [
+          "qwen"
+        ],
+        "hash": "fede8582589c5fe7db8b2e2d0557540c"
+      },
+      {
+        "title": "GitHub Release: helix - 2.9.13-rc1",
+        "source": "GitHub Releases",
+        "url": "https://github.com/helixml/helix/releases/tag/2.9.13-rc1",
+        "date": "2026-03-25",
+        "summary": "## What's Changed\r\n* Merge latest zed upstream paying close attention to and u... by @lukemarsden in https://github.com/helixml/helix/pull/1998\r\n* fix: allow multiple viewers to stream the same sessio",
+        "keywords": [
+          "qwen"
+        ],
+        "hash": "b791311f4fb11735132be8b27f70493b"
+      },
+      {
+        "title": "GitHub: LLM-Colosseum-Chinese-AI-Deduction-Arena",
+        "source": "GitHub",
+        "url": "https://github.com/anansosmart/LLM-Colosseum-Chinese-AI-Deduction-Arena",
+        "date": "2026-03-16",
+        "summary": "A multi-agent competitive framework where leading Chinese LLMs (such as Qwen, DeepSeek, and ERNIE) play dual roles as mystery-solvers and judges. The project evaluates models' strategic reasoning and ",
+        "keywords": [
+          "deepseek",
+          "ernie",
+          "qwen"
+        ],
+        "hash": "c21e534ae42b754fc9eb2b12ff46a70e"
       }
     ]
   }
