@@ -1,33 +1,33 @@
 {
-  "date": "2026-03-30",
+  "date": "2026-04-06",
   "executive_summary": {
-    "summary": "This week saw 32 updates across 8 companies/models. Top activity: deepseek, kimi, qwen",
+    "summary": "This week saw 21 updates across 6 companies/models. Top activity: kimi, deepseek, qwen",
     "key_highlights": [
-      "DEEPSEEK: 17 updates",
-      "KIMI: 14 updates",
-      "QWEN: 10 updates"
+      "KIMI: 11 updates",
+      "DEEPSEEK: 10 updates",
+      "QWEN: 3 updates"
     ],
     "trends": [
       "Strong GitHub activity - many new repositories"
     ],
-    "total_updates": 32,
-    "unique_companies": 8,
+    "total_updates": 21,
+    "unique_companies": 6,
     "top_companies": [
       {
-        "name": "deepseek",
-        "count": 17
-      },
-      {
         "name": "kimi",
-        "count": 14
+        "count": 11
       },
       {
-        "name": "qwen",
+        "name": "deepseek",
         "count": 10
       },
       {
-        "name": "minimax",
-        "count": 2
+        "name": "qwen",
+        "count": 3
+      },
+      {
+        "name": "Other",
+        "count": 1
       },
       {
         "name": "doubao",
@@ -38,129 +38,45 @@
   "top_insights": [
     {
       "type": "new_model",
-      "title": "GitHub Release: tmux-bridge-mcp - v0.2.0 — Tests, Safety, CI",
-      "description": "## What's New in v0.2.0\n\n### Testing (40 tests, all passing)\n- **kimi-parser tests** — JSON, JSON array, function-call style, multi-line blocks, malformed input, single quotes, nested quotes\n- **tmux-",
-      "impact_score": 10.0,
+      "title": "arXiv: An Independent Safety Evaluation of Kimi K2.5",
+      "description": "Kimi K2.5 is an open-weight LLM that rivals closed models across coding, multimodal, and agentic benchmarks, but was released without an accompanying safety evaluation. In this work, we conduct a prel...",
+      "impact_score": 9.5,
       "confidence": 0.8,
       "related_updates": [
-        "a69b7229438b0a614d4c2062092387c1"
+        "785630e4d9844d8f607ce0976aba3437"
       ],
       "evidence": [
-        "GitHub Releases"
+        "arXiv"
       ],
-      "timestamp": "2026-03-29"
+      "timestamp": "2026-04-03"
     },
     {
       "type": "new_model",
-      "title": "GitHub Release: tmux-bridge-mcp - v0.3.0 — Zero-Friction Onboarding",
-      "description": "## What's New in v0.3.0\n\n### One-Command Setup\n\n```bash\nnpx tmux-bridge-mcp setup\n```\n\nAuto-detects all installed agents and writes the correct MCP config for each:\n\n```\ntmux-bridge-mcp setup\n\nDetecti",
+      "title": "GitHub Release: ai4j - v2.0.0",
+      "description": "## What's Changed\n* 新增平台dashscope; 支持自由配置平台 by @SoWhatI in https://github.com/LnYo-Cly/ai4j/pull/77\n* update: 更新README.md by @xtxxueyan in https://github.com/LnYo-Cly/ai4j/pull/79\n* feature: 增加豆包平台 by",
       "impact_score": 9.0,
       "confidence": 0.8,
       "related_updates": [
-        "915d8d4a3992d1df0558c3daea0f0ffc"
+        "20cee0ac09996a0e54f925020816cc1c"
       ],
       "evidence": [
         "GitHub Releases"
       ],
-      "timestamp": "2026-03-30"
-    },
-    {
-      "type": "major_release",
-      "title": "GitHub Release: openclaw-zero-token - openclaw-zero-token 2026.3.27",
-      "description": "# v1.0.0 (2026-03-27)\r\n\r\n## 🎉 Initial Release\r\n\r\nOpenClaw Zero Token is a fork of OpenClaw that enables **zero API token costs** by leveraging browser automation to access mainstream AI platforms for ",
-      "impact_score": 9.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "0bb060bac6bf7a537bb8bf781905f926"
-      ],
-      "evidence": [
-        "GitHub Releases"
-      ],
-      "timestamp": "2026-03-29"
+      "timestamp": "2026-04-05"
     },
     {
       "type": "new_model",
-      "title": "GitHub Release: tmux-bridge-mcp - v0.1.0 — Initial Release",
-      "description": "## tmux-bridge-mcp v0.1.0\n\nStandalone MCP server for cross-pane AI agent communication via tmux.\n\n### Features\n\n- **9 MCP tools** — `tmux_list`, `tmux_read`, `tmux_type`, `tmux_message`, `tmux_keys`, ",
-      "impact_score": 9.0,
+      "title": "GitHub: LMForge-End-to-End-LLMOps-Platform-for-Multi-Model-Agents",
+      "description": "AI Agent Development Platform - Supports multiple models (OpenAI/DeepSeek/Wenxin/Tongyi), knowledge base management, workflow automation, and enterprise-grade security. Built with Flask + Vue3 + LangC",
+      "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "62f0037b561bf060158fbe150febd260"
-      ],
-      "evidence": [
-        "GitHub Releases"
-      ],
-      "timestamp": "2026-03-29"
-    },
-    {
-      "type": "major_release",
-      "title": "GitHub Release: helix - 2.9.14",
-      "description": "2.9.14\r\n\r\n## What's Changed\r\n* Merge latest zed upstream paying close attention to and u... by @lukemarsden in https://github.com/helixml/helix/pull/1998\r\n* fix: allow multiple viewers to stream the s",
-      "impact_score": 9.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "fede8582589c5fe7db8b2e2d0557540c"
-      ],
-      "evidence": [
-        "GitHub Releases"
-      ],
-      "timestamp": "2026-03-26"
-    },
-    {
-      "type": "major_release",
-      "title": "GitHub Release: helix - 2.9.13-rc1",
-      "description": "## What's Changed\r\n* Merge latest zed upstream paying close attention to and u... by @lukemarsden in https://github.com/helixml/helix/pull/1998\r\n* fix: allow multiple viewers to stream the same sessio",
-      "impact_score": 9.0,
-      "confidence": 0.8,
-      "related_updates": [
-        "b791311f4fb11735132be8b27f70493b"
-      ],
-      "evidence": [
-        "GitHub Releases"
-      ],
-      "timestamp": "2026-03-25"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub: vigilops",
-      "description": "AI-powered open-source monitoring platform with auto-remediation. 6 built-in runbooks, MCP integration (global first), DeepSeek root cause analysis. 5-minute Docker setup.",
-      "impact_score": 8.5,
-      "confidence": 0.8,
-      "related_updates": [
-        "b271a91204e9c2c003ed8f14f3a4aac5"
+        "e9d92de08a77e551afedf51fced4b137"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-03-30"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub: InferenceX",
-      "description": "Open Source Continuous Inference Benchmarking Qwen3.5, DeepSeek, GPTOSS - GB200 NVL72 vs MI355X vs B200 vs GB300 NVL72 vs H100 & soon™ TPUv6e/v7/Trainium2/3",
-      "impact_score": 8.5,
-      "confidence": 0.8,
-      "related_updates": [
-        "db9248d9e2bc829cf4695bc484d80b25"
-      ],
-      "evidence": [
-        "GitHub"
-      ],
-      "timestamp": "2026-03-30"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub: CCDash",
-      "description": "Open-source unified usage dashboard for Claude — track tokens, quota, costs across Claude Code, claude.ai & API in one panel. 开源 Claude 全平台用量监控面板，聚合 Claude Code / claude.ai / API 数据，适用于 Pro/Max 订阅用户与开",
-      "impact_score": 7.5,
-      "confidence": 0.8,
-      "related_updates": [
-        "cd6d2f3888b85a5158ca71bf2b050db1"
-      ],
-      "evidence": [
-        "GitHub"
-      ],
-      "timestamp": "2026-03-29"
+      "timestamp": "2026-04-06"
     },
     {
       "type": "new_model",
@@ -174,37 +90,95 @@
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-03-30"
-    }
-  ],
-  "significant_changes": [
+      "timestamp": "2026-04-06"
+    },
     {
-      "category": "new_company",
-      "description": "New entities detected: doubao, zhipu",
-      "magnitude": 7.0,
-      "week_over_week_change": {
-        "new": [
-          "doubao",
-          "zhipu"
-        ]
-      },
-      "implications": [
-        "Monitor doubao for future developments",
-        "Monitor zhipu for future developments"
-      ]
+      "type": "new_model",
+      "title": "GitHub: freeflux",
+      "description": "🚀 Simplify FLUX access with 4-bit models and CPU offloading, enabling powerful GPU utilization and prompt generation from keywords with DeepSeek-R1 AI.",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "a898b7340e2d958c00410c3b3e9bf35f"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-04-06"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: jincainorthschool_homeworkfastdone",
+      "description": "这是一个基于python request库做的爬虫程序，所有使用铃铛教育的学校学生均可以用这个项目快速，自动，高效，快捷，智能地完成学校作业。这个项目也使用了豆包，deepseek等的api有api的可以使用ai模型完成作业，如果您不想花钱，也可使用免费朗读功能。该项目同时有gui和simple版本，需注意simple只有朗读功能，没有ai提交，没有图形化界面，gui可以预览图片，pcm，svg多",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "91c63e8d36a668e00b5d9b8197c52134"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-04-06"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: oak-deepseek",
+      "description": "一个轻量AI Agent框架，基于DeepSeek API",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "020f3cfbc9cab3e1a958ad709bf585fb"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-04-06"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: kimi-openenv-code-reviewer",
+      "description": "OpenEnv Code Reviewer - AI-powered code review agent",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "2c82de31d3f32767fde1b75f943b7727"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-04-06"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: chatgpt-on-wechat",
+      "description": "CowAgent是基于大模型的超级AI助理，能主动思考和任务规划、访问操作系统和外部资源、创造和执行Skills、拥有长期记忆并不断成长，比OpenClaw更轻量和便捷。同时支持微信、飞书、钉钉、企微、QQ、公众号、网页等接入，可选择OpenAI/Claude/Gemini/DeepSeek/ Qwen/GLM/Kimi/LinkAI，能处理文本、语音、图片和文件，可快速搭建个人AI助理和企业数字",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "47daa50ff606227593ca4fe2e24a5739"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-04-06"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: parr-prompt",
+      "description": "Multi-provider AI prompt CLI and Dash UI (OpenAI, Gemini, Grok, Claude, DeepSeek, Kimi, Doubao)",
+      "impact_score": 7.0,
+      "confidence": 0.8,
+      "related_updates": [
+        "713b465ed851129b832d2e77cc841ccb"
+      ],
+      "evidence": [
+        "GitHub"
+      ],
+      "timestamp": "2026-04-05"
     }
   ],
+  "significant_changes": [],
   "trends": [
-    {
-      "type": "increasing_activity",
-      "description": "Activity trending up: 6 → 32 updates",
-      "confidence": 0.8
-    },
-    {
-      "type": "emerging_company",
-      "description": "qwen showing increasing activity",
-      "confidence": 0.7
-    },
     {
       "type": "emerging_company",
       "description": "deepseek showing increasing activity",
@@ -213,6 +187,11 @@
     {
       "type": "emerging_company",
       "description": "kimi showing increasing activity",
+      "confidence": 0.7
+    },
+    {
+      "type": "emerging_company",
+      "description": "qwen showing increasing activity",
       "confidence": 0.7
     },
     {
@@ -229,11 +208,15 @@
       "type": "emerging_company",
       "description": "moonshot showing increasing activity",
       "confidence": 0.7
+    },
+    {
+      "type": "emerging_company",
+      "description": "doubao showing increasing activity",
+      "confidence": 0.7
     }
   ],
   "recommendations": [
-    "URGENT: 8 high-impact developments detected - review immediately",
-    "New companies/models detected - add to monitoring list",
+    "URGENT: 2 high-impact developments detected - review immediately",
     "Long-term trends identified - consider strategic implications"
   ]
 }

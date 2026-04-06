@@ -1,178 +1,5 @@
 [
   {
-    "date": "2026-01-05",
-    "updates": [
-      {
-        "title": "GitHub: Tools_DeepSeekOCR",
-        "source": "GitHub",
-        "url": "https://github.com/Sabastincruzz/Tools_DeepSeekOCR",
-        "date": "2026-01-05",
-        "summary": "🖥️ Deploy DeepSeek-OCR for Optical Character Recognition directly from screen captures on Windows, enabling efficient text extraction from images.",
-        "keywords": [
-          "deepseek"
-        ],
-        "hash": "d074f813ffa675bc0bbd83fda14533fc"
-      },
-      {
-        "title": "GitHub: deepseek-trading-experiment",
-        "source": "GitHub",
-        "url": "https://github.com/v0acc0002/deepseek-trading-experiment",
-        "date": "2026-01-05",
-        "summary": "🤖 Explore AI-driven trading with the DeepSeek crypto bot, designed for learning rather than profit through backtesting strategies and financial analysis.",
-        "keywords": [
-          "deepseek"
-        ],
-        "hash": "103f5d1e01777b3ebc9bf6c6c995eded"
-      },
-      {
-        "title": "GitHub: DeepSeek-V3.2-Exp",
-        "source": "GitHub",
-        "url": "https://github.com/arthur1258/DeepSeek-V3.2-Exp",
-        "date": "2026-01-05",
-        "summary": "🔍 Explore and enhance deep learning models with DeepSeek-V3.2-Exp, your go-to tool for streamlined data analysis and advanced AI insights.",
-        "keywords": [
-          "deepseek"
-        ],
-        "hash": "737fd192bfa79ef39c1e43648f75ef28"
-      },
-      {
-        "title": "GitHub: kimi-ai-2api",
-        "source": "GitHub",
-        "url": "https://github.com/menendzerzumia-max/kimi-ai-2api",
-        "date": "2026-01-05",
-        "summary": "⚡ Transform Kimi.ai chat experiences into OpenAI API format with this high-performance proxy service for seamless integration and enhanced access.",
-        "keywords": [
-          "kimi"
-        ],
-        "hash": "35ac067b9e66a63789d20d6c8fbc61bf"
-      },
-      {
-        "title": "GitHub: Med-X-KimiK2-RAG",
-        "source": "GitHub",
-        "url": "https://github.com/Iluvmrbeast/Med-X-KimiK2-RAG",
-        "date": "2026-01-05",
-        "summary": "🩺 Assist clinical reasoning with MedeX, an AI-powered tool using Retrieval-Augmented Generation for medical education and case analysis.",
-        "keywords": [
-          "kimi"
-        ],
-        "hash": "e380a9bffd19b9aade1804fabb98306c"
-      },
-      {
-        "title": "GitHub: multimodel-chat",
-        "source": "GitHub",
-        "url": "https://github.com/pypy66/multimodel-chat",
-        "date": "2026-01-03",
-        "summary": "一个多合一的AI聊天工具，将ChatGPT、Gemini、LLaMA，以及DeepSeek、讯飞星火、通义千问、kimi等大模型的API集成在同一个工具中。 An all-in-one AI chat tool that integrates APIs of multiple large models, including ChatGPT, Gemini, LLaMA, DeepSeek, iFl",
-        "keywords": [
-          "deepseek",
-          "kimi"
-        ],
-        "hash": "066375b8635024933fdc8724d0da642a"
-      },
-      {
-        "title": "GitHub: Youtube-Engagement-Helper",
-        "source": "GitHub",
-        "url": "https://github.com/RadoTSC/Youtube-Engagement-Helper",
-        "date": "2026-01-02",
-        "summary": "Python script that monitors YouTube channels, transcribes videos, generates AI summaries, and creates human-like engagement comments using Kimi K2 Instruct (Chutes). Analyzes top comments to match eac",
-        "keywords": [
-          "kimi"
-        ],
-        "hash": "63c55c726fd2f3c21ff9b66f8ae27729"
-      },
-      {
-        "title": "arXiv: Geometry of Reason: Spectral Signatures of Valid Mathematical Reasoning",
-        "source": "arXiv",
-        "url": "https://arxiv.org/abs/2601.00791v1",
-        "date": "2026-01-02",
-        "summary": "We present a training-free method for detecting valid mathematical reasoning in large language models through spectral analysis of attention patterns. By treating attention matrices as adjacency matri...",
-        "keywords": [
-          "qwen"
-        ],
-        "hash": "5d76c910d0d16131f5690c80ba80929f"
-      },
-      {
-        "title": "GitHub: ApexVivum",
-        "source": "GitHub",
-        "url": "https://github.com/buckster123/ApexVivum",
-        "date": "2025-12-31",
-        "summary": "Self-evolving AI paragon powered by Kimi K2 architecture. Perceptive, meticulous, and supremely efficacious.",
-        "keywords": [
-          "kimi"
-        ],
-        "hash": "e88fab6476613c0be001f2293ae8421f"
-      },
-      {
-        "title": "GitHub: deeptrade",
-        "source": "GitHub",
-        "url": "https://github.com/soga2008/deeptrade",
-        "date": "2025-12-30",
-        "summary": "AI-driven algorithmic trading platform featuring ML predictions, technical indicators, risk metrics, and a full backtesting engine. Built with React, FastAPI, and Kimi K2AI.",
-        "keywords": [
-          "kimi"
-        ],
-        "hash": "2a583918656ffec3d5d4fd91eb15bf15"
-      },
-      {
-        "title": "GitHub: AI-test",
-        "source": "GitHub",
-        "url": "https://github.com/Sruixu/AI-test",
-        "date": "2025-12-29",
-        "summary": "基于大模型的测试用例生成工具（可使用Deepseek 、小米 MiMo 、智普、Kimi、MiniMAX等API）",
-        "keywords": [
-          "deepseek",
-          "kimi",
-          "minimax"
-        ],
-        "hash": "a90bf093e52135ca981cad036160b662"
-      },
-      {
-        "title": "GitHub: Kimiko",
-        "source": "GitHub",
-        "url": "https://github.com/gore79/Kimiko",
-        "date": "2025-12-28",
-        "summary": "Kimiko – modular AI assistant with human-in-the-loop governance",
-        "keywords": [
-          "kimi"
-        ],
-        "hash": "09bfb8f2cee201d2d888cb393ead22bc"
-      },
-      {
-        "title": "GitHub Release: http-privacy - 1.0.8 (End of Year Release)",
-        "source": "GitHub Releases",
-        "url": "https://github.com/AI-Robotic-Labs/http-privacy/releases/tag/1.0.8",
-        "date": "2025-12-09",
-        "summary": "## What's Changed\r\n* chore(deps): update dependency openai to v1.102.0 by @renovate[bot] in https://github.com/AI-Robotic-Labs/http-privacy/pull/280\r\n* chore(deps): update dependency boto3 to v1.40.21",
-        "keywords": [
-          "qwen"
-        ],
-        "hash": "0bd7efabfcfb79909e21b17db81eb9f4"
-      },
-      {
-        "title": "GitHub: AiModelCompare",
-        "source": "GitHub",
-        "url": "https://github.com/mcdonnej95/AiModelCompare",
-        "date": "2025-10-24",
-        "summary": "Comparing GPT 4-o and DeepSeek R1 API model's summarization of Chinese social media posts, using a blind judgement round from Chat GPT 4-o to score summaries on completeness, favorability, and exclusi",
-        "keywords": [
-          "deepseek"
-        ],
-        "hash": "1e7f26509ebd6b0bbedd9c81c84f997b"
-      },
-      {
-        "title": "GitHub Release: http-privacy - 1.0.6 - Out of Beta",
-        "source": "GitHub Releases",
-        "url": "https://github.com/AI-Robotic-Labs/http-privacy/releases/tag/1.0.6",
-        "date": "2025-08-01",
-        "summary": "## What's Changed\r\n* fix(deps): update dependency boto3 to v1.39.1 by @renovate[bot] in https://github.com/AI-Robotic-Labs/http-privacy/pull/194\r\n* fix(deps): update dependency boto3 to v1.39.2 by @re",
-        "keywords": [
-          "qwen"
-        ],
-        "hash": "f50fd89463680ee769c3baf78c2ba811"
-      }
-    ]
-  },
-  {
     "date": "2026-01-19",
     "updates": [
       {
@@ -2356,6 +2183,246 @@
           "qwen"
         ],
         "hash": "c21e534ae42b754fc9eb2b12ff46a70e"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "updates": [
+      {
+        "title": "GitHub: LMForge-End-to-End-LLMOps-Platform-for-Multi-Model-Agents",
+        "source": "GitHub",
+        "url": "https://github.com/Haohao-end/LMForge-End-to-End-LLMOps-Platform-for-Multi-Model-Agents",
+        "date": "2026-04-06",
+        "summary": "AI Agent Development Platform - Supports multiple models (OpenAI/DeepSeek/Wenxin/Tongyi), knowledge base management, workflow automation, and enterprise-grade security. Built with Flask + Vue3 + LangC",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "e9d92de08a77e551afedf51fced4b137"
+      },
+      {
+        "title": "GitHub: super-agent",
+        "source": "GitHub",
+        "url": "https://github.com/gelson12/super-agent",
+        "date": "2026-04-06",
+        "summary": "Multi-model AI agent with semantic routing — Claude, Gemini, DeepSeek via FastAPI",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "4574f4570a7cf2b6bf667b0d658c8052"
+      },
+      {
+        "title": "GitHub: freeflux",
+        "source": "GitHub",
+        "url": "https://github.com/Rian-create/freeflux",
+        "date": "2026-04-06",
+        "summary": "🚀 Simplify FLUX access with 4-bit models and CPU offloading, enabling powerful GPU utilization and prompt generation from keywords with DeepSeek-R1 AI.",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "a898b7340e2d958c00410c3b3e9bf35f"
+      },
+      {
+        "title": "GitHub: jincainorthschool_homeworkfastdone",
+        "source": "GitHub",
+        "url": "https://github.com/liuyuanxi1830/jincainorthschool_homeworkfastdone",
+        "date": "2026-04-06",
+        "summary": "这是一个基于python request库做的爬虫程序，所有使用铃铛教育的学校学生均可以用这个项目快速，自动，高效，快捷，智能地完成学校作业。这个项目也使用了豆包，deepseek等的api有api的可以使用ai模型完成作业，如果您不想花钱，也可使用免费朗读功能。该项目同时有gui和simple版本，需注意simple只有朗读功能，没有ai提交，没有图形化界面，gui可以预览图片，pcm，svg多",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "91c63e8d36a668e00b5d9b8197c52134"
+      },
+      {
+        "title": "GitHub: oak-deepseek",
+        "source": "GitHub",
+        "url": "https://github.com/WyxGenius/oak-deepseek",
+        "date": "2026-04-06",
+        "summary": "一个轻量AI Agent框架，基于DeepSeek API",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "020f3cfbc9cab3e1a958ad709bf585fb"
+      },
+      {
+        "title": "GitHub: kimi-openenv-code-reviewer",
+        "source": "GitHub",
+        "url": "https://github.com/kamlesh-IY9/kimi-openenv-code-reviewer",
+        "date": "2026-04-06",
+        "summary": "OpenEnv Code Reviewer - AI-powered code review agent",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "2c82de31d3f32767fde1b75f943b7727"
+      },
+      {
+        "title": "GitHub: chatgpt-on-wechat",
+        "source": "GitHub",
+        "url": "https://github.com/zhayujie/chatgpt-on-wechat",
+        "date": "2026-04-06",
+        "summary": "CowAgent是基于大模型的超级AI助理，能主动思考和任务规划、访问操作系统和外部资源、创造和执行Skills、拥有长期记忆并不断成长，比OpenClaw更轻量和便捷。同时支持微信、飞书、钉钉、企微、QQ、公众号、网页等接入，可选择OpenAI/Claude/Gemini/DeepSeek/ Qwen/GLM/Kimi/LinkAI，能处理文本、语音、图片和文件，可快速搭建个人AI助理和企业数字",
+        "keywords": [
+          "qwen",
+          "deepseek",
+          "kimi"
+        ],
+        "hash": "47daa50ff606227593ca4fe2e24a5739"
+      },
+      {
+        "title": "GitHub Release: ai4j - v2.0.0",
+        "source": "GitHub Releases",
+        "url": "https://github.com/LnYo-Cly/ai4j/releases/tag/v2.0.0",
+        "date": "2026-04-05",
+        "summary": "## What's Changed\n* 新增平台dashscope; 支持自由配置平台 by @SoWhatI in https://github.com/LnYo-Cly/ai4j/pull/77\n* update: 更新README.md by @xtxxueyan in https://github.com/LnYo-Cly/ai4j/pull/79\n* feature: 增加豆包平台 by",
+        "keywords": [],
+        "hash": "20cee0ac09996a0e54f925020816cc1c"
+      },
+      {
+        "title": "GitHub: parr-prompt",
+        "source": "GitHub",
+        "url": "https://github.com/MozhouGao/parr-prompt",
+        "date": "2026-04-05",
+        "summary": "Multi-provider AI prompt CLI and Dash UI (OpenAI, Gemini, Grok, Claude, DeepSeek, Kimi, Doubao)",
+        "keywords": [
+          "deepseek",
+          "kimi",
+          "doubao"
+        ],
+        "hash": "713b465ed851129b832d2e77cc841ccb"
+      },
+      {
+        "title": "GitHub: AgentWeave",
+        "source": "GitHub",
+        "url": "https://github.com/gutohuida/AgentWeave",
+        "date": "2026-04-05",
+        "summary": "File-based collaboration framework enabling Claude and Kimi AI agents to work together through shared state files",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "c35913ab1ff334c53684ebb2992a90e9"
+      },
+      {
+        "title": "GitHub: Chorus-WebAI",
+        "source": "GitHub",
+        "url": "https://github.com/loopgap/Chorus-WebAI",
+        "date": "2026-04-05",
+        "summary": "Chorus-WebAI 是一款定位于     “元编排器   (Meta-Orchestrator)”          的工业级网页 AI   自动化平台。它采用 Zero-API   策略，将分散的网页版 AI（如   DeepSeek, Kimi,   通义千问等）转化为协同工作    的“计算节点”。通过独创的多    模型接力 (Relay)、语义锚点    (Anchor) 和视觉证",
+        "keywords": [
+          "deepseek",
+          "kimi"
+        ],
+        "hash": "5f29270bce614f8272099ad14c8b50f0"
+      },
+      {
+        "title": "GitHub: wechat-bot",
+        "source": "GitHub",
+        "url": "https://github.com/byteD-x/wechat-bot",
+        "date": "2026-04-05",
+        "summary": "基于 wxauto 的微信 PC 端 AI 自动回复机器人，支持多模型 API 与各种oauth（OpenAI/DeepSeek/豆包等），支持各种coding plan (Kimi，GLM，codex team等)，内置记忆、情感识别与 Electron 可视化界面。",
+        "keywords": [
+          "deepseek",
+          "kimi"
+        ],
+        "hash": "b8fce5e02fcb78939ad214d0678518b4"
+      },
+      {
+        "title": "GitHub: imagetagger",
+        "source": "GitHub",
+        "url": "https://github.com/JussiSavola/imagetagger",
+        "date": "2026-04-05",
+        "summary": "The application asks Venice AI API (as well as OpenAI API) for image keywords and embeds them to image metadata. Python so should be portable. Tested only in Win11 python 3.11.9. Any other environment",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "ab1b2944b178f58e4002fef19f775238"
+      },
+      {
+        "title": "GitHub: stock-daily-report",
+        "source": "GitHub",
+        "url": "https://github.com/Chuan972/stock-daily-report",
+        "date": "2026-04-04",
+        "summary": "A股每日分析邮件工作流 - Tushare Pro + Kimi AI + 自动邮件 ",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "0e12f2fa325ef3a3d29fa5c6419eeeaf"
+      },
+      {
+        "title": "GitHub: claude-code-playground",
+        "source": "GitHub",
+        "url": "https://github.com/engineeringmadness/claude-code-playground",
+        "date": "2026-04-04",
+        "summary": "Adventures using my new AI setup - Claude Code + Kimi K2.5 + Mobile interface",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "81a71d55b3533ed5114f1e12f1c67417"
+      },
+      {
+        "title": "arXiv: A Systematic Security Evaluation of OpenClaw and Its Variants",
+        "source": "arXiv",
+        "url": "https://arxiv.org/abs/2604.03131v1",
+        "date": "2026-04-03",
+        "summary": "Tool-augmented AI agents substantially extend the practical capabilities of large language models, but they also introduce security risks that cannot be identified through model-only evaluation. In th...",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "532c7c063f376921afd497ec88b416f0"
+      },
+      {
+        "title": "arXiv: PAFT: Preservation Aware Fine-Tuning for Minimal-Edit Program Repair",
+        "source": "arXiv",
+        "url": "https://arxiv.org/abs/2604.03113v1",
+        "date": "2026-04-03",
+        "summary": "Large language models (LLMs) are effective for automated program repair, but plausible patches that pass the full test suite often rewrite more code than necessary, increasing review and maintenance c...",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "bb60906a3a3057e4de322b587818a268"
+      },
+      {
+        "title": "arXiv: An Independent Safety Evaluation of Kimi K2.5",
+        "source": "arXiv",
+        "url": "https://arxiv.org/abs/2604.03121v1",
+        "date": "2026-04-03",
+        "summary": "Kimi K2.5 is an open-weight LLM that rivals closed models across coding, multimodal, and agentic benchmarks, but was released without an accompanying safety evaluation. In this work, we conduct a prel...",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "785630e4d9844d8f607ce0976aba3437"
+      },
+      {
+        "title": "GitHub: chinese_chess4human_vs_ai",
+        "source": "GitHub",
+        "url": "https://github.com/Kevinliang05/chinese_chess4human_vs_ai",
+        "date": "2026-03-31",
+        "summary": "chinese_chess4human_vs_ai is a Python Xiangqi game for Human vs AI play. It supports legal move validation, turn management, captures, and check/checkmate logic. Users must configure their own api_key",
+        "keywords": [
+          "qwen"
+        ],
+        "hash": "9b09ee04f5557a196deb51e7620319c0"
+      },
+      {
+        "title": "GitHub: AI-translate",
+        "source": "GitHub",
+        "url": "https://github.com/Livi8/AI-translate",
+        "date": "2026-03-30",
+        "summary": "The aim for this project is to have my own translator which would enhance my journey of learning Chinese using Qwen-tts model.",
+        "keywords": [
+          "qwen"
+        ],
+        "hash": "b04d155ad8ce90cbd48c1b9505a781fd"
+      },
+      {
+        "title": "GitHub: superagent",
+        "source": "GitHub",
+        "url": "https://github.com/TheNickCoolst/superagent",
+        "date": "2026-03-29",
+        "summary": "This AI agent was designed to be an automated AI agent . That tries to build businesses. This project is used by me to make a test if the models from the Chinese Minimax M2.7 can build a whole busines",
+        "keywords": [
+          "minimax"
+        ],
+        "hash": "655d74e7ea225674c70f80a61532ce3c"
       }
     ]
   }
