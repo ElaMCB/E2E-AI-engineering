@@ -1,248 +1,5 @@
 [
   {
-    "date": "2026-01-19",
-    "updates": [
-      {
-        "title": "GitHub: fitness-timer-autopost",
-        "source": "GitHub",
-        "url": "https://github.com/VR-Lounge/fitness-timer-autopost",
-        "date": "2026-01-19",
-        "summary": "🔥 Автоматический постинг табата-тренировок в Telegram канал FITNESS TIMER через DeepSeek AI | Табата | HIIT | Фитнес",
-        "keywords": [
-          "deepseek"
-        ],
-        "hash": "e240cadc76a6b14b16e417c3b24e0d76"
-      },
-      {
-        "title": "GitHub: boss-workflow",
-        "source": "GitHub",
-        "url": "https://github.com/outwareai/boss-workflow",
-        "date": "2026-01-19",
-        "summary": "Conversational task management system with Telegram, DeepSeek AI, Discord, Google Sheets & Calendar integration",
-        "keywords": [
-          "deepseek"
-        ],
-        "hash": "1d7015f77c625c2198a579ffa5cd4857"
-      },
-      {
-        "title": "GitHub Release: tt-metal - v0.66.0-dev20260118",
-        "source": "GitHub Releases",
-        "url": "https://github.com/tenstorrent/tt-metal/releases/tag/v0.66.0-dev20260118",
-        "date": "2026-01-19",
-        "summary": "> [!NOTE]\n>\n> If you are installing from a release, please refer to the README, INSTALLATION instructions, and any other documentation packaged with the release, not on the main branch. There may be d",
-        "keywords": [
-          "deepseek"
-        ],
-        "hash": "5a348b6a0f986aa6cc2d05532cb2314d"
-      },
-      {
-        "title": "GitHub: kimi-ai-2api",
-        "source": "GitHub",
-        "url": "https://github.com/menendzerzumia-max/kimi-ai-2api",
-        "date": "2026-01-19",
-        "summary": "⚡ Transform Kimi.ai chat experiences into OpenAI API format with this high-performance proxy service for seamless integration and enhanced access.",
-        "keywords": [
-          "kimi"
-        ],
-        "hash": "35ac067b9e66a63789d20d6c8fbc61bf"
-      },
-      {
-        "title": "GitHub: Med-X-KimiK2-RAG",
-        "source": "GitHub",
-        "url": "https://github.com/Iluvmrbeast/Med-X-KimiK2-RAG",
-        "date": "2026-01-19",
-        "summary": "🩺 Assist clinical reasoning with MedeX, an AI-powered tool using Retrieval-Augmented Generation for medical education and case analysis.",
-        "keywords": [
-          "kimi"
-        ],
-        "hash": "e380a9bffd19b9aade1804fabb98306c"
-      },
-      {
-        "title": "GitHub: kimi-actions",
-        "source": "GitHub",
-        "url": "https://github.com/xiaoju111a/kimi-actions",
-        "date": "2026-01-19",
-        "summary": "AI code review GitHub Action powered by Kimi (Moonshot AI)",
-        "keywords": [
-          "moonshot",
-          "kimi"
-        ],
-        "hash": "f010fdc1b334027cc292eca977148f3d"
-      },
-      {
-        "title": "GitHub: YuntaiPhoneAgent",
-        "source": "GitHub",
-        "url": "https://github.com/YunTaiHua/YuntaiPhoneAgent",
-        "date": "2026-01-19",
-        "summary": "基于智谱AI的GUI 交互、多 AI 协作、手机多方式连接与投屏、TTS 语音播报、多模态内容生成的综合智能代理工具",
-        "keywords": [],
-        "hash": "dd7cb86ecd43c5a1f761ce7410ad4ac4"
-      },
-      {
-        "title": "GitHub Release: tt-metal - v0.66.0-dev20260117",
-        "source": "GitHub Releases",
-        "url": "https://github.com/tenstorrent/tt-metal/releases/tag/v0.66.0-dev20260117",
-        "date": "2026-01-18",
-        "summary": "> [!NOTE]\n>\n> If you are installing from a release, please refer to the README, INSTALLATION instructions, and any other documentation packaged with the release, not on the main branch. There may be d",
-        "keywords": [
-          "deepseek",
-          "qwen"
-        ],
-        "hash": "ebd8d7dba89c9e5fb71dc7b3a8c46d06"
-      },
-      {
-        "title": "GitHub: ai-daily-skill-china",
-        "source": "GitHub",
-        "url": "https://github.com/zhsh2980/ai-daily-skill-china",
-        "date": "2026-01-18",
-        "summary": "这是一个每日科技简报自动生成系统，它整合了多个技术社区和科技媒体的内容，并使用 AI（Claude API 或兼容的智谱 GLM API）生成精炼的中文简报。",
-        "keywords": [],
-        "hash": "5359715bfe724d39b7e1b318d8028a00"
-      },
-      {
-        "title": "GitHub: ZhipuAI-web-search-dify-plugin",
-        "source": "GitHub",
-        "url": "https://github.com/bdim404/ZhipuAI-web-search-dify-plugin",
-        "date": "2026-01-16",
-        "summary": "A dify plugin for Web search  powered by ZhipuAI API with advanced filtering and content control 一个由智谱AI高级搜索API驱动的Dify插件，支持过滤和内容控制的强大网页搜索功能。",
-        "keywords": [
-          "zhipu"
-        ],
-        "hash": "76c90c9c8a6d46eab20fa3fb3bfc19fb"
-      },
-      {
-        "title": "arXiv: MHA2MLA-VLM: Enabling DeepSeek's Economical Multi-Head Latent Attention across Vision-Language Models",
-        "source": "arXiv",
-        "url": "https://arxiv.org/abs/2601.11464v1",
-        "date": "2026-01-16",
-        "summary": "As vision-language models (VLMs) tackle increasingly complex and multimodal tasks, the rapid growth of Key-Value (KV) cache imposes significant memory and computational bottlenecks during inference. W...",
-        "keywords": [
-          "deepseek"
-        ],
-        "hash": "486e49c01e8a4ee80ebca9f164bdfb64"
-      },
-      {
-        "title": "GitHub: BidMonitor-AI",
-        "source": "GitHub",
-        "url": "https://github.com/zhiqianzheng/BidMonitor-AI",
-        "date": "2026-01-13",
-        "summary": "本系统是一款专为企业打造的 24/7 全天候招标动态监控利器。集成 Selenium 自动化技术绕过反爬机制，实现中国招标网、政府采购网等多平台并发采集。核心采用 DeepSeek/Gemini/Claude 等多大语言模型进行二次智能分析，配合关键词与排除词算法，精准过滤无关杂讯。支持邮件、微信、短信及语音电话多渠道同步预警，并具备多联系人独立配置功能。彻底取代人工盯守，以 AI 驱动的高效率实",
-        "keywords": [
-          "deepseek"
-        ],
-        "hash": "b2b34c8b9f872a0627d9b115ce06a6a0"
-      },
-      {
-        "title": "GitHub: paper-reading-framework",
-        "source": "GitHub",
-        "url": "https://github.com/flashpoint493/paper-reading-framework",
-        "date": "2026-01-12",
-        "summary": "使用 Moonshot AI (Kimi) 进行论文的精度阅读、内化和落地的完整框架",
-        "keywords": [
-          "moonshot",
-          "kimi"
-        ],
-        "hash": "aaafb0d2932f95c41cc016143000c870"
-      },
-      {
-        "title": "GitHub: AI-test",
-        "source": "GitHub",
-        "url": "https://github.com/Sruixu/AI-test",
-        "date": "2026-01-12",
-        "summary": "基于大模型的测试用例生成工具（可使用Deepseek 、小米 MiMo 、智普、Kimi、MiniMAX、腾讯混元等API）",
-        "keywords": [
-          "deepseek",
-          "minimax",
-          "kimi"
-        ],
-        "hash": "a90bf093e52135ca981cad036160b662"
-      },
-      {
-        "title": "GitHub: zai-vision-skill",
-        "source": "GitHub",
-        "url": "https://github.com/Dwsy/zai-vision-skill",
-        "date": "2026-01-11",
-        "summary": "智谱 AI 多模态视觉分析 Claude Skill - UI转代码、OCR、错误诊断、技术图表理解",
-        "keywords": [],
-        "hash": "7c183001fad205c0c33d4eb2dbb05729"
-      },
-      {
-        "title": "GitHub: zhenxun_plugin_zhipu_toolkit",
-        "source": "GitHub",
-        "url": "https://github.com/molanp/zhenxun_plugin_zhipu_toolkit",
-        "date": "2026-01-10",
-        "summary": "智谱AI全家桶插件，包含智谱平台多种功能(伪人，文生图/视频，图生视频 ，图像理解等)",
-        "keywords": [
-          "zhipu"
-        ],
-        "hash": "6682b7ce026a7a7748c5b9db9c6ada96"
-      },
-      {
-        "title": "GitHub: LiuYun-Know",
-        "source": "GitHub",
-        "url": "https://github.com/CloudXu2333/LiuYun-Know",
-        "date": "2026-01-08",
-        "summary": " LiuYun AI Chat - 全功能 AI 对话平台  基于 LangGraph 状态图的智能 Agent，支持多 LLM 模型动态切换（Claude/GPT/Gemini/DeepSeek）、知识库 RAG 混合检索、Tavily/Firecrawl 联网搜索、知识图谱可视化、流式对话。",
-        "keywords": [
-          "deepseek"
-        ],
-        "hash": "55959a9ffd772deea42903fbd620efd2"
-      },
-      {
-        "title": "GitHub: ai-gateway",
-        "source": "GitHub",
-        "url": "https://github.com/paipaijiang/ai-gateway",
-        "date": "2026-01-08",
-        "summary": "基于python的使用智谱AI接口的监控日志网关",
-        "keywords": [],
-        "hash": "4c274a43147324745dd0f2ef0dad0a5d"
-      },
-      {
-        "title": "GitHub: ai_assistant",
-        "source": "GitHub",
-        "url": "https://github.com/paipaijiang/ai_assistant",
-        "date": "2026-01-08",
-        "summary": "基于python的使用智谱AI接口的AI运维学习助手",
-        "keywords": [],
-        "hash": "02e94e087b69147e69a6288fb814917b"
-      },
-      {
-        "title": "GitHub: multimodel-chat",
-        "source": "GitHub",
-        "url": "https://github.com/pypy66/multimodel-chat",
-        "date": "2026-01-03",
-        "summary": "一个多合一的AI聊天工具，将ChatGPT、Gemini、LLaMA，以及DeepSeek、讯飞星火、通义千问、kimi等大模型的API集成在同一个工具中。 An all-in-one AI chat tool that integrates APIs of multiple large models, including ChatGPT, Gemini, LLaMA, DeepSeek, iFl",
-        "keywords": [
-          "deepseek",
-          "kimi"
-        ],
-        "hash": "066375b8635024933fdc8724d0da642a"
-      },
-      {
-        "title": "GitHub: Youtube-Engagement-Helper",
-        "source": "GitHub",
-        "url": "https://github.com/RadoTSC/Youtube-Engagement-Helper",
-        "date": "2026-01-02",
-        "summary": "Python script that monitors YouTube channels, transcribes videos, generates AI summaries, and creates human-like engagement comments using Kimi K2 Instruct (Chutes). Analyzes top comments to match eac",
-        "keywords": [
-          "kimi"
-        ],
-        "hash": "63c55c726fd2f3c21ff9b66f8ae27729"
-      },
-      {
-        "title": "GitHub: ApexVivum",
-        "source": "GitHub",
-        "url": "https://github.com/buckster123/ApexVivum",
-        "date": "2025-12-31",
-        "summary": "Self-evolving AI paragon powered by Kimi K2 architecture. Perceptive, meticulous, and supremely efficacious.",
-        "keywords": [
-          "kimi"
-        ],
-        "hash": "e88fab6476613c0be001f2293ae8421f"
-      }
-    ]
-  },
-  {
     "date": "2026-01-26",
     "updates": [
       {
@@ -2423,6 +2180,234 @@
           "minimax"
         ],
         "hash": "655d74e7ea225674c70f80a61532ce3c"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "updates": [
+      {
+        "title": "GitHub: free-llm-api-keys",
+        "source": "GitHub",
+        "url": "https://github.com/alistaitsacle/free-llm-api-keys",
+        "date": "2026-04-13",
+        "summary": "Free LLM API keys for GPT-5.4, Claude, DeepSeek, Gemini, Grok — copy, paste, use. Updated 3-5x daily. No credit card needed.",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "67b486510ac1d1a03fb87be79ae0d793"
+      },
+      {
+        "title": "GitHub: CowAgent",
+        "source": "GitHub",
+        "url": "https://github.com/zhayujie/CowAgent",
+        "date": "2026-04-13",
+        "summary": "CowAgent (chatgpt-on-wechat) 是基于大模型的超级AI助理，能主动思考和任务规划、访问操作系统和外部资源、创造和执行Skills、通过长期记忆和知识库不断成长，比OpenClaw更轻量和便捷。同时支持微信、飞书、钉钉、企微、QQ、公众号、网页等接入，可选择OpenAI/Claude/Gemini/DeepSeek/ Qwen/GLM/Kimi/LinkAI，能处理文本、语",
+        "keywords": [
+          "kimi",
+          "qwen",
+          "deepseek"
+        ],
+        "hash": "f5404ba62888c724fdfc788addd6f529"
+      },
+      {
+        "title": "GitHub: deepseek-trading-experiment",
+        "source": "GitHub",
+        "url": "https://github.com/v0acc0002/deepseek-trading-experiment",
+        "date": "2026-04-13",
+        "summary": "🤖 Explore AI-driven trading with the DeepSeek crypto bot, designed for learning rather than profit through backtesting strategies and financial analysis.",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "103f5d1e01777b3ebc9bf6c6c995eded"
+      },
+      {
+        "title": "GitHub: kimi-stock-agent",
+        "source": "GitHub",
+        "url": "https://github.com/dbbbbm/kimi-stock-agent",
+        "date": "2026-04-13",
+        "summary": "AI自己炒股的记录",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "8f583d35f4984ad4d37f51f03baf2c3d"
+      },
+      {
+        "title": "GitHub: kairo-skills",
+        "source": "GitHub",
+        "url": "https://github.com/askairo/kairo-skills",
+        "date": "2026-04-13",
+        "summary": "Personal AI skills collection for Kimi Code CLI and other agents",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "889c240f8659408a9e117563da333be7"
+      },
+      {
+        "title": "GitHub: local-file-processor",
+        "source": "GitHub",
+        "url": "https://github.com/duwei1018/local-file-processor",
+        "date": "2026-04-13",
+        "summary": "Standalone local file processing pipeline: PDF/DOCX/MD/TXT → AI classify/summarize/embed → DuckDB + semantic search. Supports Kimi cloud and Ollama local models.",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "3fd2d7c1d2702d7e2d71ffb5b4fd1ca2"
+      },
+      {
+        "title": "GitHub: CCDash",
+        "source": "GitHub",
+        "url": "https://github.com/zihenghe04/CCDash",
+        "date": "2026-04-13",
+        "summary": "Open-source unified usage dashboard for Claude — track tokens, quota, costs across Claude Code, claude.ai & API in one panel. 开源 Claude 全平台用量监控面板，聚合 Claude Code / claude.ai / API 数据，适用于 Pro/Max 订阅用户与开",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "cd6d2f3888b85a5158ca71bf2b050db1"
+      },
+      {
+        "title": "GitHub: lyrics-framework",
+        "source": "GitHub",
+        "url": "https://github.com/chen-da-pang/lyrics-framework",
+        "date": "2026-04-13",
+        "summary": "Extract structural frameworks from Chinese pop songs and fill new lyrics using parallel AI models (Claude/Codex/Gemini/Qwen)",
+        "keywords": [
+          "qwen"
+        ],
+        "hash": "bd055148ef304f0b59f5c07904c556d5"
+      },
+      {
+        "title": "智谱 AI 因算力告急「限购」GLM 编程计划，暴露出 AI 行业哪些问 …",
+        "source": "https://www.zhihu.com/question/1997433388664131775",
+        "url": "https://www.zhihu.com/question/1997433388664131775",
+        "date": "2026-04-13",
+        "summary": "Jan 21, 2026 · 由于最新大语言模型 GLM-4.7 发布后用户量激增，智谱AI遭遇严重 算力瓶颈 ，不得不紧急采取 限流措施 。…...",
+        "keywords": [],
+        "hash": "cd9af0e1e0d3559ba2d0421800932e2c"
+      },
+      {
+        "title": "如何评价智谱推出的一键安装版 AutoClaw 澳龙？使用效果和原版 …",
+        "source": "https://www.zhihu.com/question/2014667368383607285",
+        "url": "https://www.zhihu.com/question/2014667368383607285",
+        "date": "2026-04-13",
+        "summary": "Mar 10, 2026 · 整体布局一目了然，主要就这几块。 左侧顶部是会话，消息频道和定时任务，左侧底部是系统配置。 右侧是文件预览 …...",
+        "keywords": [],
+        "hash": "cb94659b7bdb9ceac05bf794eba0e5fa"
+      },
+      {
+        "title": "智谱于2025年7月28日发布并开源新一代旗舰模型 GLM-4.5，国 …",
+        "source": "https://www.zhihu.com/question/1933283098667251646",
+        "url": "https://www.zhihu.com/question/1933283098667251646",
+        "date": "2026-04-13",
+        "summary": "最近，国产模型真是一个比一个还顶。 刚刚，智谱发布了他们的新一代旗舰模型 GLM-4.5，并在Hugging Face上同步开源。我 …...",
+        "keywords": [],
+        "hash": "893d2eb03f422599e21b0e923d2e89d8"
+      },
+      {
+        "title": "智谱发布 GLM-4 基座大模型，性能效果如何？ - 知乎",
+        "source": "https://www.zhihu.com/question/639753877",
+        "url": "https://www.zhihu.com/question/639753877",
+        "date": "2026-04-13",
+        "summary": "这个问题是年初提的，当时讨论的是GLM-4的初代产品，现在快年底了，GLM-4的旗舰模型已经更新到了 GLM-4-Plus。 在今年11月 …...",
+        "keywords": [],
+        "hash": "c4ea595efd5b7f645928407b141c39cc"
+      },
+      {
+        "title": "如何评价智谱新一代开源大模型 GLM-4.5，该模型在技术上有什 …",
+        "source": "https://www.zhihu.com/question/1933282570436589214",
+        "url": "https://www.zhihu.com/question/1933282570436589214",
+        "date": "2026-04-13",
+        "summary": "说实话有点震惊到了，GLM-4.5一发布我就连夜在Claude Code、Cline上实测起来，真实编程体验绝不亚于我第一次上手Claude …...",
+        "keywords": [],
+        "hash": "842cb13f8c43d0a8997b4251cf8f9c0a"
+      },
+      {
+        "title": "GitHub: universal-code-review-graph",
+        "source": "GitHub",
+        "url": "https://github.com/cyberNoman/universal-code-review-graph",
+        "date": "2026-04-12",
+        "summary": "Save 6-8× tokens on AI code reviews. Builds a structural call graph via Tree-sitter + MCP. Works with Claude, Kimi, Gemini, ChatGPT, Cursor, Windsurf — any AI assistant.",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "55adee6e3fc130907ef4604bd89728fe"
+      },
+      {
+        "title": "GitHub: ai-fundraise-tracker",
+        "source": "GitHub",
+        "url": "https://github.com/terabite1/ai-fundraise-tracker",
+        "date": "2026-04-12",
+        "summary": "Automated AI startup funding tracker — scrapes deals every 12h, extracts with Kimi K2, publishes to GitHub Pages",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "f01d013d19ac23ef33ba4bfad4695dc7"
+      },
+      {
+        "title": "GitHub: AgentWeave",
+        "source": "GitHub",
+        "url": "https://github.com/gutohuida/AgentWeave",
+        "date": "2026-04-12",
+        "summary": "File-based collaboration framework enabling Claude and Kimi AI agents to work together through shared state files",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "c35913ab1ff334c53684ebb2992a90e9"
+      },
+      {
+        "title": "GitHub: deadend-cli",
+        "source": "GitHub",
+        "url": "https://github.com/xoxruns/deadend-cli",
+        "date": "2026-04-12",
+        "summary": "Agentic pentest tooling. Currently achieving 81% (KIMI K2.5) on XBOW's benchmark in full black-box. Completely Self-hosted. Every model available on LiteLLM (Ollama, anthropic, openai...)",
+        "keywords": [
+          "kimi"
+        ],
+        "hash": "1dfd5f1e4bdd4e6cb74ba5de2fd48dcf"
+      },
+      {
+        "title": "GitHub: chinese_chess4human_vs_ai",
+        "source": "GitHub",
+        "url": "https://github.com/Kevinliang05/chinese_chess4human_vs_ai",
+        "date": "2026-03-31",
+        "summary": "chinese_chess4human_vs_ai is a Python Xiangqi game for Human vs AI play. It supports legal move validation, turn management, captures, and check/checkmate logic. Users must configure their own api_key",
+        "keywords": [
+          "qwen"
+        ],
+        "hash": "9b09ee04f5557a196deb51e7620319c0"
+      },
+      {
+        "title": "GitHub: AI-translate",
+        "source": "GitHub",
+        "url": "https://github.com/Livi8/AI-translate",
+        "date": "2026-03-30",
+        "summary": "The aim for this project is to have my own translator which would enhance my journey of learning Chinese using Qwen-tts model.",
+        "keywords": [
+          "qwen"
+        ],
+        "hash": "b04d155ad8ce90cbd48c1b9505a781fd"
+      },
+      {
+        "title": "GitHub Release: deep-share - v1.7.1",
+        "source": "GitHub Releases",
+        "url": "https://github.com/Yorick-Ryu/deep-share/releases/tag/v1.7.1",
+        "date": "2026-03-17",
+        "summary": "修复DeepSeek对话批量导出Word功能\r\n\r\n**Full Changelog**: https://github.com/Yorick-Ryu/deep-share/compare/v1.7.0...v1.7.1",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "fbef47fe933a1d47b6be43b79865b6c1"
+      },
+      {
+        "title": "GitHub Release: deep-share - v1.6.12",
+        "source": "GitHub Releases",
+        "url": "https://github.com/Yorick-Ryu/deep-share/releases/tag/v1.6.12",
+        "date": "2026-03-16",
+        "summary": "- 修复（Gemini）：解决了导出按钮错误出现在侧边栏 Gem 对话菜单中的问题，仅在主对话区域显示。\r\n\r\n- 修复（DeepSeek）：修正了截图导出过程中的元素过滤逻辑\r\n\r\n**Full Changelog**: https://github.com/Yorick-Ryu/deep-share/compare/v1.6.11...v1.6.12",
+        "keywords": [
+          "deepseek"
+        ],
+        "hash": "5a2b49c64a0384005eab808da8af8bac"
       }
     ]
   }

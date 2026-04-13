@@ -1,180 +1,176 @@
 {
-  "date": "2026-04-06",
+  "date": "2026-04-13",
   "executive_summary": {
-    "summary": "This week saw 21 updates across 6 companies/models. Top activity: kimi, deepseek, qwen",
+    "summary": "This week saw 21 updates across 4 companies/models. Top activity: kimi, deepseek, Other",
     "key_highlights": [
-      "KIMI: 11 updates",
-      "DEEPSEEK: 10 updates",
-      "QWEN: 3 updates"
+      "KIMI: 9 updates",
+      "DEEPSEEK: 5 updates",
+      "OTHER: 5 updates"
     ],
     "trends": [
       "Strong GitHub activity - many new repositories"
     ],
     "total_updates": 21,
-    "unique_companies": 6,
+    "unique_companies": 4,
     "top_companies": [
       {
         "name": "kimi",
-        "count": 11
+        "count": 9
       },
       {
         "name": "deepseek",
-        "count": 10
-      },
-      {
-        "name": "qwen",
-        "count": 3
+        "count": 5
       },
       {
         "name": "Other",
-        "count": 1
+        "count": 5
       },
       {
-        "name": "doubao",
-        "count": 1
+        "name": "qwen",
+        "count": 4
       }
     ]
   },
   "top_insights": [
     {
       "type": "new_model",
-      "title": "arXiv: An Independent Safety Evaluation of Kimi K2.5",
-      "description": "Kimi K2.5 is an open-weight LLM that rivals closed models across coding, multimodal, and agentic benchmarks, but was released without an accompanying safety evaluation. In this work, we conduct a prel...",
-      "impact_score": 9.5,
-      "confidence": 0.8,
-      "related_updates": [
-        "785630e4d9844d8f607ce0976aba3437"
-      ],
-      "evidence": [
-        "arXiv"
-      ],
-      "timestamp": "2026-04-03"
-    },
-    {
-      "type": "new_model",
-      "title": "GitHub Release: ai4j - v2.0.0",
-      "description": "## What's Changed\n* 新增平台dashscope; 支持自由配置平台 by @SoWhatI in https://github.com/LnYo-Cly/ai4j/pull/77\n* update: 更新README.md by @xtxxueyan in https://github.com/LnYo-Cly/ai4j/pull/79\n* feature: 增加豆包平台 by",
+      "title": "GitHub Release: deep-share - v1.7.1",
+      "description": "修复DeepSeek对话批量导出Word功能\r\n\r\n**Full Changelog**: https://github.com/Yorick-Ryu/deep-share/compare/v1.7.0...v1.7.1",
       "impact_score": 9.0,
       "confidence": 0.8,
       "related_updates": [
-        "20cee0ac09996a0e54f925020816cc1c"
+        "fbef47fe933a1d47b6be43b79865b6c1"
       ],
       "evidence": [
         "GitHub Releases"
       ],
-      "timestamp": "2026-04-05"
+      "timestamp": "2026-03-17"
     },
     {
       "type": "new_model",
-      "title": "GitHub: LMForge-End-to-End-LLMOps-Platform-for-Multi-Model-Agents",
-      "description": "AI Agent Development Platform - Supports multiple models (OpenAI/DeepSeek/Wenxin/Tongyi), knowledge base management, workflow automation, and enterprise-grade security. Built with Flask + Vue3 + LangC",
-      "impact_score": 7.0,
+      "title": "GitHub Release: deep-share - v1.6.12",
+      "description": "- 修复（Gemini）：解决了导出按钮错误出现在侧边栏 Gem 对话菜单中的问题，仅在主对话区域显示。\r\n\r\n- 修复（DeepSeek）：修正了截图导出过程中的元素过滤逻辑\r\n\r\n**Full Changelog**: https://github.com/Yorick-Ryu/deep-share/compare/v1.6.11...v1.6.12",
+      "impact_score": 9.0,
       "confidence": 0.8,
       "related_updates": [
-        "e9d92de08a77e551afedf51fced4b137"
+        "5a2b49c64a0384005eab808da8af8bac"
+      ],
+      "evidence": [
+        "GitHub Releases"
+      ],
+      "timestamp": "2026-03-16"
+    },
+    {
+      "type": "new_model",
+      "title": "GitHub: deadend-cli",
+      "description": "Agentic pentest tooling. Currently achieving 81% (KIMI K2.5) on XBOW's benchmark in full black-box. Completely Self-hosted. Every model available on LiteLLM (Ollama, anthropic, openai...)",
+      "impact_score": 8.5,
+      "confidence": 0.8,
+      "related_updates": [
+        "1dfd5f1e4bdd4e6cb74ba5de2fd48dcf"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-04-06"
+      "timestamp": "2026-04-12"
     },
     {
       "type": "new_model",
-      "title": "GitHub: super-agent",
-      "description": "Multi-model AI agent with semantic routing — Claude, Gemini, DeepSeek via FastAPI",
-      "impact_score": 7.0,
+      "title": "GitHub: CCDash",
+      "description": "Open-source unified usage dashboard for Claude — track tokens, quota, costs across Claude Code, claude.ai & API in one panel. 开源 Claude 全平台用量监控面板，聚合 Claude Code / claude.ai / API 数据，适用于 Pro/Max 订阅用户与开",
+      "impact_score": 7.5,
       "confidence": 0.8,
       "related_updates": [
-        "4574f4570a7cf2b6bf667b0d658c8052"
+        "cd6d2f3888b85a5158ca71bf2b050db1"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-04-06"
+      "timestamp": "2026-04-13"
     },
     {
       "type": "new_model",
-      "title": "GitHub: freeflux",
-      "description": "🚀 Simplify FLUX access with 4-bit models and CPU offloading, enabling powerful GPU utilization and prompt generation from keywords with DeepSeek-R1 AI.",
+      "title": "GitHub: free-llm-api-keys",
+      "description": "Free LLM API keys for GPT-5.4, Claude, DeepSeek, Gemini, Grok — copy, paste, use. Updated 3-5x daily. No credit card needed.",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "a898b7340e2d958c00410c3b3e9bf35f"
+        "67b486510ac1d1a03fb87be79ae0d793"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-04-06"
+      "timestamp": "2026-04-13"
     },
     {
       "type": "new_model",
-      "title": "GitHub: jincainorthschool_homeworkfastdone",
-      "description": "这是一个基于python request库做的爬虫程序，所有使用铃铛教育的学校学生均可以用这个项目快速，自动，高效，快捷，智能地完成学校作业。这个项目也使用了豆包，deepseek等的api有api的可以使用ai模型完成作业，如果您不想花钱，也可使用免费朗读功能。该项目同时有gui和simple版本，需注意simple只有朗读功能，没有ai提交，没有图形化界面，gui可以预览图片，pcm，svg多",
+      "title": "GitHub: CowAgent",
+      "description": "CowAgent (chatgpt-on-wechat) 是基于大模型的超级AI助理，能主动思考和任务规划、访问操作系统和外部资源、创造和执行Skills、通过长期记忆和知识库不断成长，比OpenClaw更轻量和便捷。同时支持微信、飞书、钉钉、企微、QQ、公众号、网页等接入，可选择OpenAI/Claude/Gemini/DeepSeek/ Qwen/GLM/Kimi/LinkAI，能处理文本、语",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "91c63e8d36a668e00b5d9b8197c52134"
+        "f5404ba62888c724fdfc788addd6f529"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-04-06"
+      "timestamp": "2026-04-13"
     },
     {
       "type": "new_model",
-      "title": "GitHub: oak-deepseek",
-      "description": "一个轻量AI Agent框架，基于DeepSeek API",
+      "title": "GitHub: deepseek-trading-experiment",
+      "description": "🤖 Explore AI-driven trading with the DeepSeek crypto bot, designed for learning rather than profit through backtesting strategies and financial analysis.",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "020f3cfbc9cab3e1a958ad709bf585fb"
+        "103f5d1e01777b3ebc9bf6c6c995eded"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-04-06"
+      "timestamp": "2026-04-13"
     },
     {
       "type": "new_model",
-      "title": "GitHub: kimi-openenv-code-reviewer",
-      "description": "OpenEnv Code Reviewer - AI-powered code review agent",
+      "title": "GitHub: kimi-stock-agent",
+      "description": "AI自己炒股的记录",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "2c82de31d3f32767fde1b75f943b7727"
+        "8f583d35f4984ad4d37f51f03baf2c3d"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-04-06"
+      "timestamp": "2026-04-13"
     },
     {
       "type": "new_model",
-      "title": "GitHub: chatgpt-on-wechat",
-      "description": "CowAgent是基于大模型的超级AI助理，能主动思考和任务规划、访问操作系统和外部资源、创造和执行Skills、拥有长期记忆并不断成长，比OpenClaw更轻量和便捷。同时支持微信、飞书、钉钉、企微、QQ、公众号、网页等接入，可选择OpenAI/Claude/Gemini/DeepSeek/ Qwen/GLM/Kimi/LinkAI，能处理文本、语音、图片和文件，可快速搭建个人AI助理和企业数字",
+      "title": "GitHub: kairo-skills",
+      "description": "Personal AI skills collection for Kimi Code CLI and other agents",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "47daa50ff606227593ca4fe2e24a5739"
+        "889c240f8659408a9e117563da333be7"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-04-06"
+      "timestamp": "2026-04-13"
     },
     {
       "type": "new_model",
-      "title": "GitHub: parr-prompt",
-      "description": "Multi-provider AI prompt CLI and Dash UI (OpenAI, Gemini, Grok, Claude, DeepSeek, Kimi, Doubao)",
+      "title": "GitHub: local-file-processor",
+      "description": "Standalone local file processing pipeline: PDF/DOCX/MD/TXT → AI classify/summarize/embed → DuckDB + semantic search. Supports Kimi cloud and Ollama local models.",
       "impact_score": 7.0,
       "confidence": 0.8,
       "related_updates": [
-        "713b465ed851129b832d2e77cc841ccb"
+        "3fd2d7c1d2702d7e2d71ffb5b4fd1ca2"
       ],
       "evidence": [
         "GitHub"
       ],
-      "timestamp": "2026-04-05"
+      "timestamp": "2026-04-13"
     }
   ],
   "significant_changes": [],
@@ -191,17 +187,12 @@
     },
     {
       "type": "emerging_company",
-      "description": "qwen showing increasing activity",
-      "confidence": 0.7
-    },
-    {
-      "type": "emerging_company",
-      "description": "ernie showing increasing activity",
-      "confidence": 0.7
-    },
-    {
-      "type": "emerging_company",
       "description": "minimax showing increasing activity",
+      "confidence": 0.7
+    },
+    {
+      "type": "emerging_company",
+      "description": "qwen showing increasing activity",
       "confidence": 0.7
     },
     {
@@ -211,12 +202,17 @@
     },
     {
       "type": "emerging_company",
+      "description": "ernie showing increasing activity",
+      "confidence": 0.7
+    },
+    {
+      "type": "emerging_company",
       "description": "doubao showing increasing activity",
       "confidence": 0.7
     }
   ],
   "recommendations": [
-    "URGENT: 2 high-impact developments detected - review immediately",
+    "URGENT: 3 high-impact developments detected - review immediately",
     "Long-term trends identified - consider strategic implications"
   ]
 }
