@@ -4,11 +4,19 @@ Multi-agent architecture to extract meaningful insights and identify biggest cha
 """
 
 import json
+import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import List, Dict, Optional
 from dataclasses import dataclass, asdict
 import hashlib
+
+# Ensure shared repo-level modules can be imported when run from `ai-monitor/`.
+REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from agent_core import Agent, AgentContext, AgentRuntime
 
 
 @dataclass
@@ -34,15 +42,20 @@ class Change:
     implications: List[str]
 
 
-class AnalysisAgent:
+class AnalysisAgent(Agent):
     """Base class for specialized analysis agents"""
     
-    def __init__(self, config: Dict):
+    def __init__(self, config: Dict, name: str):
+        super().__init__(name=name)
         self.config = config
     
     def analyze(self, updates: List[Dict], historical_data: List[Dict]) -> List[Insight]:
         """Analyze updates and return insights"""
         raise NotImplementedError
+
+    def run(self, context: AgentContext):
+        """Runtime-compatible entrypoint that preserves existing behavior."""
+        return self.analyze(context.updates, context.historical_data)
 
 
 class PriorityScoringAgent(AnalysisAgent):
@@ -301,11 +314,16 @@ class IntelligentAnalyzer:
         self.results_dir = Path(results_dir)
         self.results_dir.mkdir(exist_ok=True)
         
-        # Initialize agents
-        self.priority_agent = PriorityScoringAgent({})
-        self.change_agent = ChangeDetectionAgent({})
-        self.summary_agent = SummarizationAgent({})
-        self.trend_agent = TrendAnalysisAgent({})
+        # Initialize agents through shared runtime to standardize orchestration.
+        self.runtime = AgentRuntime()
+        self.priority_agent = PriorityScoringAgent({}, "priority_scoring")
+        self.change_agent = ChangeDetectionAgent({}, "change_detection")
+        self.summary_agent = SummarizationAgent({}, "summarization")
+        self.trend_agent = TrendAnalysisAgent({}, "trend_analysis")
+        self.runtime.register(self.priority_agent)
+        self.runtime.register(self.change_agent)
+        self.runtime.register(self.summary_agent)
+        self.runtime.register(self.trend_agent)
     
     def analyze_weekly_data(self) -> Dict:
         """Run all analysis agents on weekly data"""
@@ -323,11 +341,17 @@ class IntelligentAnalyzer:
         latest = summaries[-1]
         updates = latest.get('updates', [])
         
-        # Run all agents
-        priority_insights = self.priority_agent.analyze(updates, summaries)
-        changes = self.change_agent.analyze(updates, summaries)
-        summary = self.summary_agent.analyze(updates, summaries)
-        trends = self.trend_agent.analyze(updates, summaries)
+        # Run all agents through the shared runtime.
+        context = AgentContext(
+            updates=updates,
+            historical_data=summaries,
+            metadata={"date": latest.get("date", "")},
+        )
+        runtime_outputs = self.runtime.run_all(context)
+        priority_insights = runtime_outputs.get("priority_scoring") or []
+        changes = runtime_outputs.get("change_detection") or []
+        summary = runtime_outputs.get("summarization") or {}
+        trends = runtime_outputs.get("trend_analysis") or []
         
         # Compile results
         analysis = {
@@ -341,6 +365,7 @@ class IntelligentAnalyzer:
         
         # Save analysis
         self._save_analysis(analysis)
+        self._save_runtime_trace(latest.get('date', ''))
         
         return analysis
     
@@ -381,6 +406,40 @@ class IntelligentAnalyzer:
         latest_file = self.results_dir / "latest_analysis.json"
         with open(latest_file, 'w', encoding='utf-8') as f:
             json.dump(analysis, f, indent=2, ensure_ascii=False)
+
+    def _save_runtime_trace(self, analysis_date: str):
+        """Save runtime execution trace for observability and eval gates."""
+        run_history = self.runtime.run_history
+        total_steps = len(run_history)
+        success_steps = sum(1 for run in run_history if run.status == "ok")
+        failed_steps = total_steps - success_steps
+        total_duration_ms = sum(run.duration_ms for run in run_history)
+        avg_duration_ms = total_duration_ms / total_steps if total_steps else 0.0
+
+        runtime_trace = {
+            "date": analysis_date,
+            "recorded_at": datetime.now().isoformat(),
+            "summary": {
+                "total_steps": total_steps,
+                "success_steps": success_steps,
+                "failed_steps": failed_steps,
+                "success_rate": (success_steps / total_steps) if total_steps else 1.0,
+                "average_step_duration_ms": avg_duration_ms,
+                "total_duration_ms": total_duration_ms,
+                # Placeholder until per-model token accounting is added.
+                "estimated_cost_usd": 0.0,
+            },
+            "runs": [asdict(run) for run in run_history],
+        }
+
+        timestamp = datetime.now().strftime('%Y%m%d')
+        trace_file = self.results_dir / f"runtime_trace_{timestamp}.json"
+        with open(trace_file, 'w', encoding='utf-8') as f:
+            json.dump(runtime_trace, f, indent=2, ensure_ascii=False)
+
+        latest_trace_file = self.results_dir / "latest_runtime_trace.json"
+        with open(latest_trace_file, 'w', encoding='utf-8') as f:
+            json.dump(runtime_trace, f, indent=2, ensure_ascii=False)
     
     def generate_report(self) -> str:
         """Generate human-readable report"""
