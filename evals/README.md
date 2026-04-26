@@ -21,6 +21,7 @@ evals/
       ├── correctness.py                     # Correctness metrics
       ├── safety_flags.py                    # Safety evaluation
       └── reliability.py                     # Reliability metrics
+      └── runtime_observability.py           # Runtime traces + CI thresholds
 ```
 
 ## Evaluation Lifecycle
@@ -30,6 +31,7 @@ evals/
 3. **A/B Testing**: Compare models, prompts, and tool configurations
 4. **Human-in-the-Loop**: Expert-labeled benchmarks for critical decisions
 5. **Post-Deployment Monitoring**: Continuous sampling and drift detection
+6. **Runtime Guardrails**: Trace-based thresholds for success rate/latency/step count
 
 ## Key Patterns
 
