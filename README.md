@@ -55,6 +55,7 @@ See [evals/](evals/) for evaluation patterns, A/B testing frameworks, and case s
 
 - [Evaluation Framework](evals/README.md) - High-throughput eval pipelines, A/B tests, and monitoring patterns
 - [Healthcare Case Study](docs/canvas_agent_eval_case_study.md) - Healthcare agent evaluation example
+- [Agent Engineering Playbook](docs/agent_engineering_playbook.md) - Practical guide: why agents, how to build them, day-to-day engineering workflow, and next steps
 
 **Implementation details:**
 - 1k+ eval runs per PR, 12-model matrix, seeded RNG
