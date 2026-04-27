@@ -108,7 +108,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r ai-monitor/requirements.txt
-          pip install pytest
+          pip install pytest pytest-cov
 
       - name: Enforce runtime observability thresholds
         working-directory: evals
