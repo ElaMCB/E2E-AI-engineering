@@ -94,6 +94,16 @@ jobs:
           black --check --diff ai-monitor ai-30day-sprint evals || echo "Black check failed - will format in next step"
         continue-on-error: true
 
+      - name: Run isort check
+        run: |
+          isort --check-only --diff ai-monitor ai-30day-sprint evals || echo "isort check failed"
+        continue-on-error: true
+      
+      - name: Run flake8
+        run: |
+          flake8 ai-monitor ai-30day-sprint evals --max-line-length=120 --ignore=E203,W503,E501,F401 || echo "flake8 found issues"
+        continue-on-error: true
+
   agent-runtime-gate:
     runs-on: ubuntu-latest
     steps:
@@ -114,16 +124,6 @@ jobs:
         working-directory: evals
         run: |
           pytest -v test_runtime_trace_integration.py
-      
-      - name: Run isort check
-        run: |
-          isort --check-only --diff ai-monitor ai-30day-sprint evals || echo "isort check failed"
-        continue-on-error: true
-      
-      - name: Run flake8
-        run: |
-          flake8 ai-monitor ai-30day-sprint evals --max-line-length=120 --ignore=E203,W503,E501,F401 || echo "flake8 found issues"
-        continue-on-error: true
 
   build-status:
     runs-on: ubuntu-latest
@@ -158,9 +158,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          # Use PAT if available, otherwise fall back to GITHUB_TOKEN
-          # PAT must have 'repo' scope and bypass protection permissions
-          token: ${{ secrets.METRICS_PAT || secrets.GITHUB_TOKEN }}
+          # Default GITHUB_TOKEN for clone only. Do not use METRICS_PAT here — an invalid
+          # PAT causes checkout to fail before the job runs. PAT is applied before push below.
           ref: ${{ github.ref }}
       
       - name: Set up Python
@@ -170,6 +169,7 @@ jobs:
       
       - name: Download coverage artifacts
         uses: actions/download-artifact@v4
+        continue-on-error: true
         with:
           path: coverage-artifacts
           pattern: coverage-*
@@ -198,6 +198,8 @@ jobs:
           ls -la coverage.json eval.json
       
       - name: Commit and push metrics
+        env:
+          GIT_TOKEN: ${{ secrets.METRICS_PAT || secrets.GITHUB_TOKEN }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -213,6 +215,9 @@ jobs:
               echo "No changes to commit"
             else
               git commit -m "CI: Update metrics [skip ci]"
+              if [ -n "$GIT_TOKEN" ] && [ "$GIT_TOKEN" != "${{ secrets.GITHUB_TOKEN }}" ]; then
+                git remote set-url origin "https://x-access-token:${GIT_TOKEN}@github.com/${{ github.repository }}.git"
+              fi
               # Try to push - if it fails due to branch protection, we'll handle it
               if ! git push origin main; then
                 echo "::warning::Failed to push metrics due to branch protection rules"
