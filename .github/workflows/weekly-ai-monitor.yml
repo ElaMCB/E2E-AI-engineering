@@ -17,9 +17,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          # Use PAT if available to bypass branch protection
-          # PAT must be created by a repository admin for bypass to work
-          token: ${{ secrets.METRICS_PAT || secrets.GITHUB_TOKEN }}
+          # Always use the default GITHUB_TOKEN for clone. A bad or empty METRICS_PAT
+          # breaks checkout with: fatal: could not read Username for 'https://github.com'
+          # Use METRICS_PAT only in the push step below when it differs from GITHUB_TOKEN.
           ref: main
           fetch-depth: 0  # Fetch full history for proper git operations
       
@@ -71,8 +71,7 @@ jobs:
           # Configure git to use the PAT token for authentication
           if [ -n "$GIT_TOKEN" ] && [ "$GIT_TOKEN" != "${{ secrets.GITHUB_TOKEN }}" ]; then
             echo "Using PAT token for authentication (bypass should apply)"
-            # Set remote URL with token for authentication
-            git remote set-url origin https://$GIT_TOKEN@github.com/${{ github.repository }}.git
+            git remote set-url origin "https://x-access-token:${GIT_TOKEN}@github.com/${{ github.repository }}.git"
           fi
           
           # Ensure we're on main branch
