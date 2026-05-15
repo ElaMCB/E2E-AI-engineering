@@ -200,9 +200,20 @@ class ChangeDetectionAgent(AnalysisAgent):
             curr_count = len(current_week.get('updates', []))
             
             if curr_count > prev_count * 1.5:  # 50% increase
+                if prev_count == 0:
+                    change_description = (
+                        f"Significant activity increase: {prev_count} → {curr_count} updates "
+                        "(new activity after empty prior week)"
+                    )
+                else:
+                    increase_pct = (curr_count / prev_count - 1) * 100
+                    change_description = (
+                        f"Significant activity increase: {prev_count} → {curr_count} updates "
+                        f"(+{increase_pct:.0f}%)"
+                    )
                 changes.append(Change(
                     category='market_shift',
-                    description=f"Significant activity increase: {prev_count} → {curr_count} updates (+{((curr_count/prev_count-1)*100):.0f}%)",
+                    description=change_description,
                     magnitude=6.0,
                     week_over_week_change={'prev': prev_count, 'current': curr_count},
                     implications=["Increased market activity - monitor closely", "Potential major announcements coming"]
