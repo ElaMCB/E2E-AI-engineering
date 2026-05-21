@@ -70,3 +70,91 @@ def test_runtime_trace_generation_and_thresholds(tmp_path):
         max_steps_per_run=12.0,
     )
     assert gate["ok"], f"Runtime threshold violations: {gate['violations']}"
+
+
+def test_zero_baseline_activity_spike_does_not_fail(tmp_path):
+    """A week with updates after an empty week should be reported, not crash."""
+    analyzer_module = _load_analyzer_module()
+    results_dir = tmp_path / "results"
+    results_dir.mkdir(parents=True, exist_ok=True)
+
+    weekly_summary = [
+        {
+            "date": "2026-04-13",
+            "updates": [],
+        },
+        {
+            "date": "2026-04-20",
+            "updates": [
+                {
+                    "title": "DeepSeek releases vNext",
+                    "summary": "New model release with open source weights",
+                    "source": "GitHub Releases",
+                    "date": "2026-04-20",
+                    "keywords": ["deepseek"],
+                    "hash": "a1",
+                },
+            ],
+        },
+    ]
+
+    with open(results_dir / "weekly_summary.json", "w", encoding="utf-8") as f:
+        json.dump(weekly_summary, f, indent=2)
+
+    analyzer = analyzer_module.IntelligentAnalyzer(results_dir=str(results_dir))
+    analysis = analyzer.analyze_weekly_data()
+
+    assert "error" not in analysis
+    market_shifts = [
+        change
+        for change in analysis["significant_changes"]
+        if change["category"] == "market_shift"
+    ]
+    assert market_shifts
+    assert "from zero baseline" in market_shifts[0]["description"]
+
+
+def test_agent_failure_does_not_save_partial_analysis(tmp_path):
+    """Partial agent output should not be published as successful analysis."""
+    analyzer_module = _load_analyzer_module()
+    results_dir = tmp_path / "results"
+    results_dir.mkdir(parents=True, exist_ok=True)
+
+    weekly_summary = [
+        {
+            "date": "2026-04-20",
+            "updates": [
+                {
+                    "title": "DeepSeek releases vNext",
+                    "summary": "New model release with open source weights",
+                    "source": "GitHub Releases",
+                    "date": "2026-04-20",
+                    "keywords": ["deepseek"],
+                    "hash": "a1",
+                },
+            ],
+        }
+    ]
+
+    with open(results_dir / "weekly_summary.json", "w", encoding="utf-8") as f:
+        json.dump(weekly_summary, f, indent=2)
+
+    class FailingChangeAgent(analyzer_module.AnalysisAgent):
+        def __init__(self):
+            super().__init__({}, "change_detection")
+
+        def analyze(self, updates, historical_data):
+            raise RuntimeError("boom")
+
+    analyzer = analyzer_module.IntelligentAnalyzer(results_dir=str(results_dir))
+    analyzer.runtime._agents[1] = FailingChangeAgent()
+
+    analysis = analyzer.analyze_weekly_data()
+
+    assert analysis["failed_agents"] == ["change_detection"]
+    assert "change_detection: boom" in analysis["error"]
+    assert not (results_dir / "latest_analysis.json").exists()
+
+    with open(results_dir / "latest_runtime_trace.json", "r", encoding="utf-8") as f:
+        trace_data = json.load(f)
+    assert trace_data["summary"]["failed_steps"] == 1

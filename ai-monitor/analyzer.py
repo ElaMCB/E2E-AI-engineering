@@ -200,9 +200,14 @@ class ChangeDetectionAgent(AnalysisAgent):
             curr_count = len(current_week.get('updates', []))
             
             if curr_count > prev_count * 1.5:  # 50% increase
+                if prev_count == 0:
+                    percent_change = "from zero baseline"
+                else:
+                    percent_change = f"+{((curr_count / prev_count - 1) * 100):.0f}%"
+
                 changes.append(Change(
                     category='market_shift',
-                    description=f"Significant activity increase: {prev_count} → {curr_count} updates (+{((curr_count/prev_count-1)*100):.0f}%)",
+                    description=f"Significant activity increase: {prev_count} → {curr_count} updates ({percent_change})",
                     magnitude=6.0,
                     week_over_week_change={'prev': prev_count, 'current': curr_count},
                     implications=["Increased market activity - monitor closely", "Potential major announcements coming"]
@@ -348,6 +353,16 @@ class IntelligentAnalyzer:
             metadata={"date": latest.get("date", "")},
         )
         runtime_outputs = self.runtime.run_all(context)
+        failed_runs = [run for run in self.runtime.run_history if run.status != "ok"]
+        if failed_runs:
+            self._save_runtime_trace(latest.get('date', ''))
+            failed_agents = [run.agent_name for run in failed_runs]
+            error_details = "; ".join(f"{run.agent_name}: {run.error}" for run in failed_runs)
+            return {
+                "error": f"Analysis agent failure: {error_details}",
+                "failed_agents": failed_agents,
+            }
+
         priority_insights = runtime_outputs.get("priority_scoring") or []
         changes = runtime_outputs.get("change_detection") or []
         summary = runtime_outputs.get("summarization") or {}
@@ -503,7 +518,7 @@ def main():
     
     if 'error' in analysis:
         print(f"Error: {analysis['error']}")
-        return
+        sys.exit(1)
     
     # Generate and print report
     report = analyzer.generate_report()
