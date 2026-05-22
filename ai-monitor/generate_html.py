@@ -7,6 +7,20 @@ import html
 from pathlib import Path
 from datetime import datetime
 from typing import List, Dict
+from urllib.parse import urlparse
+
+
+def safe_href(url_raw) -> str:
+    """Return an escaped href for trusted web URLs, or a safe inert link."""
+    if not url_raw or url_raw == '#':
+        return '#'
+
+    url = str(url_raw).strip()
+    parsed = urlparse(url)
+    if parsed.scheme.lower() not in {'http', 'https'} or not parsed.netloc:
+        return '#'
+
+    return html.escape(url, quote=True)
 
 
 def generate_html_page(summary_file: str = "results/weekly_summary.json", 
@@ -352,10 +366,7 @@ def generate_html_from_summaries(summaries: List[Dict]) -> str:
         for update in updates[:10]:  # Limit to 10 per keyword
             # Get and escape all user-controlled data
             title = html.escape(str(update.get('title', 'No title')))
-            url_raw = update.get('url', '#')
-            # Escape URL for href attribute to prevent XSS
-            # This escapes HTML special chars like quotes that could break out of the attribute
-            url = html.escape(str(url_raw)) if url_raw and url_raw != '#' else '#'
+            url = safe_href(update.get('url', '#'))
             source = html.escape(str(update.get('source', 'Unknown')))
             date = html.escape(str(update.get('date', 'N/A')))
             summary = html.escape(str(update.get('summary', '')))
