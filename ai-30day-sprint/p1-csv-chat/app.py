@@ -20,6 +20,12 @@ load_dotenv()
 vector_store = None
 df = None
 
+
+def public_share_enabled() -> bool:
+    """Return True only when public Gradio sharing is explicitly enabled."""
+    return os.getenv("GRADIO_SHARE", "").strip().lower() in {"1", "true", "yes", "on"}
+
+
 def load_csv(file_path: str) -> str:
     """Load and process the CSV or Excel file."""
     global df, vector_store
@@ -159,7 +165,7 @@ if __name__ == "__main__":
         print("Please set it in a .env file or as an environment variable.")
         print("You can get an API key from https://platform.deepseek.com/")
         exit(1)
-        
-    # Create interface and launch with public access
+
+    # Create interface and launch locally by default.
     demo = create_interface()
-    demo.launch(share=True)
+    demo.launch(share=public_share_enabled())

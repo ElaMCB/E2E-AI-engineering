@@ -27,6 +27,7 @@ class LLMAnalyzer:
         except Exception as e:
             print(f"LLM analysis failed: {e}")
             return self._fallback_analysis(updates)
+        return self._fallback_analysis(updates)
     
     def _analyze_with_openai(self, updates: List[Dict], historical_context: List[Dict]) -> Dict:
         """Analyze using OpenAI-compatible API"""

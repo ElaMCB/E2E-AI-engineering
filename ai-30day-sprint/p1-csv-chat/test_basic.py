@@ -40,3 +40,17 @@ def test_test_file_exists():
     assert test_file.exists(), "test_basic.py should exist"
     assert test_file.stat().st_size > 0, "test_basic.py should not be empty"
 
+
+def test_public_share_requires_explicit_opt_in(monkeypatch):
+    """The local CSV app should not expose a public Gradio tunnel by default."""
+    try:
+        import app
+    except ImportError as e:
+        pytest.skip(f"app module has missing dependencies: {e}")
+
+    monkeypatch.delenv("GRADIO_SHARE", raising=False)
+    assert app.public_share_enabled() is False
+
+    monkeypatch.setenv("GRADIO_SHARE", "true")
+    assert app.public_share_enabled() is True
+
