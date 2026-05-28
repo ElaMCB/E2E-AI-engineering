@@ -40,9 +40,9 @@ jobs:
       
       - name: Run tests
         working-directory: ${{ matrix.project }}
-        continue-on-error: true
         run: |
           if find . -maxdepth 1 -name "test_*.py" | grep -q . || [ -d "tests" ]; then
+            TEST_EXIT=0
             # Run tests with coverage, ensuring coverage.json is generated
             # Use --cov-append to combine coverage from multiple test runs
             pytest --cov=. --cov-report=xml --cov-report=term-missing --cov-report=json:coverage.json -v --tb=short || TEST_EXIT=$?
@@ -55,6 +55,9 @@ jobs:
               echo '{"totals": {"percent_covered": 0.0}}' > coverage.json
             fi
             echo "Tests completed (some may have been skipped)"
+            if [ "$TEST_EXIT" -ne 0 ]; then
+              exit "$TEST_EXIT"
+            fi
           else
             echo "No tests found for ${{ matrix.project }}"
             # Create empty coverage report
@@ -68,6 +71,7 @@ jobs:
           echo "name=coverage-${SANITIZED}" >> $GITHUB_OUTPUT
       
       - name: Upload coverage artifacts
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.sanitize.outputs.name }}
@@ -139,9 +143,8 @@ jobs:
       
       - name: Verify imports
         run: |
-          cd ai-monitor && python -c "import monitor" || echo "monitor import failed"
-          cd ../evals && python -c "import run_ab_test_models_prompts" || echo "evals import failed"
-        continue-on-error: true
+          cd ai-monitor && python -c "import monitor"
+          cd ../evals && python -c "import run_ab_test_models_prompts"
 
   generate-metrics:
     runs-on: ubuntu-latest
