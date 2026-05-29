@@ -17,6 +17,11 @@ def _load_analyzer_module():
     return module
 
 
+def _write_weekly_summary(results_dir, weekly_summary):
+    with open(results_dir / "weekly_summary.json", "w", encoding="utf-8") as f:
+        json.dump(weekly_summary, f, indent=2)
+
+
 def test_runtime_trace_generation_and_thresholds(tmp_path):
     """Analyzer should emit runtime trace that passes baseline thresholds."""
     from metrics.runtime_observability import evaluate_runtime_trace, check_runtime_thresholds
@@ -49,8 +54,7 @@ def test_runtime_trace_generation_and_thresholds(tmp_path):
         }
     ]
 
-    with open(results_dir / "weekly_summary.json", "w", encoding="utf-8") as f:
-        json.dump(weekly_summary, f, indent=2)
+    _write_weekly_summary(results_dir, weekly_summary)
 
     analyzer = analyzer_module.IntelligentAnalyzer(results_dir=str(results_dir))
     analysis = analyzer.analyze_weekly_data()
@@ -70,3 +74,50 @@ def test_runtime_trace_generation_and_thresholds(tmp_path):
         max_steps_per_run=12.0,
     )
     assert gate["ok"], f"Runtime threshold violations: {gate['violations']}"
+
+
+def test_change_detection_handles_zero_previous_week_activity(tmp_path):
+    """A quiet previous week must not make change detection fail silently."""
+    analyzer_module = _load_analyzer_module()
+    results_dir = tmp_path / "results"
+    results_dir.mkdir(parents=True, exist_ok=True)
+
+    weekly_summary = [
+        {
+            "date": "2026-04-13",
+            "updates": [],
+        },
+        {
+            "date": "2026-04-20",
+            "updates": [
+                {
+                    "title": "DeepSeek releases vNext",
+                    "summary": "New model release with open source weights",
+                    "source": "GitHub Releases",
+                    "date": "2026-04-20",
+                    "keywords": ["deepseek"],
+                    "hash": "a1",
+                }
+            ],
+        },
+    ]
+
+    _write_weekly_summary(results_dir, weekly_summary)
+
+    analyzer = analyzer_module.IntelligentAnalyzer(results_dir=str(results_dir))
+    analysis = analyzer.analyze_weekly_data()
+
+    assert "error" not in analysis
+    assert analysis["significant_changes"] == [
+        {
+            "category": "new_company",
+            "description": "New entities detected: deepseek",
+            "magnitude": 7.0,
+            "week_over_week_change": {"new": ["deepseek"]},
+            "implications": ["Monitor deepseek for future developments"],
+        }
+    ]
+
+    with open(results_dir / "latest_runtime_trace.json", "r", encoding="utf-8") as f:
+        trace_data = json.load(f)
+    assert all(run["status"] == "ok" for run in trace_data["runs"])
