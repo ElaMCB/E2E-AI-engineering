@@ -487,16 +487,20 @@ def generate_html_from_analysis(analysis: Dict) -> str:
             const userMsg = document.createElement('div');
             userMsg.className = 'agent-message';
             userMsg.style.marginBottom = '1rem';
-            userMsg.innerHTML = `
-                <div style="display: flex; align-items: start; gap: 0.75rem; flex-direction: row-reverse;">
-                    <i class="fas fa-user" style="color: var(--success); margin-top: 0.25rem;"></i>
-                    <div style="flex: 1; text-align: right;">
-                        <p style="margin: 0; color: var(--text-light); line-height: 1.6; background: rgba(59, 130, 246, 0.2); padding: 0.75rem; border-radius: 8px; display: inline-block;">
-                            ${question}
-                        </p>
-                    </div>
-                </div>
-            `;
+            const userRow = document.createElement('div');
+            userRow.style.cssText = 'display: flex; align-items: start; gap: 0.75rem; flex-direction: row-reverse;';
+            const userIcon = document.createElement('i');
+            userIcon.className = 'fas fa-user';
+            userIcon.style.cssText = 'color: var(--success); margin-top: 0.25rem;';
+            const userContent = document.createElement('div');
+            userContent.style.cssText = 'flex: 1; text-align: right;';
+            const userBubble = document.createElement('p');
+            userBubble.style.cssText = 'margin: 0; color: var(--text-light); line-height: 1.6; background: rgba(59, 130, 246, 0.2); padding: 0.75rem; border-radius: 8px; display: inline-block;';
+            userBubble.textContent = question;
+            userContent.appendChild(userBubble);
+            userRow.appendChild(userIcon);
+            userRow.appendChild(userContent);
+            userMsg.appendChild(userRow);
             messagesDiv.appendChild(userMsg);
             
             // Get agent response
@@ -507,16 +511,20 @@ def generate_html_from_analysis(analysis: Dict) -> str:
                 const agentMsg = document.createElement('div');
                 agentMsg.className = 'agent-message';
                 agentMsg.style.marginBottom = '1rem';
-                agentMsg.innerHTML = `
-                    <div style="display: flex; align-items: start; gap: 0.75rem;">
-                        <i class="fas fa-robot" style="color: var(--primary); margin-top: 0.25rem;"></i>
-                        <div style="flex: 1;">
-                            <p style="margin: 0; color: var(--text-light); line-height: 1.6; white-space: pre-line;">
-                                ${response}
-                            </p>
-                        </div>
-                    </div>
-                `;
+                const agentRow = document.createElement('div');
+                agentRow.style.cssText = 'display: flex; align-items: start; gap: 0.75rem;';
+                const agentIcon = document.createElement('i');
+                agentIcon.className = 'fas fa-robot';
+                agentIcon.style.cssText = 'color: var(--primary); margin-top: 0.25rem;';
+                const agentContent = document.createElement('div');
+                agentContent.style.cssText = 'flex: 1;';
+                const agentBubble = document.createElement('p');
+                agentBubble.style.cssText = 'margin: 0; color: var(--text-light); line-height: 1.6; white-space: pre-line;';
+                agentBubble.textContent = response;
+                agentContent.appendChild(agentBubble);
+                agentRow.appendChild(agentIcon);
+                agentRow.appendChild(agentContent);
+                agentMsg.appendChild(agentRow);
                 messagesDiv.appendChild(agentMsg);
                 messagesDiv.scrollTop = messagesDiv.scrollHeight;
             }, 500);

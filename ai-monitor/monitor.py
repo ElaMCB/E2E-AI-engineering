@@ -655,6 +655,7 @@ class AIMonitor:
     def _save_results(self, updates: List[AIUpdate]):
         """Save results to file"""
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        filename = None
         
         if self.config.get('output_format') == 'json':
             filename = self.results_dir / f"ai_updates_{timestamp}.json"
@@ -680,10 +681,15 @@ class AIMonitor:
         # Keep only last 12 weeks
         summaries = summaries[-12:]
         
-        with open(summary_file, 'w', encoding='utf-8') as f:
+        temp_summary_file = summary_file.with_name(f"{summary_file.name}.tmp")
+        with open(temp_summary_file, 'w', encoding='utf-8') as f:
             json.dump(summaries, f, indent=2, ensure_ascii=False)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(temp_summary_file, summary_file)
         
-        print(f"Results saved to {filename}")
+        if filename is not None:
+            print(f"Results saved to {filename}")
         print(f"Weekly summary updated: {summary_file}")
     
     def generate_report(self) -> str:
