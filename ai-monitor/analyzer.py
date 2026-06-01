@@ -199,7 +199,15 @@ class ChangeDetectionAgent(AnalysisAgent):
             prev_count = len(prev_week.get('updates', []))
             curr_count = len(current_week.get('updates', []))
             
-            if curr_count > prev_count * 1.5:  # 50% increase
+            if prev_count == 0 and curr_count > 0:
+                changes.append(Change(
+                    category='market_shift',
+                    description=f"New activity after quiet prior week: {prev_count} → {curr_count} updates",
+                    magnitude=6.0,
+                    week_over_week_change={'prev': prev_count, 'current': curr_count},
+                    implications=["Activity resumed after a quiet week - monitor closely"]
+                ))
+            elif curr_count > prev_count * 1.5:  # 50% increase
                 changes.append(Change(
                     category='market_shift',
                     description=f"Significant activity increase: {prev_count} → {curr_count} updates (+{((curr_count/prev_count-1)*100):.0f}%)",
@@ -348,6 +356,14 @@ class IntelligentAnalyzer:
             metadata={"date": latest.get("date", "")},
         )
         runtime_outputs = self.runtime.run_all(context)
+        agent_errors = [run for run in self.runtime.run_history if run.status != "ok"]
+        if agent_errors:
+            self._save_runtime_trace(latest.get('date', ''))
+            error_summary = "; ".join(
+                f"{run.agent_name}: {run.error}" for run in agent_errors
+            )
+            raise RuntimeError(f"Analysis agent failure(s): {error_summary}")
+
         priority_insights = runtime_outputs.get("priority_scoring") or []
         changes = runtime_outputs.get("change_detection") or []
         summary = runtime_outputs.get("summarization") or {}
