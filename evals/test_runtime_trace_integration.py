@@ -27,6 +27,10 @@ def test_runtime_trace_generation_and_thresholds(tmp_path):
 
     weekly_summary = [
         {
+            "date": "2026-04-13",
+            "updates": [],
+        },
+        {
             "date": "2026-04-20",
             "updates": [
                 {
@@ -55,6 +59,11 @@ def test_runtime_trace_generation_and_thresholds(tmp_path):
     analyzer = analyzer_module.IntelligentAnalyzer(results_dir=str(results_dir))
     analysis = analyzer.analyze_weekly_data()
     assert "error" not in analysis
+    assert any(
+        change["category"] == "market_shift"
+        and change["week_over_week_change"] == {"prev": 0, "current": 2}
+        for change in analysis["significant_changes"]
+    )
 
     trace_path = results_dir / "latest_runtime_trace.json"
     assert trace_path.exists()
