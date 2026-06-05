@@ -52,13 +52,11 @@ jobs:
         run: |
           cd ai-monitor
           python analyzer.py
-        continue-on-error: true
       
       - name: Generate Intelligence Page
         run: |
           cd ai-monitor
           python generate_intelligence_page.py
-        continue-on-error: true
       
       - name: Commit and Push Results
         env:

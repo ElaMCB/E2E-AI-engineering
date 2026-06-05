@@ -6,6 +6,8 @@ import json
 import importlib.util
 from pathlib import Path
 
+import pytest
+
 
 def _load_analyzer_module():
     repo_root = Path(__file__).resolve().parents[1]
@@ -70,3 +72,95 @@ def test_runtime_trace_generation_and_thresholds(tmp_path):
         max_steps_per_run=12.0,
     )
     assert gate["ok"], f"Runtime threshold violations: {gate['violations']}"
+
+
+def test_activity_after_empty_week_does_not_fail_runtime(tmp_path):
+    """A quiet previous week followed by new activity should not crash change detection."""
+    analyzer_module = _load_analyzer_module()
+    results_dir = tmp_path / "results"
+    results_dir.mkdir(parents=True, exist_ok=True)
+
+    weekly_summary = [
+        {
+            "date": "2026-04-20",
+            "updates": [],
+        },
+        {
+            "date": "2026-04-27",
+            "updates": [
+                {
+                    "title": "DeepSeek releases vNext",
+                    "summary": "New model release with open source weights",
+                    "source": "GitHub Releases",
+                    "date": "2026-04-27",
+                    "keywords": ["deepseek"],
+                    "hash": "a1",
+                }
+            ],
+        },
+    ]
+
+    with open(results_dir / "weekly_summary.json", "w", encoding="utf-8") as f:
+        json.dump(weekly_summary, f, indent=2)
+
+    analyzer = analyzer_module.IntelligentAnalyzer(results_dir=str(results_dir))
+    analysis = analyzer.analyze_weekly_data()
+
+    assert any(
+        change["category"] == "market_shift"
+        and change["week_over_week_change"] == {"prev": 0, "current": 1}
+        for change in analysis["significant_changes"]
+    )
+
+    with open(results_dir / "latest_runtime_trace.json", "r", encoding="utf-8") as f:
+        trace_data = json.load(f)
+
+    assert trace_data["summary"]["failed_steps"] == 0
+    assert trace_data["summary"]["success_rate"] == 1.0
+
+
+def test_analyzer_does_not_publish_partial_results_when_agent_fails(tmp_path, monkeypatch):
+    """Required agent failures should fail closed before latest_analysis is overwritten."""
+    analyzer_module = _load_analyzer_module()
+    results_dir = tmp_path / "results"
+    results_dir.mkdir(parents=True, exist_ok=True)
+
+    weekly_summary = [
+        {
+            "date": "2026-04-27",
+            "updates": [
+                {
+                    "title": "DeepSeek releases vNext",
+                    "summary": "New model release with open source weights",
+                    "source": "GitHub Releases",
+                    "date": "2026-04-27",
+                    "keywords": ["deepseek"],
+                    "hash": "a1",
+                }
+            ],
+        },
+    ]
+
+    with open(results_dir / "weekly_summary.json", "w", encoding="utf-8") as f:
+        json.dump(weekly_summary, f, indent=2)
+
+    analyzer = analyzer_module.IntelligentAnalyzer(results_dir=str(results_dir))
+
+    def fail_analysis(_updates, _historical_data):
+        raise RuntimeError("simulated required-agent failure")
+
+    monkeypatch.setattr(analyzer.change_agent, "analyze", fail_analysis)
+
+    with pytest.raises(RuntimeError, match="change_detection: simulated required-agent failure"):
+        analyzer.analyze_weekly_data()
+
+    assert not (results_dir / "latest_analysis.json").exists()
+
+    with open(results_dir / "latest_runtime_trace.json", "r", encoding="utf-8") as f:
+        trace_data = json.load(f)
+
+    assert trace_data["summary"]["failed_steps"] == 1
+    failed_runs = [run for run in trace_data["runs"] if run["status"] == "error"]
+    assert len(failed_runs) == 1
+    assert failed_runs[0]["agent_name"] == "change_detection"
+    assert failed_runs[0]["error"] == "simulated required-agent failure"
