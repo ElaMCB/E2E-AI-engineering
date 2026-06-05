@@ -199,7 +199,15 @@ class ChangeDetectionAgent(AnalysisAgent):
             prev_count = len(prev_week.get('updates', []))
             curr_count = len(current_week.get('updates', []))
             
-            if curr_count > prev_count * 1.5:  # 50% increase
+            if prev_count == 0 and curr_count > 0:
+                changes.append(Change(
+                    category='market_shift',
+                    description=f"New activity after quiet week: 0 → {curr_count} updates",
+                    magnitude=6.0,
+                    week_over_week_change={'prev': prev_count, 'current': curr_count},
+                    implications=["Increased market activity - monitor closely", "Potential major announcements coming"]
+                ))
+            elif curr_count > prev_count * 1.5:  # 50% increase
                 changes.append(Change(
                     category='market_shift',
                     description=f"Significant activity increase: {prev_count} → {curr_count} updates (+{((curr_count/prev_count-1)*100):.0f}%)",
@@ -348,6 +356,7 @@ class IntelligentAnalyzer:
             metadata={"date": latest.get("date", "")},
         )
         runtime_outputs = self.runtime.run_all(context)
+        self._raise_for_runtime_errors(latest.get('date', ''))
         priority_insights = runtime_outputs.get("priority_scoring") or []
         changes = runtime_outputs.get("change_detection") or []
         summary = runtime_outputs.get("summarization") or {}
@@ -368,6 +377,18 @@ class IntelligentAnalyzer:
         self._save_runtime_trace(latest.get('date', ''))
         
         return analysis
+
+    def _raise_for_runtime_errors(self, analysis_date: str):
+        """Fail closed rather than publishing partial analysis when an agent fails."""
+        failed_runs = [run for run in self.runtime.run_history if run.status != "ok"]
+        if not failed_runs:
+            return
+
+        self._save_runtime_trace(analysis_date)
+        details = "; ".join(
+            f"{run.agent_name}: {run.error or run.status}" for run in failed_runs
+        )
+        raise RuntimeError(f"Analysis agent failure(s): {details}")
     
     def _generate_recommendations(self, insights: List[Insight], changes: List[Change], trends: List[Dict]) -> List[str]:
         """Generate actionable recommendations"""
