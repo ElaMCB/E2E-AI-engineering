@@ -27,6 +27,10 @@ def test_runtime_trace_generation_and_thresholds(tmp_path):
 
     weekly_summary = [
         {
+            "date": "2026-04-13",
+            "updates": [],
+        },
+        {
             "date": "2026-04-20",
             "updates": [
                 {
@@ -46,7 +50,7 @@ def test_runtime_trace_generation_and_thresholds(tmp_path):
                     "hash": "a2",
                 },
             ],
-        }
+        },
     ]
 
     with open(results_dir / "weekly_summary.json", "w", encoding="utf-8") as f:
@@ -55,6 +59,11 @@ def test_runtime_trace_generation_and_thresholds(tmp_path):
     analyzer = analyzer_module.IntelligentAnalyzer(results_dir=str(results_dir))
     analysis = analyzer.analyze_weekly_data()
     assert "error" not in analysis
+    assert any(
+        change["category"] == "market_shift"
+        and change["week_over_week_change"] == {"prev": 0, "current": 2}
+        for change in analysis["significant_changes"]
+    )
 
     trace_path = results_dir / "latest_runtime_trace.json"
     assert trace_path.exists()
@@ -70,3 +79,49 @@ def test_runtime_trace_generation_and_thresholds(tmp_path):
         max_steps_per_run=12.0,
     )
     assert gate["ok"], f"Runtime threshold violations: {gate['violations']}"
+
+
+def test_analyzer_does_not_publish_partial_analysis_on_agent_failure(tmp_path):
+    """Failed agents should emit a trace but not save incomplete analysis."""
+    analyzer_module = _load_analyzer_module()
+    results_dir = tmp_path / "results"
+    results_dir.mkdir(parents=True, exist_ok=True)
+
+    weekly_summary = [
+        {
+            "date": "2026-04-20",
+            "updates": [
+                {
+                    "title": "DeepSeek releases vNext",
+                    "summary": "New model release with open source weights",
+                    "source": "GitHub Releases",
+                    "date": "2026-04-20",
+                    "keywords": ["deepseek"],
+                    "hash": "a1",
+                }
+            ],
+        }
+    ]
+
+    with open(results_dir / "weekly_summary.json", "w", encoding="utf-8") as f:
+        json.dump(weekly_summary, f, indent=2)
+
+    analyzer = analyzer_module.IntelligentAnalyzer(results_dir=str(results_dir))
+
+    def fail_change_detection(updates, historical_data):
+        raise RuntimeError("synthetic change detection failure")
+
+    analyzer.change_agent.analyze = fail_change_detection
+    analysis = analyzer.analyze_weekly_data()
+
+    assert analysis == {"error": "Analysis agent failure(s): change_detection"}
+    assert (results_dir / "latest_runtime_trace.json").exists()
+    assert not (results_dir / "latest_analysis.json").exists()
+
+    with open(results_dir / "latest_runtime_trace.json", "r", encoding="utf-8") as f:
+        trace_data = json.load(f)
+
+    failed_runs = [run for run in trace_data["runs"] if run["status"] == "error"]
+    assert len(failed_runs) == 1
+    assert failed_runs[0]["agent_name"] == "change_detection"
+    assert "synthetic change detection failure" in failed_runs[0]["error"]
