@@ -145,3 +145,43 @@ def test_runtime_metrics_derive_success_rate_from_runs():
     gate = check_runtime_thresholds(metrics, min_success_rate=0.95)
     assert not gate["ok"]
     assert "success_rate 0.500 < 0.950" in gate["violations"]
+
+
+def test_failed_agent_does_not_publish_partial_analysis(tmp_path):
+    """Agent failures should emit a trace but not overwrite latest analysis."""
+    analyzer_module = _load_analyzer_module()
+    results_dir = tmp_path / "results"
+    results_dir.mkdir(parents=True, exist_ok=True)
+
+    weekly_summary = [
+        {
+            "date": "2026-04-20",
+            "updates": [
+                {
+                    "title": "DeepSeek releases vNext",
+                    "summary": "New model release with open source weights",
+                    "source": "GitHub Releases",
+                    "date": "2026-04-20",
+                    "keywords": ["deepseek"],
+                    "hash": "a1",
+                },
+            ],
+        },
+    ]
+
+    with open(results_dir / "weekly_summary.json", "w", encoding="utf-8") as f:
+        json.dump(weekly_summary, f, indent=2)
+
+    analyzer = analyzer_module.IntelligentAnalyzer(results_dir=str(results_dir))
+
+    def fail_change_detection(_context):
+        raise RuntimeError("forced change detection failure")
+
+    analyzer.change_agent.run = fail_change_detection
+    analysis = analyzer.analyze_weekly_data()
+
+    assert analysis == {
+        "error": "Agent runtime failed: change_detection: forced change detection failure"
+    }
+    assert (results_dir / "latest_runtime_trace.json").exists()
+    assert not (results_dir / "latest_analysis.json").exists()
