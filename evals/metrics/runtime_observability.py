@@ -25,16 +25,22 @@ def evaluate_runtime_trace(trace: Dict[str, Any]) -> Dict[str, float]:
     summary = trace.get("summary", {})
     runs: List[Dict[str, Any]] = trace.get("runs", [])
 
-    total_steps = int(summary.get("total_steps", len(runs)))
-    success_rate = float(summary.get("success_rate", 1.0 if total_steps == 0 else 0.0))
     avg_step_duration_ms = float(summary.get("average_step_duration_ms", 0.0))
     estimated_cost_usd = float(summary.get("estimated_cost_usd", 0.0))
+
+    if runs:
+        total_steps = len(runs)
+        failed_steps = sum(1 for run in runs if run.get("status") != "ok")
+        success_rate = ((total_steps - failed_steps) / total_steps) if total_steps else 1.0
+    else:
+        total_steps = int(summary.get("total_steps", 0))
+        success_rate = float(summary.get("success_rate", 1.0 if total_steps == 0 else 0.0))
+        failed_steps = int(summary.get("failed_steps", 0))
 
     if runs and avg_step_duration_ms <= 0.0:
         avg_step_duration_ms = sum(float(r.get("duration_ms", 0.0)) for r in runs) / len(runs)
 
-    failed_steps = sum(1 for run in runs if run.get("status") != "ok")
-    failure_rate = (failed_steps / len(runs)) if runs else 0.0
+    failure_rate = (failed_steps / total_steps) if total_steps else 0.0
 
     return {
         "total_steps": float(total_steps),

@@ -40,11 +40,11 @@ jobs:
       
       - name: Run tests
         working-directory: ${{ matrix.project }}
-        continue-on-error: true
         run: |
           if find . -maxdepth 1 -name "test_*.py" | grep -q . || [ -d "tests" ]; then
             # Run tests with coverage, ensuring coverage.json is generated
             # Use --cov-append to combine coverage from multiple test runs
+            TEST_EXIT=0
             pytest --cov=. --cov-report=xml --cov-report=term-missing --cov-report=json:coverage.json -v --tb=short || TEST_EXIT=$?
             # Check if coverage.json was generated and has valid data
             if [ -f coverage.json ]; then
@@ -53,6 +53,10 @@ jobs:
             else
               echo "Warning: coverage.json was not generated, creating fallback"
               echo '{"totals": {"percent_covered": 0.0}}' > coverage.json
+            fi
+            if [ "$TEST_EXIT" -ne 0 ]; then
+              echo "Tests failed with exit code ${TEST_EXIT}"
+              exit "$TEST_EXIT"
             fi
             echo "Tests completed (some may have been skipped)"
           else
@@ -139,9 +143,8 @@ jobs:
       
       - name: Verify imports
         run: |
-          cd ai-monitor && python -c "import monitor" || echo "monitor import failed"
-          cd ../evals && python -c "import run_ab_test_models_prompts" || echo "evals import failed"
-        continue-on-error: true
+          cd ai-monitor && python -c "import monitor"
+          cd ../evals && python -c "import run_ab_test_models_prompts"
 
   generate-metrics:
     runs-on: ubuntu-latest
