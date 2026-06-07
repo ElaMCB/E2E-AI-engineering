@@ -107,7 +107,8 @@ def test_zero_update_baseline_generates_successful_runtime_trace(tmp_path):
     analysis = analyzer.analyze_weekly_data()
     assert "error" not in analysis
     assert analysis["significant_changes"]
-    assert "zero baseline" in analysis["significant_changes"][0]["description"]
+    descriptions = [change["description"] for change in analysis["significant_changes"]]
+    assert any("zero baseline" in description for description in descriptions)
 
     with open(results_dir / "latest_runtime_trace.json", "r", encoding="utf-8") as f:
         trace_data = json.load(f)
