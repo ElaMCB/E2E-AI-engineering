@@ -70,3 +70,98 @@ def test_runtime_trace_generation_and_thresholds(tmp_path):
         max_steps_per_run=12.0,
     )
     assert gate["ok"], f"Runtime threshold violations: {gate['violations']}"
+
+
+def test_change_detection_handles_activity_after_quiet_week(tmp_path):
+    """A quiet previous week followed by activity should not fail analysis."""
+    analyzer_module = _load_analyzer_module()
+    results_dir = tmp_path / "results"
+    results_dir.mkdir(parents=True, exist_ok=True)
+
+    weekly_summary = [
+        {
+            "date": "2026-04-13",
+            "updates": [],
+        },
+        {
+            "date": "2026-04-20",
+            "updates": [
+                {
+                    "title": "DeepSeek releases vNext",
+                    "summary": "New model release with open source weights",
+                    "source": "GitHub Releases",
+                    "date": "2026-04-20",
+                    "keywords": ["deepseek"],
+                    "hash": "a1",
+                }
+            ],
+        },
+    ]
+
+    with open(results_dir / "weekly_summary.json", "w", encoding="utf-8") as f:
+        json.dump(weekly_summary, f, indent=2)
+
+    analyzer = analyzer_module.IntelligentAnalyzer(results_dir=str(results_dir))
+    analysis = analyzer.analyze_weekly_data()
+
+    assert "error" not in analysis
+    assert analysis["significant_changes"]
+    activity_change = analysis["significant_changes"][-1]
+    assert activity_change["category"] == "market_shift"
+    assert activity_change["week_over_week_change"] == {"prev": 0, "current": 1}
+
+    with open(results_dir / "latest_runtime_trace.json", "r", encoding="utf-8") as f:
+        trace_data = json.load(f)
+    assert trace_data["summary"]["failed_steps"] == 0
+
+
+def test_analyzer_failure_preserves_previous_analysis(tmp_path, monkeypatch):
+    """Agent failures should be visible and must not overwrite good analysis."""
+    analyzer_module = _load_analyzer_module()
+    results_dir = tmp_path / "results"
+    results_dir.mkdir(parents=True, exist_ok=True)
+
+    previous_analysis = {"date": "2026-04-13", "executive_summary": {"summary": "known good"}}
+    with open(results_dir / "latest_analysis.json", "w", encoding="utf-8") as f:
+        json.dump(previous_analysis, f, indent=2)
+
+    weekly_summary = [
+        {
+            "date": "2026-04-20",
+            "updates": [
+                {
+                    "title": "Kimi announces new capability",
+                    "summary": "Moonshot AI expands features",
+                    "source": "Company Blog",
+                    "date": "2026-04-20",
+                    "keywords": ["kimi"],
+                    "hash": "a2",
+                }
+            ],
+        }
+    ]
+    with open(results_dir / "weekly_summary.json", "w", encoding="utf-8") as f:
+        json.dump(weekly_summary, f, indent=2)
+
+    analyzer = analyzer_module.IntelligentAnalyzer(results_dir=str(results_dir))
+
+    def fail_agent(_context):
+        raise RuntimeError("simulated priority failure")
+
+    monkeypatch.setattr(analyzer.runtime._agents[0], "run", fail_agent)
+    analysis = analyzer.analyze_weekly_data()
+
+    assert analysis["error"] == "Analysis failed; latest_analysis.json was not updated"
+    assert analysis["failed_agents"] == [
+        {
+            "agent_name": "priority_scoring",
+            "error": "simulated priority failure",
+        }
+    ]
+
+    with open(results_dir / "latest_analysis.json", "r", encoding="utf-8") as f:
+        assert json.load(f) == previous_analysis
+
+    with open(results_dir / "latest_runtime_trace.json", "r", encoding="utf-8") as f:
+        trace_data = json.load(f)
+    assert trace_data["summary"]["failed_steps"] == 1
