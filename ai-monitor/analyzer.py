@@ -199,10 +199,18 @@ class ChangeDetectionAgent(AnalysisAgent):
             prev_count = len(prev_week.get('updates', []))
             curr_count = len(current_week.get('updates', []))
             
-            if curr_count > prev_count * 1.5:  # 50% increase
+            if prev_count == 0 and curr_count > 0:
                 changes.append(Change(
                     category='market_shift',
-                    description=f"Significant activity increase: {prev_count} → {curr_count} updates (+{((curr_count/prev_count-1)*100):.0f}%)",
+                    description=f"Activity resumed after a quiet week: {prev_count} -> {curr_count} updates",
+                    magnitude=6.0,
+                    week_over_week_change={'prev': prev_count, 'current': curr_count},
+                    implications=["Monitor renewed activity closely", "Potential major announcements coming"]
+                ))
+            elif prev_count > 0 and curr_count > prev_count * 1.5:  # 50% increase
+                changes.append(Change(
+                    category='market_shift',
+                    description=f"Significant activity increase: {prev_count} -> {curr_count} updates (+{((curr_count/prev_count-1)*100):.0f}%)",
                     magnitude=6.0,
                     week_over_week_change={'prev': prev_count, 'current': curr_count},
                     implications=["Increased market activity - monitor closely", "Potential major announcements coming"]
@@ -352,6 +360,12 @@ class IntelligentAnalyzer:
         changes = runtime_outputs.get("change_detection") or []
         summary = runtime_outputs.get("summarization") or {}
         trends = runtime_outputs.get("trend_analysis") or []
+        self._save_runtime_trace(latest.get('date', ''))
+
+        runtime_failures = [run for run in self.runtime.run_history if run.status != "ok"]
+        if runtime_failures:
+            failed_agents = ", ".join(f"{run.agent_name}: {run.error}" for run in runtime_failures)
+            return {"error": f"Agent runtime failed: {failed_agents}"}
         
         # Compile results
         analysis = {
@@ -365,7 +379,6 @@ class IntelligentAnalyzer:
         
         # Save analysis
         self._save_analysis(analysis)
-        self._save_runtime_trace(latest.get('date', ''))
         
         return analysis
     
@@ -503,7 +516,7 @@ def main():
     
     if 'error' in analysis:
         print(f"Error: {analysis['error']}")
-        return
+        sys.exit(1)
     
     # Generate and print report
     report = analyzer.generate_report()

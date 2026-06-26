@@ -70,3 +70,94 @@ def test_runtime_trace_generation_and_thresholds(tmp_path):
         max_steps_per_run=12.0,
     )
     assert gate["ok"], f"Runtime threshold violations: {gate['violations']}"
+
+
+def test_change_detection_handles_zero_update_baseline(tmp_path):
+    """A quiet previous week followed by updates should not fail runtime analysis."""
+    analyzer_module = _load_analyzer_module()
+    results_dir = tmp_path / "results"
+    results_dir.mkdir(parents=True, exist_ok=True)
+
+    weekly_summary = [
+        {
+            "date": "2026-06-15",
+            "updates": [],
+        },
+        {
+            "date": "2026-06-22",
+            "updates": [
+                {
+                    "title": "DeepSeek releases vNext",
+                    "summary": "New model release with open source weights",
+                    "source": "GitHub Releases",
+                    "date": "2026-06-22",
+                    "keywords": ["deepseek"],
+                    "hash": "a1",
+                },
+            ],
+        },
+    ]
+
+    with open(results_dir / "weekly_summary.json", "w", encoding="utf-8") as f:
+        json.dump(weekly_summary, f, indent=2)
+
+    analyzer = analyzer_module.IntelligentAnalyzer(results_dir=str(results_dir))
+    analysis = analyzer.analyze_weekly_data()
+    assert "error" not in analysis
+
+    market_changes = [
+        change
+        for change in analysis["significant_changes"]
+        if change["category"] == "market_shift"
+    ]
+    assert market_changes
+    assert market_changes[0]["week_over_week_change"] == {"prev": 0, "current": 1}
+
+    with open(results_dir / "latest_runtime_trace.json", "r", encoding="utf-8") as f:
+        trace_data = json.load(f)
+    assert trace_data["summary"]["failed_steps"] == 0
+    assert all(run["status"] == "ok" for run in trace_data["runs"])
+
+
+def test_analyzer_does_not_overwrite_latest_analysis_on_agent_failure(tmp_path):
+    """Partial runtime failures should fail closed instead of publishing data loss."""
+    analyzer_module = _load_analyzer_module()
+    results_dir = tmp_path / "results"
+    results_dir.mkdir(parents=True, exist_ok=True)
+
+    weekly_summary = [
+        {
+            "date": "2026-06-22",
+            "updates": [
+                {
+                    "title": "DeepSeek releases vNext",
+                    "summary": "New model release with open source weights",
+                    "source": "GitHub Releases",
+                    "date": "2026-06-22",
+                    "keywords": ["deepseek"],
+                    "hash": "a1",
+                },
+            ],
+        },
+    ]
+    previous_analysis = {"date": "2026-06-15", "sentinel": "keep"}
+
+    with open(results_dir / "weekly_summary.json", "w", encoding="utf-8") as f:
+        json.dump(weekly_summary, f, indent=2)
+    with open(results_dir / "latest_analysis.json", "w", encoding="utf-8") as f:
+        json.dump(previous_analysis, f, indent=2)
+
+    analyzer = analyzer_module.IntelligentAnalyzer(results_dir=str(results_dir))
+    analyzer.change_agent.analyze = lambda updates, historical_data: (_ for _ in ()).throw(
+        RuntimeError("boom")
+    )
+
+    analysis = analyzer.analyze_weekly_data()
+    assert analysis["error"] == "Agent runtime failed: change_detection: boom"
+
+    with open(results_dir / "latest_analysis.json", "r", encoding="utf-8") as f:
+        assert json.load(f) == previous_analysis
+    with open(results_dir / "latest_runtime_trace.json", "r", encoding="utf-8") as f:
+        trace_data = json.load(f)
+    assert trace_data["summary"]["failed_steps"] == 1
+    assert any(run["agent_name"] == "change_detection" and run["status"] == "error" for run in trace_data["runs"])
