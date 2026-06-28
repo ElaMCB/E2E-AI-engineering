@@ -3,6 +3,7 @@ results/
 *.json
 !config.json
 !results/weekly_summary.json
+!results/seen_hashes.json
 
 # Python
 __pycache__/
