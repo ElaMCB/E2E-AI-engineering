@@ -80,6 +80,9 @@ jobs:
           
           # Force add results (they're in .gitignore but we need them for the website)
           git add -f ai-monitor/results/weekly_summary.json ai-monitor/results/latest_analysis.json docs/ai-monitor.html docs/intelligence.html
+          if [ -f ai-monitor/results/seen_hashes.json ]; then
+            git add -f ai-monitor/results/seen_hashes.json
+          fi
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
