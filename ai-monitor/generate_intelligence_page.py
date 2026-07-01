@@ -65,6 +65,18 @@ def get_personalized_greeting() -> Dict[str, str]:
     }
 
 
+def json_for_html_script(data: Dict) -> str:
+    """Serialize JSON so feed text cannot break out of a script tag."""
+    return (
+        json.dumps(data, ensure_ascii=False)
+        .replace("&", "\\u0026")
+        .replace("<", "\\u003c")
+        .replace(">", "\\u003e")
+        .replace("\u2028", "\\u2028")
+        .replace("\u2029", "\\u2029")
+    )
+
+
 def generate_html_from_analysis(analysis: Dict) -> str:
     """Generate HTML from analysis data"""
     
@@ -75,6 +87,7 @@ def generate_html_from_analysis(analysis: Dict) -> str:
     
     # Get personalized greeting
     personal = get_personalized_greeting()
+    analysis_json = json_for_html_script(analysis)
     
     html_output = f"""<!DOCTYPE html>
 <html lang="en">
@@ -371,19 +384,23 @@ def generate_html_from_analysis(analysis: Dict) -> str:
     
     <!-- Visitor Tracking -->
     <script src="analytics.js"></script>
+"""
     
+    html_output += f"""
+    <script id="analysis-data" type="application/json">{analysis_json}</script>
+"""
+    
+    html_output += """
     <!-- Intelligence Agent Script -->
     <script>
-        // Load analysis data for agent
+        // Load analysis data embedded at generation time for the static site.
         let analysisData = null;
-        fetch('ai-monitor/results/latest_analysis.json')
-            .then(response => response.json())
-            .then(data => {
-                analysisData = data;
-            })
-            .catch(() => {
-                console.log('Analysis data not available');
-            });
+        try {
+            const dataElement = document.getElementById('analysis-data');
+            analysisData = dataElement ? JSON.parse(dataElement.textContent) : null;
+        } catch (error) {
+            console.log('Analysis data not available');
+        }
         
         // Toggle agent interface
         document.getElementById('engageDeeperBtn').addEventListener('click', function() {
@@ -492,11 +509,11 @@ def generate_html_from_analysis(analysis: Dict) -> str:
                     <i class="fas fa-user" style="color: var(--success); margin-top: 0.25rem;"></i>
                     <div style="flex: 1; text-align: right;">
                         <p style="margin: 0; color: var(--text-light); line-height: 1.6; background: rgba(59, 130, 246, 0.2); padding: 0.75rem; border-radius: 8px; display: inline-block;">
-                            ${question}
                         </p>
                     </div>
                 </div>
             `;
+            userMsg.querySelector('p').textContent = question;
             messagesDiv.appendChild(userMsg);
             
             // Get agent response
@@ -512,11 +529,11 @@ def generate_html_from_analysis(analysis: Dict) -> str:
                         <i class="fas fa-robot" style="color: var(--primary); margin-top: 0.25rem;"></i>
                         <div style="flex: 1;">
                             <p style="margin: 0; color: var(--text-light); line-height: 1.6; white-space: pre-line;">
-                                ${response}
                             </p>
                         </div>
                     </div>
                 `;
+                agentMsg.querySelector('p').textContent = response;
                 messagesDiv.appendChild(agentMsg);
                 messagesDiv.scrollTop = messagesDiv.scrollHeight;
             }, 500);
