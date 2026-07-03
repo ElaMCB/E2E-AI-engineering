@@ -10,6 +10,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 try:
+    import monitor as monitor_module
     from monitor import AIMonitor
 except ImportError:
     pytest.skip("monitor module not available", allow_module_level=True)
@@ -94,6 +95,42 @@ def test_monitor():
     print("  python monitor.py")
     print("\nTo schedule weekly runs on Windows:")
     print("  .\\schedule_windows.ps1")
+
+
+def test_huggingface_search_handles_list_tags(tmp_path, monkeypatch):
+    """Hugging Face's normal list-valued tags should not abort the source."""
+    monkeypatch.chdir(tmp_path)
+
+    monitor = AIMonitor()
+    monitor.config.update({
+        "search_terms": ["DeepSeek AI"],
+        "huggingface_enabled": True,
+    })
+
+    class FakeResponse:
+        status_code = 200
+
+        def json(self):
+            return [
+                {
+                    "modelId": "deepseek-ai/DeepSeek-R1",
+                    "pipeline_tag": "text-generation",
+                    "tags": ["deepseek", "qwen", "text-generation"],
+                    "createdAt": "2026-04-20T00:00:00Z",
+                }
+            ]
+
+    def fake_get(url, params=None, timeout=10):
+        return FakeResponse()
+
+    monkeypatch.setattr(monitor_module.requests, "get", fake_get)
+
+    updates = monitor.search_huggingface()
+
+    assert len(updates) == 1
+    assert updates[0].source == "Hugging Face"
+    assert updates[0].title == "Hugging Face: deepseek-ai/DeepSeek-R1"
+    assert "deepseek" in updates[0].keywords
 
 
 if __name__ == "__main__":

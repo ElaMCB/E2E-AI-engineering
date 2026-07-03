@@ -70,3 +70,93 @@ def test_runtime_trace_generation_and_thresholds(tmp_path):
         max_steps_per_run=12.0,
     )
     assert gate["ok"], f"Runtime threshold violations: {gate['violations']}"
+
+
+def test_zero_update_previous_week_does_not_fail_change_detection(tmp_path):
+    """A quiet week followed by activity should be reported, not divide by zero."""
+    analyzer_module = _load_analyzer_module()
+    results_dir = tmp_path / "results"
+    results_dir.mkdir(parents=True, exist_ok=True)
+
+    weekly_summary = [
+        {
+            "date": "2026-04-13",
+            "updates": [],
+        },
+        {
+            "date": "2026-04-20",
+            "updates": [
+                {
+                    "title": "DeepSeek releases vNext",
+                    "summary": "New model release with open source weights",
+                    "source": "GitHub Releases",
+                    "date": "2026-04-20",
+                    "keywords": ["deepseek"],
+                    "hash": "a1",
+                }
+            ],
+        },
+    ]
+
+    with open(results_dir / "weekly_summary.json", "w", encoding="utf-8") as f:
+        json.dump(weekly_summary, f, indent=2)
+
+    analyzer = analyzer_module.IntelligentAnalyzer(results_dir=str(results_dir))
+    analysis = analyzer.analyze_weekly_data()
+
+    assert "error" not in analysis
+    assert any(change["category"] == "market_shift" for change in analysis["significant_changes"])
+
+    with open(results_dir / "latest_runtime_trace.json", "r", encoding="utf-8") as f:
+        trace_data = json.load(f)
+
+    assert trace_data["summary"]["failed_steps"] == 0
+    assert trace_data["summary"]["success_rate"] == 1.0
+
+
+def test_analyzer_preserves_latest_analysis_when_agent_fails(tmp_path, monkeypatch):
+    """Partial runtime outputs should not overwrite the last successful analysis."""
+    analyzer_module = _load_analyzer_module()
+    results_dir = tmp_path / "results"
+    results_dir.mkdir(parents=True, exist_ok=True)
+
+    weekly_summary = [
+        {
+            "date": "2026-04-20",
+            "updates": [
+                {
+                    "title": "DeepSeek releases vNext",
+                    "summary": "New model release with open source weights",
+                    "source": "GitHub Releases",
+                    "date": "2026-04-20",
+                    "keywords": ["deepseek"],
+                    "hash": "a1",
+                }
+            ],
+        }
+    ]
+    previous_analysis = {"date": "2026-04-13", "executive_summary": {"summary": "last good"}}
+
+    with open(results_dir / "weekly_summary.json", "w", encoding="utf-8") as f:
+        json.dump(weekly_summary, f, indent=2)
+    with open(results_dir / "latest_analysis.json", "w", encoding="utf-8") as f:
+        json.dump(previous_analysis, f, indent=2)
+
+    analyzer = analyzer_module.IntelligentAnalyzer(results_dir=str(results_dir))
+
+    def fail_change_detection(_context):
+        raise RuntimeError("boom")
+
+    monkeypatch.setattr(analyzer.change_agent, "run", fail_change_detection)
+    analysis = analyzer.analyze_weekly_data()
+
+    assert analysis == {"error": "Analysis failed for agent(s): change_detection"}
+    with open(results_dir / "latest_analysis.json", "r", encoding="utf-8") as f:
+        assert json.load(f) == previous_analysis
+
+    with open(results_dir / "latest_runtime_trace.json", "r", encoding="utf-8") as f:
+        trace_data = json.load(f)
+
+    assert trace_data["summary"]["failed_steps"] == 1
+    failed_runs = [run for run in trace_data["runs"] if run["status"] == "error"]
+    assert failed_runs[0]["agent_name"] == "change_detection"
