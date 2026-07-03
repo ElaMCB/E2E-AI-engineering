@@ -349,7 +349,17 @@ class AIMonitor:
                     
                     for model in models:
                         if isinstance(model, dict):
-                            content = model.get('modelId', '') + ' ' + model.get('pipeline_tag', '') + ' ' + (model.get('tags', []) or [])
+                            raw_tags = model.get('tags', []) or []
+                            if isinstance(raw_tags, list):
+                                tags = [str(tag) for tag in raw_tags]
+                            else:
+                                tags = [str(raw_tags)]
+
+                            content = ' '.join([
+                                str(model.get('modelId', '') or ''),
+                                str(model.get('pipeline_tag', '') or ''),
+                                ' '.join(tags),
+                            ])
                             
                             if self._is_relevant(str(content)):
                                 # Get model details
@@ -361,7 +371,7 @@ class AIMonitor:
                                     source="Hugging Face",
                                     url=model_url,
                                     date=model.get('createdAt', datetime.now().isoformat())[:10] if model.get('createdAt') else datetime.now().strftime('%Y-%m-%d'),
-                                    summary=f"Model: {model.get('pipeline_tag', 'N/A')} - {', '.join(model.get('tags', [])[:3]) if model.get('tags') else 'No tags'}",
+                                    summary=f"Model: {model.get('pipeline_tag', 'N/A')} - {', '.join(tags[:3]) if tags else 'No tags'}",
                                     keywords=self._extract_keywords(str(content)),
                                     hash=''
                                 )
