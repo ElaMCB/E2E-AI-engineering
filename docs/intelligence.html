@@ -509,12 +509,11 @@
                 <div style="display: flex; align-items: start; gap: 0.75rem; flex-direction: row-reverse;">
                     <i class="fas fa-user" style="color: var(--success); margin-top: 0.25rem;"></i>
                     <div style="flex: 1; text-align: right;">
-                        <p style="margin: 0; color: var(--text-light); line-height: 1.6; background: rgba(59, 130, 246, 0.2); padding: 0.75rem; border-radius: 8px; display: inline-block;">
-                            ${question}
-                        </p>
+                        <p style="margin: 0; color: var(--text-light); line-height: 1.6; background: rgba(59, 130, 246, 0.2); padding: 0.75rem; border-radius: 8px; display: inline-block;"></p>
                     </div>
                 </div>
             `;
+            userMsg.querySelector('p').textContent = question;
             messagesDiv.appendChild(userMsg);
             
             // Get agent response
@@ -529,12 +528,11 @@
                     <div style="display: flex; align-items: start; gap: 0.75rem;">
                         <i class="fas fa-robot" style="color: var(--primary); margin-top: 0.25rem;"></i>
                         <div style="flex: 1;">
-                            <p style="margin: 0; color: var(--text-light); line-height: 1.6; white-space: pre-line;">
-                                ${response}
-                            </p>
+                            <p style="margin: 0; color: var(--text-light); line-height: 1.6; white-space: pre-line;"></p>
                         </div>
                     </div>
                 `;
+                agentMsg.querySelector('p').textContent = response;
                 messagesDiv.appendChild(agentMsg);
                 messagesDiv.scrollTop = messagesDiv.scrollHeight;
             }, 500);
