@@ -100,15 +100,27 @@ class AIMonitor:
         """Load previously seen article hashes to avoid duplicates"""
         seen_file = self.results_dir / "seen_hashes.json"
         if seen_file.exists():
-            with open(seen_file, 'r') as f:
+            with open(seen_file, 'r', encoding='utf-8') as f:
                 return set(json.load(f))
+
+        summary_file = self.results_dir / "weekly_summary.json"
+        if summary_file.exists():
+            with open(summary_file, 'r', encoding='utf-8') as f:
+                summaries = json.load(f)
+            return {
+                update['hash']
+                for week in summaries
+                for update in week.get('updates', [])
+                if update.get('hash')
+            }
+
         return set()
     
     def _save_seen_hashes(self):
         """Save seen hashes to file"""
         seen_file = self.results_dir / "seen_hashes.json"
-        with open(seen_file, 'w') as f:
-            json.dump(list(self.seen_hashes), f, indent=2)
+        with open(seen_file, 'w', encoding='utf-8') as f:
+            json.dump(sorted(self.seen_hashes), f, indent=2)
     
     def search_duckduckgo(self, query: str, max_results: int = 10) -> List[AIUpdate]:
         """Search using DuckDuckGo (no API key required)"""
