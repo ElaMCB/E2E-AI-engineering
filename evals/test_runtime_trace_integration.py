@@ -17,6 +17,11 @@ def _load_analyzer_module():
     return module
 
 
+def _write_weekly_summary(results_dir, weekly_summary):
+    with open(results_dir / "weekly_summary.json", "w", encoding="utf-8") as f:
+        json.dump(weekly_summary, f, indent=2)
+
+
 def test_runtime_trace_generation_and_thresholds(tmp_path):
     """Analyzer should emit runtime trace that passes baseline thresholds."""
     from metrics.runtime_observability import evaluate_runtime_trace, check_runtime_thresholds
@@ -49,8 +54,7 @@ def test_runtime_trace_generation_and_thresholds(tmp_path):
         }
     ]
 
-    with open(results_dir / "weekly_summary.json", "w", encoding="utf-8") as f:
-        json.dump(weekly_summary, f, indent=2)
+    _write_weekly_summary(results_dir, weekly_summary)
 
     analyzer = analyzer_module.IntelligentAnalyzer(results_dir=str(results_dir))
     analysis = analyzer.analyze_weekly_data()
@@ -70,3 +74,90 @@ def test_runtime_trace_generation_and_thresholds(tmp_path):
         max_steps_per_run=12.0,
     )
     assert gate["ok"], f"Runtime threshold violations: {gate['violations']}"
+
+
+def test_change_detection_handles_zero_previous_week(tmp_path):
+    """A quiet week followed by activity should not fail runtime analysis."""
+    analyzer_module = _load_analyzer_module()
+    results_dir = tmp_path / "results"
+    results_dir.mkdir(parents=True, exist_ok=True)
+
+    _write_weekly_summary(
+        results_dir,
+        [
+            {"date": "2026-04-13", "updates": []},
+            {
+                "date": "2026-04-20",
+                "updates": [
+                    {
+                        "title": "DeepSeek releases vNext",
+                        "summary": "New model release with open source weights",
+                        "source": "GitHub Releases",
+                        "date": "2026-04-20",
+                        "keywords": ["deepseek"],
+                        "hash": "a1",
+                    }
+                ],
+            },
+        ],
+    )
+
+    analyzer = analyzer_module.IntelligentAnalyzer(results_dir=str(results_dir))
+    analysis = analyzer.analyze_weekly_data()
+
+    assert "error" not in analysis
+    assert any(change["category"] == "market_shift" for change in analysis["significant_changes"])
+
+    with open(results_dir / "latest_runtime_trace.json", "r", encoding="utf-8") as f:
+        trace_data = json.load(f)
+    assert trace_data["summary"]["failed_steps"] == 0
+    assert trace_data["summary"]["success_rate"] == 1.0
+
+
+def test_analyzer_preserves_latest_analysis_when_agent_fails(tmp_path):
+    """Partial runtime failures must not overwrite the last good analysis."""
+    analyzer_module = _load_analyzer_module()
+    results_dir = tmp_path / "results"
+    results_dir.mkdir(parents=True, exist_ok=True)
+
+    previous_analysis = {"date": "2026-04-13", "sentinel": "last-good-analysis"}
+    with open(results_dir / "latest_analysis.json", "w", encoding="utf-8") as f:
+        json.dump(previous_analysis, f, indent=2)
+
+    _write_weekly_summary(
+        results_dir,
+        [
+            {
+                "date": "2026-04-20",
+                "updates": [
+                    {
+                        "title": "Kimi announces new capability",
+                        "summary": "Moonshot AI expands features",
+                        "source": "Company Blog",
+                        "date": "2026-04-20",
+                        "keywords": ["kimi"],
+                        "hash": "b1",
+                    }
+                ],
+            }
+        ],
+    )
+
+    analyzer = analyzer_module.IntelligentAnalyzer(results_dir=str(results_dir))
+
+    def fail_agent(_context):
+        raise RuntimeError("synthetic runtime failure")
+
+    analyzer.change_agent.run = fail_agent
+    analysis = analyzer.analyze_weekly_data()
+
+    assert "error" in analysis
+    assert "change_detection" in analysis["error"]
+    assert "synthetic runtime failure" in analysis["error"]
+
+    with open(results_dir / "latest_analysis.json", "r", encoding="utf-8") as f:
+        assert json.load(f) == previous_analysis
+
+    with open(results_dir / "latest_runtime_trace.json", "r", encoding="utf-8") as f:
+        trace_data = json.load(f)
+    assert trace_data["summary"]["failed_steps"] == 1
