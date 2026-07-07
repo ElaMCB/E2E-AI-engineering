@@ -147,12 +147,12 @@ def run_evaluation_tests() -> Dict[str, Any]:
                     "color": color
                 }
             else:
-                # Fallback if we can't parse the score
+                print("Eval script completed but no parseable score was found", file=sys.stderr)
                 return {
                     "schemaVersion": 1,
                     "label": "Eval Score",
-                    "message": "85.0%",
-                    "color": "green"
+                    "message": "N/A",
+                    "color": "grey"
                 }
         else:
             print(f"Eval script failed: {result.stderr}", file=sys.stderr)
