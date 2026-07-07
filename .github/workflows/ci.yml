@@ -226,7 +226,7 @@ jobs:
                 echo "::warning::3. Or manually merge metrics updates"
                 echo "Metrics files generated but not committed:"
                 ls -la coverage.json eval.json
-                exit 0  # Don't fail the job, just warn
+                exit 1
               fi
             fi
           else
@@ -234,4 +234,3 @@ jobs:
             echo "Metrics files generated:"
             ls -la coverage.json eval.json 2>/dev/null || echo "Metrics files not found"
           fi
-        continue-on-error: true
