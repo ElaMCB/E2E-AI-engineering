@@ -1,8 +1,10 @@
 # Results and data
-results/
+results/*
 *.json
 !config.json
+!results/
 !results/weekly_summary.json
+!results/seen_hashes.json
 
 # Python
 __pycache__/

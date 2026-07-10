@@ -100,15 +100,43 @@ class AIMonitor:
         """Load previously seen article hashes to avoid duplicates"""
         seen_file = self.results_dir / "seen_hashes.json"
         if seen_file.exists():
-            with open(seen_file, 'r') as f:
+            with open(seen_file, 'r', encoding='utf-8') as f:
                 return set(json.load(f))
-        return set()
+        return self._load_seen_hashes_from_summary()
+
+    def _load_seen_hashes_from_summary(self) -> set:
+        """Backfill seen hashes from committed weekly summaries on fresh checkouts."""
+        summary_file = self.results_dir / "weekly_summary.json"
+        if not summary_file.exists():
+            return set()
+
+        with open(summary_file, 'r', encoding='utf-8') as f:
+            summaries = json.load(f)
+
+        hashes = set()
+        for week in summaries:
+            for update in week.get('updates', []):
+                update_hash = update.get('hash')
+                if update_hash:
+                    hashes.add(update_hash)
+        return hashes
+
+    def _atomic_write_json(self, path: Path, data):
+        """Write JSON via atomic replace so interrupted runs do not corrupt history."""
+        tmp_path = path.with_name(f".{path.name}.tmp")
+        try:
+            with open(tmp_path, 'w', encoding='utf-8') as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+                f.write("\n")
+            os.replace(tmp_path, path)
+        finally:
+            if tmp_path.exists():
+                tmp_path.unlink()
     
     def _save_seen_hashes(self):
         """Save seen hashes to file"""
         seen_file = self.results_dir / "seen_hashes.json"
-        with open(seen_file, 'w') as f:
-            json.dump(list(self.seen_hashes), f, indent=2)
+        self._atomic_write_json(seen_file, sorted(self.seen_hashes))
     
     def search_duckduckgo(self, query: str, max_results: int = 10) -> List[AIUpdate]:
         """Search using DuckDuckGo (no API key required)"""
@@ -658,8 +686,7 @@ class AIMonitor:
         
         if self.config.get('output_format') == 'json':
             filename = self.results_dir / f"ai_updates_{timestamp}.json"
-            with open(filename, 'w', encoding='utf-8') as f:
-                json.dump([asdict(update) for update in updates], f, indent=2, ensure_ascii=False)
+            self._atomic_write_json(filename, [asdict(update) for update in updates])
         
         # Also save to weekly summary
         summary_file = self.results_dir / "weekly_summary.json"
@@ -680,8 +707,7 @@ class AIMonitor:
         # Keep only last 12 weeks
         summaries = summaries[-12:]
         
-        with open(summary_file, 'w', encoding='utf-8') as f:
-            json.dump(summaries, f, indent=2, ensure_ascii=False)
+        self._atomic_write_json(summary_file, summaries)
         
         print(f"Results saved to {filename}")
         print(f"Weekly summary updated: {summary_file}")

@@ -4,6 +4,7 @@ Multi-agent architecture to extract meaningful insights and identify biggest cha
 """
 
 import json
+import os
 import sys
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -200,9 +201,14 @@ class ChangeDetectionAgent(AnalysisAgent):
             curr_count = len(current_week.get('updates', []))
             
             if curr_count > prev_count * 1.5:  # 50% increase
+                if prev_count == 0:
+                    description = f"Activity resumed after a quiet week: {curr_count} updates"
+                else:
+                    percent_increase = ((curr_count / prev_count - 1) * 100)
+                    description = f"Significant activity increase: {prev_count} → {curr_count} updates (+{percent_increase:.0f}%)"
                 changes.append(Change(
                     category='market_shift',
-                    description=f"Significant activity increase: {prev_count} → {curr_count} updates (+{((curr_count/prev_count-1)*100):.0f}%)",
+                    description=description,
                     magnitude=6.0,
                     week_over_week_change={'prev': prev_count, 'current': curr_count},
                     implications=["Increased market activity - monitor closely", "Potential major announcements coming"]
@@ -348,6 +354,13 @@ class IntelligentAnalyzer:
             metadata={"date": latest.get("date", "")},
         )
         runtime_outputs = self.runtime.run_all(context)
+
+        failed_runs = [run for run in self.runtime.run_history if run.status != "ok"]
+        if failed_runs:
+            self._save_runtime_trace(latest.get('date', ''))
+            failed_agents = ", ".join(run.agent_name for run in failed_runs)
+            return {"error": f"Analysis agent failure(s): {failed_agents}"}
+
         priority_insights = runtime_outputs.get("priority_scoring") or []
         changes = runtime_outputs.get("change_detection") or []
         summary = runtime_outputs.get("summarization") or {}
@@ -399,13 +412,23 @@ class IntelligentAnalyzer:
         timestamp = datetime.now().strftime('%Y%m%d')
         analysis_file = self.results_dir / f"analysis_{timestamp}.json"
         
-        with open(analysis_file, 'w', encoding='utf-8') as f:
-            json.dump(analysis, f, indent=2, ensure_ascii=False)
+        self._atomic_write_json(analysis_file, analysis)
         
         # Also update latest analysis
         latest_file = self.results_dir / "latest_analysis.json"
-        with open(latest_file, 'w', encoding='utf-8') as f:
-            json.dump(analysis, f, indent=2, ensure_ascii=False)
+        self._atomic_write_json(latest_file, analysis)
+
+    def _atomic_write_json(self, path: Path, data):
+        """Write JSON via atomic replace so interrupted runs keep the last good file."""
+        tmp_path = path.with_name(f".{path.name}.tmp")
+        try:
+            with open(tmp_path, 'w', encoding='utf-8') as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+                f.write("\n")
+            os.replace(tmp_path, path)
+        finally:
+            if tmp_path.exists():
+                tmp_path.unlink()
 
     def _save_runtime_trace(self, analysis_date: str):
         """Save runtime execution trace for observability and eval gates."""
@@ -434,12 +457,10 @@ class IntelligentAnalyzer:
 
         timestamp = datetime.now().strftime('%Y%m%d')
         trace_file = self.results_dir / f"runtime_trace_{timestamp}.json"
-        with open(trace_file, 'w', encoding='utf-8') as f:
-            json.dump(runtime_trace, f, indent=2, ensure_ascii=False)
+        self._atomic_write_json(trace_file, runtime_trace)
 
         latest_trace_file = self.results_dir / "latest_runtime_trace.json"
-        with open(latest_trace_file, 'w', encoding='utf-8') as f:
-            json.dump(runtime_trace, f, indent=2, ensure_ascii=False)
+        self._atomic_write_json(latest_trace_file, runtime_trace)
     
     def generate_report(self) -> str:
         """Generate human-readable report"""
@@ -503,7 +524,7 @@ def main():
     
     if 'error' in analysis:
         print(f"Error: {analysis['error']}")
-        return
+        sys.exit(1)
     
     # Generate and print report
     report = analyzer.generate_report()

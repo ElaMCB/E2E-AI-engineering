@@ -52,13 +52,11 @@ jobs:
         run: |
           cd ai-monitor
           python analyzer.py
-        continue-on-error: true
       
       - name: Generate Intelligence Page
         run: |
           cd ai-monitor
           python generate_intelligence_page.py
-        continue-on-error: true
       
       - name: Commit and Push Results
         env:
@@ -76,10 +74,10 @@ jobs:
           
           # Ensure we're on main branch
           git checkout main || git checkout -b main
-          git pull origin main || true
+          git pull origin main
           
           # Force add results (they're in .gitignore but we need them for the website)
-          git add -f ai-monitor/results/weekly_summary.json ai-monitor/results/latest_analysis.json docs/ai-monitor.html docs/intelligence.html
+          git add -f ai-monitor/results/weekly_summary.json ai-monitor/results/seen_hashes.json ai-monitor/results/latest_analysis.json ai-monitor/results/latest_runtime_trace.json docs/ai-monitor.html docs/intelligence.html
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
@@ -90,7 +88,7 @@ jobs:
               echo "::warning::Repository admin role should allow bypass, but push failed"
               echo "::warning::This might indicate the PAT wasn't created by a repository admin"
               echo "::warning::Or the bypass list needs to include the specific user who created the PAT"
-              exit 0  # Don't fail the job
+              exit 1
             else
               echo "Successfully pushed to main using PAT with bypass permissions"
             fi
