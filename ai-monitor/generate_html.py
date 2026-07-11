@@ -7,6 +7,20 @@ import html
 from pathlib import Path
 from datetime import datetime
 from typing import List, Dict
+from urllib.parse import urlparse
+
+
+def _safe_external_url(url_raw) -> str:
+    """Return an escaped HTTP(S) URL or an empty string for unsafe schemes."""
+    if not url_raw or url_raw == '#':
+        return ''
+
+    url = str(url_raw).strip()
+    parsed = urlparse(url)
+    if parsed.scheme not in {'http', 'https'} or not parsed.netloc:
+        return ''
+
+    return html.escape(url, quote=True)
 
 
 def generate_html_page(summary_file: str = "results/weekly_summary.json", 
@@ -352,18 +366,28 @@ def generate_html_from_summaries(summaries: List[Dict]) -> str:
         for update in updates[:10]:  # Limit to 10 per keyword
             # Get and escape all user-controlled data
             title = html.escape(str(update.get('title', 'No title')))
-            url_raw = update.get('url', '#')
-            # Escape URL for href attribute to prevent XSS
-            # This escapes HTML special chars like quotes that could break out of the attribute
-            url = html.escape(str(url_raw)) if url_raw and url_raw != '#' else '#'
+            url = _safe_external_url(update.get('url', '#'))
             source = html.escape(str(update.get('source', 'Unknown')))
             date = html.escape(str(update.get('date', 'N/A')))
             summary = html.escape(str(update.get('summary', '')))
+            title_html = (
+                f'<a href="{url}" target="_blank" rel="noopener noreferrer">{title}</a>'
+                if url
+                else f'<span>{title}</span>'
+            )
+            read_more_html = (
+                f"""
+                    <a href="{url}" target="_blank" rel="noopener noreferrer" class="update-link">
+                        Read more <i class="fas fa-external-link-alt"></i>
+                    </a>"""
+                if url
+                else ""
+            )
             
             html_output += f"""
                 <div class="update-card">
                     <div class="update-title">
-                        <a href="{url}" target="_blank" rel="noopener noreferrer">{title}</a>
+                        {title_html}
                     </div>
                     <div class="update-meta">
                         <span class="update-source">
@@ -376,9 +400,7 @@ def generate_html_from_summaries(summaries: List[Dict]) -> str:
                         </span>
                     </div>
                     <div class="update-summary">{summary}</div>
-                    <a href="{url}" target="_blank" rel="noopener noreferrer" class="update-link">
-                        Read more <i class="fas fa-external-link-alt"></i>
-                    </a>
+                    {read_more_html}
                 </div>
 """
         
