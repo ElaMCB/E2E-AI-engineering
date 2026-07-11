@@ -11,6 +11,16 @@ from typing import Dict
 import pytz
 
 
+def _script_safe_json(data: Dict) -> str:
+    """Serialize data for embedding in an inline JSON script tag."""
+    return (
+        json.dumps(data, ensure_ascii=False)
+        .replace("&", "\\u0026")
+        .replace("<", "\\u003c")
+        .replace(">", "\\u003e")
+    )
+
+
 def generate_intelligence_page(analysis_file: str = "results/latest_analysis.json",
                                output_file: str = "../docs/intelligence.html"):
     """Generate HTML page from analysis results"""
@@ -75,6 +85,7 @@ def generate_html_from_analysis(analysis: Dict) -> str:
     
     # Get personalized greeting
     personal = get_personalized_greeting()
+    analysis_json = _script_safe_json(analysis)
     
     html_output = f"""<!DOCTYPE html>
 <html lang="en">
@@ -371,19 +382,20 @@ def generate_html_from_analysis(analysis: Dict) -> str:
     
     <!-- Visitor Tracking -->
     <script src="analytics.js"></script>
+
+    <script id="analysis-data" type="application/json">{analysis_json}</script>
     
     <!-- Intelligence Agent Script -->
     <script>
-        // Load analysis data for agent
         let analysisData = null;
-        fetch('ai-monitor/results/latest_analysis.json')
-            .then(response => response.json())
-            .then(data => {
-                analysisData = data;
-            })
-            .catch(() => {
+        const analysisElement = document.getElementById('analysis-data');
+        if (analysisElement) {
+            try {
+                analysisData = JSON.parse(analysisElement.textContent);
+            } catch (error) {
                 console.log('Analysis data not available');
-            });
+            }
+        }
         
         // Toggle agent interface
         document.getElementById('engageDeeperBtn').addEventListener('click', function() {
@@ -476,6 +488,51 @@ def generate_html_from_analysis(analysis: Dict) -> str:
             return "I can help you with:\\n• Top insights and their impact scores\\n• Significant changes this week\\n• Recommendations on what to focus on\\n• Updates about specific companies (DeepSeek, Kimi, etc.)\\n• Executive summary\\n\\nTry asking: 'What are the top 3 insights?' or 'What changed this week?'";
         }
         
+        function createAgentMessage(text, role) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'agent-message';
+            wrapper.style.marginBottom = '1rem';
+
+            const row = document.createElement('div');
+            row.style.display = 'flex';
+            row.style.alignItems = 'start';
+            row.style.gap = '0.75rem';
+            if (role === 'user') {
+                row.style.flexDirection = 'row-reverse';
+            }
+
+            const icon = document.createElement('i');
+            icon.className = role === 'user' ? 'fas fa-user' : 'fas fa-robot';
+            icon.style.color = role === 'user' ? 'var(--success)' : 'var(--primary)';
+            icon.style.marginTop = '0.25rem';
+
+            const body = document.createElement('div');
+            body.style.flex = '1';
+            if (role === 'user') {
+                body.style.textAlign = 'right';
+            }
+
+            const paragraph = document.createElement('p');
+            paragraph.style.margin = '0';
+            paragraph.style.color = 'var(--text-light)';
+            paragraph.style.lineHeight = '1.6';
+            paragraph.textContent = text;
+            if (role === 'user') {
+                paragraph.style.background = 'rgba(59, 130, 246, 0.2)';
+                paragraph.style.padding = '0.75rem';
+                paragraph.style.borderRadius = '8px';
+                paragraph.style.display = 'inline-block';
+            } else {
+                paragraph.style.whiteSpace = 'pre-line';
+            }
+
+            body.appendChild(paragraph);
+            row.appendChild(icon);
+            row.appendChild(body);
+            wrapper.appendChild(row);
+            return wrapper;
+        }
+
         // Send message function
         function sendMessage() {
             const input = document.getElementById('agentInput');
@@ -484,40 +541,14 @@ def generate_html_from_analysis(analysis: Dict) -> str:
             
             // Add user message
             const messagesDiv = document.getElementById('agentMessages');
-            const userMsg = document.createElement('div');
-            userMsg.className = 'agent-message';
-            userMsg.style.marginBottom = '1rem';
-            userMsg.innerHTML = `
-                <div style="display: flex; align-items: start; gap: 0.75rem; flex-direction: row-reverse;">
-                    <i class="fas fa-user" style="color: var(--success); margin-top: 0.25rem;"></i>
-                    <div style="flex: 1; text-align: right;">
-                        <p style="margin: 0; color: var(--text-light); line-height: 1.6; background: rgba(59, 130, 246, 0.2); padding: 0.75rem; border-radius: 8px; display: inline-block;">
-                            ${question}
-                        </p>
-                    </div>
-                </div>
-            `;
-            messagesDiv.appendChild(userMsg);
+            messagesDiv.appendChild(createAgentMessage(question, 'user'));
             
             // Get agent response
             const response = getAgentResponse(question);
             
             // Add agent response
             setTimeout(() => {
-                const agentMsg = document.createElement('div');
-                agentMsg.className = 'agent-message';
-                agentMsg.style.marginBottom = '1rem';
-                agentMsg.innerHTML = `
-                    <div style="display: flex; align-items: start; gap: 0.75rem;">
-                        <i class="fas fa-robot" style="color: var(--primary); margin-top: 0.25rem;"></i>
-                        <div style="flex: 1;">
-                            <p style="margin: 0; color: var(--text-light); line-height: 1.6; white-space: pre-line;">
-                                ${response}
-                            </p>
-                        </div>
-                    </div>
-                `;
-                messagesDiv.appendChild(agentMsg);
+                messagesDiv.appendChild(createAgentMessage(response, 'agent'));
                 messagesDiv.scrollTop = messagesDiv.scrollHeight;
             }, 500);
             

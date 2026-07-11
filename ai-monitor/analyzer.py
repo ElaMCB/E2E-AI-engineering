@@ -199,7 +199,15 @@ class ChangeDetectionAgent(AnalysisAgent):
             prev_count = len(prev_week.get('updates', []))
             curr_count = len(current_week.get('updates', []))
             
-            if curr_count > prev_count * 1.5:  # 50% increase
+            if prev_count == 0 and curr_count > 0:
+                changes.append(Change(
+                    category='market_shift',
+                    description=f"Activity resumed from zero to {curr_count} updates",
+                    magnitude=6.0,
+                    week_over_week_change={'prev': prev_count, 'current': curr_count},
+                    implications=["Market activity resumed after a quiet week", "Review new updates for delayed announcements"]
+                ))
+            elif curr_count > prev_count * 1.5:  # 50% increase
                 changes.append(Change(
                     category='market_shift',
                     description=f"Significant activity increase: {prev_count} → {curr_count} updates (+{((curr_count/prev_count-1)*100):.0f}%)",
