@@ -382,8 +382,13 @@ def generate_html_from_analysis(analysis: Dict) -> str:
     
     <!-- Visitor Tracking -->
     <script src="analytics.js"></script>
+"""
 
+    html_output += f"""
     <script id="analysis-data" type="application/json">{analysis_json}</script>
+"""
+
+    html_output += """
     
     <!-- Intelligence Agent Script -->
     <script>
