@@ -7,6 +7,15 @@ import html
 from pathlib import Path
 from datetime import datetime
 from typing import List, Dict
+from urllib.parse import urlparse
+
+
+def safe_external_url(url: str) -> str:
+    """Return an HTTP(S) URL for links, or '#' for unsafe schemes."""
+    parsed = urlparse(str(url).strip())
+    if parsed.scheme in {"http", "https"}:
+        return html.escape(parsed.geturl(), quote=True)
+    return "#"
 
 
 def generate_html_page(summary_file: str = "results/weekly_summary.json", 
@@ -352,10 +361,7 @@ def generate_html_from_summaries(summaries: List[Dict]) -> str:
         for update in updates[:10]:  # Limit to 10 per keyword
             # Get and escape all user-controlled data
             title = html.escape(str(update.get('title', 'No title')))
-            url_raw = update.get('url', '#')
-            # Escape URL for href attribute to prevent XSS
-            # This escapes HTML special chars like quotes that could break out of the attribute
-            url = html.escape(str(url_raw)) if url_raw and url_raw != '#' else '#'
+            url = safe_external_url(update.get('url', '#'))
             source = html.escape(str(update.get('source', 'Unknown')))
             date = html.escape(str(update.get('date', 'N/A')))
             summary = html.escape(str(update.get('summary', '')))

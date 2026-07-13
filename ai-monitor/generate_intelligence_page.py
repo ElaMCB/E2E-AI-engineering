@@ -476,49 +476,67 @@ def generate_html_from_analysis(analysis: Dict) -> str:
             return "I can help you with:\\n• Top insights and their impact scores\\n• Significant changes this week\\n• Recommendations on what to focus on\\n• Updates about specific companies (DeepSeek, Kimi, etc.)\\n• Executive summary\\n\\nTry asking: 'What are the top 3 insights?' or 'What changed this week?'";
         }
         
+        function appendChatMessage(sender, text) {
+            const messagesDiv = document.getElementById('agentMessages');
+            const message = document.createElement('div');
+            message.className = 'agent-message';
+            message.style.marginBottom = '1rem';
+
+            const row = document.createElement('div');
+            row.style.display = 'flex';
+            row.style.alignItems = 'start';
+            row.style.gap = '0.75rem';
+            if (sender === 'user') {
+                row.style.flexDirection = 'row-reverse';
+            }
+
+            const icon = document.createElement('i');
+            icon.className = sender === 'user' ? 'fas fa-user' : 'fas fa-robot';
+            icon.style.color = sender === 'user' ? 'var(--success)' : 'var(--primary)';
+            icon.style.marginTop = '0.25rem';
+
+            const body = document.createElement('div');
+            body.style.flex = '1';
+            if (sender === 'user') {
+                body.style.textAlign = 'right';
+            }
+
+            const paragraph = document.createElement('p');
+            paragraph.style.margin = '0';
+            paragraph.style.color = 'var(--text-light)';
+            paragraph.style.lineHeight = '1.6';
+            if (sender === 'user') {
+                paragraph.style.background = 'rgba(59, 130, 246, 0.2)';
+                paragraph.style.padding = '0.75rem';
+                paragraph.style.borderRadius = '8px';
+                paragraph.style.display = 'inline-block';
+            } else {
+                paragraph.style.whiteSpace = 'pre-line';
+            }
+            paragraph.textContent = text;
+
+            body.appendChild(paragraph);
+            row.appendChild(icon);
+            row.appendChild(body);
+            message.appendChild(row);
+            messagesDiv.appendChild(message);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
         // Send message function
         function sendMessage() {
             const input = document.getElementById('agentInput');
             const question = input.value.trim();
             if (!question) return;
             
-            // Add user message
-            const messagesDiv = document.getElementById('agentMessages');
-            const userMsg = document.createElement('div');
-            userMsg.className = 'agent-message';
-            userMsg.style.marginBottom = '1rem';
-            userMsg.innerHTML = `
-                <div style="display: flex; align-items: start; gap: 0.75rem; flex-direction: row-reverse;">
-                    <i class="fas fa-user" style="color: var(--success); margin-top: 0.25rem;"></i>
-                    <div style="flex: 1; text-align: right;">
-                        <p style="margin: 0; color: var(--text-light); line-height: 1.6; background: rgba(59, 130, 246, 0.2); padding: 0.75rem; border-radius: 8px; display: inline-block;">
-                            ${question}
-                        </p>
-                    </div>
-                </div>
-            `;
-            messagesDiv.appendChild(userMsg);
+            appendChatMessage('user', question);
             
             // Get agent response
             const response = getAgentResponse(question);
             
             // Add agent response
             setTimeout(() => {
-                const agentMsg = document.createElement('div');
-                agentMsg.className = 'agent-message';
-                agentMsg.style.marginBottom = '1rem';
-                agentMsg.innerHTML = `
-                    <div style="display: flex; align-items: start; gap: 0.75rem;">
-                        <i class="fas fa-robot" style="color: var(--primary); margin-top: 0.25rem;"></i>
-                        <div style="flex: 1;">
-                            <p style="margin: 0; color: var(--text-light); line-height: 1.6; white-space: pre-line;">
-                                ${response}
-                            </p>
-                        </div>
-                    </div>
-                `;
-                messagesDiv.appendChild(agentMsg);
-                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                appendChatMessage('agent', response);
             }, 500);
             
             input.value = '';
