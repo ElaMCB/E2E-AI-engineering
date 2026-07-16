@@ -199,7 +199,15 @@ class ChangeDetectionAgent(AnalysisAgent):
             prev_count = len(prev_week.get('updates', []))
             curr_count = len(current_week.get('updates', []))
             
-            if curr_count > prev_count * 1.5:  # 50% increase
+            if prev_count == 0 and curr_count > 0:
+                changes.append(Change(
+                    category='market_shift',
+                    description=f"Activity resumed after a quiet week: 0 → {curr_count} updates",
+                    magnitude=6.0,
+                    week_over_week_change={'prev': prev_count, 'current': curr_count},
+                    implications=["Increased market activity - monitor closely", "Potential major announcements coming"]
+                ))
+            elif curr_count > prev_count * 1.5:  # 50% increase
                 changes.append(Change(
                     category='market_shift',
                     description=f"Significant activity increase: {prev_count} → {curr_count} updates (+{((curr_count/prev_count-1)*100):.0f}%)",
@@ -348,6 +356,13 @@ class IntelligentAnalyzer:
             metadata={"date": latest.get("date", "")},
         )
         runtime_outputs = self.runtime.run_all(context)
+        self._save_runtime_trace(latest.get('date', ''))
+
+        failed_runs = [run for run in self.runtime.run_history if run.status != "ok"]
+        if failed_runs:
+            failed_agents = ", ".join(run.agent_name for run in failed_runs)
+            return {"error": f"Analysis failed for agent(s): {failed_agents}"}
+
         priority_insights = runtime_outputs.get("priority_scoring") or []
         changes = runtime_outputs.get("change_detection") or []
         summary = runtime_outputs.get("summarization") or {}
@@ -365,7 +380,6 @@ class IntelligentAnalyzer:
         
         # Save analysis
         self._save_analysis(analysis)
-        self._save_runtime_trace(latest.get('date', ''))
         
         return analysis
     
@@ -503,7 +517,7 @@ def main():
     
     if 'error' in analysis:
         print(f"Error: {analysis['error']}")
-        return
+        return 1
     
     # Generate and print report
     report = analyzer.generate_report()
@@ -520,8 +534,9 @@ def main():
     
     print(f"\nAnalysis saved to: {report_file}")
     print(f"Latest analysis: {analyzer.results_dir / 'latest_analysis.json'}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
 
