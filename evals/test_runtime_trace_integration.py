@@ -27,6 +27,10 @@ def test_runtime_trace_generation_and_thresholds(tmp_path):
 
     weekly_summary = [
         {
+            "date": "2026-04-13",
+            "updates": [],
+        },
+        {
             "date": "2026-04-20",
             "updates": [
                 {
@@ -55,6 +59,10 @@ def test_runtime_trace_generation_and_thresholds(tmp_path):
     analyzer = analyzer_module.IntelligentAnalyzer(results_dir=str(results_dir))
     analysis = analyzer.analyze_weekly_data()
     assert "error" not in analysis
+    assert any(
+        change["category"] == "market_shift"
+        for change in analysis["significant_changes"]
+    )
 
     trace_path = results_dir / "latest_runtime_trace.json"
     assert trace_path.exists()
@@ -70,3 +78,34 @@ def test_runtime_trace_generation_and_thresholds(tmp_path):
         max_steps_per_run=12.0,
     )
     assert gate["ok"], f"Runtime threshold violations: {gate['violations']}"
+
+
+def test_agent_failure_preserves_latest_analysis(tmp_path):
+    """A failed agent must not replace the last successfully published analysis."""
+    analyzer_module = _load_analyzer_module()
+    results_dir = tmp_path / "results"
+    results_dir.mkdir(parents=True, exist_ok=True)
+
+    with open(results_dir / "weekly_summary.json", "w", encoding="utf-8") as f:
+        json.dump([{"date": "2026-04-20", "updates": []}], f)
+
+    previous_analysis = {"date": "2026-04-13", "status": "valid"}
+    latest_analysis_path = results_dir / "latest_analysis.json"
+    with open(latest_analysis_path, "w", encoding="utf-8") as f:
+        json.dump(previous_analysis, f)
+
+    analyzer = analyzer_module.IntelligentAnalyzer(results_dir=str(results_dir))
+
+    def fail_agent(_context):
+        raise RuntimeError("injected failure")
+
+    analyzer.change_agent.run = fail_agent
+    result = analyzer.analyze_weekly_data()
+
+    assert result == {"error": "Analysis failed for agent(s): change_detection"}
+    with open(latest_analysis_path, "r", encoding="utf-8") as f:
+        assert json.load(f) == previous_analysis
+
+    with open(results_dir / "latest_runtime_trace.json", "r", encoding="utf-8") as f:
+        trace_data = json.load(f)
+    assert trace_data["summary"]["failed_steps"] == 1
