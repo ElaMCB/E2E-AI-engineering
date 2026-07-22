@@ -52,7 +52,6 @@ jobs:
         run: |
           cd ai-monitor
           python analyzer.py
-        continue-on-error: true
       
       - name: Generate Intelligence Page
         run: |
