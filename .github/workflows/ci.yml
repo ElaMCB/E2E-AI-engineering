@@ -161,6 +161,9 @@ jobs:
           # Default GITHUB_TOKEN for clone only. Do not use METRICS_PAT here — an invalid
           # PAT causes checkout to fail before the job runs. PAT is applied before push below.
           ref: ${{ github.ref }}
+          # Prevent checkout's GITHUB_TOKEN Authorization header from overriding
+          # the PAT embedded in the push URL below.
+          persist-credentials: false
       
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -214,9 +217,11 @@ jobs:
               echo "No changes to commit"
             else
               git commit -m "CI: Update metrics [skip ci]"
-              if [ -n "$GIT_TOKEN" ] && [ "$GIT_TOKEN" != "${{ secrets.GITHUB_TOKEN }}" ]; then
-                git remote set-url origin "https://x-access-token:${GIT_TOKEN}@github.com/${{ github.repository }}.git"
+              if [ -z "$GIT_TOKEN" ]; then
+                echo "::error::No token is available for publishing metrics"
+                exit 1
               fi
+              git remote set-url origin "https://x-access-token:${GIT_TOKEN}@github.com/${{ github.repository }}.git"
               # Try to push - if it fails due to branch protection, we'll handle it
               if ! git push origin main; then
                 echo "::warning::Failed to push metrics due to branch protection rules"
@@ -226,7 +231,7 @@ jobs:
                 echo "::warning::3. Or manually merge metrics updates"
                 echo "Metrics files generated but not committed:"
                 ls -la coverage.json eval.json
-                exit 0  # Don't fail the job, just warn
+                exit 1
               fi
             fi
           else
@@ -234,4 +239,3 @@ jobs:
             echo "Metrics files generated:"
             ls -la coverage.json eval.json 2>/dev/null || echo "Metrics files not found"
           fi
-        continue-on-error: true

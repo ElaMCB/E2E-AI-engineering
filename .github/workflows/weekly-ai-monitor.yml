@@ -19,9 +19,12 @@ jobs:
         with:
           # Always use the default GITHUB_TOKEN for clone. A bad or empty METRICS_PAT
           # breaks checkout with: fatal: could not read Username for 'https://github.com'
-          # Use METRICS_PAT only in the push step below when it differs from GITHUB_TOKEN.
+          # Select METRICS_PAT (or the default token fallback) only in the publish step.
           ref: main
           fetch-depth: 0  # Fetch full history for proper git operations
+          # Otherwise checkout's persisted GITHUB_TOKEN Authorization header overrides
+          # the PAT embedded in the push URL below.
+          persist-credentials: false
       
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -68,11 +71,13 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          # Configure git to use the PAT token for authentication
-          if [ -n "$GIT_TOKEN" ] && [ "$GIT_TOKEN" != "${{ secrets.GITHUB_TOKEN }}" ]; then
-            echo "Using PAT token for authentication (bypass should apply)"
-            git remote set-url origin "https://x-access-token:${GIT_TOKEN}@github.com/${{ github.repository }}.git"
+          # Checkout credentials are deliberately not persisted, so this is the only
+          # Authorization credential Git sends for pull/push.
+          if [ -z "$GIT_TOKEN" ]; then
+            echo "::error::No token is available for publishing monitor results"
+            exit 1
           fi
+          git remote set-url origin "https://x-access-token:${GIT_TOKEN}@github.com/${{ github.repository }}.git"
           
           # Ensure we're on main branch
           git checkout main || git checkout -b main
@@ -90,7 +95,7 @@ jobs:
               echo "::warning::Repository admin role should allow bypass, but push failed"
               echo "::warning::This might indicate the PAT wasn't created by a repository admin"
               echo "::warning::Or the bypass list needs to include the specific user who created the PAT"
-              exit 0  # Don't fail the job
+              exit 1
             else
               echo "Successfully pushed to main using PAT with bypass permissions"
             fi
